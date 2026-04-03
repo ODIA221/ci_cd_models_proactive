@@ -1,0 +1,801 @@
+timestamp,message,commit_id,user,stage_name_Build,stage_name_Deploy,stage_name_Test,job_name_deploy_to_dev,job_name_deploy_to_staging,job_name_run_integration_tests,job_name_run_unit_tests,task_name_build,task_name_checkout,task_name_deploy,task_name_test,status_running,status_skipped,status_success
+2024-03-02 01:05:07+0000,Task completed successfully.,f831dbe56dcbceadccc1447923b1d9659becadbe,MISSING,True,False,False,False,True,False,False,False,False,False,False,False,False,True
+2024-07-22 19:55:41+0000,Task was skipped due to pipeline conditions.,dcbac61f342d8b5ed473959be9edbeb1dfaca028,user_psc,True,False,False,False,False,False,True,False,False,True,False,False,True,False
+2024-03-01 23:03:43+0000,Task completed successfully.,fded3f1e6bcedb9fc338c14dfad3aa360bb6b50c,user_usq,False,False,False,True,False,False,False,False,False,True,False,False,False,True
+2024-06-02 12:21:00+0000,Task was skipped due to pipeline conditions.,2c9d4fbd41bb1c5c7feb06035d3b4feaf1ac45d0,MISSING,False,False,True,True,False,False,False,False,False,False,True,False,True,False
+2024-04-17 07:59:29+0000,Task execution failed.,a4e872fbdf81f1d1742bf5ae0c76ee9d10eea02a,user_umu,False,False,True,False,False,False,False,False,False,False,True,False,False,False
+2024-04-06 14:31:21+0000,Task completed successfully.,7ab9fa990aab4ad609ad890afbd7bf3aa2ecc4e3,MISSING,False,False,False,True,False,False,False,False,False,True,False,False,False,True
+2024-02-22 07:14:58+0000,Task execution failed.,904ab9dd9c2a8dd0cea3c6c09ba7636cad52006b,user_glz,False,False,True,False,False,False,False,False,False,False,True,False,False,False
+2024-11-20 03:29:55+0000,Task execution failed.,8faae7afc957535afee8be1dfbaccb9ebdc1dafa,user_yjl,False,False,False,False,False,True,False,False,False,False,False,False,False,False
+2024-09-05 06:07:21+0000,Task was skipped due to pipeline conditions.,41dfb56c0ac5c693beaf5a3eb004feebb51149c6,MISSING,True,False,False,False,False,False,True,False,False,True,False,False,True,False
+2024-12-09 06:10:14+0000,Task was skipped due to pipeline conditions.,5f448dbd7e80665dacedf746b849f29feea302ee,user_kof,False,False,True,True,False,False,False,False,False,True,False,False,True,False
+2024-09-01 23:05:03+0000,Task is currently in progress.,b4b6c6ad98e25bcf4fcbccce7a9b85b2efababef,user_wlb,False,False,False,True,False,False,False,False,False,True,False,True,False,False
+2024-05-27 12:35:14+0000,Task is currently in progress.,3aead9dd6ca5ca3c31a3a6c28cbcb91a855091ef,MISSING,False,True,False,False,True,False,False,False,False,False,True,True,False,False
+2024-10-28 06:35:11+0000,Task was skipped due to pipeline conditions.,cac9b340a6c28b17c3ea25ad9cebb57a0a95a986,user_aay,False,True,False,False,False,True,False,False,False,False,False,False,True,False
+2024-08-21 08:46:59+0000,Task was skipped due to pipeline conditions.,6cec717c7c8b1a4f8756d7dfc2fcc403f9bcbf3e,MISSING,False,False,False,False,False,False,True,False,False,True,False,False,True,False
+2024-01-16 05:14:59+0000,Task was skipped due to pipeline conditions.,14ead90a09dceaffbe73f2aeccee2de5d3fe167e,MISSING,False,False,False,False,False,False,False,False,False,True,False,False,True,False
+2024-09-22 00:13:00+0000,Task execution failed.,decee9908f3bf5f9fddd04f28614de5caa431fcf,user_fbr,False,False,True,False,False,False,False,True,False,False,False,False,False,False
+2024-04-21 17:01:30+0000,Task was skipped due to pipeline conditions.,d3f84eea65107ebe7213bca7f0e47da5e95c6a82,MISSING,False,True,False,True,False,False,False,False,False,False,False,False,True,False
+2024-05-12 21:02:18+0000,Task execution failed.,b44a01f2b624daf4daeaa00f9cb494b17aca6b99,user_vdc,True,False,False,False,False,False,True,False,False,False,False,False,False,False
+2024-03-27 22:25:29+0000,Task is currently in progress.,ddbcf7399dc538a2ac3101ddeebe2cf6190bae6b,MISSING,False,True,False,False,False,True,False,False,False,False,True,True,False,False
+2024-09-26 23:47:46+0000,Task was skipped due to pipeline conditions.,face46efb3a9ac4c7d7abcbfabafecf95ccd570c,MISSING,True,False,False,True,False,False,False,True,False,False,False,False,True,False
+2024-05-06 05:18:05+0000,Task completed successfully.,bd6a635b0af89ffae2da0e7b66fab167ebdd8867,user_shb,True,False,False,False,False,True,False,False,False,False,False,False,False,True
+2024-12-09 10:49:45+0000,Task completed successfully.,22edb30fb680ac57a95f44eaf6725ececded5df1,MISSING,False,False,False,False,False,True,False,False,False,False,True,False,False,True
+2024-02-26 18:34:36+0000,Task was skipped due to pipeline conditions.,4057b53e15daddf2dca4614dce8bfefff47dc8fc,MISSING,False,False,True,False,False,True,False,False,False,False,True,False,True,False
+2024-04-03 07:23:48+0000,Task was skipped due to pipeline conditions.,07beab25f30af5624d5f1ccab41464f4cef0a81a,MISSING,False,False,False,False,True,False,False,False,False,False,True,False,True,False
+2024-06-18 01:20:44+0000,Task completed successfully.,f03d4a5ade10f6ccfde33eeff5efaa36cd9fc491,MISSING,False,False,False,True,False,False,False,False,False,False,False,False,False,True
+2024-03-07 05:46:01+0000,Task is currently in progress.,89bbdfe9c2efba26cddc0b9cbecbd1b7a4170404,user_ojk,False,False,True,False,False,False,True,False,True,False,False,True,False,False
+2024-04-26 19:52:41+0000,Task was skipped due to pipeline conditions.,c10b19d9a60fe02a6da4a250e82eb26cd99aa012,MISSING,False,True,False,False,False,True,False,True,False,False,False,False,True,False
+2024-02-25 05:17:16+0000,Task is currently in progress.,a3adc50cc8d58376d884fa6ba2d34fdbb2cbd1fb,user_ede,False,False,False,False,False,False,True,False,True,False,False,True,False,False
+2024-03-04 19:44:52+0000,Task is currently in progress.,fbbcbfae2dea4da85ad0cf354fef4f0ff1adfed2,user_oug,False,True,False,False,True,False,False,False,False,True,False,True,False,False
+2024-05-23 05:13:23+0000,Task was skipped due to pipeline conditions.,40b48e1e9fe6238c1d2eabf77d047bcaf959c4a2,MISSING,False,True,False,False,False,False,True,False,False,False,True,False,True,False
+2024-01-08 15:42:32+0000,Task completed successfully.,0e0b840bc9ab0a89e9e5a2abc3ff829d14ebac8b,user_xon,True,False,False,False,False,True,False,True,False,False,False,False,False,True
+2024-08-30 02:32:22+0000,Task was skipped due to pipeline conditions.,1cfb4d37ebe6baf105e71e2b9ced2f1ac9d0fe38,MISSING,False,False,False,False,True,False,False,True,False,False,False,False,True,False
+2024-09-17 17:04:06+0000,Task was skipped due to pipeline conditions.,24d6e4ff7a8e5acc43b2deb0b5858eff9fdb0f5e,user_hky,True,False,False,False,False,False,True,False,False,False,False,False,True,False
+2024-02-14 13:19:12+0000,Task completed successfully.,e9d8684f0ece45a0b32a7c6e52734b3a4e878fcf,MISSING,False,False,False,False,False,True,False,False,False,False,True,False,False,True
+2024-08-11 21:57:54+0000,Task was skipped due to pipeline conditions.,6d47b17ab8ff493d0b849969dbab3a29d46cd6ee,MISSING,False,True,False,False,False,False,False,False,False,False,True,False,True,False
+2024-02-28 14:28:50+0000,Task completed successfully.,13feeaae6cbcbad205afd8cfaaa7cac6529555db,user_bce,True,False,False,True,False,False,False,False,False,False,True,False,False,True
+2024-08-31 07:30:36+0000,Task is currently in progress.,5aada4c790a6d5f71e3fb6048f8a0b172273bc87,MISSING,False,True,False,False,True,False,False,False,True,False,False,True,False,False
+2024-04-01 17:21:11+0000,Task execution failed.,a736defd98590b18bae0ffbbd948af11b6fc9a2a,MISSING,False,False,False,True,False,False,False,False,False,True,False,False,False,False
+2024-01-31 09:52:55+0000,Task execution failed.,238d6b7c2f83d7ad5e4bbc69cced92ead0eabacf,MISSING,False,True,False,False,False,False,True,False,False,True,False,False,False,False
+2024-03-02 20:20:28+0000,Task execution failed.,d2f4bd7ceaaf3632a3dcc95cf3c91b2b3101adcb,MISSING,False,False,True,False,False,False,False,False,False,False,True,False,False,False
+2024-05-20 16:11:33+0000,Task completed successfully.,60fbddf59145eca8e8c1baa98ee8cd1c2ad956ec,MISSING,True,False,False,True,False,False,False,False,False,False,True,False,False,True
+2024-07-09 08:59:52+0000,Task is currently in progress.,bff1518b5f907e9541ef8d1ecbee5e5ad5bbb6c4,MISSING,False,True,False,False,False,True,False,False,False,False,True,True,False,False
+2024-05-30 13:29:30+0000,Task execution failed.,3db0a04f58c32cce36d7fa088a3cdbf6758c2aa0,user_xgx,False,True,False,True,False,False,False,True,False,False,False,False,False,False
+2024-11-08 05:55:41+0000,Task was skipped due to pipeline conditions.,a4fddaaa334124f28b2e9b3d12e4a86d5855faa2,user_juj,False,False,False,False,True,False,False,True,False,False,False,False,True,False
+2024-03-31 06:54:02+0000,Task is currently in progress.,ff3bbdb8edf1dc5a6c87dbfed06a1397afcd9dd8,MISSING,True,False,False,False,True,False,False,True,False,False,False,True,False,False
+2024-02-08 12:28:26+0000,Task was skipped due to pipeline conditions.,5cfd37ebd5e3a0af6929e4ce443bddd8bd2e5bbc,MISSING,False,False,False,False,False,False,False,False,False,True,False,False,True,False
+2024-11-24 04:16:35+0000,Task was skipped due to pipeline conditions.,7daaffb6dc8bc8bb6e5e21d383f0a472afc63bda,MISSING,True,False,False,False,False,False,False,False,True,False,False,False,True,False
+2024-07-13 07:14:58+0000,Task execution failed.,8fe7c47e309371748ebefa0fa0dc0e56f25fe4fc,user_blq,False,True,False,False,False,False,True,True,False,False,False,False,False,False
+2024-01-25 21:01:54+0000,Task is currently in progress.,3e5f3bb29ac922d8fe0fdafcec4ae3dd895df0d8,MISSING,False,True,False,False,False,False,True,False,True,False,False,True,False,False
+2024-12-04 08:09:43+0000,Task was skipped due to pipeline conditions.,6fc0c4dae875abf92fdef96fdfed1f2be4b4d7ea,MISSING,False,False,False,False,False,True,False,True,False,False,False,False,True,False
+2024-03-20 17:39:56+0000,Task execution failed.,e5072adca6fa15cbde4e655399ef850d8deecd9f,MISSING,False,False,True,False,False,False,True,False,True,False,False,False,False,False
+2024-08-08 23:16:52+0000,Task completed successfully.,b1a20ca2086f63dea20d3cfcb0ad7dcb254c6ca7,user_yat,False,False,False,False,False,False,True,False,False,True,False,False,False,True
+2024-05-12 05:42:37+0000,Task completed successfully.,6eedc0d95657a8be9b9034a954dbad12009ddaeb,MISSING,True,False,False,False,False,False,False,False,True,False,False,False,False,True
+2024-07-26 06:18:36+0000,Task execution failed.,32d9e8c5dba22c7afae43742b2daa07f5c8a8ceb,MISSING,True,False,False,True,False,False,False,False,False,False,False,False,False,False
+2024-09-24 01:28:16+0000,Task execution failed.,b745bf2220dcd02debc5adfc7d7d3181ae5cd6ad,MISSING,False,False,True,False,False,True,False,True,False,False,False,False,False,False
+2024-07-18 11:27:03+0000,Task completed successfully.,ce042f04d7dcfc94edd5cee2c99afdaeea17c34a,MISSING,True,False,False,False,False,True,False,False,False,False,True,False,False,True
+2024-07-26 18:17:59+0000,Task is currently in progress.,6efe53ab4a0bbddfca92279e4dbf6df86a6801ca,user_ixe,False,False,True,False,False,True,False,True,False,False,False,True,False,False
+2024-02-13 21:27:05+0000,Task completed successfully.,97dfea05b27dbac2ba9f2beea72b30b42e0e539c,user_dxz,False,False,False,True,False,False,False,False,False,False,True,False,False,True
+2024-10-27 11:35:50+0000,Task is currently in progress.,dccf8745cf5cf22f5dd8e21fe4f82c8e60c3e9ae,MISSING,False,False,True,False,False,False,True,True,False,False,False,True,False,False
+2024-04-10 22:48:05+0000,Task was skipped due to pipeline conditions.,4e1af3aba7ae8b74ee7cde3c7cf18cf0cdb546d8,user_pvy,False,True,False,True,False,False,False,False,False,True,False,False,True,False
+2024-10-25 04:53:30+0000,Task is currently in progress.,3047eacefdd3acb5bfd22bf0ced7f38d2cb9c96d,user_dds,False,True,False,False,False,False,True,False,False,False,False,True,False,False
+2024-01-25 13:32:50+0000,Task execution failed.,c5ec1e1aece36e2b671f0be64fc2bee7adecc4b3,MISSING,True,False,False,True,False,False,False,False,True,False,False,False,False,False
+2024-09-07 15:54:38+0000,Task execution failed.,eb9fd7ecf1bfcd7cfe61fefacdee84d4ceaac13d,MISSING,False,False,False,False,False,True,False,False,False,False,True,False,False,False
+2024-08-21 21:09:46+0000,Task completed successfully.,761f4e34373ef1eb6dbdcb96c4734d0d8f3ced4a,user_exh,False,False,True,False,False,False,True,False,True,False,False,False,False,True
+2024-06-03 20:58:51+0000,Task execution failed.,e25e6eb0dafae3cdcc270a85fbed8e5933b1ceb9,MISSING,False,True,False,True,False,False,False,False,False,True,False,False,False,False
+2024-04-14 22:06:01+0000,Task was skipped due to pipeline conditions.,c8559e2496bfef8e8d626e0448c2b8fec438aaae,MISSING,False,True,False,False,False,False,False,False,False,False,True,False,True,False
+2024-07-28 18:30:51+0000,Task execution failed.,31a2aec8cf01741a8a4415b1e2841cbbfbeacea6,MISSING,False,False,True,False,False,False,True,False,True,False,False,False,False,False
+2024-04-22 03:30:53+0000,Task is currently in progress.,a3dee3a1a623b1c3baaed6fed95b1371c1548ef4,user_nfl,False,True,False,False,False,True,False,False,False,False,True,True,False,False
+2024-10-31 01:04:21+0000,Task is currently in progress.,2414fb98f2baeddef2eacd40f79343b01d8b535d,user_ngm,False,False,False,True,False,False,False,False,False,True,False,True,False,False
+2024-07-30 03:03:25+0000,Task is currently in progress.,c1f5e3bfffaacbbe53adb5f21d44af390b8ab1bd,MISSING,False,False,False,True,False,False,False,True,False,False,False,True,False,False
+2024-09-01 16:47:14+0000,Task execution failed.,dc15b059502bfd3ff2dbafafe8c4efcbb3cfe6ec,MISSING,False,False,False,False,False,False,False,False,True,False,False,False,False,False
+2024-02-09 04:38:09+0000,Task execution failed.,3cd83f5890db4ab3aa93fbdba0daf1b4d3d2d05b,user_bvm,True,False,False,False,False,False,False,True,False,False,False,False,False,False
+2024-01-20 21:04:33+0000,Task is currently in progress.,4977e01046aac790c7badf107719c10eeeee2abd,MISSING,False,True,False,False,False,False,False,False,False,False,True,True,False,False
+2024-12-11 15:14:08+0000,Task completed successfully.,6c1d2cbaa7cbb39b2dbfac1ed3eaafca0ddf6a90,MISSING,False,False,False,False,False,False,False,True,False,False,False,False,False,True
+2024-02-02 17:29:53+0000,Task is currently in progress.,e8927afb5fa738fdc37c0c0cc10fb7f447569bdb,MISSING,True,False,False,False,False,False,False,False,False,True,False,True,False,False
+2024-10-01 12:55:17+0000,Task is currently in progress.,aaf8be857b79fad5dd4eac6cdbce94cec19b39a9,MISSING,False,False,True,False,False,False,False,False,False,False,True,True,False,False
+2024-06-26 05:08:21+0000,Task execution failed.,efbf70eef2bca7ae086ad7739447a22aff76a6ac,user_qlr,False,False,False,False,True,False,False,True,False,False,False,False,False,False
+2024-03-09 04:06:32+0000,Task is currently in progress.,f6ca8589bcb6bb1daefb93b188a9eee3ccbab9c3,user_ufw,True,False,False,False,False,False,False,True,False,False,False,True,False,False
+2024-06-03 06:15:40+0000,Task execution failed.,f27cac36f2cdbee6a2dba647879c4600cadecce7,user_czj,False,False,True,False,False,False,True,False,False,True,False,False,False,False
+2024-07-17 09:44:03+0000,Task execution failed.,086bedbd4cebcb41d700a478d4fdbd6aa6eca5ca,user_ilm,True,False,False,False,False,False,False,True,False,False,False,False,False,False
+2024-04-01 18:20:24+0000,Task completed successfully.,4cfff8adb68de4b80f311cc092e87883593b9ecc,user_pha,False,False,False,False,False,False,True,False,True,False,False,False,False,True
+2024-09-02 23:48:06+0000,Task is currently in progress.,aca9fad07fcffd0df8ffa221abbbce63e8fb5a2c,MISSING,False,False,True,False,False,False,False,False,False,False,False,True,False,False
+2024-07-21 10:13:39+0000,Task execution failed.,c8d7f9356b6c6ddb55a6ccce5f46a5ce81bd748b,user_nvf,False,False,False,False,False,False,True,False,True,False,False,False,False,False
+2024-06-13 10:51:50+0000,Task execution failed.,791c4228ba5def8ead56312ba1bdeffbb78beedb,user_gnw,True,False,False,False,False,False,False,True,False,False,False,False,False,False
+2024-11-18 00:07:31+0000,Task completed successfully.,3cecf6c1c9e9bcd5f1d65ed4efb48d2eacec3ae0,user_vjz,False,True,False,False,False,False,True,True,False,False,False,False,False,True
+2024-07-23 21:57:33+0000,Task was skipped due to pipeline conditions.,7fdc7ba4bb6fe3e6430b50d61faca42db92f5db6,MISSING,False,True,False,False,False,False,True,False,False,True,False,False,True,False
+2024-02-03 05:22:23+0000,Task completed successfully.,afe795b84278fc5e7edbbd99e05c15fb3a5fcb71,user_yqs,False,True,False,False,False,False,False,False,True,False,False,False,False,True
+2024-11-10 04:03:45+0000,Task completed successfully.,2b812fda1fcf9f8f6d4c63ce5ccd6e275b1b59e5,MISSING,False,False,True,False,True,False,False,False,True,False,False,False,False,True
+2024-01-22 09:31:43+0000,Task completed successfully.,cebc44c4067fef1c252a0dc25491fbc8208cfc8d,user_sfb,True,False,False,False,False,False,True,False,False,False,False,False,False,True
+2024-01-30 05:40:04+0000,Task completed successfully.,b18ae4ae8aedeeaf647f5f97dae79adece6a3cf1,MISSING,True,False,False,False,False,True,False,False,False,True,False,False,False,True
+2024-10-26 00:28:51+0000,Task was skipped due to pipeline conditions.,d8ee8b2332e28c1b17999f5dda9338aa6f8de21e,MISSING,True,False,False,False,False,True,False,False,True,False,False,False,True,False
+2024-07-28 08:36:22+0000,Task completed successfully.,f5b5f93bebfbb905fdbef75e6fcb8ddf671f1deb,user_qmj,False,True,False,False,False,True,False,False,False,False,True,False,False,True
+2024-07-09 08:25:38+0000,Task completed successfully.,261b6ef0ca9ceea8955e65d3fbe6150d61c0cfa7,user_jds,False,False,True,False,False,True,False,False,False,False,True,False,False,True
+2024-04-02 07:45:48+0000,Task is currently in progress.,aa5da2bd271dfddd45dae8a486e7f94e322f3148,MISSING,False,False,False,False,False,False,False,False,False,False,False,True,False,False
+2024-12-11 08:23:44+0000,Task is currently in progress.,ceb2da2f6bc7fb7ac777ec5a6a44d4bb8fd6b29b,MISSING,False,True,False,False,False,False,True,False,False,False,False,True,False,False
+2024-07-08 00:50:03+0000,Task execution failed.,f905fa75fe6c0b5df604ee0f7ac41dde39b6cdb4,user_nke,False,False,True,False,False,True,False,False,True,False,False,False,False,False
+2024-08-21 06:25:37+0000,Task completed successfully.,a8504cb3b81a28c3efcdf29d2d62c6f5c9bbc1e2,MISSING,True,False,False,True,False,False,False,False,True,False,False,False,False,True
+2024-07-24 17:49:14+0000,Task was skipped due to pipeline conditions.,192bd51bd39f182cbe59e5cb4c83bb9a9f1b8af7,MISSING,True,False,False,False,False,False,True,False,False,True,False,False,True,False
+2024-05-22 16:13:49+0000,Task is currently in progress.,5064fc29804ee94a3aaecdddba4b84f89a6fb4cc,user_zaa,False,False,False,False,True,False,False,False,True,False,False,True,False,False
+2024-04-05 01:59:54+0000,Task execution failed.,7bdc3cddc97aebe8cde54f0bfceee94baf042644,user_tvn,False,True,False,False,True,False,False,True,False,False,False,False,False,False
+2024-06-18 05:15:11+0000,Task completed successfully.,ca0752d609b893d54d073a0f7cddecaf1573eba5,MISSING,False,True,False,False,False,False,False,False,False,False,False,False,False,True
+2024-10-25 19:33:26+0000,Task was skipped due to pipeline conditions.,3e8ae45e90dd1a56db1d25a9e154cbee6034acdf,MISSING,False,False,True,False,False,True,False,False,False,False,False,False,True,False
+2024-02-03 02:44:04+0000,Task was skipped due to pipeline conditions.,eff1b7fc08e2f5d917f2e61961fa774dbff25ebc,MISSING,False,True,False,False,False,True,False,False,False,False,False,False,True,False
+2024-03-20 05:03:56+0000,Task is currently in progress.,eb8b2f182b86dea67cd1fef3ea937acc556ebdcd,user_zmh,False,False,False,False,False,False,True,False,False,False,True,True,False,False
+2024-02-02 02:22:11+0000,Task completed successfully.,c3431fcb6998d50fb0df8fbbf21aa17e53cb94f2,MISSING,False,True,False,False,False,True,False,True,False,False,False,False,False,True
+2024-08-03 22:27:38+0000,Task execution failed.,9c1ee7c5eadf2aaa1d6e575fc7a4689af6eb1ffd,MISSING,False,True,False,False,False,False,True,False,False,False,True,False,False,False
+2024-02-08 08:01:44+0000,Task completed successfully.,4cef4acdaa8914dd4adbfbeb70fc6a9bda46fc8d,user_nom,False,False,False,False,False,False,True,False,False,False,True,False,False,True
+2024-02-20 02:40:04+0000,Task completed successfully.,51fdb18aadf028ee61245509e9b4f4c88d0dd058,user_rro,False,False,True,False,False,False,True,False,False,False,True,False,False,True
+2024-12-09 02:39:55+0000,Task execution failed.,cb4ac8befd5aabcbeebbe920ae0d9cf8eea42ef2,user_apo,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+2024-07-17 20:00:07+0000,Task was skipped due to pipeline conditions.,12ffc483f38ace2300650e2c8eb6a8229cb9ee94,user_qqr,False,True,False,True,False,False,False,False,True,False,False,False,True,False
+2024-11-15 06:00:32+0000,Task is currently in progress.,6b1db80eebf2153ebe4d76ead5bacacb5bbadea4,MISSING,True,False,False,False,False,False,False,True,False,False,False,True,False,False
+2024-04-20 10:05:58+0000,Task completed successfully.,102726aede694ddfe2aedfda810789fd35eddce5,user_fjt,False,False,False,False,False,False,True,False,False,True,False,False,False,True
+2024-01-14 01:04:57+0000,Task was skipped due to pipeline conditions.,64c7a3aaaeb0a3c2c890d9a7e7ea74cabc55adeb,user_dwy,False,False,True,False,False,False,True,False,True,False,False,False,True,False
+2024-10-29 19:08:34+0000,Task is currently in progress.,6aac1bbee4c28fa40b04faa2cabee0f4bbef2ede,MISSING,False,False,True,False,False,False,False,False,False,False,True,True,False,False
+2024-11-25 20:51:41+0000,Task completed successfully.,c969d6caf7af8ddb2168e6efc83d6d9ba45e5c89,user_asu,False,True,False,False,False,True,False,False,False,False,True,False,False,True
+2024-09-29 11:17:46+0000,Task completed successfully.,e8c0bdaa06c173cf9e6ecc03bba3dadffd58c021,MISSING,True,False,False,False,False,False,True,False,True,False,False,False,False,True
+2024-05-16 22:46:08+0000,Task is currently in progress.,8f8b875be2c1c6da06bf5ccf01af157bb33da02c,MISSING,False,False,True,False,False,True,False,False,False,False,True,True,False,False
+2024-01-21 19:35:49+0000,Task is currently in progress.,4dd9e77ea6f05f0fdddb082e40be0fe4ab2a20c8,MISSING,False,False,False,False,False,True,False,False,False,True,False,True,False,False
+2024-03-21 07:54:31+0000,Task is currently in progress.,131ffa61888ccdf6e1d9bc043ce9eb0460ffc1bd,MISSING,True,False,False,False,False,True,False,False,False,False,False,True,False,False
+2024-10-31 16:08:08+0000,Task completed successfully.,f3a8bed3c601cd038ebbfc368d19d52437dea7e4,user_hsv,False,False,False,False,True,False,False,False,False,True,False,False,False,True
+2024-01-14 21:53:00+0000,Task execution failed.,4d7dc6ecdc41ea2deb3ec922a5e80a59bbcac8db,MISSING,False,False,True,False,False,True,False,False,False,True,False,False,False,False
+2024-06-21 02:29:11+0000,Task completed successfully.,cf58bf1ce3bafc56edbabfe53fce07a4ddfb545e,MISSING,False,True,False,False,False,False,True,True,False,False,False,False,False,True
+2024-02-24 03:01:25+0000,Task was skipped due to pipeline conditions.,a1505ece8bcfa7bdf31cfebfac1bd4748c04e99d,MISSING,False,False,True,False,True,False,False,False,False,True,False,False,True,False
+2024-01-25 06:57:37+0000,Task execution failed.,eab762034a136fe0d6e37dbdbd65c189bbbae2db,MISSING,False,True,False,False,False,False,True,False,False,True,False,False,False,False
+2024-01-11 01:56:30+0000,Task execution failed.,bb4fc04f2b127cad3ff9bd38da05cf1c71fdacc4,user_iyh,False,True,False,False,False,True,False,False,False,False,True,False,False,False
+2024-07-28 18:56:51+0000,Task completed successfully.,efec17fadb03ad5da67fd8fae30aed5f58caaf0c,user_onw,False,False,False,True,False,False,False,False,True,False,False,False,False,True
+2024-06-12 20:20:00+0000,Task execution failed.,9df4d1c621faba317c9bb2a17474803f46f8b3b8,user_nrc,False,False,False,False,False,False,True,False,False,True,False,False,False,False
+2024-06-03 16:04:11+0000,Task completed successfully.,a2dd1b00527a7aed0f30f4e646d5ae890cbb7975,user_ovq,False,False,True,False,False,False,True,True,False,False,False,False,False,True
+2024-01-22 13:36:04+0000,Task was skipped due to pipeline conditions.,dfb29ed27aaa8afe007a492a903d3b1bc62eed96,MISSING,False,False,False,False,False,False,False,False,False,True,False,False,True,False
+2024-12-27 03:47:43+0000,Task was skipped due to pipeline conditions.,f1b3ec0a4de0db068fd2d75cdddedcacd7abbfcd,MISSING,False,False,True,False,True,False,False,False,False,False,True,False,True,False
+2024-10-18 22:13:27+0000,Task execution failed.,a2b63dd7651dae9df2d0d95fc87beba0c49da69c,user_jdy,True,False,False,False,True,False,False,False,False,True,False,False,False,False
+2024-10-26 00:19:48+0000,Task completed successfully.,2998ca59bbf07f3deaae8a344d8baf1a9799acd4,user_qbc,True,False,False,False,False,True,False,False,False,True,False,False,False,True
+2024-08-06 20:41:58+0000,Task was skipped due to pipeline conditions.,2cad89defae003635b1afcd1175f0ce1f5fe09df,MISSING,False,False,False,False,False,False,False,False,False,True,False,False,True,False
+2024-03-23 17:38:37+0000,Task is currently in progress.,bace762ec384f1af6d31eedbbaaf058e5eaf7a6e,user_vaq,False,False,True,False,False,False,False,False,False,True,False,True,False,False
+2024-08-02 15:17:30+0000,Task completed successfully.,df00d10b592e177f2ac01bc6065b2f1edb310efb,user_ngk,False,True,False,False,False,False,False,True,False,False,False,False,False,True
+2024-11-24 01:33:29+0000,Task completed successfully.,9cf6facd07f4ed53cf8a2aaa2e6c81b5c82efb62,MISSING,False,False,True,True,False,False,False,True,False,False,False,False,False,True
+2024-07-22 02:34:00+0000,Task is currently in progress.,c7d6cbace16f328d85e4d6ab3a56eff0aeb5adeb,MISSING,False,False,True,False,True,False,False,False,True,False,False,True,False,False
+2024-09-10 00:16:29+0000,Task is currently in progress.,a8acefad877d9315c7eec08e69baf3dd5ecbeb41,user_ogf,False,True,False,True,False,False,False,False,False,True,False,True,False,False
+2024-08-08 05:16:00+0000,Task was skipped due to pipeline conditions.,741449eecfac0665fbc9e5c94c822fe6562c68dc,user_xvn,False,False,True,False,False,False,True,False,False,False,False,False,True,False
+2024-03-06 12:55:06+0000,Task completed successfully.,c0b66dc2fc1a484bc7a034cf6b7ce0f443f60e6c,user_rqu,False,True,False,False,False,False,True,False,False,False,False,False,False,True
+2024-07-26 18:28:07+0000,Task completed successfully.,dbdc81d3eabd7ac9dc9bce49a0a0f4ababc0ff0b,MISSING,True,False,False,False,False,False,False,False,False,False,False,False,False,True
+2024-03-16 20:01:16+0000,Task execution failed.,972ebcf0adf0fec423f012ef9d0ba1235edcc0ba,user_ivg,True,False,False,False,False,True,False,False,False,False,False,False,False,False
+2024-01-19 05:14:09+0000,Task execution failed.,c1dcc18f05bc1639f30034bbdc58a95e8d7cd37e,MISSING,False,False,True,False,False,False,False,False,False,False,True,False,False,False
+2024-08-08 18:41:31+0000,Task execution failed.,fc1f84767d2efe10de1dabb4beac0fdca34654de,MISSING,True,False,False,False,True,False,False,False,True,False,False,False,False,False
+2024-10-20 17:39:18+0000,Task execution failed.,e1d1addeefbe315ef0c4b9ee8aeaceed87a0febe,user_imh,False,False,False,False,True,False,False,False,False,False,False,False,False,False
+2024-09-03 04:30:14+0000,Task execution failed.,33743eba60cb6bf99073bcb7180a4ffcf9e9bf4c,MISSING,False,False,True,False,False,False,True,False,False,True,False,False,False,False
+2024-09-20 05:15:43+0000,Task is currently in progress.,aef6c4bba12dc16bfd0057075e7d24574d25619f,user_ufp,False,False,False,False,True,False,False,True,False,False,False,True,False,False
+2024-09-13 14:05:10+0000,Task execution failed.,41e6fb0a177c5c4c4295deb9ec1cb365aedd3a44,MISSING,True,False,False,False,False,True,False,True,False,False,False,False,False,False
+2024-10-21 09:38:47+0000,Task is currently in progress.,dcaae572e63ddd105da67a21ecfd1f0a95adc889,MISSING,True,False,False,False,False,True,False,True,False,False,False,True,False,False
+2024-02-10 02:19:08+0000,Task was skipped due to pipeline conditions.,1df5ad4cb1c0a6b09909a434f714b0d6b6cc1b7f,user_tut,False,True,False,False,False,False,False,False,False,False,True,False,True,False
+2024-04-01 01:31:51+0000,Task completed successfully.,ddaddd420f1cefcac3bbad2b116d9dda368a0fbf,MISSING,False,False,True,False,False,False,True,True,False,False,False,False,False,True
+2024-06-27 23:56:41+0000,Task is currently in progress.,bb5c1c17e05a5c69fd669caf0e2adf0f67db541f,user_kkc,False,False,False,False,False,False,False,False,True,False,False,True,False,False
+2024-12-25 19:21:05+0000,Task is currently in progress.,bc3f7934aeeccfeacddd3cd01ceded621c270d4f,MISSING,True,False,False,False,False,False,True,False,False,False,True,True,False,False
+2024-06-19 03:11:28+0000,Task was skipped due to pipeline conditions.,db511d7fb6e2d35ffdfa5f3f5b1aa36af2cfef4c,user_cuz,False,False,False,True,False,False,False,False,False,False,False,False,True,False
+2024-04-25 15:47:34+0000,Task is currently in progress.,abac22bdea62acfe4ab6cee4d0bbf9cbf6cbcce6,MISSING,False,False,True,True,False,False,False,False,False,False,False,True,False,False
+2024-05-28 13:05:32+0000,Task is currently in progress.,6ecffe4f0baded5cabfdaaec71e76e9cad29c5cb,user_roz,True,False,False,False,False,True,False,False,False,False,False,True,False,False
+2024-09-16 03:56:12+0000,Task is currently in progress.,bd5babdafa1eaf94c9a8feba9a2ab86e615fba9e,MISSING,False,False,False,False,True,False,False,False,False,False,True,True,False,False
+2024-10-04 20:54:20+0000,Task execution failed.,a14f19fecdbf4eb7bd2afb0b3cbbe639f21f4830,user_nnc,False,False,False,True,False,False,False,False,False,True,False,False,False,False
+2024-08-01 01:00:29+0000,Task was skipped due to pipeline conditions.,7ebf29ffc4e8aee9cdf469412a165547f42a5d13,user_pjl,True,False,False,True,False,False,False,False,False,False,False,False,True,False
+2024-12-06 15:42:22+0000,Task completed successfully.,4f97ba1e3e1fdd19edfb6efd7a6a66b8ce96d104,MISSING,False,True,False,False,False,False,True,False,False,True,False,False,False,True
+2024-03-17 11:07:54+0000,Task was skipped due to pipeline conditions.,a92fe636b9c3dbfa5f14bca7f1befedfc799f4ab,MISSING,False,False,True,False,False,False,True,False,False,False,False,False,True,False
+2024-09-10 05:46:05+0000,Task was skipped due to pipeline conditions.,edabcadcafeacc48549dbbed1435f12c4d9ddaab,user_xge,False,False,True,False,False,False,False,False,False,True,False,False,True,False
+2024-03-10 23:34:48+0000,Task was skipped due to pipeline conditions.,e142ac4838fcb0dffcfac04e3ba9ae08be6fec48,user_hor,False,False,True,True,False,False,False,False,True,False,False,False,True,False
+2024-05-22 15:51:52+0000,Task was skipped due to pipeline conditions.,b4f7dfa43b4d5aff431ebfb8bb1f30730d4f883c,MISSING,False,True,False,False,True,False,False,False,False,False,True,False,True,False
+2024-08-28 00:47:03+0000,Task execution failed.,d9aec5efcc345fa3f93e5ef8bbb35ae149f87d30,MISSING,True,False,False,False,False,False,False,False,True,False,False,False,False,False
+2024-09-17 01:16:31+0000,Task was skipped due to pipeline conditions.,4cd1f3caed7ba4bbcc8bc1fdb614bf86065c0e83,MISSING,False,False,True,False,False,False,False,False,False,False,False,False,True,False
+2024-10-08 14:39:21+0000,Task execution failed.,0cd6bd1eb792f032bd3d68c2cdb51a7faabae1bd,MISSING,False,False,True,True,False,False,False,False,False,False,False,False,False,False
+2024-10-06 08:28:46+0000,Task completed successfully.,cbfa779bfa821e2ccf3d76b8bde64ec20c40c51c,user_rpr,False,False,True,True,False,False,False,False,False,False,False,False,False,True
+2024-05-22 11:22:03+0000,Task execution failed.,8a2b6f0de5d0e03ce869178cb95faa4ae7fc3dc2,MISSING,False,False,True,False,False,False,False,False,False,False,True,False,False,False
+2024-07-10 16:16:36+0000,Task is currently in progress.,dc1f7aab75bcdf97c985d9d98e822b0ba2d4e0de,MISSING,False,False,False,False,True,False,False,True,False,False,False,True,False,False
+2024-03-06 13:48:19+0000,Task is currently in progress.,942b2a1e9a1f6fcddcc1bae338f037c6d147807d,user_pqh,False,True,False,False,False,False,True,False,False,False,True,True,False,False
+2024-11-22 01:32:32+0000,Task completed successfully.,2aecf06de33c5b44a886df8fac3c8d8e71472bed,MISSING,False,False,False,False,False,False,True,False,False,True,False,False,False,True
+2024-04-28 02:21:29+0000,Task completed successfully.,ff8facf0042ab394c4b31eaaf710a9d8d53aec90,MISSING,True,False,False,False,False,True,False,False,True,False,False,False,False,True
+2024-02-20 19:23:55+0000,Task is currently in progress.,96af40bdd63e0efae5edd8cde6fcd1c89a8e6bc9,MISSING,False,True,False,False,False,True,False,False,False,False,True,True,False,False
+2024-11-11 23:28:29+0000,Task is currently in progress.,8ae7a48e1da99fb09c0faa1eba1bbaed4d7bd9bd,MISSING,False,False,False,False,False,False,True,False,False,False,True,True,False,False
+2024-02-21 08:51:41+0000,Task is currently in progress.,dffb6567e1afb6eaff9084fa1fd8e46b099e1ad1,user_qkp,False,False,False,True,False,False,False,False,False,False,True,True,False,False
+2024-09-18 07:38:55+0000,Task execution failed.,cc10d9b23f6c982fb9b6f0663e3c4fa81df63ce1,MISSING,True,False,False,False,False,True,False,False,False,False,False,False,False,False
+2024-01-23 20:22:40+0000,Task execution failed.,b3bb6c5d5becde0b2dabe7fab4640ebb5a5d6a2c,MISSING,False,False,False,False,True,False,False,False,False,True,False,False,False,False
+2024-12-02 08:59:44+0000,Task was skipped due to pipeline conditions.,e90bd5bb19e211b8af846cdf64ee26118effadcb,user_gqh,True,False,False,False,True,False,False,False,True,False,False,False,True,False
+2024-09-16 18:06:42+0000,Task is currently in progress.,e7bcf6aac9f9dabe7d20dae5efb7cb5858ba480e,user_ivu,False,False,True,True,False,False,False,False,False,False,False,True,False,False
+2024-07-07 07:09:07+0000,Task execution failed.,5759aeb7f73d3ae8f4fcaebdc0def2f696cd6f94,user_kww,False,False,True,False,False,False,True,False,False,False,True,False,False,False
+2024-11-09 00:20:37+0000,Task completed successfully.,dcaeaec8ffc8ac5d210e5a5ab2f0d642b2c82aa7,user_oeq,False,False,True,False,False,False,False,False,False,False,False,False,False,True
+2024-07-10 08:31:23+0000,Task execution failed.,edce2f4159aac89ae7dca057373a7008b311ce85,user_yfk,False,False,False,False,True,False,False,False,False,False,False,False,False,False
+2024-10-07 22:20:53+0000,Task is currently in progress.,5e4ee15fbf40ffff8eecd2fcedc6cce44096ec46,user_moh,False,False,True,False,True,False,False,False,False,False,False,True,False,False
+2024-12-29 00:43:43+0000,Task is currently in progress.,f1b6feceae42d4f8acba1f4b9ded0f3d24bfee39,MISSING,False,False,True,False,True,False,False,False,False,True,False,True,False,False
+2024-08-20 16:22:01+0000,Task execution failed.,ae88a95cfba6cba8f869a19fe66cadb5c60b4bf2,MISSING,False,False,False,False,False,False,False,True,False,False,False,False,False,False
+2024-04-30 18:55:50+0000,Task is currently in progress.,6a45cbadbfc0a5de745d0dbcccdfb2c6e4b4e5df,MISSING,False,True,False,True,False,False,False,False,True,False,False,True,False,False
+2024-06-20 20:37:44+0000,Task execution failed.,1cd3e4deda8da719edad2855952e0124ba2d9ec9,user_nkb,False,True,False,False,False,False,False,False,True,False,False,False,False,False
+2024-12-14 19:02:03+0000,Task execution failed.,7a792c51a9a1ae71af7d9aeb42d1c2cf98fdd789,user_utr,False,False,False,False,True,False,False,False,False,False,True,False,False,False
+2024-08-29 19:23:52+0000,Task is currently in progress.,dc73d8cdd35bbad5ebc4bb7dff3465be03f6a6cc,user_lgv,False,False,True,True,False,False,False,False,True,False,False,True,False,False
+2024-03-16 00:03:54+0000,Task completed successfully.,6fbb472a7c6cd48b6c9aa8a8bd0ae293a9117e0d,MISSING,True,False,False,False,True,False,False,False,False,False,False,False,False,True
+2024-04-28 10:31:30+0000,Task is currently in progress.,2f6e765dd6f9f286b7ca9e6c82342c7e2bcecc79,user_xce,False,True,False,False,True,False,False,False,False,True,False,True,False,False
+2024-01-29 18:25:23+0000,Task execution failed.,1eca0509aed2cec5dca4b3bd2994efc688c7b5c9,MISSING,False,False,True,False,False,True,False,False,False,True,False,False,False,False
+2024-10-19 16:29:56+0000,Task is currently in progress.,f37f39db613e94aae1aabd1d8cbe3ad7eb97ca5e,user_agm,False,False,True,False,False,False,False,False,False,False,False,True,False,False
+2024-02-25 18:49:29+0000,Task execution failed.,b6dcabcb24be70d4dc3cdee0ffcf433cb0aeeccb,user_uti,True,False,False,False,True,False,False,False,False,False,False,False,False,False
+2024-02-21 19:21:56+0000,Task completed successfully.,add32ca014eca2bc373e4385d650b56eeb6e6e8e,MISSING,True,False,False,False,False,False,False,False,False,True,False,False,False,True
+2024-06-25 06:13:40+0000,Task execution failed.,f056facdec40febde070aeb5bebc7cecb0339884,user_hxf,True,False,False,False,True,False,False,False,False,False,False,False,False,False
+2024-08-19 15:39:55+0000,Task execution failed.,beb0ba286ee6bbde44a8dd697b0f02d56c5debf5,MISSING,True,False,False,False,False,False,False,True,False,False,False,False,False,False
+2024-04-16 19:29:43+0000,Task execution failed.,2cef0f41f1fab5dcce9cb9fc24edbaa2bc3bcf3a,user_puh,False,True,False,True,False,False,False,False,False,True,False,False,False,False
+2024-05-14 09:55:26+0000,Task is currently in progress.,b6f62dadbb18c77c720d4eaafdfa8b487e6bd7ea,user_wqr,False,True,False,False,False,False,False,True,False,False,False,True,False,False
+2024-08-13 23:34:33+0000,Task is currently in progress.,9cb0617c71ab7cddbfffbc2f3d30bafaac9fda6a,MISSING,True,False,False,False,False,False,True,True,False,False,False,True,False,False
+2024-01-22 07:34:56+0000,Task completed successfully.,fab5f2cffcdbe44cdaffaf53efefb344d3c2a769,MISSING,False,True,False,False,False,False,False,False,True,False,False,False,False,True
+2024-02-11 10:51:50+0000,Task was skipped due to pipeline conditions.,19cdadf9cdca772e3a7a0bcf0d576a1c9bab13ff,MISSING,True,False,False,False,True,False,False,False,False,False,False,False,True,False
+2024-06-19 10:07:20+0000,Task is currently in progress.,9148cea7942dda8dfe28acc51fbb9e104c13acb0,user_lgk,False,True,False,False,False,False,False,False,False,False,True,True,False,False
+2024-11-16 16:49:58+0000,Task execution failed.,56b47ba9bcefaf99cc3a96cb2e90a81f2e981bc9,MISSING,True,False,False,True,False,False,False,False,False,False,True,False,False,False
+2024-02-28 20:50:30+0000,Task completed successfully.,ce5ae2f72a6058c34f9240bf85f7ad9e0346db32,user_nms,False,True,False,True,False,False,False,False,False,True,False,False,False,True
+2024-08-09 10:27:16+0000,Task completed successfully.,e6c73cc7fe916e17c9eb454c2cbc4dda856aab0a,user_zqu,True,False,False,True,False,False,False,False,False,True,False,False,False,True
+2024-02-04 06:48:48+0000,Task completed successfully.,67a7c392c9bfac95f69d6dd1105124dac5fa6a6c,user_njy,False,False,False,False,True,False,False,False,False,False,True,False,False,True
+2024-08-16 17:22:00+0000,Task is currently in progress.,ccef9f0aab2d4d50c6aab51daef5ed1e8abd56d7,MISSING,False,True,False,True,False,False,False,False,False,True,False,True,False,False
+2024-10-16 15:26:11+0000,Task was skipped due to pipeline conditions.,7defcdb1a9e4b0c6b1ebbadee91b7b13df17cc3e,MISSING,False,False,False,True,False,False,False,False,False,False,True,False,True,False
+2024-01-15 07:36:13+0000,Task execution failed.,6d2cebee4ef76a69c3edb7a2029d69fcfcbeead1,user_jau,False,True,False,False,False,False,True,False,True,False,False,False,False,False
+2024-11-12 01:03:02+0000,Task was skipped due to pipeline conditions.,d4d29007b0a5275aca063fd9357dbfaf6e60dae5,MISSING,False,False,False,False,False,False,False,False,False,False,False,False,True,False
+2024-09-27 03:14:17+0000,Task execution failed.,e835fd2da55a10865eae6f6cfaebe02be4bf0fe5,MISSING,False,False,False,False,False,True,False,False,True,False,False,False,False,False
+2024-10-01 23:04:13+0000,Task is currently in progress.,13f0de2a9af2b9abdfcd041bbd696cc1740a81ee,MISSING,False,False,False,False,False,False,True,False,False,True,False,True,False,False
+2024-12-28 02:06:03+0000,Task is currently in progress.,21392c5b695abad8c3d4527dffa4adf5f2734cb6,MISSING,False,False,False,False,False,False,False,True,False,False,False,True,False,False
+2024-03-08 12:40:28+0000,Task completed successfully.,3d924dc15f7e9dd7dadc269b3b5dfbeb15bcbe8d,MISSING,True,False,False,False,False,True,False,False,True,False,False,False,False,True
+2024-11-20 03:12:05+0000,Task was skipped due to pipeline conditions.,7bef5c74b0aed0daeaaae4e2d09ce42dfeb19f91,MISSING,False,True,False,True,False,False,False,False,True,False,False,False,True,False
+2024-04-18 06:01:19+0000,Task completed successfully.,aabcff2df5bc5520f8b66f822b4d71bb9968b883,user_hko,False,False,False,False,False,False,False,False,False,True,False,False,False,True
+2024-09-24 08:48:00+0000,Task execution failed.,db4f9d223cef5d6b8de7fe83fb3dd580a0c2fb7f,user_iev,False,False,True,False,False,False,False,True,False,False,False,False,False,False
+2024-09-11 20:01:21+0000,Task was skipped due to pipeline conditions.,a1f1ac7aca49ac96b1c5cde7e3efcf935d13464b,MISSING,True,False,False,False,False,True,False,False,True,False,False,False,True,False
+2024-11-19 22:15:18+0000,Task was skipped due to pipeline conditions.,0fdddeb1aef5bede8ee9dcbc342ba929d9c3bd3b,user_gmz,True,False,False,False,True,False,False,False,False,False,False,False,True,False
+2024-10-09 12:08:12+0000,Task completed successfully.,ea1d4dcee0cac90abac67ca4794be80afc7ecff1,user_xlz,False,False,False,False,False,False,True,False,False,False,True,False,False,True
+2024-10-29 09:57:26+0000,Task completed successfully.,b19a410d634cde4510df8be4ccabafbf6b73d3cc,MISSING,False,False,False,False,False,False,False,False,True,False,False,False,False,True
+2024-02-22 13:27:51+0000,Task is currently in progress.,69e568907c2a6496cbe07b3bd6e3eefb2d20cd9c,user_gjz,False,False,True,True,False,False,False,False,True,False,False,True,False,False
+2024-04-25 18:07:22+0000,Task execution failed.,afb82deae0eee4b2ceae71506fbc3eaeba8bced3,user_fow,False,False,True,False,False,True,False,False,True,False,False,False,False,False
+2024-05-18 07:05:58+0000,Task was skipped due to pipeline conditions.,d8fedb5c7b576c2ac311ddf956aba36cf727aace,user_ptc,True,False,False,False,True,False,False,False,False,True,False,False,True,False
+2024-09-14 16:50:57+0000,Task completed successfully.,e1b2ffc8ea0f308ac23ca6dddde678f62ec6bece,user_rys,False,False,False,False,False,True,False,False,False,True,False,False,False,True
+2024-07-25 08:36:40+0000,Task is currently in progress.,1102f6bf2442cc260ceb9435be5a7c9c3c89a43c,MISSING,False,False,True,False,False,False,True,False,True,False,False,True,False,False
+2024-04-20 01:58:36+0000,Task was skipped due to pipeline conditions.,eb95fe2bf8dce9fc32be47b2ae1aed65e1e162c4,user_ypc,True,False,False,False,True,False,False,False,False,True,False,False,True,False
+2024-02-25 08:39:14+0000,Task execution failed.,1b4aa11ea9d3c0a7009bf5aa9a9397ff3ffe9ed7,user_eay,True,False,False,True,False,False,False,False,True,False,False,False,False,False
+2024-03-09 21:08:18+0000,Task was skipped due to pipeline conditions.,ac6bd335d8fcbc1fccd162dcfdee576d54ccf265,MISSING,False,False,False,False,True,False,False,False,False,False,True,False,True,False
+2024-09-13 03:39:20+0000,Task execution failed.,adeda7b9cd24f370ad4a01fb9c13faa03ad04a2a,user_yfe,False,False,True,False,False,False,True,False,False,False,True,False,False,False
+2024-06-06 18:31:29+0000,Task execution failed.,f6bf2e0f6e35fef8e53a86d53681fe6af6eccbee,MISSING,False,True,False,True,False,False,False,False,False,False,True,False,False,False
+2024-09-05 20:39:15+0000,Task is currently in progress.,f25b7dcf90c0b65e4f9dadaa5edeb3397d4ec7ce,MISSING,False,False,False,False,False,False,False,False,False,False,True,True,False,False
+2024-01-16 18:24:05+0000,Task is currently in progress.,fddfea99e1fdba75efde0dc0a6ef73f27b658dc6,MISSING,True,False,False,False,False,True,False,False,False,False,False,True,False,False
+2024-11-22 15:38:00+0000,Task completed successfully.,fdc090f83a8deabcc5cc1cebee5c93ffffe692ab,MISSING,False,False,False,False,False,False,True,False,False,False,False,False,False,True
+2024-03-27 07:11:17+0000,Task is currently in progress.,f3bea26c6d125ebba3daadeb8a1dcdddbd6f6130,MISSING,False,False,False,False,False,False,False,True,False,False,False,True,False,False
+2024-10-10 02:53:27+0000,Task was skipped due to pipeline conditions.,f9bf0aaedeecbbd9630e5b5ac1c825a14a3a1d9b,MISSING,False,False,True,False,False,True,False,True,False,False,False,False,True,False
+2024-09-30 16:42:29+0000,Task was skipped due to pipeline conditions.,dfb8bcec72dbdfbb4e08f26ec9cbfdd52db7d035,user_cpd,True,False,False,False,True,False,False,False,False,False,False,False,True,False
+2024-03-09 23:05:33+0000,Task was skipped due to pipeline conditions.,1a5f88dccd7a9ecb69a7ef7dab8d91b2c09cd4f9,user_hbu,False,False,True,False,True,False,False,False,True,False,False,False,True,False
+2024-09-23 08:48:38+0000,Task was skipped due to pipeline conditions.,a4cbf21b21ca8cabc480bb6ecbeffbcc341bfa1f,MISSING,False,False,True,False,False,False,True,False,False,False,False,False,True,False
+2024-06-13 10:47:28+0000,Task completed successfully.,085919f36de10550e14fcf3cef419ba4363f9b9d,user_xnc,False,False,False,True,False,False,False,False,False,False,False,False,False,True
+2024-07-22 12:42:40+0000,Task was skipped due to pipeline conditions.,8f4d63effb52e2faade694dadd6beee27df836bb,user_wry,False,True,False,False,False,False,False,False,False,False,False,False,True,False
+2024-08-17 01:33:15+0000,Task was skipped due to pipeline conditions.,e8fa6775bd590a8d3fe0ee9f8ea5dcf7f2ac6f38,MISSING,True,False,False,True,False,False,False,True,False,False,False,False,True,False
+2024-02-25 19:09:45+0000,Task completed successfully.,ac0847d690e7f7cb3bfbb1cebf826af903f5fbb5,user_wse,True,False,False,False,False,True,False,True,False,False,False,False,False,True
+2024-12-02 22:33:35+0000,Task execution failed.,7b7616b9c37b48ceafffff2460dcbe3f2fea8ccf,user_kfy,False,False,True,False,False,False,False,True,False,False,False,False,False,False
+2024-11-28 07:52:32+0000,Task execution failed.,4b7b367ff4dbaafbd6bdc9e29c368e752ba16688,MISSING,False,False,False,False,False,False,True,False,True,False,False,False,False,False
+2024-01-10 05:59:50+0000,Task is currently in progress.,9a2ca50f4d54ac6f1a0c489ceedabdffd6c06569,user_woz,False,True,False,True,False,False,False,False,False,False,True,True,False,False
+2024-12-21 16:03:09+0000,Task completed successfully.,ceb668df20f04cd6cbb0dfc0bfccfc40c409939d,MISSING,False,False,False,False,True,False,False,False,False,False,True,False,False,True
+2024-03-29 00:57:15+0000,Task completed successfully.,c9f5ed7df63aeab7a41e51adab6f8c0ec5dd809f,MISSING,False,False,False,False,True,False,False,False,False,False,False,False,False,True
+2024-07-01 18:31:53+0000,Task was skipped due to pipeline conditions.,07ffdeb2e3d12e7e2639065ec53dcf9a1769a6ce,MISSING,False,False,True,True,False,False,False,False,True,False,False,False,True,False
+2024-05-10 14:44:34+0000,Task was skipped due to pipeline conditions.,fba9a2edccccdebc6fb45f0e0aeeaea8e8219e94,user_cvn,False,True,False,True,False,False,False,False,True,False,False,False,True,False
+2024-11-01 05:15:57+0000,Task was skipped due to pipeline conditions.,d0e8ec92b46dd81f2267cd01dfcf76ef22d2ea53,user_qhe,False,False,True,False,False,False,True,False,False,False,True,False,True,False
+2024-07-30 00:44:55+0000,Task execution failed.,f67beceeef8a12ae7899eede5b9432fdebb48d2a,MISSING,True,False,False,False,False,False,True,True,False,False,False,False,False,False
+2024-07-30 10:47:25+0000,Task was skipped due to pipeline conditions.,ebf95eada5abc9ebd3ada8750f531283f48cfc06,MISSING,False,False,True,True,False,False,False,False,False,False,False,False,True,False
+2024-02-16 00:43:49+0000,Task execution failed.,ebec0dbef352c8d3d162d8daf1efd15de4ffe63f,user_byn,True,False,False,True,False,False,False,False,False,False,True,False,False,False
+2024-04-18 01:29:16+0000,Task execution failed.,3a1b643cf3ad369d54d7bccf5c4e8b7efea60fb8,user_evv,True,False,False,False,True,False,False,False,True,False,False,False,False,False
+2024-10-12 22:40:36+0000,Task is currently in progress.,e02bcf8cf0cc631fc30b59509a5f4bcc2f9f619a,MISSING,False,True,False,False,False,False,False,False,False,True,False,True,False,False
+2024-10-17 22:02:16+0000,Task completed successfully.,854e4d3b9bfd121e7f0ead7d55ef6d514dc8cbe8,user_weu,True,False,False,False,True,False,False,False,False,False,True,False,False,True
+2024-07-10 17:11:23+0000,Task was skipped due to pipeline conditions.,f79fd4da78e0e4c32bf20a52ecba00cb7ef73c47,user_smi,True,False,False,True,False,False,False,False,False,True,False,False,True,False
+2024-06-14 23:47:19+0000,Task completed successfully.,fadeca06bb24a55be6c60f6f26dfbe0c55ce065d,user_bog,True,False,False,False,False,True,False,False,True,False,False,False,False,True
+2024-06-02 23:42:21+0000,Task completed successfully.,acf7b16f4bb497b4b9110e1f5c0e040a52e4db56,MISSING,False,False,True,False,False,True,False,False,False,False,False,False,False,True
+2024-02-22 00:17:22+0000,Task is currently in progress.,55f7bfe9dfdcece9c7dbc6a02bdb9cfcb5aa26bd,MISSING,True,False,False,False,False,False,False,True,False,False,False,True,False,False
+2024-02-06 12:34:53+0000,Task execution failed.,cada53f3c6fac65a640ebb1efdec72caea2cd08b,MISSING,False,False,False,False,False,False,True,False,False,False,False,False,False,False
+2024-10-24 18:58:09+0000,Task completed successfully.,f4cecd8aa4c03ce9e8f80705f6cafbadbbd4d9fe,MISSING,True,False,False,False,False,False,False,False,False,True,False,False,False,True
+2024-08-28 06:32:51+0000,Task completed successfully.,dfedc169fade5acddc55e33b33ffaa379f7800dc,MISSING,False,False,False,False,False,False,False,False,False,False,False,False,False,True
+2024-11-17 19:09:33+0000,Task completed successfully.,5c65f3bf6121d24df23c2bcc8d4ea56bfabd936c,user_wjo,False,True,False,False,False,False,True,False,False,False,False,False,False,True
+2024-01-25 01:52:06+0000,Task was skipped due to pipeline conditions.,a000a49ea5f629cc0a4ccc7b3c1b67e49ffef3d6,user_kxe,False,True,False,False,False,False,True,False,True,False,False,False,True,False
+2024-01-17 14:00:17+0000,Task completed successfully.,cf5f79c9e32fe142fdb84bdb8948a23e0d44f8de,user_qve,True,False,False,True,False,False,False,False,False,False,True,False,False,True
+2024-05-03 19:57:02+0000,Task was skipped due to pipeline conditions.,4e24bb9adebdb2eac87fce0f2620e45d6c6b8dec,MISSING,False,False,True,True,False,False,False,False,False,False,False,False,True,False
+2024-07-17 14:37:12+0000,Task completed successfully.,7db277cbade9cc2fefde2bebf88f39de979bfb2b,user_lzs,False,False,True,True,False,False,False,False,False,False,True,False,False,True
+2024-11-23 10:51:42+0000,Task execution failed.,2e49fdfbad8aafdd698903bded1f1781f8e28a45,MISSING,False,False,False,False,False,True,False,True,False,False,False,False,False,False
+2024-05-12 14:38:25+0000,Task completed successfully.,a9ce6abf5e99fe5bb09efeee90878a3fb07caa9c,user_uwb,False,False,False,False,False,False,True,True,False,False,False,False,False,True
+2024-12-18 02:43:11+0000,Task completed successfully.,f3a9abfae3e77f0d0a0dcfbcfbd220f0e913eebc,MISSING,True,False,False,False,False,False,False,False,False,False,True,False,False,True
+2024-12-01 18:15:21+0000,Task was skipped due to pipeline conditions.,116d53bae8dcf30ebdeb2d9071ae27ad185f3499,MISSING,False,False,True,True,False,False,False,False,False,True,False,False,True,False
+2024-07-22 15:32:47+0000,Task is currently in progress.,e09c80c6ddd7fabdfdddcaed15d9aa11a7a9a2e1,MISSING,False,True,False,False,False,False,True,True,False,False,False,True,False,False
+2024-04-17 22:45:08+0000,Task completed successfully.,eba39b5f7d8cbe9b9b3ee1b0fe6e27ecb60afb2b,user_awx,False,False,True,True,False,False,False,False,True,False,False,False,False,True
+2024-06-11 16:10:10+0000,Task was skipped due to pipeline conditions.,9f8789a42bef5ccecfa46d45fb2aef5d6adbd8fc,MISSING,False,True,False,False,False,True,False,False,False,False,True,False,True,False
+2024-07-23 18:28:18+0000,Task was skipped due to pipeline conditions.,0ca753baadbe5f55e8e9fcbf0aca08e3c318a4b3,user_iij,True,False,False,False,True,False,False,False,True,False,False,False,True,False
+2024-02-24 20:10:41+0000,Task execution failed.,2cfc7febcdae18f270be8c67db5cebddd1ee9ec0,MISSING,True,False,False,False,False,False,False,False,True,False,False,False,False,False
+2024-06-09 04:33:42+0000,Task execution failed.,2544f441fbceaf9a4308c1bb1c20edbb711affb2,user_pkq,True,False,False,False,False,False,True,False,True,False,False,False,False,False
+2024-01-28 03:23:22+0000,Task execution failed.,1e880ef2eeeaeea24fc46daa567de9c64fab09b4,MISSING,False,True,False,False,False,False,True,False,True,False,False,False,False,False
+2024-05-23 05:57:25+0000,Task was skipped due to pipeline conditions.,622c6fdcd6bb2a3e8bf1107a8ae4eff81ccc0b5d,MISSING,False,False,True,False,False,False,True,False,True,False,False,False,True,False
+2024-07-08 23:29:02+0000,Task is currently in progress.,9b0cfb27996d7173e19e37401c54ebffc4f7acfe,MISSING,True,False,False,False,True,False,False,False,False,False,True,True,False,False
+2024-07-01 22:29:29+0000,Task was skipped due to pipeline conditions.,c9c07e5a51df7187f00376aa780ad86e24d29f92,MISSING,False,False,True,False,False,False,True,False,False,False,True,False,True,False
+2024-02-27 18:10:30+0000,Task is currently in progress.,e1fed3fdf65bdfe3abaa39a62e78e1298a84ee8b,user_eyi,False,False,True,False,True,False,False,False,False,True,False,True,False,False
+2024-06-23 03:02:32+0000,Task is currently in progress.,aaf14a82d59b9abf2b926eedca0d35e0c9eebbd0,MISSING,True,False,False,True,False,False,False,True,False,False,False,True,False,False
+2024-02-22 10:44:00+0000,Task execution failed.,4baf1e3ad7bfec01c5d5fe64c3979ba23ab6d1b0,user_zan,False,False,True,False,False,False,True,True,False,False,False,False,False,False
+2024-07-02 11:10:30+0000,Task is currently in progress.,a8e8bcf3ec6ce61eedeffaeb5e8ed3d538e34ef2,MISSING,False,False,True,True,False,False,False,True,False,False,False,True,False,False
+2024-03-05 11:34:55+0000,Task was skipped due to pipeline conditions.,5faaf0e8ecc5d483da59bdb3875ca5bbcc3d2c37,MISSING,False,False,False,False,True,False,False,True,False,False,False,False,True,False
+2024-02-17 02:48:47+0000,Task completed successfully.,d9129cca5d77517be80f2e44dfa7607bae5ed4fc,user_yif,False,False,False,False,True,False,False,False,False,False,False,False,False,True
+2024-03-30 20:17:30+0000,Task was skipped due to pipeline conditions.,81a7c004baddc9e9b46f2d6721e37afeffa8cb5c,MISSING,True,False,False,False,True,False,False,False,True,False,False,False,True,False
+2024-05-14 00:48:34+0000,Task is currently in progress.,bbdddeabf4ab9afdf3d7ffccc5badb02ec83a29a,user_ndl,False,False,True,False,False,False,True,False,False,True,False,True,False,False
+2024-03-15 15:20:16+0000,Task completed successfully.,e1b0e8ef2fff14812e2563edc0fced1e3b3e85ff,MISSING,False,False,True,False,False,True,False,False,False,True,False,False,False,True
+2024-05-01 11:38:17+0000,Task execution failed.,88cedacab41d7c7c48b23d44289dd8c5bcbd9d56,user_yjs,False,True,False,False,False,True,False,False,False,False,True,False,False,False
+2024-12-11 19:51:39+0000,Task completed successfully.,aac933fb755bcbf4fb3ecfae08ac23b7d570cfdf,MISSING,False,False,False,True,False,False,False,False,False,False,False,False,False,True
+2024-07-02 12:36:39+0000,Task completed successfully.,63d1a3f7f33c1ff037d7fb9eeeaeedb1cc5b32b1,user_axq,False,True,False,False,False,True,False,False,False,True,False,False,False,True
+2024-06-08 01:20:40+0000,Task execution failed.,12d2339bada17355cc25eef5aa5da58c030acaba,MISSING,False,False,True,False,False,False,False,False,False,False,True,False,False,False
+2024-09-17 17:19:07+0000,Task execution failed.,8a6d5e55d55af62acbcd1228ab8db1b37b233ea8,user_kfy,False,False,True,False,True,False,False,False,False,False,True,False,False,False
+2024-09-21 01:06:24+0000,Task execution failed.,61b5caa564251f5a0fe002cec7adbb602ebf1bcb,user_lri,False,False,False,False,False,False,True,False,True,False,False,False,False,False
+2024-02-12 20:41:29+0000,Task completed successfully.,c167e3c9d939db1ef0eb9b17842caa4fab3c75cf,user_dax,True,False,False,False,False,True,False,False,False,True,False,False,False,True
+2024-02-25 21:34:06+0000,Task completed successfully.,2c7b4afc58caae67d3ddee40becedffdd299f2fe,user_ivg,False,False,False,True,False,False,False,False,True,False,False,False,False,True
+2024-01-25 11:32:18+0000,Task was skipped due to pipeline conditions.,de8ea9a0efd9ea6bdc35eefcc79e05a6cdfc96ab,MISSING,True,False,False,False,False,False,False,True,False,False,False,False,True,False
+2024-02-14 03:33:33+0000,Task was skipped due to pipeline conditions.,a0d7bfde2452bf3ff5c7eaddadb39e7bbc55217f,user_dns,False,True,False,False,True,False,False,False,False,False,False,False,True,False
+2024-10-06 02:12:15+0000,Task completed successfully.,26140bc3deb8ebe70125b2e2fdd7fdc6ad58d9d7,user_mvc,False,True,False,False,False,True,False,False,False,False,True,False,False,True
+2024-04-09 03:40:23+0000,Task completed successfully.,5afe3fcecd49f560014efddf56ad46c8dae18a9a,MISSING,False,False,True,True,False,False,False,False,False,False,False,False,False,True
+2024-12-24 10:37:02+0000,Task is currently in progress.,e265afd120620cf9b7ef2d9ae549dbbcca1edc46,user_iew,True,False,False,True,False,False,False,True,False,False,False,True,False,False
+2024-01-17 16:40:33+0000,Task was skipped due to pipeline conditions.,d57d028b02eb1b0aeaeac5aa6cb44cad141cc1cd,user_crb,True,False,False,False,False,False,True,False,False,True,False,False,True,False
+2024-09-20 22:05:58+0000,Task was skipped due to pipeline conditions.,f8aca0905fd5807fd2afaedc40adcbbbbcaebdbb,user_mxn,False,False,False,False,True,False,False,False,False,True,False,False,True,False
+2024-07-17 22:01:38+0000,Task is currently in progress.,bbd3ec087974cefcbe4a9b6e9c8e1ef1d2bfe4fe,MISSING,False,True,False,False,True,False,False,False,False,True,False,True,False,False
+2024-07-24 19:30:21+0000,Task was skipped due to pipeline conditions.,bcf6e5ca7839ef0545edb4ed52341abbe5aba82f,user_jff,False,False,False,False,False,False,True,False,False,True,False,False,True,False
+2024-01-07 16:13:33+0000,Task is currently in progress.,50fa52b7bf69dcfcc2e5343a8af3bcfac9c0cf13,user_lsn,False,False,False,True,False,False,False,False,False,False,False,True,False,False
+2024-12-17 07:46:47+0000,Task execution failed.,7c0c1366c57eedb0ebcca8117a59dfbc93aa73b6,user_uol,False,False,False,False,False,True,False,False,False,False,True,False,False,False
+2024-12-06 11:26:49+0000,Task completed successfully.,3b32f4df8c26cbd0884a4a14b2cda57dca5300cb,user_qpb,True,False,False,False,False,True,False,True,False,False,False,False,False,True
+2024-07-13 21:39:35+0000,Task is currently in progress.,b6f3f52fd42f7ccd7a22e3baaa3dad18cc3a89ea,MISSING,False,True,False,False,True,False,False,True,False,False,False,True,False,False
+2024-05-19 09:12:34+0000,Task execution failed.,82ddbccf88ba24a0fdd957acda6acafdaea80f41,MISSING,False,False,True,True,False,False,False,False,False,False,True,False,False,False
+2024-04-05 14:19:50+0000,Task is currently in progress.,0bbac40aad801cdb6de2e30819bdccdc43b56b5c,user_ear,True,False,False,False,False,False,True,False,False,False,True,True,False,False
+2024-04-21 12:25:11+0000,Task was skipped due to pipeline conditions.,97aae7bd31666025a42f96bfcb9fb292ffb1810f,MISSING,False,True,False,False,False,False,False,False,False,True,False,False,True,False
+2024-09-27 10:25:26+0000,Task completed successfully.,d2c36531d7ea7abbf7eb899110d21869bfc2639b,user_gmq,False,False,True,False,False,False,True,False,True,False,False,False,False,True
+2024-05-05 03:28:39+0000,Task is currently in progress.,24e0f26e55fb9c6ebdf8fcdd29d7c3fece7cbaa0,MISSING,False,False,False,False,False,True,False,False,False,False,False,True,False,False
+2024-12-16 06:26:38+0000,Task completed successfully.,8bc4d4dfef80e0b5a18b7c063eeb34bdfcc481bf,MISSING,False,False,False,False,False,False,False,False,False,True,False,False,False,True
+2024-03-27 18:25:19+0000,Task was skipped due to pipeline conditions.,1efc1dce36decbaddd90d57e80eff7dbbb94df42,user_fdx,True,False,False,False,False,False,False,False,False,True,False,False,True,False
+2024-06-06 22:35:10+0000,Task was skipped due to pipeline conditions.,ab8d17b6e1bc144f62b18ad9c4bb0820b78f246a,user_zyy,False,False,True,False,True,False,False,False,True,False,False,False,True,False
+2024-03-14 10:51:07+0000,Task completed successfully.,eff4ab79c7781135bd3f688ff4fb4d3f54a9ba40,user_bse,False,False,True,False,False,False,True,False,True,False,False,False,False,True
+2024-02-11 07:57:40+0000,Task was skipped due to pipeline conditions.,f09af9ee7660fea6add2486166e0af66b6a85f7c,MISSING,False,False,True,True,False,False,False,True,False,False,False,False,True,False
+2024-12-17 00:57:00+0000,Task is currently in progress.,fcf06c3389eafab18f97792fd03caa7acffcbfa6,MISSING,True,False,False,True,False,False,False,False,False,True,False,True,False,False
+2024-10-10 13:41:54+0000,Task execution failed.,a0bf8cb73ee1edc0b5a0eeda5bda55b9d484ec4e,MISSING,True,False,False,True,False,False,False,False,True,False,False,False,False,False
+2024-07-04 23:01:48+0000,Task is currently in progress.,d11b7136f0eacf6b42690ea6c325e3fcbcbcf2f1,user_qea,False,True,False,True,False,False,False,True,False,False,False,True,False,False
+2024-10-08 21:07:31+0000,Task completed successfully.,53b3e2feaadbab1113ba54daf91c8bfe6bdd8b02,user_afi,False,False,True,True,False,False,False,True,False,False,False,False,False,True
+2024-09-10 23:23:03+0000,Task completed successfully.,cee0dbd8bf96e430e0db629b382caa9c1f9638aa,MISSING,True,False,False,False,True,False,False,True,False,False,False,False,False,True
+2024-10-05 11:58:09+0000,Task is currently in progress.,9efef63c49be174ce2bc7bfe4217bd82ccc6db88,user_czi,False,False,False,False,False,False,True,False,False,False,True,True,False,False
+2024-07-25 05:51:47+0000,Task was skipped due to pipeline conditions.,f53c47f086e1ff4d02ba9a1315dbccbb0a2f0209,user_xsl,False,False,True,False,False,False,True,False,False,False,True,False,True,False
+2024-08-21 07:27:44+0000,Task is currently in progress.,b39a7f605acaeba83588292abf3a4eef9eddd67d,user_hag,False,False,True,False,False,True,False,False,False,False,False,True,False,False
+2024-01-21 16:59:45+0000,Task is currently in progress.,5d42b1cba62cf3b0077dce6ceaabb16e022b0523,user_hrv,False,False,False,False,False,True,False,False,False,False,True,True,False,False
+2024-08-08 09:28:17+0000,Task is currently in progress.,665fffdfae81eeb59fedb308a3afdbc5a816cae6,MISSING,False,False,False,False,False,False,True,False,False,False,False,True,False,False
+2024-04-11 02:24:07+0000,Task execution failed.,f8b48cf229e33dda762fdac3fa2c4dd0c2a3bafb,user_pee,True,False,False,False,False,False,True,False,False,True,False,False,False,False
+2024-12-07 10:22:29+0000,Task was skipped due to pipeline conditions.,206a49e1feeeeda98fc6eefd00cecf0ca3a1f3fc,MISSING,False,False,True,True,False,False,False,False,True,False,False,False,True,False
+2024-07-12 09:39:13+0000,Task completed successfully.,ac0d7eeadcce3ddfabc616ee2edc0e8b619fdd3e,user_yxs,True,False,False,False,True,False,False,False,False,False,True,False,False,True
+2024-01-11 19:29:33+0000,Task is currently in progress.,4574df34b2722b7abd4dddcef3bd71bf6b41e3aa,user_gla,False,False,False,False,False,True,False,True,False,False,False,True,False,False
+2024-03-12 09:38:56+0000,Task completed successfully.,0d7550f9d791deb9fe99f9d5cf66ef554ef0fd66,MISSING,False,False,True,False,True,False,False,False,False,True,False,False,False,True
+2024-02-07 22:39:46+0000,Task execution failed.,d9e8ea2bbccf0e101b5f84c505de062af66b4e7d,MISSING,True,False,False,False,False,False,True,False,True,False,False,False,False,False
+2024-08-02 15:43:35+0000,Task completed successfully.,ae4b164bc1c83d2bbcff2ca3dfedeecbd5c55d3a,user_qva,True,False,False,False,False,True,False,False,False,False,False,False,False,True
+2024-04-20 21:08:23+0000,Task execution failed.,b9130237abeaedcc6cdf998b2a2cdffffbd24bdb,MISSING,False,False,True,False,False,False,True,False,False,False,False,False,False,False
+2024-07-23 05:07:18+0000,Task was skipped due to pipeline conditions.,bd3e3ccf263fc82f0abed8e79dd2efacef8bef80,user_vhh,False,False,True,False,False,True,False,False,False,False,True,False,True,False
+2024-01-15 13:12:02+0000,Task completed successfully.,639d3d92e7f8f1db54db86ef787aa7a3e4d1edbf,MISSING,True,False,False,False,False,False,False,True,False,False,False,False,False,True
+2024-03-24 20:39:15+0000,Task is currently in progress.,bbdc074568ac9fbd3e8c4169cfb8c7cfb1bf8c9b,user_qan,False,False,True,True,False,False,False,True,False,False,False,True,False,False
+2024-11-14 11:58:45+0000,Task is currently in progress.,7ada9df22395716eeedc412e8cd89aaf3876c0cd,MISSING,True,False,False,False,False,True,False,False,False,False,False,True,False,False
+2024-10-15 20:07:36+0000,Task is currently in progress.,b06596a6fffb42fdffb8d1f4fdcae8604ffead14,MISSING,True,False,False,False,True,False,False,False,True,False,False,True,False,False
+2024-09-16 03:04:34+0000,Task is currently in progress.,8bdb6c6f85ebf36e8be082e7be6d045e7df618e0,user_esu,False,False,False,False,False,False,True,False,False,True,False,True,False,False
+2024-01-09 20:59:00+0000,Task was skipped due to pipeline conditions.,f5bce35fcf03dbcb6eacb5be64cbbecaabb738f7,MISSING,False,True,False,True,False,False,False,True,False,False,False,False,True,False
+2024-05-25 02:45:47+0000,Task execution failed.,c62b56357a9ace8b18ac06266cd64889afbd6ac3,MISSING,True,False,False,False,False,True,False,False,False,False,False,False,False,False
+2024-04-22 11:59:05+0000,Task execution failed.,a24721e58be7ebc3ae90694d6f69b50b2e1ba6f0,user_osd,False,False,False,False,False,True,False,False,True,False,False,False,False,False
+2024-10-16 10:01:30+0000,Task is currently in progress.,350db92c6fa6573d814af3112a20f1aa41686fdd,MISSING,False,False,False,False,True,False,False,False,True,False,False,True,False,False
+2024-09-09 20:24:40+0000,Task is currently in progress.,a18c4a51240ab85fedfba58eb3efebbe9ad562ab,user_kxb,False,False,False,True,False,False,False,True,False,False,False,True,False,False
+2024-06-09 18:40:20+0000,Task completed successfully.,b37ffca09dae6600ad5ad4ec6ec8babadcc61b4c,user_aqm,False,False,True,False,False,False,False,True,False,False,False,False,False,True
+2024-02-04 13:05:35+0000,Task was skipped due to pipeline conditions.,ae7c5e42bdef083e57557a096bc2ed5df3e1c3d3,user_ubo,True,False,False,True,False,False,False,False,True,False,False,False,True,False
+2024-01-04 17:31:16+0000,Task execution failed.,e2499f7d9339d8f651247cab4eadaa64e9cb9dde,MISSING,False,False,True,True,False,False,False,False,False,False,False,False,False,False
+2024-03-31 23:49:38+0000,Task is currently in progress.,ce40aa5a1c0b25571bbdfc8ccda856cf1be32f3d,MISSING,False,False,False,False,False,True,False,False,True,False,False,True,False,False
+2024-03-20 00:33:09+0000,Task is currently in progress.,e40be70ce3194b22e9e7b636fc917e4dbf3bcf2c,MISSING,True,False,False,True,False,False,False,True,False,False,False,True,False,False
+2024-10-25 02:36:01+0000,Task execution failed.,1d0a5fcd4cc8ef3daaff5b4e5aeccecb755195ae,user_oxi,False,False,False,False,False,False,True,False,False,False,True,False,False,False
+2024-11-02 20:08:51+0000,Task completed successfully.,d5a5bdc61b7e8b5e9447020a4fb830a1fddcfecd,MISSING,True,False,False,True,False,False,False,False,True,False,False,False,False,True
+2024-03-03 19:18:59+0000,Task execution failed.,0c1a1dd42da6cedc4bac9fe991b33a5a6ee01420,user_ndu,False,True,False,False,True,False,False,False,True,False,False,False,False,False
+2024-11-06 20:46:11+0000,Task completed successfully.,39bd8f7946faedf7e90fc6d5ea96fa28adb5e387,user_gie,False,True,False,True,False,False,False,False,True,False,False,False,False,True
+2024-10-23 11:16:33+0000,Task execution failed.,dac21c7d0bc57bef8dc9d926dbdac77048c81056,user_etv,True,False,False,False,True,False,False,False,False,False,True,False,False,False
+2024-10-30 14:13:30+0000,Task completed successfully.,fa97ff135c08b346f5cb6eb8eadfebdc4a4910c3,user_udz,False,False,True,False,False,True,False,False,True,False,False,False,False,True
+2024-05-27 09:08:45+0000,Task completed successfully.,a5cac2a4e1e12ff9f9ba2cbe8bfedc3cd3dbaac4,user_vez,True,False,False,False,False,False,False,False,False,True,False,False,False,True
+2024-09-03 15:00:51+0000,Task execution failed.,f0eec08ce13940afc96ad3afdfcceeb5decc8214,MISSING,False,True,False,False,False,False,True,True,False,False,False,False,False,False
+2024-04-30 17:23:43+0000,Task was skipped due to pipeline conditions.,b4b0aa6ef0feec4b08d2ea1ffb6ffbcf1eaaab29,user_rlv,True,False,False,False,True,False,False,False,False,False,True,False,True,False
+2024-07-29 10:57:47+0000,Task was skipped due to pipeline conditions.,cc823ed6ea25ecaf567b95b586bfb0d0e74a8ade,MISSING,True,False,False,False,False,True,False,True,False,False,False,False,True,False
+2024-03-13 23:20:35+0000,Task was skipped due to pipeline conditions.,3ee9c524a1eebbe51eabcd89f19d97c9106b6fb6,MISSING,True,False,False,False,False,False,False,True,False,False,False,False,True,False
+2024-05-05 14:36:20+0000,Task execution failed.,1cc6baa9be09ff3e5d4d709e9f02cd53a791aae9,user_zlu,False,True,False,False,False,True,False,False,False,True,False,False,False,False
+2024-06-04 08:49:06+0000,Task was skipped due to pipeline conditions.,5ea0f1afbb42ec552bae2f939d9d5fa72bed8387,user_ybd,False,False,False,False,False,False,True,False,False,False,False,False,True,False
+2024-09-10 13:26:33+0000,Task completed successfully.,f9f65d9effeb61fffefd54360b5b6eba9592a3be,MISSING,False,False,True,False,False,False,True,False,False,True,False,False,False,True
+2024-09-08 03:46:12+0000,Task was skipped due to pipeline conditions.,6e66a70efa65b43fd71de7bdec2ee79aa1eef35e,MISSING,False,False,True,False,False,False,True,False,False,False,False,False,True,False
+2024-05-13 14:49:31+0000,Task is currently in progress.,50bea36ed7b499cedc7d5db4af21f967896e264d,user_tmu,False,False,False,False,True,False,False,False,False,True,False,True,False,False
+2024-05-11 02:07:14+0000,Task is currently in progress.,e568dcad77dbdb55e2efdfece6ccca01b3ba9395,user_vqh,True,False,False,False,True,False,False,True,False,False,False,True,False,False
+2024-11-23 01:34:34+0000,Task completed successfully.,ad4d8953ea29a21d83c423c1c9b2a6c7f3ea8f4d,user_pco,False,False,False,False,False,True,False,False,False,False,False,False,False,True
+2024-10-02 19:09:58+0000,Task execution failed.,ce2da8fecc07ef6dbadbaa4ae595edcead68d2dd,user_svz,False,True,False,False,True,False,False,False,False,False,False,False,False,False
+2024-02-02 02:17:27+0000,Task execution failed.,d62cff1341d1e7bdbd0efad6a4c61a3decb1fa03,user_bxj,True,False,False,True,False,False,False,False,False,True,False,False,False,False
+2024-08-21 07:44:43+0000,Task is currently in progress.,1729e62b24a3f2dea8dbeacddfdad5d9f45d3335,user_irc,True,False,False,True,False,False,False,True,False,False,False,True,False,False
+2024-03-15 06:44:22+0000,Task is currently in progress.,2c62ba0ca26f250da6b0ffa2c61a8bd0c4ddf9d1,MISSING,True,False,False,False,False,False,True,False,False,True,False,True,False,False
+2024-11-07 14:47:06+0000,Task is currently in progress.,c756fbdf1fcc8dd45dadadefaaa9954eab8a2c1e,MISSING,False,False,False,False,False,False,True,False,True,False,False,True,False,False
+2024-02-20 11:19:04+0000,Task was skipped due to pipeline conditions.,c1d8ad9a484d6c27abe9f1607531db682988ee1e,MISSING,False,False,False,False,True,False,False,False,True,False,False,False,True,False
+2024-11-08 07:08:58+0000,Task was skipped due to pipeline conditions.,0afa3daace3a940cd0ee8acda336ecebeb2dbfd4,MISSING,True,False,False,True,False,False,False,False,True,False,False,False,True,False
+2024-06-26 04:36:46+0000,Task was skipped due to pipeline conditions.,fbd92dc7c412d3ea79b9e7eafd7eda8dfff7af20,user_yhl,True,False,False,False,True,False,False,False,False,False,False,False,True,False
+2024-08-29 04:59:49+0000,Task was skipped due to pipeline conditions.,d2113ce7ae6e1225aabf0cafce66017f2eedc03d,user_yvz,True,False,False,False,False,True,False,True,False,False,False,False,True,False
+2024-04-30 06:41:20+0000,Task was skipped due to pipeline conditions.,28d5eacb21ace3af985ec4a9c89ba50df1d15a7f,MISSING,False,False,True,True,False,False,False,False,False,False,False,False,True,False
+2024-08-20 17:12:38+0000,Task was skipped due to pipeline conditions.,ddf3babbd9a6fcc79c04fd17a37e25f1ce55aade,MISSING,True,False,False,True,False,False,False,False,True,False,False,False,True,False
+2024-02-23 23:54:20+0000,Task execution failed.,a1dcf0dfebedd3dbfc4fff7affbad7dbafbb681a,MISSING,False,False,False,False,False,True,False,False,False,False,True,False,False,False
+2024-07-12 05:55:32+0000,Task is currently in progress.,df4d6cbcf794dd8a5a5dafc291d8acfbd3e29e1b,user_sra,False,True,False,False,False,False,True,False,True,False,False,True,False,False
+2024-06-19 11:59:31+0000,Task completed successfully.,6e444528ad5c2f0eae1cf40a537bbf9ffcb5264d,user_dby,False,True,False,False,False,False,True,False,False,True,False,False,False,True
+2024-03-11 11:04:23+0000,Task execution failed.,db189e0cfc2f8b478f67ff120eeb07c8bac50dfd,user_xaf,False,True,False,False,False,False,False,False,False,False,True,False,False,False
+2024-01-05 22:53:12+0000,Task is currently in progress.,32fd2db7c8ab01e2d3a00e87b9bca97859e6d67a,MISSING,False,False,False,True,False,False,False,False,False,False,False,True,False,False
+2024-11-02 20:44:48+0000,Task was skipped due to pipeline conditions.,584d09ac1fda18879f2b1dbefa360b807ee68b71,user_iam,True,False,False,False,False,True,False,False,False,False,True,False,True,False
+2024-04-21 17:43:28+0000,Task execution failed.,ecb95bbf7b59f9d4d61cb36eb4cbb80ffbaba2b3,user_gey,False,True,False,True,False,False,False,False,False,False,False,False,False,False
+2024-01-25 03:19:50+0000,Task is currently in progress.,6baacde6cbf6cedd78bd03a85e76ba51e2db5fa0,MISSING,False,True,False,False,False,False,True,True,False,False,False,True,False,False
+2024-10-19 14:11:24+0000,Task is currently in progress.,ca1ccc8db8225aede5f6a453a1cf5a1927ce1b63,user_crh,False,False,True,False,True,False,False,False,False,False,True,True,False,False
+2024-11-26 09:17:36+0000,Task execution failed.,b1f0cd8ffacb1c4339b35e6a63046bdbdecf5acf,MISSING,False,True,False,False,False,True,False,False,True,False,False,False,False,False
+2024-03-18 07:46:40+0000,Task was skipped due to pipeline conditions.,bb261cfa4b91baf6598e247cfd2b4727ffbd2da4,user_apv,False,False,False,True,False,False,False,False,False,False,True,False,True,False
+2024-08-16 10:46:38+0000,Task was skipped due to pipeline conditions.,5fcbade9f9953192f7bae5ca1d515dc4f9d5ccbf,MISSING,False,False,False,False,True,False,False,False,True,False,False,False,True,False
+2024-01-15 05:26:36+0000,Task completed successfully.,6aacdebadd2dd062ab9f5d4bacb5155eecfb2482,MISSING,False,False,False,True,False,False,False,False,False,False,False,False,False,True
+2024-08-08 04:31:16+0000,Task was skipped due to pipeline conditions.,8c7f6a942eb9cea668fd501d28dfaf8daa6c326b,MISSING,False,False,True,True,False,False,False,False,True,False,False,False,True,False
+2024-06-12 04:55:07+0000,Task is currently in progress.,dd3ea0cacad3af440cea169adc2a1e92dbb7ca26,user_eqp,False,False,False,True,False,False,False,True,False,False,False,True,False,False
+2024-12-10 03:54:12+0000,Task is currently in progress.,e7feab3b0ba5bb561fccbe2f8184cd4a65cbfcc5,MISSING,True,False,False,False,False,False,False,False,False,True,False,True,False,False
+2024-10-08 17:42:21+0000,Task completed successfully.,efb36fbe1af0cd4ec2cee79ee4d2d3fd6f6fdbce,MISSING,False,False,False,False,False,False,True,False,False,False,False,False,False,True
+2024-04-26 07:50:33+0000,Task was skipped due to pipeline conditions.,bcb6bf16b3f9300dbf9f31a75d0ff560f9bcaac8,MISSING,False,True,False,False,False,False,False,False,False,True,False,False,True,False
+2024-01-27 00:36:40+0000,Task execution failed.,7c51bcc2cdee8ba9dff8cccdd6fe3f6e5c4aafb8,MISSING,False,False,False,False,False,True,False,False,True,False,False,False,False,False
+2024-10-08 18:30:34+0000,Task is currently in progress.,cde56d9e42e0bbc3a4a3e962c00f19aabff44baf,user_tjs,True,False,False,True,False,False,False,False,True,False,False,True,False,False
+2024-07-21 13:56:39+0000,Task is currently in progress.,4952f46bc39ce46e9f238abc341aee593e35b688,MISSING,True,False,False,False,True,False,False,False,False,False,True,True,False,False
+2024-06-07 19:05:03+0000,Task was skipped due to pipeline conditions.,b11cbc8bdbbdd4faedd5daa8e4fee9d8e5bdeeab,MISSING,True,False,False,True,False,False,False,False,False,False,False,False,True,False
+2024-09-21 17:53:57+0000,Task is currently in progress.,99c59285ba83bfc09dd0cd7e852c81d134c0ca2c,user_omr,False,False,False,False,True,False,False,False,False,False,False,True,False,False
+2024-12-29 08:59:56+0000,Task execution failed.,57ca46d28bd476128badf6619aaaedfb78afcb77,MISSING,False,False,False,True,False,False,False,False,False,False,False,False,False,False
+2024-03-29 10:22:00+0000,Task is currently in progress.,7aba80ba8ffba3cdfb9482f1f39cde3a232f203b,MISSING,True,False,False,False,False,False,False,False,False,True,False,True,False,False
+2024-02-24 05:58:00+0000,Task is currently in progress.,16c1fadda1fafdad9d09fe38a2fd93dbabdfdf2b,user_afh,False,True,False,False,True,False,False,False,False,True,False,True,False,False
+2024-02-22 00:59:32+0000,Task completed successfully.,69271579e659ccbbf2c44569c2e9fe76fb9d7da5,MISSING,False,False,True,False,False,True,False,False,False,False,False,False,False,True
+2024-06-07 13:37:44+0000,Task was skipped due to pipeline conditions.,2bfe5c2a8aea8efb6af6975b3643bf3b6a7afd41,MISSING,True,False,False,False,False,True,False,False,False,False,True,False,True,False
+2024-11-19 18:56:10+0000,Task was skipped due to pipeline conditions.,2a93cd9ffe787f14392aabba5e40ebbe1da53f9c,user_dur,True,False,False,False,False,True,False,False,True,False,False,False,True,False
+2024-09-18 03:40:04+0000,Task was skipped due to pipeline conditions.,0d3c86bd0dec969adfe79fb38fe1d8db863aaa0d,user_efj,False,False,True,True,False,False,False,False,False,False,True,False,True,False
+2024-02-27 02:00:53+0000,Task was skipped due to pipeline conditions.,b273faaa50d25fe98f70bc047ba080ebf20cd014,MISSING,False,False,True,False,True,False,False,True,False,False,False,False,True,False
+2024-01-26 08:36:01+0000,Task execution failed.,b01d69e9f1eef1febb02ef21dd2efaadb1b9ef42,user_ezg,False,False,True,False,False,False,False,True,False,False,False,False,False,False
+2024-06-24 12:08:25+0000,Task is currently in progress.,c2ed427dff988edf711f062dbaf3cbc1ce5eeda6,user_xwx,False,True,False,False,False,True,False,False,False,False,False,True,False,False
+2024-01-06 03:12:03+0000,Task completed successfully.,550269c3dcabd8eb65f5df1de372a2fe631c0e11,user_pyf,False,False,False,True,False,False,False,False,False,False,False,False,False,True
+2024-10-16 06:14:08+0000,Task is currently in progress.,c053c74ca2f1d3b2fd561cebf0b35ff392d50f3e,MISSING,True,False,False,False,True,False,False,False,False,True,False,True,False,False
+2024-09-29 18:21:41+0000,Task completed successfully.,e88da1bf8fd1923fcaabd63a1f55c8aac2c912e7,user_fwn,False,True,False,False,True,False,False,False,False,False,False,False,False,True
+2024-05-15 16:33:09+0000,Task is currently in progress.,dddcadd79c07a0b44d70c6c745cd37ae86eb5080,user_cps,False,False,False,True,False,False,False,False,True,False,False,True,False,False
+2024-02-06 00:30:18+0000,Task execution failed.,dcfd109626240db40e6adedd1b3c19d90d6e87da,user_rqx,False,False,True,True,False,False,False,True,False,False,False,False,False,False
+2024-03-03 02:34:22+0000,Task was skipped due to pipeline conditions.,2cf3d62d93bfeccf0eacfec2b0ec474ce782a2cd,user_scz,False,False,True,False,True,False,False,False,False,True,False,False,True,False
+2024-05-17 01:57:56+0000,Task was skipped due to pipeline conditions.,d8c14c0ec4d8bcbe5acbd2a49ebf2149b8ea806a,user_sef,False,False,False,False,True,False,False,False,False,True,False,False,True,False
+2024-06-20 22:43:18+0000,Task execution failed.,e85aedb4fd8e5339f695e7f9e5ee67012ea04ad2,user_cxd,False,False,True,False,False,False,False,False,False,False,True,False,False,False
+2024-11-08 11:28:57+0000,Task is currently in progress.,abcaaf888ab84ef4bd461424f762f0d11fe5ba4e,user_guh,False,True,False,False,True,False,False,False,False,False,True,True,False,False
+2024-08-20 04:29:56+0000,Task execution failed.,2e96eeff116f9c5e96adf92dfe405c0fa0fa1854,user_qws,False,True,False,True,False,False,False,True,False,False,False,False,False,False
+2024-05-07 16:59:04+0000,Task completed successfully.,46ea799eebb833d7748557b6d5d3f08bdcbfcb3a,user_mep,False,False,False,True,False,False,False,False,True,False,False,False,False,True
+2024-01-15 03:39:12+0000,Task execution failed.,60e69933b3ce5a0be2fff01a7bb6da570f3a741e,user_vyj,False,False,False,False,False,False,True,True,False,False,False,False,False,False
+2024-03-13 09:01:00+0000,Task was skipped due to pipeline conditions.,8fffbfeddcfdebbccf938d55e0c7dafc2cffdf2d,MISSING,False,True,False,False,False,False,False,True,False,False,False,False,True,False
+2024-12-15 13:16:55+0000,Task completed successfully.,f098f85a1ef6bd612deadfa734d2cac0ee8bdfab,user_ofi,False,True,False,False,True,False,False,True,False,False,False,False,False,True
+2024-07-13 07:36:58+0000,Task completed successfully.,2bc64aad4ecef845f799170a2f19d36ddc8a6a33,MISSING,True,False,False,False,False,False,False,False,False,False,True,False,False,True
+2024-12-16 10:18:07+0000,Task execution failed.,9b70b2cabbe0bef3a3cecba2d6e67ad2a859da3b,user_wls,False,False,False,False,False,False,True,False,False,True,False,False,False,False
+2024-03-15 14:07:44+0000,Task is currently in progress.,9dad424358d5b17ca44c13bb0a3c234f9484d5fe,user_tas,False,False,True,False,False,False,False,True,False,False,False,True,False,False
+2024-11-30 17:43:46+0000,Task completed successfully.,4458a7ba7ece108e4d61b1af6c9ffcbea5b94dd9,user_xdx,False,False,False,False,False,False,False,True,False,False,False,False,False,True
+2024-07-24 00:34:33+0000,Task completed successfully.,2db0f90fd3ebce3238a87f6095b1bde77d3ecfa1,user_ltu,False,False,False,False,False,False,False,False,False,False,True,False,False,True
+2024-08-04 08:52:22+0000,Task completed successfully.,87ae14ce33511dcf2d824fcc2680d56ab05edf64,user_sgb,False,False,False,False,False,True,False,False,False,True,False,False,False,True
+2024-10-04 14:23:54+0000,Task completed successfully.,05444abec4baafcd2073bf0e4440d6cc9ca4fceb,MISSING,False,False,True,False,False,False,False,True,False,False,False,False,False,True
+2024-01-12 23:14:33+0000,Task execution failed.,aad6e0df7028b20cdca4d9aacbd7869b4fb8f64f,user_kza,False,True,False,False,True,False,False,False,True,False,False,False,False,False
+2024-02-12 14:32:29+0000,Task is currently in progress.,d48ebdacd9a99ce3b2aef651adcfd4f3fde5fd2f,MISSING,False,False,True,False,False,False,True,False,True,False,False,True,False,False
+2024-06-01 16:45:50+0000,Task is currently in progress.,425f8fef7041c51f2255fea7cd12fc9f255deffa,user_ywy,False,False,True,False,True,False,False,False,False,True,False,True,False,False
+2024-05-11 20:13:20+0000,Task execution failed.,e6bdb41a1ce35f78c43f39cedf27c8a959564bcf,MISSING,True,False,False,False,True,False,False,False,False,False,True,False,False,False
+2024-02-21 17:35:11+0000,Task was skipped due to pipeline conditions.,fecc84fef883dcea85f39502cba43bde44100dbb,MISSING,False,True,False,False,False,True,False,False,False,True,False,False,True,False
+2024-09-10 02:19:18+0000,Task is currently in progress.,0dddd769a1296d0a9c6ec0b617a2298cbfa62a1c,user_jyx,True,False,False,False,True,False,False,False,True,False,False,True,False,False
+2024-05-08 08:31:20+0000,Task was skipped due to pipeline conditions.,c71d3be7c37afa65c9b62a7a84d2ba0bce77b01a,user_ayf,False,False,True,False,False,False,False,False,False,False,True,False,True,False
+2024-12-18 20:34:05+0000,Task was skipped due to pipeline conditions.,f0decfd8bbbbdb38e1f5b17ddbabb42aca9cf5a3,user_zug,False,False,True,True,False,False,False,False,False,False,False,False,True,False
+2024-04-19 16:04:30+0000,Task execution failed.,c59a90088c2d833988a53eb1fe5f63fa56e8bdb4,MISSING,False,True,False,False,False,True,False,False,False,False,True,False,False,False
+2024-04-12 12:00:54+0000,Task was skipped due to pipeline conditions.,6cdd0817f6f9ffd0fdc385aae62afbaffe1853cf,MISSING,False,True,False,False,False,True,False,False,False,False,False,False,True,False
+2024-12-04 10:11:30+0000,Task completed successfully.,66d55dcae7bbeb514b82dab6b49fec4c7d17e9a1,user_oqn,True,False,False,False,False,True,False,False,False,False,True,False,False,True
+2024-03-15 00:08:57+0000,Task completed successfully.,dabbd1e4b8f50db71facc5d8ffa3eb0d8cbca5cc,MISSING,False,False,False,True,False,False,False,False,False,True,False,False,False,True
+2024-12-01 22:29:42+0000,Task is currently in progress.,80d598ea3acae1ba6d21262c4cfffaf7d0dcab52,MISSING,True,False,False,False,False,False,True,True,False,False,False,True,False,False
+2024-11-02 07:46:00+0000,Task execution failed.,fb75f9b56f99ce579e7c7cdd8d6ef7e260bf9b8c,user_agu,False,True,False,False,False,False,True,False,False,False,True,False,False,False
+2024-05-06 10:02:51+0000,Task completed successfully.,eccd8f0f22bde813ee49fe5b6ade93c3af24d809,user_hrn,False,True,False,False,False,False,True,False,False,False,False,False,False,True
+2024-09-22 16:08:45+0000,Task was skipped due to pipeline conditions.,ad5df2ada87cf2e4a95f51bc79b286ee0513def0,user_abc,True,False,False,False,False,True,False,False,True,False,False,False,True,False
+2024-03-08 06:35:55+0000,Task is currently in progress.,7cc83dc9c9e6b4672bd770b3bfa21ea2df9cbd04,MISSING,False,False,True,False,False,True,False,True,False,False,False,True,False,False
+2024-11-28 01:15:42+0000,Task execution failed.,d6c6cea2da9fcd6cd9d2ad8a8c335da583fc3b2a,MISSING,False,True,False,False,False,True,False,True,False,False,False,False,False,False
+2024-04-25 12:37:18+0000,Task execution failed.,6176b30833ccdf3af10badcbb7d50e357cbd82f7,MISSING,True,False,False,False,False,False,True,False,True,False,False,False,False,False
+2024-06-30 10:46:20+0000,Task is currently in progress.,0febaa6de374bf0aadb78bc381e5d124af8f9aa8,MISSING,True,False,False,False,True,False,False,False,True,False,False,True,False,False
+2024-05-06 03:25:14+0000,Task completed successfully.,5f0ab91a4eeb6dcb95ea024b36b5d40eee7df1a0,user_pmd,True,False,False,False,False,True,False,False,True,False,False,False,False,True
+2024-02-26 13:29:27+0000,Task completed successfully.,5a4fc2964f9f6b6c4aa4c8a99aedadaf4ca3bda4,user_izr,False,False,True,False,False,False,True,False,False,True,False,False,False,True
+2024-03-03 16:24:27+0000,Task completed successfully.,4df4d45c3b2bb0eabc91cf87fe12b3dddf0b4ac2,MISSING,False,False,True,True,False,False,False,False,False,False,False,False,False,True
+2024-01-13 14:43:47+0000,Task execution failed.,5c0fd0abfe3abf8edf59210442df39469bbe6f70,user_rdd,False,False,False,True,False,False,False,True,False,False,False,False,False,False
+2024-03-23 11:12:00+0000,Task is currently in progress.,afdbda86feb3f7c9edbbe0caa3ac687f14fbc797,user_akq,True,False,False,True,False,False,False,False,False,True,False,True,False,False
+2024-05-08 17:58:20+0000,Task was skipped due to pipeline conditions.,edaecb488fd5e0a421a2dafccb2ebbb40c0fddb6,user_bsz,False,False,False,False,False,True,False,False,True,False,False,False,True,False
+2024-03-05 18:11:04+0000,Task execution failed.,acdbef38762e5acc79cbbea71a7c89c0d8da3d58,user_ixu,True,False,False,False,False,False,False,False,False,False,False,False,False,False
+2024-02-04 03:40:02+0000,Task was skipped due to pipeline conditions.,c713ea6a0ece558cbd5bdd7c00bcfc6da98b7e69,MISSING,False,False,True,False,False,True,False,False,True,False,False,False,True,False
+2024-06-10 16:26:39+0000,Task execution failed.,ce7102ba7391f50cfc395ddccac1bdf8522b6a7c,MISSING,False,False,True,True,False,False,False,False,False,False,False,False,False,False
+2024-07-01 16:03:57+0000,Task execution failed.,1c1cb94f08ddeff7bd9fbbba53cccdc6addbeedf,user_anq,False,False,True,False,False,False,False,False,True,False,False,False,False,False
+2024-09-09 12:33:04+0000,Task completed successfully.,048d364717b2cd1fdf02a14d7cfff9bbcbad7fc8,user_tei,False,True,False,False,False,False,True,False,False,False,True,False,False,True
+2024-10-16 18:51:54+0000,Task is currently in progress.,702a10bf7ba4dedbefc6cbc414c35afe4e03db6e,MISSING,False,False,False,True,False,False,False,False,True,False,False,True,False,False
+2024-01-17 08:37:38+0000,Task is currently in progress.,b8aa3bc6d75fc084425fbff71becc2b8caceb6bc,user_qib,False,True,False,True,False,False,False,False,False,True,False,True,False,False
+2024-12-14 19:03:27+0000,Task execution failed.,9dab6132aac0dccaed9ab8b2f12f39a1fe1c28b4,user_kps,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+2024-12-21 08:00:09+0000,Task completed successfully.,decadc143a2eccaad53cdcd3cc7a5e8b076cef64,MISSING,False,False,True,True,False,False,False,False,True,False,False,False,False,True
+2024-12-15 14:16:59+0000,Task was skipped due to pipeline conditions.,7cffb84d2cdac1d984adf2aa0675f8b134ebcdac,user_gep,False,False,True,False,False,False,True,True,False,False,False,False,True,False
+2024-08-05 01:12:45+0000,Task was skipped due to pipeline conditions.,988d32cecceb53da94f53db74e03970aabc54d22,MISSING,False,True,False,False,False,False,True,False,False,False,True,False,True,False
+2024-02-06 00:32:05+0000,Task execution failed.,0d5d0ca8c93ccf73746ca7dee13accbaeb0ed1be,user_lry,False,False,True,False,True,False,False,False,False,False,False,False,False,False
+2024-03-13 13:48:10+0000,Task execution failed.,beadf6cfe5df6aeeebd5bc6faeac50ad9a9caeea,MISSING,False,False,True,True,False,False,False,True,False,False,False,False,False,False
+2024-01-25 10:28:53+0000,Task completed successfully.,dbb84a7ec4a6e7ffee4f8bfce57c3beb4d6ebf7e,user_wsi,False,True,False,False,False,True,False,False,False,False,True,False,False,True
+2024-08-20 20:02:13+0000,Task was skipped due to pipeline conditions.,e7f4ca738515d1f5bec4b1ee7d4b261e7d3efcd9,MISSING,False,True,False,False,False,False,True,False,True,False,False,False,True,False
+2024-04-01 19:36:47+0000,Task was skipped due to pipeline conditions.,d92853b39dee2459fdf97349fe72b07c8a168be0,MISSING,False,True,False,False,False,False,False,True,False,False,False,False,True,False
+2024-07-15 00:30:25+0000,Task was skipped due to pipeline conditions.,7eaf619d94eeecda71cffbcc4afdcc2dec68bbec,user_ijr,True,False,False,False,False,False,True,False,False,False,False,False,True,False
+2024-05-09 20:57:19+0000,Task completed successfully.,88dbe555adfe451b5c3f6be85ca51048ed0b4cea,user_pyf,False,False,True,True,False,False,False,False,False,False,False,False,False,True
+2024-08-04 20:15:47+0000,Task execution failed.,ffc41f807a5b50cf5dbaacdd8a766d5964baebb3,user_xyr,False,False,True,True,False,False,False,False,False,True,False,False,False,False
+2024-02-12 12:03:28+0000,Task execution failed.,abb020722fae2d1a62db948dee28bddc7786fdb9,MISSING,False,False,False,False,False,True,False,False,True,False,False,False,False,False
+2024-02-16 00:32:10+0000,Task execution failed.,0ebce8ff24eea9bbd6c10643be4be5dac1ba797c,user_izk,True,False,False,False,False,False,False,False,True,False,False,False,False,False
+2024-12-04 11:20:38+0000,Task completed successfully.,851bcf90d31accfca28f7bc3c5af0c9964d9aff5,user_zzw,True,False,False,True,False,False,False,False,False,True,False,False,False,True
+2024-10-04 07:41:08+0000,Task completed successfully.,10fdadb12e4aafe6b34398047fe6fedaef8ce0b4,MISSING,True,False,False,True,False,False,False,True,False,False,False,False,False,True
+2024-11-13 23:33:05+0000,Task is currently in progress.,17ab5abd76c3c10427d28ecb0fb1e02361c4a0e6,MISSING,False,False,True,False,True,False,False,False,True,False,False,True,False,False
+2024-04-23 07:46:12+0000,Task is currently in progress.,fa54ab18b1a78de2c0c73c0a2d6dfda7a0b0d511,MISSING,False,False,True,False,True,False,False,True,False,False,False,True,False,False
+2024-05-04 20:22:00+0000,Task completed successfully.,b143d9e7c0a6f84dbf17db99ce0661fb39eacbb1,user_lzn,False,False,True,False,False,False,True,False,False,False,True,False,False,True
+2024-10-26 20:06:44+0000,Task was skipped due to pipeline conditions.,c5a2ad2acc9c37ae91f43a8be32ed76da3c9abf6,user_vry,True,False,False,False,False,True,False,False,False,False,False,False,True,False
+2024-01-06 12:12:33+0000,Task was skipped due to pipeline conditions.,18d8a8a2eca4add5af30f743ec3ccf3e355f8f33,user_kry,False,False,False,True,False,False,False,False,False,False,True,False,True,False
+2024-12-01 20:54:38+0000,Task was skipped due to pipeline conditions.,bdec2af21de86dfc8f083aedfbd245ebd8f1ac6a,MISSING,False,False,False,False,True,False,False,False,False,False,True,False,True,False
+2024-08-26 21:41:24+0000,Task is currently in progress.,b65273b27ab93f55db2d9cebeff2d78fad1a7e75,user_wal,False,False,True,False,False,False,False,False,False,True,False,True,False,False
+2024-07-13 07:09:29+0000,Task was skipped due to pipeline conditions.,6bb0a4abaae561d3ff4cb968641da85e8c1b101f,MISSING,False,True,False,False,False,False,False,False,False,False,True,False,True,False
+2024-10-03 06:17:21+0000,Task is currently in progress.,a4ffc89eff1bd5affb024dd9cf3b0c9faaf741d8,user_rap,True,False,False,False,False,False,False,False,False,False,False,True,False,False
+2024-08-05 13:14:31+0000,Task is currently in progress.,ae31aaafafa241f25dddf2cba62525d4ce4d2d9b,user_nao,False,False,False,False,False,False,False,True,False,False,False,True,False,False
+2024-07-26 06:52:06+0000,Task is currently in progress.,eeddaa9245bcf713f275f0ea9f2cb6bf8cf18e50,user_wrm,False,True,False,True,False,False,False,False,True,False,False,True,False,False
+2024-11-09 02:19:00+0000,Task was skipped due to pipeline conditions.,a089be8cb6371cc72bc219f07cc03e78f030dc61,MISSING,True,False,False,True,False,False,False,False,False,True,False,False,True,False
+2024-04-07 21:23:13+0000,Task is currently in progress.,6a292950ddac5aab432b64af7b4e403a80ecb94b,user_ewe,False,False,True,True,False,False,False,False,False,False,True,True,False,False
+2024-04-05 23:43:07+0000,Task execution failed.,1098e32e7dd3aef5da1c502c6b92e520aa73d10e,MISSING,True,False,False,False,False,False,True,False,False,False,True,False,False,False
+2024-12-09 17:35:56+0000,Task completed successfully.,cdbad27ff7c678f92519fec269e1aa7aee32f1c1,user_gyp,False,False,True,False,False,False,False,True,False,False,False,False,False,True
+2024-07-15 17:13:03+0000,Task was skipped due to pipeline conditions.,5e76b4db6f9c830fbce0a269c26beb3abe356cfb,user_gvn,False,False,True,False,False,False,True,True,False,False,False,False,True,False
+2024-08-18 04:00:12+0000,Task completed successfully.,bbdefb4009cdc88d90f5cb5ff3e3ec8eccdfb48c,user_mlv,False,False,False,False,False,False,True,False,False,False,True,False,False,True
+2024-04-04 16:58:53+0000,Task completed successfully.,a5b8bcb45c71d320d5edc720d1db83e568b2c07e,user_uxd,True,False,False,False,False,False,True,False,False,False,False,False,False,True
+2024-01-25 10:52:01+0000,Task was skipped due to pipeline conditions.,b9c7aace87e4056e6c51dffcc00cf3c61ea7a27e,MISSING,False,True,False,False,False,False,False,False,False,True,False,False,True,False
+2024-02-18 04:05:33+0000,Task is currently in progress.,f139aaa80bcb4761dc94a07bfadee31a88dec9ce,MISSING,False,False,False,False,False,True,False,False,False,False,True,True,False,False
+2024-03-04 21:37:53+0000,Task was skipped due to pipeline conditions.,c2d7c189f7c414ccd45bbc903ac4cfea23aa3000,MISSING,False,False,False,False,True,False,False,True,False,False,False,False,True,False
+2024-06-26 21:32:06+0000,Task was skipped due to pipeline conditions.,6daabed3c4fac0985b5d1eeb0b736bdb5b64c47a,MISSING,True,False,False,False,False,False,False,False,False,True,False,False,True,False
+2024-11-02 02:48:49+0000,Task was skipped due to pipeline conditions.,29fb9288179fde1e7ea345a1bb1ad2e1f4b0656f,user_wad,False,False,False,True,False,False,False,True,False,False,False,False,True,False
+2024-10-12 17:56:16+0000,Task completed successfully.,c31eefbc380a3d2056eafdc695aea90e2abdd4a3,user_ftz,True,False,False,True,False,False,False,False,False,True,False,False,False,True
+2024-11-05 23:18:15+0000,Task was skipped due to pipeline conditions.,6efeda3be6bc4ed03e82cbd8e514ea559de53b20,MISSING,False,True,False,True,False,False,False,False,False,False,True,False,True,False
+2024-11-14 22:17:50+0000,Task was skipped due to pipeline conditions.,d119b9ece4e1b88d8f74f91f0a1b711a8fa2bade,user_tzo,False,False,False,False,False,True,False,False,False,False,False,False,True,False
+2024-04-10 05:27:50+0000,Task execution failed.,c50618beabdfee2e0dbc5a070b2401def1b9711a,MISSING,False,True,False,True,False,False,False,False,True,False,False,False,False,False
+2024-09-29 00:32:21+0000,Task is currently in progress.,9b41eaaccc8087f4a0f3ddae1adbea7eacccfddd,user_zhi,False,True,False,False,False,False,False,False,True,False,False,True,False,False
+2024-01-08 22:07:00+0000,Task was skipped due to pipeline conditions.,d26d97016deb76fc4ea541ebded18eadb4c8f3fd,user_tki,False,False,True,True,False,False,False,False,False,False,True,False,True,False
+2024-11-08 18:22:05+0000,Task execution failed.,93de76dcec9a14a007a57edb37057e9eaa4a25e6,MISSING,True,False,False,False,True,False,False,False,True,False,False,False,False,False
+2024-08-29 10:34:13+0000,Task execution failed.,5c6c1cac58e1fbfc06abcf6c17ba4e69e057a4ef,MISSING,False,True,False,True,False,False,False,False,False,True,False,False,False,False
+2024-08-08 07:26:17+0000,Task execution failed.,a1ed5a77f059c8b0176a2dfcfea43d5d424f4ae6,MISSING,False,True,False,False,False,True,False,False,False,True,False,False,False,False
+2024-07-03 15:11:57+0000,Task was skipped due to pipeline conditions.,dc5bea48c5bb1e24e1bbaaaf4fd2b1b5b4055ad7,user_tds,True,False,False,False,True,False,False,False,False,False,False,False,True,False
+2024-05-05 00:57:13+0000,Task execution failed.,4037f32aff4fa8f8793eccde7541f25dc685e9db,user_gfg,True,False,False,False,False,False,True,False,False,False,True,False,False,False
+2024-06-02 08:09:16+0000,Task completed successfully.,ffb2b76c3d13b4adbb2dfaeea8b133a67a2c5dba,user_btk,True,False,False,False,True,False,False,False,False,False,False,False,False,True
+2024-04-03 21:44:06+0000,Task is currently in progress.,e27f153b7f3b8e4022ffca54c64e3e13facadf4d,MISSING,False,False,True,False,False,False,False,True,False,False,False,True,False,False
+2024-11-25 21:12:11+0000,Task execution failed.,42b2ebbf4ecf4d6cca851a11b292ca5ee12ba151,user_ikr,False,False,True,True,False,False,False,True,False,False,False,False,False,False
+2024-10-05 13:30:37+0000,Task was skipped due to pipeline conditions.,2e2df346fb52a955efe6eb53be019bc5cd277e2d,MISSING,True,False,False,False,False,False,False,False,False,False,False,False,True,False
+2024-11-10 10:42:39+0000,Task was skipped due to pipeline conditions.,0d2ece86dbfb6c44faef6cbcdfefe1e80ea60a21,user_zzu,True,False,False,True,False,False,False,True,False,False,False,False,True,False
+2024-04-04 14:04:11+0000,Task is currently in progress.,32c3c3a17d3c106e56a70bb8c57df1dcbbb9ca63,user_yjl,False,True,False,False,False,True,False,False,True,False,False,True,False,False
+2024-05-08 13:52:56+0000,Task is currently in progress.,7be23ed6dcb7eeabdfdccbacbcbd8094f98db078,MISSING,False,False,True,False,True,False,False,True,False,False,False,True,False,False
+2024-02-16 16:04:39+0000,Task was skipped due to pipeline conditions.,ecb8ba88d6852acdb7adda5a5cffbdcb3f6e7af9,MISSING,False,True,False,False,False,False,True,False,True,False,False,False,True,False
+2024-01-20 12:25:20+0000,Task execution failed.,cbff1e7bdb3054d07ab7a7b6e9994a36038bdff6,user_hob,True,False,False,False,False,False,False,False,False,False,False,False,False,False
+2024-08-23 06:33:44+0000,Task was skipped due to pipeline conditions.,b5239e949eafa4a17abb8eff6d33ffecafdf2e40,MISSING,False,False,True,False,False,True,False,False,False,False,True,False,True,False
+2024-01-28 11:59:32+0000,Task completed successfully.,e770bb96d0fa4c66b7cde3aeec1493ff8e61d6fa,MISSING,False,False,True,False,True,False,False,False,False,False,True,False,False,True
+2024-04-07 09:47:25+0000,Task execution failed.,c101f9b076604fdcdbafb2c0ad0dfce4bf1e12da,user_qon,False,False,True,False,False,False,True,False,False,False,False,False,False,False
+2024-12-30 03:51:31+0000,Task execution failed.,e3cbe7327534d4ca3a255f36ab0dd3ca5670edcd,MISSING,False,False,False,False,False,True,False,False,True,False,False,False,False,False
+2024-08-31 10:32:31+0000,Task is currently in progress.,57bc46f5aae9472ee7bcc0684bbe8443c48fe4ae,user_ncd,True,False,False,False,True,False,False,True,False,False,False,True,False,False
+2024-12-23 13:17:45+0000,Task was skipped due to pipeline conditions.,3ee2fae183ecdded6e8f63e110f32afda3dfadd2,MISSING,False,False,True,False,False,False,True,False,False,False,False,False,True,False
+2024-06-28 01:25:02+0000,Task execution failed.,b6b7a2047c1fdc462fc4c9efb9208dd86acec9b8,user_zeq,False,False,False,False,False,True,False,False,False,False,True,False,False,False
+2024-11-25 03:58:02+0000,Task was skipped due to pipeline conditions.,acce1ea5e92bf2d9d06eaffcfbef7885df2be51d,MISSING,False,False,False,False,False,False,False,False,False,False,True,False,True,False
+2024-05-17 05:17:34+0000,Task completed successfully.,0fe5ffb08f2c7a74cf1b501bd6a939e19a6f8578,MISSING,False,True,False,False,False,True,False,False,True,False,False,False,False,True
+2024-03-08 19:37:25+0000,Task is currently in progress.,39b3477ebfabfb0a6effc7138985dc86e841a8ed,user_xrk,False,False,True,False,False,False,False,False,False,False,True,True,False,False
+2024-07-17 03:01:07+0000,Task is currently in progress.,cbbb2268af37dfa9ef6312c0ffdaad9eedcfdace,MISSING,True,False,False,False,False,False,False,True,False,False,False,True,False,False
+2024-05-27 01:27:54+0000,Task completed successfully.,bc0a37a1de893d9bcdd17cd41aebf3d0a1e7edae,MISSING,False,False,False,False,False,False,True,True,False,False,False,False,False,True
+2024-11-14 23:43:58+0000,Task execution failed.,5dfe56cadfadcf80d7cf507cfc4c5afbcfaebfe2,MISSING,False,True,False,True,False,False,False,False,True,False,False,False,False,False
+2024-02-19 14:29:15+0000,Task is currently in progress.,95388fa8cea79d1dcd9370cdad4de85edf0b1cff,MISSING,False,True,False,False,False,False,True,False,True,False,False,True,False,False
+2024-05-14 19:16:44+0000,Task was skipped due to pipeline conditions.,b667d1ff708ffa1adfc1b3e22dfd3ccf6720bdad,MISSING,False,False,False,False,False,False,True,False,True,False,False,False,True,False
+2024-07-11 07:59:32+0000,Task completed successfully.,1aa3331b49508bcbeb37be39aa0a06a1b2f6a4c8,user_swx,False,False,True,True,False,False,False,False,False,True,False,False,False,True
+2024-12-24 04:31:33+0000,Task was skipped due to pipeline conditions.,200dcac4abcfddc4e0db567b09a71e19effa89f1,user_sjl,True,False,False,False,False,False,False,False,False,False,False,False,True,False
+2024-02-29 15:40:58+0000,Task is currently in progress.,7e0cfcde9e8f4cd7fad9dc8f8a34f1feca49b8fb,user_sjs,False,False,True,False,True,False,False,False,False,False,False,True,False,False
+2024-03-14 10:51:44+0000,Task was skipped due to pipeline conditions.,b2d127c5fda28814ce43e5eb6dcfcca85cc16c8d,MISSING,False,False,True,False,False,True,False,False,False,True,False,False,True,False
+2024-07-12 02:41:59+0000,Task completed successfully.,2a8ccaa3166433aa9ed5afe5913edad894ecf364,user_nuq,False,False,False,False,False,False,False,False,False,True,False,False,False,True
+2024-07-11 02:26:46+0000,Task was skipped due to pipeline conditions.,6b2a0cec59aa3eba0ffd7de5dc1a7ac4c6ecec2d,user_zfw,False,True,False,False,False,True,False,True,False,False,False,False,True,False
+2024-12-05 17:40:36+0000,Task execution failed.,0a213d5bba2aaea807ccbaf7dfff9b7bd1ffd5dc,user_voh,False,False,True,False,True,False,False,True,False,False,False,False,False,False
+2024-04-15 08:28:04+0000,Task is currently in progress.,b5d0d5e2f00fd5c9b1f3e1b7ac9e8b3ef66f6b1b,MISSING,False,False,True,True,False,False,False,False,True,False,False,True,False,False
+2024-11-06 01:20:30+0000,Task is currently in progress.,43bb95b49fac50fc976df2db8aa2c3f3b86493db,user_svx,True,False,False,False,False,False,False,False,False,False,True,True,False,False
+2024-04-13 15:38:01+0000,Task is currently in progress.,c0fb34e58b78bceed62ed6ecfbeca09c4d4ead2c,user_knk,False,False,False,False,True,False,False,False,True,False,False,True,False,False
+2024-09-17 01:43:02+0000,Task is currently in progress.,5acd68cd0a2a7d9ea3bbdadcb5557a906efddd3e,MISSING,False,False,False,True,False,False,False,False,False,False,False,True,False,False
+2024-10-26 20:26:37+0000,Task is currently in progress.,f0a41b3eb4cbabcabf0ad290ad9f9fa0acecbcdc,user_pld,False,False,False,True,False,False,False,True,False,False,False,True,False,False
+2024-03-21 05:10:33+0000,Task was skipped due to pipeline conditions.,f95e0e01fafa76d249b7e3cd4c2f6beecbb69ef0,user_nyu,False,False,True,False,False,True,False,False,False,False,True,False,True,False
+2024-02-11 05:59:37+0000,Task was skipped due to pipeline conditions.,ceacd7e0b2fdb9990a32798fd5c399c9b45bfc0b,user_vgk,False,False,False,False,False,False,True,False,True,False,False,False,True,False
+2024-08-31 19:49:56+0000,Task completed successfully.,58aba4fa923b2a1faf8cfddea7cfa256fb36c344,MISSING,False,False,True,False,False,False,True,False,False,True,False,False,False,True
+2024-05-24 15:05:17+0000,Task execution failed.,2fbabdb67e8af1b0c9d83bb4b7d9ae1e2ef9fcea,user_oxj,False,True,False,False,False,False,True,True,False,False,False,False,False,False
+2024-02-07 14:09:44+0000,Task execution failed.,912de249082bebe1f78caf765d6f9f0dfac72ab4,user_ymw,False,False,False,True,False,False,False,False,True,False,False,False,False,False
+2024-09-01 16:40:08+0000,Task was skipped due to pipeline conditions.,f79fc1e7ff93bceca4d0493fa60a8b6468c6ffd7,MISSING,False,True,False,False,False,False,False,True,False,False,False,False,True,False
+2024-05-13 23:37:47+0000,Task is currently in progress.,9cbfbec7f79cbb88a6811ad3a4a68ce29ccc0cea,user_eba,True,False,False,False,False,True,False,False,True,False,False,True,False,False
+2024-04-08 01:57:32+0000,Task execution failed.,5ee25cea8dcfad03f9ce1b82c956b1df67d02c0e,MISSING,False,True,False,False,True,False,False,True,False,False,False,False,False,False
+2024-04-22 01:46:05+0000,Task execution failed.,a844ac4d8abac63deae3d9caf546fded61faf9aa,MISSING,True,False,False,False,True,False,False,False,False,False,False,False,False,False
+2024-06-21 14:08:28+0000,Task execution failed.,e0665bfa81249c22e98762346082cce9f5b1ab26,user_zls,False,False,True,False,False,True,False,False,False,False,True,False,False,False
+2024-01-30 18:27:47+0000,Task is currently in progress.,781d90f68e9b28aed1bac884a78439ccfc2bd490,MISSING,False,False,True,False,False,False,False,True,False,False,False,True,False,False
+2024-03-22 03:26:53+0000,Task is currently in progress.,aaedeaeacbd98babcdcf7e432ba3fb4a40e1e2be,user_wyb,False,False,False,True,False,False,False,True,False,False,False,True,False,False
+2024-06-28 21:38:12+0000,Task is currently in progress.,f26fcbeba9b5ceb027ca932d89cc9922e5c73d6f,MISSING,False,True,False,False,False,False,False,True,False,False,False,True,False,False
+2024-02-15 19:26:40+0000,Task was skipped due to pipeline conditions.,cebaeabb3cd0ff68abfbc3db6ae7ebce3cb4dbf0,user_lvu,False,True,False,True,False,False,False,False,False,True,False,False,True,False
+2024-03-09 08:21:07+0000,Task execution failed.,fbc8dee68ac1b4d134dc4affefdaef171de33ead,user_qbk,False,True,False,False,True,False,False,True,False,False,False,False,False,False
+2024-07-06 01:26:51+0000,Task execution failed.,2b9c2adc4ccd8ebd602b980b63cd3a4e750000fd,user_wow,False,False,False,False,False,True,False,False,False,False,False,False,False,False
+2024-04-01 18:31:57+0000,Task completed successfully.,e11d5b7f3eaafc2cfacaefce5db0d4b1cbd5ade9,MISSING,True,False,False,False,True,False,False,True,False,False,False,False,False,True
+2024-01-23 03:48:04+0000,Task completed successfully.,9f55365d8f3bdcaffb771d2a8c38ffd34a5a86f6,user_chd,True,False,False,False,False,False,False,False,True,False,False,False,False,True
+2024-12-15 13:09:21+0000,Task is currently in progress.,8ceddd3725d390ab78cfcb863a0d07e9a0f8d3fd,user_mil,False,False,False,False,False,True,False,False,False,True,False,True,False,False
+2024-07-14 10:49:59+0000,Task is currently in progress.,bcdcb77daeb0e4f5043dffe014e7de4cbbc0ef2e,MISSING,True,False,False,True,False,False,False,True,False,False,False,True,False,False
+2024-02-26 05:49:24+0000,Task execution failed.,828d3e3aacac8f3812ffb89fbdfafe430e8eafcd,user_uxt,False,False,True,False,False,False,False,False,False,True,False,False,False,False
+2024-01-13 06:55:32+0000,Task is currently in progress.,ae05ebb26ff38fc70dd5b1fbd07df75257abfac4,MISSING,False,False,True,False,False,False,False,False,True,False,False,True,False,False
+2024-12-04 19:23:42+0000,Task was skipped due to pipeline conditions.,0e2ec54ee6fc2b21dee6bbedf117af8fe4e5be36,user_pgp,False,False,True,True,False,False,False,False,False,True,False,False,True,False
+2024-12-30 16:00:14+0000,Task is currently in progress.,3d241a18ceb3e7551ef8cc8ed7d11be912ffdcb3,MISSING,False,False,False,False,False,True,False,False,False,False,False,True,False,False
+2024-08-21 18:09:41+0000,Task is currently in progress.,1c5b3b53f888df4db96a7eaca55a3c4ca7bafe49,user_tkv,False,True,False,True,False,False,False,True,False,False,False,True,False,False
+2024-09-13 10:18:01+0000,Task is currently in progress.,11d9d0ccb8ff021c9af3d961b2a7ffe2b2085f72,user_jcx,False,False,False,False,False,False,True,False,True,False,False,True,False,False
+2024-03-16 17:38:59+0000,Task completed successfully.,f76d9f906545ad51d33e9bfffbfa9daf7ded21a8,MISSING,True,False,False,False,True,False,False,False,False,False,False,False,False,True
+2024-02-05 00:44:15+0000,Task execution failed.,eced5caaeeabcb7f4cf09b1d021f63d9486cea05,MISSING,False,True,False,False,False,True,False,False,False,False,False,False,False,False
+2024-07-15 17:34:30+0000,Task was skipped due to pipeline conditions.,a2da36c2ba1ac8d4061987a9f0aaff5ceda464ef,user_rru,True,False,False,True,False,False,False,False,False,True,False,False,True,False
+2024-06-18 09:58:06+0000,Task completed successfully.,dd4e298cf9c7bdc1a2a4a895ebe3a0a71cadba90,MISSING,False,False,True,False,False,False,True,False,True,False,False,False,False,True
+2024-08-15 20:19:29+0000,Task is currently in progress.,dc3a9acadeb2fdc511acdfbecc7c6a40fe6ce585,MISSING,False,True,False,False,False,False,False,False,False,False,True,True,False,False
+2024-05-22 10:25:41+0000,Task was skipped due to pipeline conditions.,45d148fdb90b3ab0eceeec415b7ec6d191adfe2e,user_rtr,False,False,False,False,False,False,False,True,False,False,False,False,True,False
+2024-07-02 15:21:08+0000,Task execution failed.,f754eb805bf1d12ad604fbc5aadcfc4356bda467,MISSING,False,False,True,False,False,False,True,False,True,False,False,False,False,False
+2024-05-13 12:54:22+0000,Task was skipped due to pipeline conditions.,cac12edc5af111d2c1554de076b79a7444aa3baf,MISSING,False,False,True,True,False,False,False,False,True,False,False,False,True,False
+2024-01-06 16:43:00+0000,Task is currently in progress.,402fed5edc4b4faaaff7ffedd4fe7cd18aecacda,user_spr,False,False,True,True,False,False,False,False,False,False,True,True,False,False
+2024-08-31 12:04:12+0000,Task is currently in progress.,fddc23cb5fd24dedcec866dc4187248cecdc9da5,user_ujd,False,False,False,False,False,True,False,False,True,False,False,True,False,False
+2024-06-28 04:50:04+0000,Task was skipped due to pipeline conditions.,edc4dafdebfa7eafbde988b1398da2f1abaf1c2f,MISSING,False,False,True,False,False,False,True,True,False,False,False,False,True,False
+2024-01-26 18:33:43+0000,Task was skipped due to pipeline conditions.,b985ceb5c6ecc36293c2ce5aae7fddf0f7fe17be,MISSING,False,False,False,False,False,False,True,False,False,False,True,False,True,False
+2024-01-18 13:48:56+0000,Task completed successfully.,41ccbcc1b1b9c752dfc7b9a64f8dea2dfd608a47,MISSING,False,False,False,False,False,False,True,False,False,False,True,False,False,True
+2024-08-29 08:49:46+0000,Task was skipped due to pipeline conditions.,44f5aaa3649d5a57032d2c3cdd63ffab5a7f9d2e,user_sku,False,False,False,False,False,True,False,True,False,False,False,False,True,False
+2024-11-18 15:43:05+0000,Task was skipped due to pipeline conditions.,a8c988fe1ed90ac7a8ae4b123b17d4ffbe3faab0,MISSING,False,False,True,False,False,False,True,False,False,False,True,False,True,False
+2024-02-08 07:20:05+0000,Task completed successfully.,e7f7d814dc4aa22afea6fbab1ed0afacb7ed2e5e,user_iix,False,False,True,False,False,True,False,False,False,True,False,False,False,True
+2024-07-08 12:47:25+0000,Task was skipped due to pipeline conditions.,0c6cd9dea7663bac9a05d428e33e7cf1babd0075,user_gcf,False,False,False,False,False,False,False,False,False,True,False,False,True,False
+2024-12-16 07:03:30+0000,Task execution failed.,d047f5dfbb6d73fdbb8ac67cfc4eef95fc3eea2f,MISSING,False,False,False,False,False,False,True,False,False,False,True,False,False,False
+2024-12-23 12:47:41+0000,Task completed successfully.,ded64c2cef5dc1d89a4d2ae3d763cdd2d63eef7f,user_yon,False,False,True,False,False,False,False,False,True,False,False,False,False,True
+2024-09-14 13:09:27+0000,Task is currently in progress.,e3347e5e21f2bdddae3ffd2f6d263d7ee4cdac2c,user_emj,False,True,False,False,False,False,True,False,False,False,True,True,False,False
+2024-03-26 03:22:59+0000,Task execution failed.,56bc9db2257d257c1cd4fd2e39dbbabbd9e78326,MISSING,False,True,False,False,False,True,False,True,False,False,False,False,False,False
+2024-08-07 10:48:51+0000,Task is currently in progress.,de24dbc168a3a4edd4ec3fd748f105dd1abfa7df,user_fuq,False,True,False,False,False,True,False,True,False,False,False,True,False,False
+2024-06-10 07:41:43+0000,Task completed successfully.,fdde05c1ebe26d28dbbbbff6dffd745cecbbffb9,user_bai,False,False,True,False,False,True,False,False,False,True,False,False,False,True
+2024-05-14 08:36:46+0000,Task is currently in progress.,1a896a7deb2c0b829f2600a3d5b0b8127290820b,MISSING,True,False,False,False,True,False,False,False,False,True,False,True,False,False
+2024-06-01 03:56:45+0000,Task execution failed.,bebd2ccbeccabcde092498eee73e71f6fecd4ba7,MISSING,False,True,False,False,True,False,False,False,False,False,True,False,False,False
+2024-11-26 03:39:25+0000,Task was skipped due to pipeline conditions.,bf892fdc1be12733cd4a5c97a1d95ebdd1ebb0f0,MISSING,True,False,False,False,True,False,False,False,False,False,True,False,True,False
+2024-05-15 14:11:37+0000,Task is currently in progress.,fb1efa950aab00c2ed8ae24ad82b281bedefbafb,user_slm,False,False,False,False,False,False,True,True,False,False,False,True,False,False
+2024-10-01 18:48:11+0000,Task was skipped due to pipeline conditions.,a7b62a6c5dbbcaaab7ee7c2ffadecc460c78f8cc,MISSING,False,True,False,False,True,False,False,False,False,False,False,False,True,False
+2024-05-04 20:39:16+0000,Task was skipped due to pipeline conditions.,b44eca1cbd9e18a3f6f4cf5983c2aa3be59b17de,MISSING,True,False,False,False,False,True,False,False,False,False,True,False,True,False
+2024-01-01 09:04:56+0000,Task completed successfully.,db0de6d07b980efcd2abaeac95b6faa9ee494dfb,MISSING,False,True,False,False,True,False,False,False,False,True,False,False,False,True
+2024-08-01 20:39:09+0000,Task was skipped due to pipeline conditions.,99e1eecf7a4aeaefe89a6ffecde2c677c800ecca,MISSING,False,False,False,False,True,False,False,False,False,False,False,False,True,False
+2024-05-02 04:12:34+0000,Task is currently in progress.,ee68cbd080ab39bc04cf24f07b9a5f2d7d4bcea6,MISSING,False,False,True,False,False,False,False,True,False,False,False,True,False,False
+2024-01-21 03:02:04+0000,Task is currently in progress.,2fec06bf0e7a70d9421cfec9db0f6bc5eac9cd6b,MISSING,False,True,False,False,False,True,False,False,True,False,False,True,False,False
+2024-07-10 20:01:08+0000,Task completed successfully.,fbaddc1b3b35ec1ec9a9eefd437ce5bd8d28e3b8,MISSING,False,False,False,True,False,False,False,False,False,True,False,False,False,True
+2024-12-14 19:23:16+0000,Task is currently in progress.,ee6381ce43ae8a9fa8f6ed0ab2345f1defbb9b3b,user_sde,False,True,False,True,False,False,False,True,False,False,False,True,False,False
+2024-11-20 01:16:53+0000,Task is currently in progress.,ebacb5133bcd8a30dfea196b5adbb683217d5c59,user_hkc,False,False,False,False,True,False,False,False,True,False,False,True,False,False
+2024-03-22 19:10:59+0000,Task was skipped due to pipeline conditions.,2ef454a108d9acfcc5bcfeadfdcc3e64a8a1bf0a,MISSING,True,False,False,True,False,False,False,True,False,False,False,False,True,False
+2024-04-29 15:48:41+0000,Task was skipped due to pipeline conditions.,f2e963b7fd25f1dbedb76a43a0ff18bdd0aabab1,MISSING,True,False,False,False,False,False,True,False,True,False,False,False,True,False
+2024-02-15 21:32:54+0000,Task is currently in progress.,f4ebc0e54bd1adeff13b0fc9c5b6ed4a58e71c10,user_arn,False,False,False,False,False,True,False,True,False,False,False,True,False,False
+2024-11-02 21:57:50+0000,Task is currently in progress.,abdaeefcbcec409a3fd72dcaf2ddac796d7d08dc,user_vga,False,True,False,False,False,False,False,False,False,False,False,True,False,False
+2024-10-11 05:51:24+0000,Task was skipped due to pipeline conditions.,5452f241b6a6afce59f678db9fb0ccdbeac3c20f,MISSING,False,True,False,False,False,False,False,False,True,False,False,False,True,False
+2024-06-08 11:42:00+0000,Task was skipped due to pipeline conditions.,185f09e38c31fccffab8e6d693b3899cb1ba7db3,user_ssi,False,False,False,True,False,False,False,False,False,False,False,False,True,False
+2024-11-20 10:21:33+0000,Task execution failed.,ed0ccaf4f2bf0caef2f91ff1a7afb9a84ac9a3dd,MISSING,True,False,False,False,False,False,False,False,False,True,False,False,False,False
+2024-08-29 23:36:53+0000,Task completed successfully.,22c92d6ec9f777efabeb53cceb81d8efffc2eecf,MISSING,False,False,True,False,True,False,False,False,False,False,False,False,False,True
+2024-05-12 10:35:45+0000,Task execution failed.,d4fddffdbf19aa56f58123ef3ec7df5d861a55ac,user_ucl,False,False,True,False,False,False,True,False,False,False,False,False,False,False
+2024-03-28 20:16:54+0000,Task execution failed.,1ddf100cd830bef9c52aec6c9efeb6a25abd58d8,user_vsj,False,False,False,False,False,False,True,True,False,False,False,False,False,False
+2024-07-31 23:08:49+0000,Task was skipped due to pipeline conditions.,d2a4ddea8e9f2de2daab447cec2456dbfdcdb4dd,user_fxq,False,False,False,False,False,True,False,False,False,False,True,False,True,False
+2024-03-11 04:14:23+0000,Task was skipped due to pipeline conditions.,c9abf33be1be6dde5a8dc406deabefbf7d6d3efd,MISSING,True,False,False,False,False,False,True,True,False,False,False,False,True,False
+2024-08-14 12:42:00+0000,Task was skipped due to pipeline conditions.,16d4bbc6f8d34dbd0455cce0a1ca0ebbcaea8f7f,user_quf,False,False,False,True,False,False,False,False,False,False,False,False,True,False
+2024-09-27 21:39:52+0000,Task is currently in progress.,cf8aae3d1e8aa62dd7fe2eebdfc4e6199dacdbea,user_voe,True,False,False,False,False,False,True,False,False,False,True,True,False,False
+2024-12-28 02:51:26+0000,Task completed successfully.,9ea0642ecc72ef2db9dafad9cd829fd6cb52cfbb,MISSING,True,False,False,False,False,True,False,False,False,False,False,False,False,True
+2024-09-24 04:27:37+0000,Task execution failed.,929115e4afe2a0eafa65f1b42dd8dd4cfe2aa1cc,MISSING,False,True,False,False,False,False,False,False,False,True,False,False,False,False
+2024-03-03 00:51:09+0000,Task execution failed.,c94fefcbddc622bfff19aeea1eacd43073cf32e6,MISSING,False,False,False,True,False,False,False,True,False,False,False,False,False,False
+2024-07-02 20:45:52+0000,Task execution failed.,7badc829a2afe29dabc12acac5c7b2af0dc7b51f,MISSING,True,False,False,True,False,False,False,False,False,False,True,False,False,False
+2024-04-06 14:13:52+0000,Task completed successfully.,1aadb76194dfc62fee9ecdb1541b7dd59dcbb4ea,MISSING,False,False,True,False,True,False,False,False,False,False,False,False,False,True
+2024-02-03 10:36:12+0000,Task is currently in progress.,dc7ad02d1be9b7efaf44d7edd1d67d99afc2d2f4,user_ysu,False,True,False,False,False,False,False,False,True,False,False,True,False,False
+2024-12-23 08:58:00+0000,Task execution failed.,9ca9eab8dda3aa0d3967b82cba776592da136d43,user_hek,False,False,False,False,False,True,False,False,False,False,True,False,False,False
+2024-03-14 06:16:44+0000,Task was skipped due to pipeline conditions.,3ef4a97fab246bf0d3ca303179e4d1dccccfe4cf,user_lhi,False,False,True,True,False,False,False,False,True,False,False,False,True,False
+2024-07-18 10:08:34+0000,Task is currently in progress.,a71817d3861f4999dac6bdf8dbef8b46ecaaed08,MISSING,False,False,True,False,False,False,True,True,False,False,False,True,False,False
+2024-11-19 18:09:50+0000,Task execution failed.,d13c6edecebfb85ad67f9a9cb68a7c1a18df0ed1,user_pvn,False,True,False,False,False,False,False,False,False,False,False,False,False,False
+2024-07-04 01:39:22+0000,Task was skipped due to pipeline conditions.,deac7e438a2caf7ce6f5abac3ef6cbe75958ff2a,user_tzq,False,False,False,False,False,False,True,False,False,True,False,False,True,False
+2024-06-13 19:03:48+0000,Task is currently in progress.,eb62312e395ad6ddbd7acce77eaa5e6c2613c65f,MISSING,False,True,False,False,True,False,False,False,True,False,False,True,False,False
+2024-07-23 12:37:12+0000,Task was skipped due to pipeline conditions.,efce024d6230beac1b31ee68afa5cd543a2600b6,MISSING,False,False,True,False,False,False,False,False,False,False,False,False,True,False
+2024-05-25 15:28:36+0000,Task completed successfully.,a271cebfa96f867bc66cfecda87adae5dd9b44bb,user_yve,False,False,False,False,False,False,True,True,False,False,False,False,False,True
+2024-12-27 07:39:51+0000,Task is currently in progress.,3f96d56b32ca6822a0aacfcbffa83da2404f5091,MISSING,False,False,True,False,True,False,False,False,False,False,False,True,False,False
+2024-05-24 21:03:38+0000,Task execution failed.,5cf9b16ddf13107fa88240bae68ed010f6acadfc,MISSING,True,False,False,False,False,True,False,False,False,True,False,False,False,False
+2024-12-02 09:15:09+0000,Task was skipped due to pipeline conditions.,5e0eafa6b39fb805fd2d98eedbe68c7aec3b59e2,MISSING,False,True,False,False,True,False,False,False,False,True,False,False,True,False
+2024-02-09 16:26:27+0000,Task execution failed.,4659cbbe75adbaede71181d9ecfe2ae9948e3c56,MISSING,True,False,False,False,False,True,False,False,False,False,True,False,False,False
+2024-02-25 07:00:08+0000,Task completed successfully.,49c9d1a9efbeb1bf2c3f628b0627f3fb9e16eda7,MISSING,False,False,True,False,False,True,False,True,False,False,False,False,False,True
+2024-12-02 22:36:39+0000,Task is currently in progress.,205965f1be5c2cfae4d4f7ae4e7b00cfaf401766,MISSING,False,False,False,False,True,False,False,False,False,True,False,True,False,False
+2024-10-30 13:27:21+0000,Task execution failed.,ada247e13a05000cafcb077d897e1ededded52da,user_gqz,False,True,False,False,False,False,False,False,False,False,True,False,False,False
+2024-10-08 14:29:46+0000,Task execution failed.,c7cdd10a0e049fe6eabd6bb33fb09bc6b3cd0f61,user_tqb,True,False,False,False,False,False,False,False,False,False,False,False,False,False
+2024-05-23 04:18:03+0000,Task execution failed.,e8a3c051c59b4ac6427c1336f935cf2e8e0284bf,user_iue,False,False,False,True,False,False,False,False,False,False,False,False,False,False
+2024-10-04 08:06:37+0000,Task execution failed.,fad42d92fa21f3c25aec1bf499f2d12f0b950bd7,user_cxl,False,False,False,True,False,False,False,False,False,True,False,False,False,False
+2024-04-26 18:01:39+0000,Task was skipped due to pipeline conditions.,d587faa2afcae21ffbb94a5ef6cdc8cea6a3eef9,user_cfv,False,True,False,True,False,False,False,False,False,True,False,False,True,False
+2024-11-28 22:52:21+0000,Task was skipped due to pipeline conditions.,1fc0e2e7fdeee491c8ead8c7a00e8fcab8bf780e,MISSING,False,False,False,False,False,True,False,True,False,False,False,False,True,False
+2024-05-21 22:55:16+0000,Task was skipped due to pipeline conditions.,bbed47b5beb5a1f75b92363f48ae4edef8f28ca4,user_hel,False,False,True,False,False,False,True,False,True,False,False,False,True,False
+2024-11-25 04:26:39+0000,Task execution failed.,9c79fe9dfb91e8e9d6ae592c0fc15cf9d7ff2ba6,user_ixh,False,False,True,True,False,False,False,False,False,False,True,False,False,False
+2024-12-02 11:55:03+0000,Task completed successfully.,faffc02f5a8c9ef309d244ea25e2ed3abdbf9e5d,MISSING,False,True,False,False,True,False,False,True,False,False,False,False,False,True
+2024-07-10 00:17:46+0000,Task completed successfully.,a30ca35aafcecedc4a9c1a9aab9d13f7353fcc76,user_wnv,False,True,False,False,False,False,True,True,False,False,False,False,False,True
+2024-09-07 06:42:11+0000,Task is currently in progress.,df3d43cbd96a371baf5d481ae2ce985ea9dbf570,MISSING,True,False,False,False,False,True,False,False,False,True,False,True,False,False
+2024-05-22 12:28:34+0000,Task was skipped due to pipeline conditions.,61b3c0d3bef9da1e5897bf3bc6a0fdf2c8a8f68d,MISSING,True,False,False,False,False,False,True,False,True,False,False,False,True,False
+2024-01-12 01:35:14+0000,Task execution failed.,18aaedb16d1501e6fdae03a6b88dcaedda55d2a9,MISSING,True,False,False,False,False,True,False,True,False,False,False,False,False,False
+2024-01-12 22:50:57+0000,Task completed successfully.,bc9bb5d143e99d0eacda97eac3efa0dc7ae56bac,MISSING,False,False,False,False,False,False,True,True,False,False,False,False,False,True
+2024-09-26 13:11:43+0000,Task execution failed.,b6a8a08fd1fdf6040b4e32f210d01fd55d8a4aef,user_lkq,False,True,False,False,False,True,False,False,False,False,False,False,False,False
+2024-04-14 04:48:14+0000,Task is currently in progress.,4ee63fb4ac80b3faececa0f63ffe092fa4f1f9a3,MISSING,False,False,True,False,False,False,True,False,False,False,True,True,False,False
+2024-08-22 17:24:28+0000,Task execution failed.,da8d496a45aa8ec68e792bac2eecdda8c8b19fa5,user_muv,False,False,False,True,False,False,False,True,False,False,False,False,False,False
+2024-03-07 01:27:59+0000,Task completed successfully.,3eafb973e3963ebdf91c494fddebbe166e4ba9b5,user_bdn,True,False,False,False,False,False,False,False,False,True,False,False,False,True
+2024-06-15 08:38:55+0000,Task execution failed.,9bc0001d23cb8b7ebd16ed40afebffe95e97be8e,MISSING,False,True,False,False,False,True,False,False,False,False,False,False,False,False
+2024-04-10 08:13:10+0000,Task execution failed.,92c04df02542aefa9d9aaba64efa98b601052de7,user_sue,False,True,False,False,False,True,False,True,False,False,False,False,False,False
+2024-07-19 22:43:32+0000,Task was skipped due to pipeline conditions.,f895adcdab3ff37bac41fc5663fecca8adbe4154,user_ndo,False,False,True,False,False,False,False,False,False,True,False,False,True,False
+2024-11-02 04:20:38+0000,Task execution failed.,c03470584dae55b96eaa836eee17979bac1dcaff,MISSING,False,False,True,True,False,False,False,True,False,False,False,False,False,False
+2024-07-30 19:20:41+0000,Task was skipped due to pipeline conditions.,a4a0a86346be4e17bacd731b77dbcfa0bac4bcba,user_kfa,False,False,False,False,False,False,False,False,False,False,True,False,True,False
+2024-06-06 14:40:04+0000,Task execution failed.,afbbeb42db5deaec2251ef4d0ee1aa0dd711dad3,MISSING,False,False,False,False,False,False,True,False,False,True,False,False,False,False
+2024-04-22 01:46:20+0000,Task is currently in progress.,64adadfdc21ba14dddb50eaf5f7efdbcf4f5abcc,user_jdj,False,True,False,False,True,False,False,False,False,False,True,True,False,False
+2024-03-30 14:14:28+0000,Task execution failed.,8d2bb898ec2ef14d1e915dd1acfdfda852e3a8a0,MISSING,False,False,True,False,False,False,False,False,False,False,False,False,False,False
+2024-04-23 04:52:48+0000,Task completed successfully.,b8f817bf3c8d9ffcfde85c29aa20bcc6df64a2e2,user_kwg,False,False,False,True,False,False,False,True,False,False,False,False,False,True
+2024-12-19 22:03:24+0000,Task was skipped due to pipeline conditions.,c29fad1eaceb35293b33a2ba78e3a44fc55fe75d,MISSING,True,False,False,False,False,True,False,False,False,False,False,False,True,False
+2024-10-23 17:13:42+0000,Task was skipped due to pipeline conditions.,b08fc4ad1ffae64a1115bbcbccd1cdd3dacaf339,MISSING,True,False,False,False,False,False,False,False,False,False,False,False,True,False
+2024-02-11 20:18:29+0000,Task completed successfully.,cceed0485eed3bf9a94d82fdfd84ddd90b054a56,MISSING,False,False,True,False,True,False,False,False,True,False,False,False,False,True
+2024-08-29 20:28:26+0000,Task was skipped due to pipeline conditions.,d5fc05ae4bec7fea3af78e10af3fdd9cb8aa7bf1,user_quq,False,True,False,False,False,True,False,False,False,True,False,False,True,False
+2024-05-13 09:39:07+0000,Task was skipped due to pipeline conditions.,af3e21debfffbbbac5bbca49ae4e2fd1a3c1d3e7,user_trc,False,False,False,False,False,False,True,False,True,False,False,False,True,False
+2024-11-11 00:33:05+0000,Task completed successfully.,d86ea6d9b7ae02b45db3f6ff5f23db2cac0b564e,user_fxh,False,False,True,False,False,True,False,True,False,False,False,False,False,True
+2024-04-05 03:03:35+0000,Task was skipped due to pipeline conditions.,2e0d0a5a0abdbce23c534c55c073aa319dc9c9bb,user_ufq,False,False,True,False,False,True,False,False,False,True,False,False,True,False
+2024-12-24 06:41:06+0000,Task was skipped due to pipeline conditions.,bb0dcddd74c3bd66d3bfa0eab8d05cb0e35b921d,user_bug,False,False,False,False,True,False,False,False,False,True,False,False,True,False
+2024-12-27 18:00:01+0000,Task was skipped due to pipeline conditions.,da2fcf1b54ff4b3bca0849fb3581fba7572db33e,user_pst,False,False,True,False,True,False,False,False,True,False,False,False,True,False
+2024-06-19 04:13:25+0000,Task completed successfully.,c7fbeacbae1ede3bf6eb2aae41073c52cbc5abec,MISSING,True,False,False,False,False,False,True,True,False,False,False,False,False,True
+2024-01-31 00:30:41+0000,Task execution failed.,13edebc4ad344888d9b66edadccfe4b97aebccdd,MISSING,False,True,False,False,False,False,False,False,False,False,False,False,False,False
+2024-07-16 12:59:35+0000,Task completed successfully.,bea933ce647dc3130bc2fb364aaeb4a5fefb2c92,user_zir,False,True,False,False,False,False,True,False,False,False,True,False,False,True
+2024-05-27 17:28:09+0000,Task is currently in progress.,7ddd7bcbb4ea4dfd9a40d4c5deaa6cbffe1caeed,user_sat,False,False,True,False,False,False,True,False,False,False,True,True,False,False
+2024-03-09 21:41:57+0000,Task was skipped due to pipeline conditions.,ba4b5dcf94500ba2faeb3eb0e5272e047c870cdc,user_ykj,False,False,False,False,False,False,False,False,False,True,False,False,True,False
+2024-04-04 23:57:57+0000,Task was skipped due to pipeline conditions.,8afd7f4cdb4b6fef8b8bd9dafcfcd3cd7bd2bed7,user_uxe,False,False,False,False,False,True,False,True,False,False,False,False,True,False
+2024-01-30 19:07:34+0000,Task was skipped due to pipeline conditions.,eab7660c721dd1bffb2d60cfb3feeafb87a9b395,user_ybi,False,False,False,True,False,False,False,False,True,False,False,False,True,False
+2024-05-31 21:58:20+0000,Task execution failed.,fdf8aea79faafbe069ffbcd1a4d217f57dc6da2d,user_lwl,False,True,False,True,False,False,False,False,True,False,False,False,False,False
+2024-05-12 01:12:53+0000,Task was skipped due to pipeline conditions.,34a0e9febb330ccda877d084510e9fc2bb3b4edc,MISSING,False,False,False,True,False,False,False,False,False,False,False,False,True,False
+2024-08-09 16:08:35+0000,Task completed successfully.,dcb29b9ed085b1f9b0eaa3daea8f81868d21baab,MISSING,True,False,False,False,False,False,True,True,False,False,False,False,False,True
+2024-08-06 21:35:24+0000,Task execution failed.,7fdacaca6c898de0aecde29e12c9125f5befad9e,user_cae,False,True,False,False,False,False,True,True,False,False,False,False,False,False
+2024-12-13 07:06:51+0000,Task is currently in progress.,23bbd88bc5cfde4f8df8f33c2b4dddc6ffdf56fb,MISSING,False,False,True,False,False,False,False,False,False,True,False,True,False,False
+2024-11-18 09:33:30+0000,Task execution failed.,b48ddc51c29ac93dd0b185a1cd8bec04ebe07267,user_zzb,False,False,True,True,False,False,False,False,False,False,False,False,False,False
+2024-09-01 12:30:00+0000,Task execution failed.,1e64c5cb34cabd0a996ee5e22d5d0b3f109be84d,MISSING,True,False,False,False,False,True,False,False,False,False,True,False,False,False
+2024-03-13 14:17:13+0000,Task completed successfully.,6b2b8c12ec7a0dcbf9d69743e20275d4d9ad05c7,MISSING,True,False,False,False,True,False,False,False,False,True,False,False,False,True
+2024-05-19 06:39:06+0000,Task was skipped due to pipeline conditions.,bca41a3fbb027cd151b3e7d04cef1dd14a072caa,MISSING,False,False,False,False,True,False,False,True,False,False,False,False,True,False
+2024-12-08 22:07:20+0000,Task execution failed.,d77f0ffeea9acaad83398574bc71ffc73ddadcff,user_cnq,False,False,False,True,False,False,False,False,False,True,False,False,False,False
+2024-09-28 16:50:50+0000,Task is currently in progress.,adbba28dd58cb70ca604a81b0ec5a20bca1f0515,user_fvs,False,True,False,False,False,False,True,False,False,False,False,True,False,False
+2024-11-03 00:47:51+0000,Task was skipped due to pipeline conditions.,1e18dcb5dba00bd15ef47ed1a65533360b059ca8,MISSING,True,False,False,False,False,True,False,False,True,False,False,False,True,False
+2024-04-08 00:20:04+0000,Task was skipped due to pipeline conditions.,4b024679afad7da4425aa284a12ac023ba041043,user_pmw,True,False,False,False,True,False,False,False,False,False,False,False,True,False
+2024-09-05 11:31:54+0000,Task was skipped due to pipeline conditions.,c94e559ba3aefb1ef15b9e22db0fd06017a1f4ff,MISSING,True,False,False,False,True,False,False,False,False,True,False,False,True,False
+2024-02-29 23:47:58+0000,Task execution failed.,d0145c0a3ebd621ceb8c83acd2a73e7168aabaef,user_hgq,False,True,False,False,False,False,True,False,True,False,False,False,False,False
+2024-01-07 21:28:11+0000,Task was skipped due to pipeline conditions.,ae6ccae0e8ff543f1cb2de8b292bc06c077fbf95,user_mhv,False,True,False,True,False,False,False,False,False,False,False,False,True,False
+2024-03-20 00:59:35+0000,Task execution failed.,f9701612cebc3adccf99cfe976ffc9b4bdaf1ebd,MISSING,True,False,False,False,False,False,False,False,False,False,False,False,False,False
+2024-04-15 10:13:15+0000,Task is currently in progress.,eed2df4ebcaabced7bcb172728e3d89e4fa7fba5,MISSING,False,False,True,False,True,False,False,True,False,False,False,True,False,False
+2024-02-24 21:01:50+0000,Task was skipped due to pipeline conditions.,faf9f9dea545683bbcc18fabc5ff788fcfab2fdc,user_oei,False,False,True,False,True,False,False,False,False,False,False,False,True,False
+2024-07-17 18:11:24+0000,Task completed successfully.,d11b6bdd5cc11ed9a5b3b5f6c4e30bebdba5d0da,MISSING,False,False,False,True,False,False,False,False,True,False,False,False,False,True
+2024-08-29 10:40:01+0000,Task is currently in progress.,4c90a93e70cabddddfaa345cd88fe7cbbac6a84c,user_cpn,True,False,False,False,False,False,True,False,True,False,False,True,False,False
+2024-03-30 04:12:17+0000,Task was skipped due to pipeline conditions.,bb8ebbae9d403ba72d3dd61cfec03b5a5eddcaff,MISSING,False,False,False,True,False,False,False,False,False,False,True,False,True,False
+2024-02-12 10:09:33+0000,Task execution failed.,efbdf29f2bb6fae1c6bbe54100daccacbf4fee49,MISSING,False,True,False,False,True,False,False,True,False,False,False,False,False,False
+2024-07-04 05:55:46+0000,Task completed successfully.,ffa120affbe33aef3ce7a1182b7cae163cd81147,MISSING,False,True,False,False,False,False,True,False,False,False,True,False,False,True
+2024-12-27 17:31:18+0000,Task was skipped due to pipeline conditions.,f9afcdbc306e49f0aa61c4ba4ee39afd363bdf13,user_khz,False,False,True,False,False,True,False,True,False,False,False,False,True,False
+2024-04-24 03:20:29+0000,Task completed successfully.,52fbde8d3fb5be8e3ddc4f6bb7ae9eadeb8b30dd,user_rou,False,False,False,False,False,False,False,False,False,True,False,False,False,True
+2024-02-02 22:45:45+0000,Task completed successfully.,fdc38baaf0dc1a09aff5fafca2ed123e98ec684d,user_xbm,False,False,False,False,False,False,True,False,False,False,True,False,False,True
+2024-03-21 23:57:27+0000,Task execution failed.,cc750edbedaaaff7eb58118aa3cdf5f5a7dfba37,user_thk,True,False,False,True,False,False,False,True,False,False,False,False,False,False
+2024-10-14 15:56:05+0000,Task was skipped due to pipeline conditions.,ebacaef91efb9212d4f2caf22d4aafba8aceecbc,MISSING,False,False,True,False,False,False,True,False,False,True,False,False,True,False
+2024-12-08 15:44:48+0000,Task completed successfully.,ba7dc9fed0bfaf3abf6b03ccdf0d7e723aa4ec2b,MISSING,False,True,False,False,False,False,False,False,False,False,True,False,False,True
+2024-05-18 17:17:00+0000,Task execution failed.,eff2c2e7fbd6f895f32aecbcadfef19ecf9ecfa2,MISSING,False,False,False,False,False,False,True,False,False,True,False,False,False,False
+2024-04-26 23:25:19+0000,Task was skipped due to pipeline conditions.,1405d08d9dca8fef8a11dd1edbc19c4af5fbf426,MISSING,False,False,True,False,False,True,False,False,True,False,False,False,True,False
+2024-09-24 07:12:36+0000,Task was skipped due to pipeline conditions.,9e0acefe22b3fd4defbd8a369120e9a3dfcdfc70,MISSING,False,False,False,False,False,False,True,False,False,False,False,False,True,False
+2024-11-14 13:36:39+0000,Task was skipped due to pipeline conditions.,effdf841ace44fab3ca553aedce82c48694f73f2,user_exr,False,False,False,True,False,False,False,False,True,False,False,False,True,False
+2024-04-19 12:38:16+0000,Task is currently in progress.,88e7fd430d80793c3baa6463ea3dccad6a4dbcad,MISSING,False,True,False,False,False,True,False,False,False,False,False,True,False,False
+2024-04-02 11:09:41+0000,Task is currently in progress.,d9d4dab4e53ab31e0a69aa5c5fc4891b1fc4ce5a,user_eor,False,True,False,False,False,False,True,False,False,False,False,True,False,False
+2024-07-31 23:09:34+0000,Task was skipped due to pipeline conditions.,ca9fdf59bed409bcaee7ad1da0d4dd2dc6eaeabf,user_umb,False,False,False,False,False,False,True,False,False,False,False,False,True,False
+2024-04-29 23:04:11+0000,Task is currently in progress.,be95bff604795cc8cee8dccce15e1cc24fb7fe9d,MISSING,False,False,False,False,False,True,False,True,False,False,False,True,False,False
+2024-09-07 21:41:38+0000,Task is currently in progress.,baa286f40b1b3dcf7c0e4d96cc98be4a6ec5b934,user_bqs,False,False,False,False,False,False,False,True,False,False,False,True,False,False
+2024-07-05 22:21:14+0000,Task is currently in progress.,bcf616c91e8addaffd432f807ceddda4abdd49ba,user_qsg,False,False,False,False,False,False,True,False,False,False,True,True,False,False
+2024-06-01 02:47:12+0000,Task is currently in progress.,eb21dff0baeefa2ec3709c3e64806420badbf9db,user_duw,True,False,False,True,False,False,False,False,False,False,True,True,False,False
+2024-04-30 16:12:16+0000,Task is currently in progress.,a5bc79ddbeabb54fddfd7ff6b1dcad0fbef0cab1,MISSING,False,False,False,False,False,False,False,True,False,False,False,True,False,False
+2024-12-21 15:14:45+0000,Task is currently in progress.,3c6e9cbb6a39d6596faf93e751fddcd4e7c06b0e,user_isg,True,False,False,False,False,False,False,False,False,True,False,True,False,False
+2024-06-17 17:12:05+0000,Task is currently in progress.,57792abdffa8505cbb044cb8a2acba5184cfb8de,MISSING,False,False,False,True,False,False,False,True,False,False,False,True,False,False
+2024-01-31 18:39:04+0000,Task is currently in progress.,b87dd21d59777fae0ffaf4ef0e2e7c01eed35cca,MISSING,False,True,False,False,False,True,False,False,False,False,True,True,False,False
+2024-02-02 03:26:07+0000,Task completed successfully.,fbaaeb3f4ab1d9be97bd1ac899e0feded14daee9,MISSING,True,False,False,False,False,True,False,True,False,False,False,False,False,True
+2024-07-18 22:11:44+0000,Task was skipped due to pipeline conditions.,ca471e6bdcc9cdfe2ead8ac9095bdfbe94099fe9,user_etg,False,False,True,True,False,False,False,False,False,True,False,False,True,False
+2024-08-26 20:53:30+0000,Task was skipped due to pipeline conditions.,674cced19eedbbdb91ab7abec2f85fbda67bcdfa,user_uwk,False,True,False,False,True,False,False,False,False,False,True,False,True,False
+2024-01-11 22:23:31+0000,Task is currently in progress.,d3cf3d9ade6b36758f20dfd7a3da90ce91adb55e,MISSING,False,False,False,False,False,False,True,False,False,True,False,True,False,False
+2024-12-05 12:59:07+0000,Task completed successfully.,ebfb2a60502cda8bad7debbf5feb9845d05abaec,MISSING,False,True,False,False,False,False,True,False,False,True,False,False,False,True
+2024-08-20 04:18:25+0000,Task execution failed.,78be0f3ac385cdd0c1087ffafa5eb7d1be94758e,user_pcx,True,False,False,False,False,True,False,False,False,True,False,False,False,False
+2024-03-22 08:44:15+0000,Task was skipped due to pipeline conditions.,5ccf4e02f9daa1d28ae515d9bc9fc345d0c78f0c,user_tqo,False,False,False,False,True,False,False,False,False,True,False,False,True,False
+2024-08-29 00:06:26+0000,Task is currently in progress.,1385aa7aed8f4bf5bebcfbde9a8e3f7acbf4b96b,MISSING,True,False,False,False,False,True,False,False,True,False,False,True,False,False
+2024-01-06 20:30:03+0000,Task completed successfully.,120a51aaa91d6df9bd52ff1d892f05b0abcbe68e,user_cxd,False,True,False,False,False,True,False,False,False,False,False,False,False,True
+2024-11-16 21:02:27+0000,Task completed successfully.,62fc4bead754cce9a0940f5f503a4fdefab85e5c,user_wth,False,False,False,False,True,False,False,False,False,True,False,False,False,True
+2024-10-26 11:59:18+0000,Task is currently in progress.,f8f55d852e7ddbfddabf3addaa9c9dd80e60f7ef,MISSING,True,False,False,False,False,False,True,False,False,False,True,True,False,False
+2024-08-08 16:06:56+0000,Task execution failed.,0dbf5e8a643368cbaa6cff9e926b35cdb6bafced,user_ahc,False,False,False,False,True,False,False,False,False,False,True,False,False,False
+2024-02-24 10:39:53+0000,Task completed successfully.,bdcc5b758c44bcfd9cf86ab2961cace6e1bfebed,MISSING,True,False,False,False,True,False,False,True,False,False,False,False,False,True
+2024-02-29 21:46:22+0000,Task is currently in progress.,7d4b471d27c74f783754a0a403bffe65a42ec0d3,MISSING,False,True,False,False,True,False,False,False,False,False,False,True,False,False
+2024-06-01 12:35:38+0000,Task completed successfully.,857a16c851b534b506474a54e8b3dc24adaedeaf,user_uyx,True,False,False,True,False,False,False,False,False,False,True,False,False,True
+2024-09-03 22:27:07+0000,Task is currently in progress.,afb9d35bfea4da317629000dbd9cb89d2df86db7,user_ilb,True,False,False,False,False,True,False,False,False,True,False,True,False,False
+2024-12-20 08:40:51+0000,Task execution failed.,1b5e7cceee8fb923b2fff167cfa3cdf4e81eaecb,user_yso,True,False,False,False,False,False,True,False,True,False,False,False,False,False
+2024-09-13 17:06:26+0000,Task completed successfully.,debad70fd77d13391fb29babfba8489cbe8120cc,MISSING,False,False,False,False,True,False,False,True,False,False,False,False,False,True
+2024-03-31 17:42:07+0000,Task was skipped due to pipeline conditions.,c8f5524adaacc4c6eddeafebcac94e6c2faa8bbf,user_jyf,False,True,False,False,False,True,False,False,True,False,False,False,True,False
+2024-10-28 02:15:36+0000,Task is currently in progress.,cc5da5b11d09110ecdacd370d68d9adb44149def,MISSING,True,False,False,False,False,True,False,True,False,False,False,True,False,False
+2024-06-06 20:16:31+0000,Task completed successfully.,cb30b82a39746bdab9c6a52730bac347e3bc0aeb,MISSING,False,False,True,True,False,False,False,False,False,False,False,False,False,True
+2024-12-31 01:48:33+0000,Task completed successfully.,52f4f3bcbeabcbbaca97b5bb7e3507419f91ecbe,MISSING,False,False,True,True,False,False,False,False,False,False,False,False,False,True
+2024-11-07 14:57:35+0000,Task is currently in progress.,ed4da57b64da9ac1bc7ba9bb3dca88e9c37290ea,MISSING,False,True,False,False,False,False,False,True,False,False,False,True,False,False
+2024-06-02 16:02:58+0000,Task completed successfully.,dbe59ea6be1ed51a8e5fc43c1cca03846b3c49a0,user_kxv,True,False,False,True,False,False,False,False,True,False,False,False,False,True
+2024-09-06 03:13:38+0000,Task execution failed.,3ab0c1abd706dcdea632bfd0cdd88d31d7fc21a1,user_qkr,True,False,False,False,False,False,True,False,False,True,False,False,False,False
+2024-05-30 05:36:12+0000,Task completed successfully.,8acccb8dfab6db102eba5efdccdefa0afae8d65a,MISSING,False,False,False,False,False,False,True,False,False,True,False,False,False,True
+2024-02-18 07:20:21+0000,Task execution failed.,89cb3b5ee8e59e51c4ea2126be7cf9e3aaced4db,MISSING,False,False,False,False,False,True,False,True,False,False,False,False,False,False
+2024-07-16 16:20:11+0000,Task execution failed.,3355ccc563ab48c0ababdce81dae996c04a3ed69,user_saj,False,False,True,False,False,False,False,False,False,True,False,False,False,False
+2024-03-28 23:02:07+0000,Task is currently in progress.,a98d6a07fddeec440dc8b63aacffe8c71d2c8f6a,MISSING,False,True,False,False,False,False,False,False,False,False,False,True,False,False
+2024-01-03 10:47:54+0000,Task was skipped due to pipeline conditions.,f3c15cdbbb0bce2831217b7af943a7d301bfeca3,MISSING,False,True,False,True,False,False,False,True,False,False,False,False,True,False
+2024-07-28 21:51:11+0000,Task is currently in progress.,5ce5c2beadd3ef6bdd4553bdca0d197acd2091bd,user_hzj,False,True,False,True,False,False,False,False,False,False,False,True,False,False
+2024-01-24 22:48:12+0000,Task was skipped due to pipeline conditions.,78dc4befb9aef7f9fd1b92e3dd5ba9bdb0a297c6,user_woh,False,False,True,True,False,False,False,False,False,False,False,False,True,False
+2024-11-04 09:20:57+0000,Task execution failed.,360d73bff47fbecdaaaa7e31ec7d1cee1b2c2b04,user_xxs,False,False,True,False,False,False,True,False,False,True,False,False,False,False
+2024-09-20 16:44:19+0000,Task execution failed.,5abde1ff5f40515a0c843c6dfda9f82bad3dab0c,user_mnd,False,True,False,True,False,False,False,True,False,False,False,False,False,False
+2024-08-06 17:03:43+0000,Task is currently in progress.,ed7d95891a8e7fc6f591ccc73bd7e050ea2cac29,user_zgp,False,False,True,False,False,True,False,False,False,True,False,True,False,False
+2024-06-08 15:20:39+0000,Task completed successfully.,8d8e37bcbf9b89fdb6fab3cbccd17f512bb774b2,MISSING,False,True,False,False,False,False,True,False,False,False,False,False,False,True
+2024-06-12 06:42:40+0000,Task was skipped due to pipeline conditions.,654d396b1193c519d6bcabb7bc28a3d9dd750f15,MISSING,False,True,False,False,False,False,True,False,False,False,True,False,True,False
+2024-01-18 23:17:57+0000,Task completed successfully.,45dbcef37eeebf6c9b3ef33cba09b7b6a77d8382,MISSING,False,False,True,False,True,False,False,True,False,False,False,False,False,True
+2024-12-09 22:06:16+0000,Task execution failed.,06f239c08fb295fd8ac68da8a64bd46baa218cde,user_dlm,False,False,True,True,False,False,False,True,False,False,False,False,False,False
+2024-12-28 09:05:05+0000,Task was skipped due to pipeline conditions.,2e5d4ab3dcfc4bd6b122de2c9fccec3eaea5f4a5,MISSING,False,False,True,False,False,True,False,False,False,False,False,False,True,False
+2024-06-03 22:53:45+0000,Task is currently in progress.,ce27dd2ca7b6edcd8d2e00cef2ea0de4baeca16e,MISSING,True,False,False,False,False,False,False,False,False,False,True,True,False,False
+2024-04-25 20:42:43+0000,Task was skipped due to pipeline conditions.,9ecad55a0cbcecab6e17e7b892d0ffaef36a5eee,MISSING,False,False,False,False,True,False,False,False,False,True,False,False,True,False
+2024-06-05 23:47:56+0000,Task completed successfully.,6140fdf0020514fe34508654c34bdeeb2111f7ad,user_fgt,False,True,False,True,False,False,False,False,False,False,False,False,False,True
+2024-11-29 00:26:12+0000,Task was skipped due to pipeline conditions.,0ddf458e698212dbc305af23f9f1cafcc93c5bde,user_shm,True,False,False,False,False,False,True,False,False,False,True,False,True,False
+2024-11-05 07:03:43+0000,Task was skipped due to pipeline conditions.,c6ef262fafabf1b0fa7c463f3bd7340c3852d2e0,MISSING,False,True,False,True,False,False,False,False,False,False,True,False,True,False
+2024-09-21 11:01:06+0000,Task was skipped due to pipeline conditions.,05cd18e4e5ece80b8aec7df0fc607989b7803034,user_ece,True,False,False,True,False,False,False,False,False,False,False,False,True,False
+2024-10-26 14:38:05+0000,Task is currently in progress.,9d05810ddebd5dad26b3d4bc9dcae8aa9dad01d6,MISSING,False,False,False,False,False,False,False,False,False,False,False,True,False,False
+2024-05-18 16:27:28+0000,Task is currently in progress.,59e9e1eff0cd0b4db642cff21ccf667616d87720,user_suj,False,True,False,False,True,False,False,True,False,False,False,True,False,False
+2024-08-01 08:52:36+0000,Task is currently in progress.,e20fbd19c3b2dddbecbdbf8dd9f98e3aa20be22e,user_kkf,False,False,False,False,False,False,True,False,True,False,False,True,False,False
+2024-01-01 10:29:49+0000,Task execution failed.,0dca2bc57e7dcda48025ef635e4da790b2ff9c82,MISSING,True,False,False,False,True,False,False,True,False,False,False,False,False,False
+2024-04-26 15:53:27+0000,Task was skipped due to pipeline conditions.,0dbd9ab11afbbbacedae58d2f1faff9ad64f7cb5,user_kcw,False,True,False,False,True,False,False,False,False,False,False,False,True,False
+2024-11-11 20:08:27+0000,Task execution failed.,b197beef69e47facbd4cfbefeefceb74721d8fca,MISSING,True,False,False,False,False,True,False,False,False,False,False,False,False,False
+2024-10-25 22:22:12+0000,Task was skipped due to pipeline conditions.,d75039c4fa9c5ce7dcd431fd330824cbb6de96ce,MISSING,False,False,True,False,False,True,False,False,True,False,False,False,True,False
+2024-02-26 20:57:37+0000,Task was skipped due to pipeline conditions.,55ec0db6fb066cafa44fc2de3acc3c1e62facd9e,MISSING,False,False,False,False,False,True,False,False,True,False,False,False,True,False
+2024-10-21 17:09:01+0000,Task execution failed.,72cdf130ca1b2e31bb084bbf060c029c90bdddbe,MISSING,False,False,True,False,False,False,True,True,False,False,False,False,False,False
