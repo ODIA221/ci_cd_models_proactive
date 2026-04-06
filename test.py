@@ -1,5 +1,3 @@
-# Créez un fichier test.py
-cat > test.py << 'EOF'
 import pandas as pd
 import numpy as np
 from pathlib import Path
@@ -13,10 +11,8 @@ if csv_files:
     print(f"✅ Fichier chargé: {csv_files[0].name}")
     print(f"📊 Dimensions: {df.shape}")
     print(f"📋 Colonnes: {df.columns.tolist()[:5]}...")
+    print(f"\n🔍 Aperçu:")
+    print(df.head())
 else:
     print("❌ Aucun fichier CSV trouvé dans data/raw/")
     print("   Placez vos données dans ce dossier")
-EOF
-
-# Exécutez le script
-#python test.py
