@@ -3,7 +3,7 @@ import numpy as np
 from pathlib import Path
 
 # Cherchez vos fichiers CSV
-data_path = Path('data/raw')
+data_path = Path('data//raw/metrics')
 csv_files = list(data_path.glob('*.csv'))
 
 if csv_files:
@@ -14,5 +14,5 @@ if csv_files:
     print(f"\n🔍 Aperçu:")
     print(df.head())
 else:
-    print("❌ Aucun fichier CSV trouvé dans data/raw/")
+    print("❌ Aucun fichier CSV trouvé dans data/raw/ooo")
     print("   Placez vos données dans ce dossier")
