@@ -1,0 +1,34 @@
+# Environnements virtuels
+venv/
+.venv/
+env/
+
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Données (sources externes volumineuses, régénérables via `python -m src.data.acquire`)
+data/raw/
+data/interim/
+data/processed/
+!data/raw/metrics/dataset_metrics.csv
+!data/raw/logs/dataset-logs.csv
+!data/raw/traces/traces.json
+!data/processed/multimodal_data.parquet
+
+# Sorties d'entraînement
+models/
+experiments/*.csv
+
+# Fichiers d'exécution (PID/logs de `./run.sh start`)
+.run/
+
+# Outils tiers clonés (non vendored, cf. registry.yaml)
+anomaly-detection-log-datasets/
+
+# Divers
+.DS_Store

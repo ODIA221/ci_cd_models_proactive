@@ -1,0 +1,114 @@
+# Registre des sources de données externes pour LogPipeGuard
+# Chaque entrée décrit une source telle qu'utilisée par src/data/acquire.py.
+# Ce fichier est la référence pour connaître, sans lire le code, la taille
+# estimée, les prérequis d'accès (token, téléchargement manuel, Docker) et
+# la citation à utiliser.
+
+loghub:
+  display_name: "LogHub (HDFS_v1 / BGL)"
+  module: "src.data.sources.loghub:LogHubConnector"
+  modalities: [logs]
+  datasets: [hdfs, bgl]
+  urls:
+    hdfs: "https://zenodo.org/records/8196385/files/HDFS_v1.zip"
+    bgl: "https://zenodo.org/records/8196385/files/BGL.zip"
+  estimated_size: "HDFS_v1 ~1.5GB, BGL ~700MB"
+  requires_token: false
+  requires_manual_download: false
+  requires_docker: false
+  citation: "Zhu et al., Loghub: A Large Collection of System Log Datasets, ISSRE 2023"
+  notes: >
+    Réutilise le clone local de github.com/ait-aecid/anomaly-detection-log-datasets
+    (scripts hdfs_parse.py / bgl_parse.py) pour le parsing plutôt que de le
+    réimplémenter. Cloner ce dépôt manuellement s'il est absent.
+
+rcaeval:
+  display_name: "RCAEval"
+  module: "src.data.sources.rcaeval:RCAEvalConnector"
+  modalities: [metrics, logs, traces]
+  datasets: [RE1, RE2, RE3]
+  urls:
+    package: "pip:RCAEval"
+  estimated_size: "RE1 quelques centaines de Mo, RE2 plusieurs Go, RE3 le plus volumineux"
+  requires_token: false
+  requires_manual_download: false
+  requires_docker: false
+  citation: "Pham et al., RCAEval: A Benchmark for Root Cause Analysis, 2024"
+  notes: >
+    735 cas de défaillance sur Online Boutique / Sock Shop / Train Ticket.
+    Nécessite `pip install -r requirements-optional.txt` (paquet RCAEval).
+    RE2 est le sous-ensemble le plus pertinent (logs+metrics+traces).
+
+gaia:
+  display_name: "GAIA (Generic AIOps Atlas)"
+  module: "src.data.sources.gaia:GAIAConnector"
+  modalities: [metrics, logs, traces]
+  urls:
+    repo: "https://github.com/CloudWise-OpenSource/GAIA-DataSet"
+  estimated_size: "inconnue - dépend des liens Baidu Netdisk/Google Drive"
+  requires_token: false
+  requires_manual_download: true
+  requires_docker: false
+  citation: "CloudWise, GAIA DataSet, 2021"
+  notes: >
+    Les liens de téléchargement (Baidu Netdisk / Google Drive) changent et ne
+    peuvent pas être scriptés de façon fiable. Télécharger manuellement
+    MicroSS/ et Companion Data/ puis les placer dans data/raw/gaia/manual/.
+
+travistorrent:
+  display_name: "TravisTorrent (sous-ensemble Java)"
+  module: "src.data.sources.travistorrent:TravisTorrentConnector"
+  modalities: [tabular]
+  urls:
+    java_subset: "https://github.com/monperrus/travistorrent-java-ci-build-dataset"
+    original: "TODO: vérifier le DOI Figshare archivé (Beller, Gousios, Zaidman) - site original instable"
+  estimated_size: "variable selon le dépôt ciblé (un dossier par dépôt GitHub, quelques Mo à ~1Go)"
+  requires_token: false
+  requires_manual_download: false
+  requires_docker: false
+  citation: "Beller, Gousios, Zaidman, TravisTorrent, MSR 2017"
+  notes: >
+    Vérifié en explorant le dépôt réel: contrairement à la description
+    initiale ("CSV de 519 373 builds"), ce dépôt GitHub ne contient PAS de
+    CSV agrégé mais un dossier par dépôt ('{owner}@{repo}/') rempli de logs
+    Travis CI bruts compressés (.log.bz2). fetch(repo=...) cible un dépôt
+    précis via sparse-checkout git; parse() en extrait heuristiquement
+    (regex) le statut de build et les compteurs de tests. Le dump tabulaire
+    "propre" original est un artefact distinct (travistorrent.testroots.org
+    / Figshare), DOI non résolu, non automatisé dans cette passe.
+
+github_actions:
+  display_name: "GitHub Actions (runs + logs)"
+  module: "src.data.sources.github_actions:GitHubActionsConnector"
+  modalities: [logs, tabular]
+  urls:
+    api: "https://api.github.com/repos/{owner}/{repo}/actions/runs"
+    ghalogs_paper: "TODO: lien à trouver depuis l'article MSR'25 (Moriconi et al., GHALogs)"
+    gigawork: "pip:gigawork (Cardoen et al., MSR 2024) - alternative pour l'historique des workflows"
+  estimated_size: "variable selon le dépôt ciblé"
+  requires_token: true
+  requires_manual_download: false
+  requires_docker: false
+  citation: "GitHub REST API - Actions"
+  notes: >
+    Nécessite la variable d'environnement GITHUB_TOKEN (token personnel
+    GitHub). fetch() échoue explicitement si absente, aucun appel API n'est
+    fait sans authentification.
+
+otel_demo:
+  display_name: "OpenTelemetry Demo (Astronomy Shop / OF4CD)"
+  module: "src.data.sources.otel_demo.connector:OTelDemoConnector"
+  modalities: [metrics, logs, traces]
+  urls:
+    repo: "https://github.com/open-telemetry/opentelemetry-demo"
+  estimated_size: "N/A - stack live, pas de téléchargement de dataset"
+  requires_token: false
+  requires_manual_download: false
+  requires_docker: true
+  citation: "OpenTelemetry Demo (Astronomy Shop)"
+  notes: >
+    Même démonstrateur que l'article OF4CD. Cloner en dossier frère
+    (../opentelemetry-demo, non vendored ici) et lancer `docker compose up`.
+    Scénarios de défaillance SC1/SC2 injectables via flagd
+    (src/flagd/demo.flagd.json dans le dépôt upstream). Exporte
+    Prometheus/Jaeger/Loki vers parquet une fois le stack démarré.

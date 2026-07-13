@@ -98,7 +98,21 @@ class AnomalyDetector:
             predictions = np.where(mse > threshold, -1, 1)
         
         return predictions
-    
+
+    def anomaly_score(self, X: np.ndarray) -> np.ndarray:
+        """
+        Score continu d'anomalie (plus élevé = plus anormal), utile pour
+        trier/prioriser des alertes plutôt que de se limiter à -1/1.
+        """
+        try:
+            if self.model_type == "autoencoder":
+                reconstructions = self.model.predict(X)
+                return np.mean((X - reconstructions) ** 2, axis=1)
+            return -self.model.decision_function(X)
+        except Exception as e:
+            logger.warning(f"Score d'anomalie non calculable: {e}")
+            return np.full(len(X), np.nan)
+
     def evaluate(self, X_test: np.ndarray, y_true: Optional[np.ndarray] = None) -> Dict:
         """
         Évalue les performances du modèle

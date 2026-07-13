@@ -5,17 +5,24 @@ Pipeline complet: chargement -> prétraitement -> entraînement -> évaluation
 
 import sys
 from pathlib import Path
+import json
 import pandas as pd
 import numpy as np
+import joblib
 import logging
 from datetime import datetime
 
-# Ajout du chemin src pour les imports
-sys.path.append(str(Path(__file__).parent.parent))
+# Ajout de la racine du repo pour les imports. Important: on importe via
+# `src.xxx` (pas `data.xxx`) pour que le nom de module qualifié soit
+# identique à celui utilisé par src/api/ — sinon joblib.dump(preprocessor)
+# sérialise la classe sous le nom 'data.preprocess.CICDPreprocessor', que
+# l'API (qui importe 'src.data.preprocess.CICDPreprocessor') ne peut pas
+# désérialiser (ModuleNotFoundError: No module named 'data.preprocess').
+sys.path.append(str(Path(__file__).resolve().parent.parent.parent))
 
-from data.load_data import CICDDataLoader
-from data.preprocess import CICDPreprocessor
-from models.detection_models import AnomalyDetector
+from src.data.load_data import CICDDataLoader
+from src.data.preprocess import CICDPreprocessor
+from src.models.detection_models import AnomalyDetector
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -68,7 +75,8 @@ def train_pipeline(data_path: Path,
     
     # 4. Prétraitement
     logger.info("\n--- PRÉTRAITEMENT ---")
-    X_processed = preprocessor.fit_transform(X)
+    preprocessor.fit(X)
+    X_processed = preprocessor.transform(X)
     logger.info(f"Données après prétraitement: {X_processed.shape}")
     
     # 5. Construction et entraînement du modèle
@@ -101,29 +109,53 @@ def train_pipeline(data_path: Path,
     model_path.parent.mkdir(exist_ok=True)
     detector.save(model_path)
     logger.info(f"Modèle sauvegardé: {model_path}")
-    
+
+    # 7bis. Sauvegarde du préprocesseur ajusté + métadonnées, pour pouvoir
+    # rejouer exactement le même prétraitement sur de nouvelles données
+    # (ex: une requête API) sans jamais réajuster scaler/imputer/encoders.
+    preprocessor_path = Path("models") / f"{model_type}_{timestamp}_preprocessor.joblib"
+    joblib.dump(preprocessor, preprocessor_path)
+
+    meta = {
+        "model_type": model_type,
+        "created_at": datetime.now().isoformat(),
+        "feature_columns": X_processed.columns.tolist(),
+        "source_metrics_filename": metrics_filename,
+        "source_logs_filename": logs_filename,
+        "target_col": target_col,
+    }
+    meta_path = Path("models") / f"{model_type}_{timestamp}_meta.json"
+    with open(meta_path, "w", encoding="utf-8") as f:
+        json.dump(meta, f, indent=2, ensure_ascii=False)
+    logger.info(f"Préprocesseur et métadonnées sauvegardés: {preprocessor_path.name}, {meta_path.name}")
+
     # 8. Sauvegarde des résultats
-    results_df = pd.DataFrame({
-        'prediction': results['predictions'],
-        'anomalie': results['predictions'] == -1
-    })
+    # Score continu (plus élevé = plus anormal), utile pour trier/prioriser les alertes.
+    anomaly_score = detector.anomaly_score(X_processed.values if hasattr(X_processed, 'values') else X_processed)
+
+    # Repose sur X.reindex(...) plutôt que sur un alignement positionnel: robuste même
+    # si le prétraitement a supprimé des lignes (missing_strategy='drop').
+    results_df = X.reindex(X_processed.index).reset_index()
+    results_df['anomaly_score'] = anomaly_score
+    results_df['prediction'] = results['predictions']
+    results_df['anomalie'] = results['predictions'] == -1
+    results_df = results_df.sort_values('anomaly_score', ascending=False)
+
     results_path = Path("experiments") / f"results_{timestamp}.csv"
     results_path.parent.mkdir(exist_ok=True)
     results_df.to_csv(results_path, index=False)
-    logger.info(f"Résultats sauvegardés: {results_path}")
+    logger.info(f"Résultats sauvegardés (triés par score d'anomalie décroissant): {results_path}")
     
     return detector, results
 
 
 if __name__ == "__main__":
-    # Configuration - À ADAPTER AVEC VOS FICHIERS
-    DATA_PATH = Path("../data")  # Chemin relatif depuis src/models/
-    
-    # Exemple d'utilisation avec vos données
-    # Remplacez 'compute_dataset.csv' par le nom de votre fichier
+    # Chemin robuste au répertoire courant: <repo_root>/data
+    DATA_PATH = Path(__file__).resolve().parent.parent.parent / "data"
+
     detector, results = train_pipeline(
         data_path=DATA_PATH,
-        metrics_filename="compute_dataset.csv",  # À modifier
-        model_type="isolation_forest",  # Testez les différents modèles
-        target_col=None  # Mettez le nom si vous avez une colonne d'étiquettes
+        metrics_filename="metrics/dataset_metrics.csv",
+        model_type="isolation_forest",
+        target_col=None  # Pas de colonne cible connue - détection non supervisée
     )

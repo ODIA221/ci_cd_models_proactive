@@ -1,0 +1,41 @@
+# Extrait de configuration à fusionner dans le Collector OTel de
+# opentelemetry-demo (fichier src/otel-collector/otelcol-config.yml du dépôt
+# upstream cloné en dossier frère). Ne remplace pas la config existante du
+# démonstrateur (receivers OTLP, exporters Prometheus/Jaeger/Loki déjà
+# configurés) — ajoute seulement le processor d'attributs CI/CD décrit par
+# OF4CD (pipeline.id, job.id, commit.hash) pour permettre la corrélation
+# systématique via trace_id entre logs/métriques/traces d'un même run CI.
+#
+# Usage: copier le bloc `processors.attributes/ci` ci-dessous dans la config
+# existante, puis l'ajouter à la pipeline `traces`/`logs`/`metrics` concernée
+# (section `service.pipelines`).
+
+processors:
+  attributes/ci:
+    actions:
+      - key: ci.pipeline.id
+        from_context: ci.pipeline.id
+        action: insert
+      - key: ci.job.id
+        from_context: ci.job.id
+        action: insert
+      - key: git.commit.hash
+        from_context: git.commit.hash
+        action: insert
+
+# Exemple d'intégration dans service.pipelines (à fusionner, pas à copier tel quel):
+#
+# service:
+#   pipelines:
+#     traces:
+#       receivers: [otlp]
+#       processors: [batch, attributes/ci]
+#       exporters: [otlp/jaeger]
+#     logs:
+#       receivers: [otlp]
+#       processors: [batch, attributes/ci]
+#       exporters: [loki]
+#     metrics:
+#       receivers: [otlp]
+#       processors: [batch, attributes/ci]
+#       exporters: [prometheus]
