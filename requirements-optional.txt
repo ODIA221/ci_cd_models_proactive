@@ -1,0 +1,6 @@
+# Dépendances optionnelles, spécifiques à une seule source de données.
+# Installer uniquement si tu utilises le connecteur correspondant :
+#   pip install -r requirements-optional.txt
+
+# Requis par src/data/sources/rcaeval.py (téléchargement + accès aux cas RE1/RE2/RE3)
+RCAEval
