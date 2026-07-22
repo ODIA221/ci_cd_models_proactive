@@ -1,6 +1,13 @@
 # Dépendances optionnelles, spécifiques à une seule source de données.
 # Installer uniquement si tu utilises le connecteur correspondant :
 #   pip install -r requirements-optional.txt
-
-# Requis par src/data/sources/rcaeval.py (téléchargement + accès aux cas RE1/RE2/RE3)
-RCAEval
+#
+# Actuellement vide: src/data/sources/rcaeval.py téléchargeait auparavant via
+# le paquet `RCAEval`, mais celui-ci s'est révélé cassé sur PyPI (même avec
+# l'extra [default], le wheel publié n'expose pas RCAEval.utility - vérifié
+# le 2026-07-22) et sa chaîne de dépendances (numba/llvmlite, causal-learn,
+# etc., figée sur un environnement 2023) entre en conflit avec les
+# dépendances du reste de ce projet (a cassé mlflow via un downgrade de
+# setuptools/pkg_resources lors des tests). Le connecteur télécharge
+# désormais directement les archives Zenodo via `requests` (déjà dans
+# requirements.txt) - aucune dépendance supplémentaire n'est nécessaire.
