@@ -28,16 +28,25 @@ rcaeval:
   modalities: [metrics, logs, traces]
   datasets: [RE1, RE2, RE3]
   urls:
-    package: "pip:RCAEval"
-  estimated_size: "RE1 quelques centaines de Mo, RE2 plusieurs Go, RE3 le plus volumineux"
+    zenodo: "https://zenodo.org/records/14590730 (fichiers RE{1,2,3}-{OB,SS,TT}.zip)"
+  estimated_size: "RE1 quelques centaines de Mo, RE2 ~4.2GB (OB 1.2GB, SS 0.25GB, TT 2.8GB), RE3 le plus volumineux"
   requires_token: false
   requires_manual_download: false
   requires_docker: false
   citation: "Pham et al., RCAEval: A Benchmark for Root Cause Analysis, 2024"
   notes: >
     735 cas de défaillance sur Online Boutique / Sock Shop / Train Ticket.
-    Nécessite `pip install -r requirements-optional.txt` (paquet RCAEval).
+    Ne dépend PAS du paquet PyPI `RCAEval` (vérifié cassé le 2026-07-22: même
+    avec l'extra [default], le wheel publié n'expose pas RCAEval.utility, et
+    sa chaîne de dépendances entre en conflit avec le reste du projet).
+    fetch() télécharge directement les archives Zenodo via `requests`.
     RE2 est le sous-ensemble le plus pertinent (logs+metrics+traces).
+    Structure réelle par cas: <service>_<fault>/<num>/{inject_time.txt,
+    metrics.csv, simple_metrics.csv, logs.csv, traces.csv, logts.csv,
+    tracets_err.csv, tracets_lat.csv} - un seul cas donne une fenêtre
+    normale (avant inject_time) et une fenêtre anormale (après), pas de
+    split train/test pré-fourni (le connecteur le construit lui-même
+    au niveau du cas pour éviter la fuite de données).
 
 gaia:
   display_name: "GAIA (Generic AIOps Atlas)"
