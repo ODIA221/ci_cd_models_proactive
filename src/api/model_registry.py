@@ -83,6 +83,14 @@ def load_triplet(model_id: str) -> Tuple[AnomalyDetector, CICDPreprocessor, Dict
         detector.build_model(modality_dims=meta["modality_dims"])
     detector.load(MODELS_DIR / f"{model_id}.joblib")
 
+    if meta["model_type"] in ("autoencoder", "multimodal_autoencoder"):
+        # save()/load() ne portent que les poids (state_dict) — sans ceci,
+        # un detector rechargé a threshold_=None et predict() retombe sur le
+        # 95e percentile du batch REÇU: sur une requête à une seule ligne,
+        # x > percentile([x], 95) == x > x == False toujours -> /predict
+        # renverrait "normal" pour absolument tout, silencieusement.
+        detector.threshold_ = meta.get("threshold_")
+
     preprocessor = joblib.load(MODELS_DIR / f"{model_id}_preprocessor.joblib")
 
     return detector, preprocessor, meta

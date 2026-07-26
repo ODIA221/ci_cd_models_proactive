@@ -20,6 +20,7 @@ class ModelInfo(BaseModel):
     source_logs_filename: Optional[str] = None
     target_col: Optional[str] = None
     source: Optional[str] = None
+    horizon_seconds: Optional[int] = None
 
 
 class ModelsListResponse(BaseModel):

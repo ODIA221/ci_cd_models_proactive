@@ -262,6 +262,128 @@ class RCAEvalConnector(BaseConnector):
         features_df.to_parquet(out_dir / "features.parquet")
         labels_df.to_parquet(out_dir / "labels.parquet", index=False)
 
+    def build_horizon_features(self, horizon: int, subset: str = "RE2", use_cache: bool = True):
+        """
+        Variante de parse() pour l'étude de proactivité (chapitre 10,
+        minimiser le délai de détection): au lieu d'agréger toute la fenêtre
+        'abnormal' (jusqu'à 720s après inject_time), tronque à `horizon`
+        secondes de part et d'autre de inject_time — les H DERNIÈRES
+        secondes avant (baseline normale, contexte qu'un moniteur en direct
+        aurait sous la main juste avant l'incident) et les H PREMIÈRES
+        secondes après (évaluation: peut-on détecter avec seulement ça ?).
+
+        Même forme de retour que parse() (features_df indexé par run_id,
+        labels_df au schéma LABELS_COLUMNS) pour rester utilisable comme un
+        remplacement direct de features.parquet/labels.parquet.
+
+        Mis en cache sous interim/<subset>/horizon_<H>/ (contrairement à
+        parse(), qui écrit toujours dans le dossier canonique): recalculer
+        relit les CSV bruts de ~270 cas (plusieurs minutes, mesuré) — sans
+        cache, le dashboard (qui doit rester réactif) devrait refaire ce
+        travail à chaque clic pour un modèle entraîné à cet horizon.
+
+        Args:
+            horizon: nombre de secondes de part et d'autre de inject_time
+            use_cache: False pour forcer le recalcul (ex: après une
+                modification de la logique d'agrégation)
+        """
+        from src.data.features import build_metrics_agg_matrix, build_sequence_features, build_traces_agg_matrix
+
+        cache_dir = self.interim_dir / subset / f"horizon_{horizon}"
+        features_cache = cache_dir / "features.parquet"
+        labels_cache = cache_dir / "labels.parquet"
+        if use_cache and features_cache.exists() and labels_cache.exists():
+            logger.info(f"Features horizon={horizon}s chargées depuis le cache: {cache_dir}")
+            return pd.read_parquet(features_cache), pd.read_parquet(labels_cache)
+
+        subset_dir = self.raw_dir / subset
+        if not subset_dir.exists():
+            raise FileNotFoundError(f"'{subset_dir}' introuvable. Lance fetch(subset='{subset}') d'abord.")
+
+        case_dirs = sorted(
+            d for d in subset_dir.glob(f"{subset}-*/*/*")
+            if d.is_dir() and (d / "inject_time.txt").exists()
+        )
+        if not case_dirs:
+            raise RuntimeError(f"Aucun cas trouvé dans {subset_dir} (attendu: {subset}-{{OB,SS,TT}}/<service>_<fault>/<case_num>/)")
+
+        feature_rows, labels_rows = [], []
+
+        for case_dir in case_dirs:
+            case_id = "/".join(case_dir.relative_to(subset_dir).parts)
+            inject_time = int((case_dir / "inject_time.txt").read_text().strip())
+            is_train_case = self._split_for_case(case_id)
+
+            windows = [("normal", 1, "train" if is_train_case else "test_normal")]
+            if not is_train_case:
+                windows.append(("abnormal", -1, "test_abnormal"))
+
+            metrics_raw = self._load_case_metrics(case_dir)
+            logs_raw = pd.read_csv(case_dir / "logs.csv") if (case_dir / "logs.csv").exists() else pd.DataFrame()
+            traces_raw = pd.read_csv(case_dir / "traces.csv") if (case_dir / "traces.csv").exists() else pd.DataFrame()
+
+            logs_ts_seconds = logs_raw["timestamp"] / 1e9 if "timestamp" in logs_raw.columns else None
+            traces_ts_seconds = traces_raw["startTime"] / 1e6 if "startTime" in traces_raw.columns else None
+
+            for window_name, label_value, split in windows:
+                # PAS de suffixe _h{horizon} sur run_id: contrairement à
+                # evaluate_proactive.py (un horizon à la fois, jamais
+                # mélangés), train_rcaeval.py --horizon-seconds doit produire
+                # des prédictions dont le run_id correspond EXACTEMENT à
+                # celui utilisé par parse() — sinon GET /explain/{run_id}
+                # (src/api/main.py) ne retrouverait plus les spans bruts déjà
+                # persistés sous ce nom dans traces/.
+                run_id = f"{case_id}__{window_name}"
+                labels_rows.append({"run_id": run_id, "source": "rcaeval", "label": label_value, "fault_type": split})
+
+                lo, hi = (inject_time - horizon, inject_time) if window_name == "normal" else (inject_time, inject_time + horizon)
+                feats = {"run_id": run_id}
+
+                if not metrics_raw.empty and "time" in metrics_raw.columns:
+                    mask = (metrics_raw["time"] >= lo) & (metrics_raw["time"] < hi)
+                    seg = metrics_raw[mask]
+                    if not seg.empty:
+                        value_cols = [c for c in seg.columns if c != "time"]
+                        melted = seg.melt(id_vars="time", value_vars=value_cols, var_name="metric_name", value_name="value")
+                        melted["run_id"] = run_id
+                        agg = build_metrics_agg_matrix(melted, id_col="run_id")
+                        feats.update(agg.loc[run_id].to_dict())
+
+                if logs_ts_seconds is not None:
+                    mask = (logs_ts_seconds >= lo) & (logs_ts_seconds < hi)
+                    seg = logs_raw[mask]
+                    if not seg.empty and "cluster_id" in seg.columns:
+                        tidy = pd.DataFrame({"run_id": run_id, "template_id": seg["cluster_id"].to_numpy()})
+                        agg = build_sequence_features(tidy, id_col="run_id")
+                        feats.update(agg.loc[run_id].to_dict())
+
+                if traces_ts_seconds is not None:
+                    mask = (traces_ts_seconds >= lo) & (traces_ts_seconds < hi)
+                    seg = traces_raw[mask]
+                    if not seg.empty:
+                        tidy = pd.DataFrame({
+                            "run_id": run_id,
+                            "service": seg.get("serviceName"),
+                            "duration_ms": seg.get("duration"),
+                            "status": seg.get("statusCode"),
+                        })
+                        agg = build_traces_agg_matrix(tidy, id_col="run_id")
+                        feats.update(agg.loc[run_id].to_dict())
+
+                feature_rows.append(feats)
+
+        features_df = pd.DataFrame(feature_rows).set_index("run_id").fillna(0.0)
+        labels_df = pd.DataFrame(labels_rows, columns=schema.LABELS_COLUMNS)
+        schema.validate_labels_df(labels_df)
+
+        if use_cache:
+            cache_dir.mkdir(parents=True, exist_ok=True)
+            features_df.to_parquet(features_cache)
+            labels_df.to_parquet(labels_cache, index=False)
+            logger.info(f"Features horizon={horizon}s mises en cache: {cache_dir}")
+
+        return features_df, labels_df
+
         logger.info(
             f"RCAEval {subset} parsé: {len(case_dirs)} cas ({n_train_cases} train, {n_test_cases} test), "
             f"{features_df.shape[0]} runs x {features_df.shape[1]} features -> {out_dir}, "

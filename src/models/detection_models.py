@@ -71,8 +71,23 @@ class AnomalyDetector:
             raise ValueError(f"Modèle non reconnu: {self.model_type}")
 
         return self.model
-    
-    def train(self, X_train: np.ndarray, X_val: Optional[np.ndarray] = None, 
+
+    @staticmethod
+    def _reconstruction_error(X: np.ndarray, reconstructions: np.ndarray) -> np.ndarray:
+        """
+        Erreur de reconstruction par ligne, médiane (pas moyenne) des carrés
+        des résidus par colonne: certaines colonnes metric_* RCAEval sont
+        quasi constantes (0 sauf pour un service précis, cf.
+        MultimodalAutoencoder._modality_loss) — leur résidu standardisé peut
+        être énorme sur les quelques lignes concernées, et une MOYENNE sur
+        ~3000 colonnes laisse une poignée de colonnes pareilles écraser
+        toutes les autres (score ~1e16 observé). La médiane, insensible à un
+        petit nombre de colonnes extrêmes, reste un score utilisable pour
+        classer/trier les alertes.
+        """
+        return np.median((X - reconstructions) ** 2, axis=1)
+
+    def train(self, X_train: np.ndarray, X_val: Optional[np.ndarray] = None,
               epochs: int = 50, batch_size: int = 32):
         """
         Entraîne le modèle
@@ -97,8 +112,8 @@ class AnomalyDetector:
             # soit le pouvoir discriminant réel du modèle (AUC, lui,
             # indépendant du seuil, n'était pas affecté).
             reconstructions_train = self.model.predict(X_train)
-            train_mse = np.mean((X_train - reconstructions_train) ** 2, axis=1)
-            self.threshold_ = np.percentile(train_mse, 95)
+            train_error = self._reconstruction_error(X_train, reconstructions_train)
+            self.threshold_ = np.percentile(train_error, 95)
 
         logger.info(f"Modèle {self.model_type} entraîné avec succès")
 
@@ -114,17 +129,17 @@ class AnomalyDetector:
 
         elif self.model_type in ('autoencoder', 'multimodal_autoencoder'):
             reconstructions = self.model.predict(X_test)
-            mse = np.mean((X_test - reconstructions) ** 2, axis=1)
+            error = self._reconstruction_error(X_test, reconstructions)
             if self.threshold_ is None:
                 logger.warning(
                     "Seuil non appris (train() jamais appelé sur cette instance, ex: après load() seul) — "
                     "repli sur le 95e percentile de CE batch de test, biaisé si sa prévalence d'anomalies "
                     "diffère de celle de l'entraînement."
                 )
-                threshold = np.percentile(mse, 95)
+                threshold = np.percentile(error, 95)
             else:
                 threshold = self.threshold_
-            predictions = np.where(mse > threshold, -1, 1)
+            predictions = np.where(error > threshold, -1, 1)
 
         return predictions
 
@@ -136,7 +151,7 @@ class AnomalyDetector:
         try:
             if self.model_type in ("autoencoder", "multimodal_autoencoder"):
                 reconstructions = self.model.predict(X)
-                return np.mean((X - reconstructions) ** 2, axis=1)
+                return self._reconstruction_error(X, reconstructions)
             return -self.model.decision_function(X)
         except Exception as e:
             logger.warning(f"Score d'anomalie non calculable: {e}")

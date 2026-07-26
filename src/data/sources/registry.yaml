@@ -104,6 +104,49 @@ github_actions:
     GitHub). fetch() échoue explicitement si absente, aucun appel API n'est
     fait sans authentification.
 
+jenkins:
+  display_name: "Jenkins (builds + logs de console)"
+  module: "src.data.sources.jenkins:JenkinsConnector"
+  modalities: [logs, tabular]
+  urls:
+    api: "{jenkins_url}/job/{job}/api/json"
+  estimated_size: "variable selon le job ciblé"
+  requires_token: true
+  requires_manual_download: false
+  requires_docker: false
+  citation: "Jenkins REST API"
+  notes: >
+    Nécessite JENKINS_USER + JENKINS_TOKEN (jeton d'API Jenkins, menu
+    utilisateur -> Configure -> API Token). fetch() échoue explicitement si
+    l'un des deux est absent. Contrairement à github_actions.py, parse()
+    unifie aussi les logs de console vers le schéma logs (template_id via
+    drain3, cf. src/data/log_parsing.py) et dérive labels.parquet du statut
+    de build (SUCCESS=normal, FAILURE/UNSTABLE/ABORTED=anomalie). Limite
+    assumée, non vérifiable sans instance réelle: jobs de premier niveau
+    uniquement (pas de dossiers imbriqués /job/x/job/y/). Aucun split
+    train/test prédéfini (contrairement à RCAEval) - à la charge d'un futur
+    script d'évaluation dédié.
+
+gitlab_ci:
+  display_name: "GitLab CI (pipelines + traces de jobs)"
+  module: "src.data.sources.gitlab_ci:GitLabCIConnector"
+  modalities: [logs, tabular]
+  urls:
+    api: "{gitlab_url}/api/v4/projects/{project}/pipelines"
+  estimated_size: "variable selon le projet ciblé"
+  requires_token: true
+  requires_manual_download: false
+  requires_docker: false
+  citation: "GitLab REST API v4"
+  notes: >
+    Nécessite GITLAB_TOKEN (jeton d'accès personnel, scope 'read_api').
+    fetch() échoue explicitement si absent. Comme jenkins.py, parse() unifie
+    les traces de jobs vers le schéma logs (template_id via drain3) et
+    dérive labels.parquet du statut de pipeline (success=normal,
+    failed/canceled=anomalie; running/pending/skipped exclus). project peut
+    être l'ID numérique ou le chemin 'namespace/nom' (URL-encodé
+    automatiquement). Aucun split train/test prédéfini.
+
 otel_demo:
   display_name: "OpenTelemetry Demo (Astronomy Shop / OF4CD)"
   module: "src.data.sources.otel_demo.connector:OTelDemoConnector"

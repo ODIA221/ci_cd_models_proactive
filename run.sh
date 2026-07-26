@@ -11,6 +11,17 @@
 #                                  # ex: ./run.sh acquire --source loghub --dataset hdfs
 #   ./run.sh evaluate             # évaluation protocolée (précision/rappel/F1/AUC) sur
 #                                  # données labellisées (LogHub HDFS par défaut)
+#   ./run.sh train-rcaeval <args...>     # entraîne un modèle RCAEval PERSISTANT, servable par
+#                                  # l'API/dashboard (triplet .joblib/_preprocessor.joblib/_meta.json)
+#                                  # ex: ./run.sh train-rcaeval --model-type multimodal_autoencoder
+#                                  # ex: ./run.sh train-rcaeval --model-type isolation_forest --horizon-seconds 60
+#                                  # nécessite d'avoir acquis RCAEval au préalable (./run.sh acquire --source rcaeval --subset RE2)
+#   ./run.sh evaluate-multimodal <args...>  # compare fusion tardive vs fusion neuronale jointe vs
+#                                  # mono-modalité sur RCAEval (précision/rappel/F1/AUC réels)
+#   ./run.sh evaluate-causal <args...>      # évalue la corrélation causale (precision@1/@3 contre
+#                                  # le service fautif réellement injecté, RCAEval)
+#   ./run.sh evaluate-proactive <args...>   # mesure le délai de détection minimal (proactivité):
+#                                  # précision/rappel/F1/AUC par horizon (15s à 720s post-incident)
 #   ./run.sh otel-up               # clone (si besoin) ../opentelemetry-demo et lance le stack
 #                                  # Docker Compose (nécessite Docker installé et démarré)
 #   ./run.sh otel-down             # arrête le stack OpenTelemetry Demo

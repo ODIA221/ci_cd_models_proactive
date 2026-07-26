@@ -111,6 +111,16 @@ elif data_source == "Uploader un CSV":
         df = pd.read_csv(uploaded)
 else:
     rcaeval_dir = REPO_ROOT / "data" / "interim" / "rcaeval" / "RE2"
+    # Modèle entraîné à un horizon tronqué (chapitre 10, proactivité):
+    # les features doivent venir du MÊME horizon, pas de la fenêtre complète
+    # (colonnes event_*/2gram_* différentes selon la durée agrégée) — sinon
+    # /predict rejette la requête en 422 (unexpected_columns). Lues depuis le
+    # cache écrit par RCAEvalConnector.build_horizon_features (rcaeval.py),
+    # jamais recalculées ici: recalculer relit ~270 cas bruts (plusieurs
+    # minutes), incompatible avec un dashboard réactif.
+    horizon = selected_model.get("horizon_seconds")
+    if horizon:
+        rcaeval_dir = rcaeval_dir / f"horizon_{horizon}"
     features_path, labels_path = rcaeval_dir / "features.parquet", rcaeval_dir / "labels.parquet"
     if features_path.exists() and labels_path.exists():
         features_df = pd.read_parquet(features_path)
@@ -122,6 +132,12 @@ else:
         # /explain/{run_id}.
         df = features_df[test_mask].reset_index()
         explainable = True
+    elif horizon:
+        st.error(
+            f"Features à l'horizon {horizon}s introuvables sous {rcaeval_dir}. "
+            f"Lance d'abord: python -m src.models.train_rcaeval --horizon-seconds {horizon} "
+            "(construit et met en cache ces features)."
+        )
     else:
         st.error(
             f"Données RCAEval introuvables sous {rcaeval_dir}. "
