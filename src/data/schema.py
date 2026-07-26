@@ -27,6 +27,16 @@ TRACES_COLUMNS: List[str] = [
 ]
 LABELS_COLUMNS: List[str] = ["run_id", "source", "label", "fault_type"]
 
+# Colonnes optionnelles de labels.parquet: présentes uniquement pour les
+# sources qui exposent un vrai ground truth de cause racine (ex. RCAEval,
+# où le nom de dossier <service>_<fault_type> encode le service injecté).
+# Ne sont PAS ajoutées à LABELS_COLUMNS pour ne pas casser les connecteurs
+# (loghub, otel_demo) qui ne les fournissent pas — validate_labels_df ne les
+# exige donc jamais. root_cause_fault_type diffère de la colonne fault_type
+# ci-dessus (qui encode train/test_normal/test_abnormal, pas le type de faute
+# injectée).
+OPTIONAL_LABELS_COLUMNS: List[str] = ["root_cause_service", "root_cause_fault_type"]
+
 
 def _validate(df: pd.DataFrame, required_columns: List[str], modality: str) -> None:
     missing = [c for c in required_columns if c not in df.columns]
