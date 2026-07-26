@@ -136,6 +136,9 @@ class RCAEvalConnector(BaseConnector):
         if not subset_dir.exists():
             raise FileNotFoundError(f"'{subset_dir}' introuvable. Lance fetch(subset='{subset}') d'abord.")
 
+        traces_dir = self.interim_dir / subset / "traces"
+        traces_dir.mkdir(parents=True, exist_ok=True)
+
         case_dirs = sorted(
             d for d in subset_dir.glob(f"{subset}-*/*/*")
             if d.is_dir() and (d / "inject_time.txt").exists()
@@ -150,6 +153,13 @@ class RCAEvalConnector(BaseConnector):
         for i, case_dir in enumerate(case_dirs):
             # case_id inclut le système + service_fault + numéro pour rester unique sur OB/SS/TT
             case_id = "/".join(case_dir.relative_to(subset_dir).parts)
+            # Le 2e segment du chemin est toujours <service>_<fault_type>, avec
+            # fault_type in {cpu,delay,disk,loss,mem,socket} (aucun ne contient
+            # '_', vérifié sur les 271 cas RE2-OB/SS/TT) — rpartition sur le
+            # dernier '_' sépare donc service (peut lui-même contenir des '_'
+            # ou '-', ex. 'ts-auth-service') du type de faute injectée.
+            service_fault_dirname = case_dir.relative_to(subset_dir).parts[1]
+            root_cause_service, _, root_cause_fault_type = service_fault_dirname.rpartition("_")
             inject_time = int((case_dir / "inject_time.txt").read_text().strip())
             is_train_case = self._split_for_case(case_id)
             if is_train_case:
@@ -170,7 +180,16 @@ class RCAEvalConnector(BaseConnector):
 
             for window_name, label_value, split in windows:
                 run_id = f"{case_id}__{window_name}"
-                labels_rows.append({"run_id": run_id, "source": "rcaeval", "label": label_value, "fault_type": split})
+                labels_rows.append({
+                    "run_id": run_id,
+                    "source": "rcaeval",
+                    "label": label_value,
+                    "fault_type": split,
+                    # Cause racine connue uniquement après injection: n'a pas
+                    # de sens sur la fenêtre 'normal' (pré-injection).
+                    "root_cause_service": root_cause_service if window_name == "abnormal" else None,
+                    "root_cause_fault_type": root_cause_fault_type if window_name == "abnormal" else None,
+                })
 
                 feats = {"run_id": run_id}
 
@@ -204,6 +223,29 @@ class RCAEvalConnector(BaseConnector):
                         })
                         agg = build_traces_agg_matrix(tidy, id_col="run_id")
                         feats.update(agg.loc[run_id].to_dict())
+
+                        # Spans bruts (hiérarchie span_id/parent_span_id
+                        # préservée) réservés aux fenêtres test_normal/
+                        # test_abnormal: nécessaires au module de corrélation
+                        # causale (src/causal/), qui n'a besoin d'expliquer
+                        # que les runs du split test. Les fenêtres 'train'
+                        # (~185 cas) ne sont pas matérialisées span par span
+                        # pour rester dans le même ordre de grandeur de temps
+                        # de parsing que l'agrégation existante ci-dessus.
+                        if split != "train":
+                            raw_spans = pd.DataFrame({
+                                "timestamp": traces_ts_seconds[mask].to_numpy(),
+                                "source": "rcaeval",
+                                "run_id": run_id,
+                                "span_id": seg.get("spanID"),
+                                "parent_span_id": seg.get("parentSpanID"),
+                                "service": seg.get("serviceName"),
+                                "operation": seg.get("operationName"),
+                                "duration_ms": seg.get("duration"),
+                                "status": seg.get("statusCode"),
+                            })
+                            safe_run_id = run_id.replace("/", "__")
+                            raw_spans.to_parquet(traces_dir / f"{safe_run_id}.parquet", index=False)
 
                 feature_rows.append(feats)
 
