@@ -123,6 +123,12 @@ def train_pipeline(data_path: Path,
         "source_metrics_filename": metrics_filename,
         "source_logs_filename": logs_filename,
         "target_col": target_col,
+        # Seuil de reconstruction appris sur X_train (AnomalyDetector.train,
+        # model_type='autoencoder' uniquement) — save()/load() ne portent que
+        # les poids; sans ce champ, un modèle rechargé via l'API perdrait son
+        # seuil et /predict casserait sur les requêtes à une seule ligne
+        # (cf. src/api/model_registry.py::load_triplet).
+        "threshold_": float(detector.threshold_) if detector.threshold_ is not None else None,
     }
     meta_path = Path("models") / f"{model_type}_{timestamp}_meta.json"
     with open(meta_path, "w", encoding="utf-8") as f:

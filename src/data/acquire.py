@@ -11,6 +11,8 @@ Exemples:
     python -m src.data.acquire --source rcaeval --subset RE2
     python -m src.data.acquire --source travistorrent --repo AlchemyCMS/alchemy_cms
     python -m src.data.acquire --source github_actions --repo owner/name   # nécessite GITHUB_TOKEN
+    python -m src.data.acquire --source jenkins --jenkins-url https://ci.example.com --job my-job  # nécessite JENKINS_USER/JENKINS_TOKEN
+    python -m src.data.acquire --source gitlab_ci --project namespace/nom  # nécessite GITLAB_TOKEN
     python -m src.data.acquire --source otel_demo --export all             # nécessite le stack Docker démarré
     python -m src.data.acquire --source gaia
 """
@@ -70,6 +72,10 @@ def main() -> None:
     parser.add_argument("--subset", type=str, help="[rcaeval] 'RE1', 'RE2' ou 'RE3'")
     parser.add_argument("--repo", type=str, help="[travistorrent, github_actions] '{owner}/{name}'")
     parser.add_argument("--export", type=str, default="all", help="[otel_demo] 'prometheus', 'jaeger', 'loki' ou 'all'")
+    parser.add_argument("--job", type=str, help="[jenkins] nom du job (premier niveau uniquement)")
+    parser.add_argument("--jenkins-url", type=str, help="[jenkins] URL de base de l'instance (ex: 'https://ci.example.com')")
+    parser.add_argument("--project", type=str, help="[gitlab_ci] ID numérique ou 'namespace/nom'")
+    parser.add_argument("--gitlab-url", type=str, help="[gitlab_ci] URL de base de l'instance (défaut: gitlab.com)")
 
     args = parser.parse_args()
 
@@ -91,6 +97,14 @@ def main() -> None:
         kwargs["repo"] = args.repo
     if args.export:
         kwargs["export"] = args.export
+    if args.job:
+        kwargs["job"] = args.job
+    if args.jenkins_url:
+        kwargs["jenkins_url"] = args.jenkins_url
+    if args.project:
+        kwargs["project"] = args.project
+    if args.gitlab_url:
+        kwargs["gitlab_url"] = args.gitlab_url
 
     do_fetch = not args.parse_only
     do_parse = not args.fetch_only
