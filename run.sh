@@ -9,6 +9,9 @@
 #   ./run.sh sources              # liste les sources de données externes et leur statut
 #   ./run.sh acquire <args...>    # transmet les arguments à `python -m src.data.acquire`
 #                                  # ex: ./run.sh acquire --source loghub --dataset hdfs
+#                                  # ex: ./run.sh acquire --source rcaeval --subset RE2
+#                                  # ex: ./run.sh acquire --source jenkins --jenkins-url https://ci.example.com --job my-job
+#                                  # ex: ./run.sh acquire --source gitlab_ci --project namespace/nom
 #   ./run.sh evaluate             # évaluation protocolée (précision/rappel/F1/AUC) sur
 #                                  # données labellisées (LogHub HDFS par défaut)
 #   ./run.sh train-rcaeval <args...>     # entraîne un modèle RCAEval PERSISTANT, servable par
@@ -22,6 +25,20 @@
 #                                  # le service fautif réellement injecté, RCAEval)
 #   ./run.sh evaluate-proactive <args...>   # mesure le délai de détection minimal (proactivité):
 #                                  # précision/rappel/F1/AUC par horizon (15s à 720s post-incident)
+#   ./run.sh showcase-rcaeval        # PRÉPARE le dashboard: acquiert RCAEval RE2 si besoin (~4.2GB,
+#                                  # une seule fois) puis entraîne 3 modèles servables — isolation_forest
+#                                  # (fenêtre complète, pour la corrélation causale), multimodal_autoencoder
+#                                  # (architecture hybride), isolation_forest --horizon-seconds 60
+#                                  # (proactivité). Prend plusieurs minutes. Ensuite: ./run.sh start,
+#                                  # choisir un modèle + la source "RCAEval (test, avec chaîne causale)"
+#                                  # dans le dashboard. La généricité (Jenkins/GitLab CI) n'est PAS
+#                                  # démontrable dans le dashboard: ce sont des connecteurs de données
+#                                  # (cf. ./run.sh acquire), pas des modèles à visualiser. Pour Jenkins,
+#                                  # ./run.sh jenkins-up démarre une instance locale à des fins de test.
+#   ./run.sh jenkins-up             # démarre un Jenkins local (Docker, jenkins/jenkins:lts) pour tester
+#                                  # le connecteur Jenkins sans instance réelle. Affiche le mot de passe
+#                                  # initial à la première installation. Nécessite Docker démarré.
+#   ./run.sh jenkins-down            # arrête le conteneur Jenkins local (conserve son volume de données)
 #   ./run.sh otel-up               # clone (si besoin) ../opentelemetry-demo et lance le stack
 #                                  # Docker Compose (nécessite Docker installé et démarré)
 #   ./run.sh otel-down             # arrête le stack OpenTelemetry Demo
@@ -73,6 +90,121 @@ case "$COMMAND" in
     evaluate)
         shift
         "$PYTHON_BIN" src/models/evaluate.py "$@"
+        ;;
+
+    train-rcaeval)
+        shift
+        echo "==> Entraînement d'un modèle RCAEval persistant (servable par l'API/dashboard)..."
+        "$PYTHON_BIN" src/models/train_rcaeval.py "$@"
+        ;;
+
+    evaluate-multimodal)
+        shift
+        "$PYTHON_BIN" src/models/evaluate_multimodal.py "$@"
+        ;;
+
+    evaluate-causal)
+        shift
+        "$PYTHON_BIN" src/models/evaluate_causal.py "$@"
+        ;;
+
+    evaluate-proactive)
+        shift
+        "$PYTHON_BIN" src/models/evaluate_proactive.py "$@"
+        ;;
+
+    showcase-rcaeval)
+        echo "==> Préparation de la démo dashboard (corrélation causale, architecture hybride, proactivité)."
+        echo "    La généricité (Jenkins/GitLab CI) n'est pas incluse: ce sont des connecteurs de données,"
+        echo "    pas des modèles à visualiser, et nécessitent un vrai serveur/jeton (cf. ./run.sh acquire)."
+        echo
+
+        if [ ! -f "data/interim/rcaeval/RE2/features.parquet" ]; then
+            echo "==> RCAEval RE2 non trouvé, acquisition (fetch+parse, ~4.2GB, peut prendre du temps)..."
+            "$PYTHON_BIN" -m src.data.acquire --source rcaeval --subset RE2
+        else
+            echo "==> RCAEval RE2 déjà acquis (data/interim/rcaeval/RE2/features.parquet), réutilisation."
+        fi
+
+        echo
+        echo "==> [1/3] isolation_forest, fenêtre complète (corrélation causale)..."
+        "$PYTHON_BIN" src/models/train_rcaeval.py --model-type isolation_forest
+
+        echo
+        echo "==> [2/3] multimodal_autoencoder, fenêtre complète (architecture hybride)..."
+        "$PYTHON_BIN" src/models/train_rcaeval.py --model-type multimodal_autoencoder
+
+        echo
+        echo "==> [3/3] isolation_forest, horizon 60s (proactivité)..."
+        "$PYTHON_BIN" src/models/train_rcaeval.py --model-type isolation_forest --horizon-seconds 60
+
+        echo
+        echo "==> Terminé. Lance ./run.sh start, puis dans le dashboard:"
+        echo "    1. Choisis un modèle dans la barre latérale (isolation_forest_rcaeval_*,"
+        echo "       multimodal_autoencoder_rcaeval_*, ou celui avec horizon_seconds=60)"
+        echo "    2. Sélectionne la source 'RCAEval (test, avec chaîne causale)'"
+        echo "    3. Clique 'Lancer la détection', puis choisis une anomalie sous"
+        echo "       'Chaîne causale' pour voir le service fautif identifié"
+        ;;
+
+    jenkins-up)
+        if ! command -v docker >/dev/null 2>&1; then
+            echo "Docker n'est pas installé (ou pas dans le PATH). Installe Docker Desktop avant de relancer."
+            exit 1
+        fi
+        if ! docker info >/dev/null 2>&1; then
+            echo "Docker est installé mais le daemon ne répond pas. Démarre Docker Desktop puis relance."
+            exit 1
+        fi
+
+        if docker ps -a --format '{{.Names}}' | grep -qx jenkins; then
+            echo "==> Conteneur 'jenkins' déjà présent, démarrage (docker start)..."
+            docker start jenkins >/dev/null
+        else
+            echo "==> Création du conteneur Jenkins (jenkins/jenkins:lts, premier lancement: téléchargement de l'image)..."
+            docker run -d --name jenkins -p 8080:8080 -p 50000:50000 -v jenkins_home:/var/jenkins_home jenkins/jenkins:lts >/dev/null
+        fi
+
+        echo "==> Attente du démarrage de Jenkins..."
+        READY=false
+        for _ in $(seq 1 60); do
+            CODE="$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8080/login 2>/dev/null || true)"
+            if [ "$CODE" = "200" ] || [ "$CODE" = "403" ]; then
+                READY=true
+                break
+            fi
+            sleep 2
+        done
+
+        echo
+        if [ "$READY" = "true" ]; then
+            echo "==> Jenkins accessible sur http://localhost:8080"
+        else
+            echo "==> Jenkins ne répond pas encore après 2 min — laisse-lui un peu plus de temps, ou vérifie: docker logs jenkins"
+        fi
+
+        if docker exec jenkins test -f /var/jenkins_home/secrets/initialAdminPassword 2>/dev/null; then
+            echo "==> Mot de passe initial (première installation uniquement, à coller sur http://localhost:8080):"
+            docker exec jenkins cat /var/jenkins_home/secrets/initialAdminPassword
+        fi
+
+        echo
+        echo "Ensuite:"
+        echo "  1. Termine la configuration sur http://localhost:8080 si besoin (plugins suggérés, compte admin)"
+        echo "  2. Crée un job de test (Freestyle project, une étape shell) et lance-le plusieurs fois"
+        echo "  3. Génère un jeton: menu utilisateur -> Configure -> API Token"
+        echo "  4. export JENKINS_USER=... JENKINS_TOKEN=..."
+        echo "  5. ./run.sh acquire --source jenkins --jenkins-url http://localhost:8080 --job <nom-du-job>"
+        echo "Pour arrêter: ./run.sh jenkins-down"
+        ;;
+
+    jenkins-down)
+        if docker ps -a --format '{{.Names}}' | grep -qx jenkins; then
+            docker stop jenkins >/dev/null
+            echo "==> Conteneur Jenkins arrêté (volume conservé; ./run.sh jenkins-up pour le relancer)."
+        else
+            echo "Aucun conteneur 'jenkins' trouvé, rien à arrêter."
+        fi
         ;;
 
     otel-up)
@@ -234,7 +366,7 @@ case "$COMMAND" in
 
     *)
         echo "Commande inconnue: '$COMMAND'"
-        echo "Usage: ./run.sh [setup|demo|sources|acquire <args...>|evaluate|otel-up|otel-down|serve|dashboard|start|stop]"
+        echo "Usage: ./run.sh [setup|demo|sources|acquire <args...>|evaluate|train-rcaeval <args...>|evaluate-multimodal <args...>|evaluate-causal <args...>|evaluate-proactive <args...>|showcase-rcaeval|jenkins-up|jenkins-down|otel-up|otel-down|serve|dashboard|start|stop]"
         exit 1
         ;;
 esac
