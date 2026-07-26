@@ -92,18 +92,41 @@ if not selected_model_id:
 # --- Détection ---
 st.header("Détection")
 
-data_source = st.radio("Données à analyser", ["Données d'exemple", "Uploader un CSV"], horizontal=True)
+data_source = st.radio(
+    "Données à analyser",
+    ["Données d'exemple", "Uploader un CSV", "RCAEval (test, avec chaîne causale)"],
+    horizontal=True,
+)
 
 df = None
+explainable = False  # True seulement pour la source RCAEval (run_id + spans disponibles)
 if data_source == "Données d'exemple":
     if SAMPLE_CSV.exists():
         df = pd.read_csv(SAMPLE_CSV)
     else:
         st.error(f"Fichier d'exemple introuvable: {SAMPLE_CSV}")
-else:
+elif data_source == "Uploader un CSV":
     uploaded = st.file_uploader("Fichier CSV", type="csv")
     if uploaded is not None:
         df = pd.read_csv(uploaded)
+else:
+    rcaeval_dir = REPO_ROOT / "data" / "interim" / "rcaeval" / "RE2"
+    features_path, labels_path = rcaeval_dir / "features.parquet", rcaeval_dir / "labels.parquet"
+    if features_path.exists() and labels_path.exists():
+        features_df = pd.read_parquet(features_path)
+        labels_df = pd.read_parquet(labels_path).set_index("run_id")
+        test_mask = labels_df.reindex(features_df.index)["fault_type"].isin(["test_normal", "test_abnormal"])
+        # run_id (index de features.parquet, cf. rcaeval.py) redevient une
+        # colonne: c'est ce que l'API extrait pour le faire transiter jusque
+        # dans la réponse /predict (cf. main.py) et pouvoir ensuite appeler
+        # /explain/{run_id}.
+        df = features_df[test_mask].reset_index()
+        explainable = True
+    else:
+        st.error(
+            f"Données RCAEval introuvables sous {rcaeval_dir}. "
+            "Lance d'abord: python -m src.data.acquire --source rcaeval --subset RE2"
+        )
 
 if df is not None:
     max_rows = min(len(df), 5000)
@@ -125,7 +148,9 @@ if df is not None:
             results_df = df_subset.reset_index(drop=True).copy()
             results_df["anomaly_score"] = [p["anomaly_score"] for p in predictions]
             results_df["anomalie"] = [p["anomalie"] for p in predictions]
+            results_df["run_id"] = [p.get("run_id") for p in predictions]
             st.session_state["results_df"] = results_df
+            st.session_state["explainable"] = explainable
 
 # --- Résultats ---
 if "results_df" in st.session_state:
@@ -179,3 +204,29 @@ if "results_df" in st.session_state:
     st.subheader("Anomalies les plus sévères")
     top_anomalies = results_df[results_df["anomalie"]].sort_values("anomaly_score", ascending=False)
     st.dataframe(top_anomalies, use_container_width=True, hide_index=True)
+
+    if st.session_state.get("explainable") and "run_id" in top_anomalies.columns:
+        run_id_options = top_anomalies["run_id"].dropna().tolist()
+        if run_id_options:
+            st.subheader("Chaîne causale")
+            selected_run_id = st.selectbox("Anomalie à expliquer (relie l'alerte aux spans de trace suspects)", run_id_options)
+            try:
+                explain_resp = requests.get(
+                    f"{base_url}/explain/{selected_run_id}", params={"model_id": selected_model_id}, timeout=15
+                )
+            except requests.exceptions.RequestException as e:
+                st.error(f"Erreur en appelant /explain: {e}")
+            else:
+                if explain_resp.status_code != 200:
+                    st.info(f"Chaîne causale indisponible: {explain_resp.json().get('detail', explain_resp.text)}")
+                else:
+                    causal_chain = explain_resp.json()["causal_chain"]
+                    if not causal_chain:
+                        st.info("Aucun signal suspect (erreur/latence) détecté sur ce run.")
+                    else:
+                        st.caption("Services suspects, du plus probable au moins probable (cause racine en tête)")
+                        for rank, item in enumerate(causal_chain, start=1):
+                            st.markdown(
+                                f"**{rank}. {item['service']}** — `{item['operation']}` — "
+                                f"{item['reason']} (score={item['score']:.1f}, {item['n_suspect_spans']} spans suspects)"
+                            )

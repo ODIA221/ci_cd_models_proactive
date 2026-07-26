@@ -256,7 +256,7 @@ class RCAEvalConnector(BaseConnector):
         out_dir.mkdir(parents=True, exist_ok=True)
 
         features_df = pd.DataFrame(feature_rows).set_index("run_id").fillna(0.0)
-        labels_df = pd.DataFrame(labels_rows, columns=schema.LABELS_COLUMNS)
+        labels_df = pd.DataFrame(labels_rows, columns=schema.LABELS_COLUMNS + schema.OPTIONAL_LABELS_COLUMNS)
         schema.validate_labels_df(labels_df)
 
         features_df.to_parquet(out_dir / "features.parquet")
@@ -264,5 +264,6 @@ class RCAEvalConnector(BaseConnector):
 
         logger.info(
             f"RCAEval {subset} parsé: {len(case_dirs)} cas ({n_train_cases} train, {n_test_cases} test), "
-            f"{features_df.shape[0]} runs x {features_df.shape[1]} features -> {out_dir}"
+            f"{features_df.shape[0]} runs x {features_df.shape[1]} features -> {out_dir}, "
+            f"spans bruts (test uniquement) -> {traces_dir}"
         )
