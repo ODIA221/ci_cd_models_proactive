@@ -61,16 +61,26 @@ def resolve_model_id(model_id: Optional[str] = None) -> str:
     return model_id
 
 
-def load_triplet(model_id: str) -> Tuple[AnomalyDetector, CICDPreprocessor, Dict]:
-    """Charge (detector, preprocessor, meta) pour un model_id déjà résolu."""
+def load_meta(model_id: str) -> Dict:
+    """Charge uniquement les métadonnées d'un model_id, sans charger le
+    detector/preprocessor (évite de désérialiser un autoencoder PyTorch
+    juste pour lire feature_columns/source_dir, ex: GET /explain)."""
     meta_path = MODELS_DIR / f"{model_id}_meta.json"
     with open(meta_path, "r", encoding="utf-8") as f:
         meta = json.load(f)
     meta["model_id"] = model_id
+    return meta
+
+
+def load_triplet(model_id: str) -> Tuple[AnomalyDetector, CICDPreprocessor, Dict]:
+    """Charge (detector, preprocessor, meta) pour un model_id déjà résolu."""
+    meta = load_meta(model_id)
 
     detector = AnomalyDetector(model_type=meta["model_type"])
     if meta["model_type"] == "autoencoder":
         detector.build_model(input_dim=len(meta["feature_columns"]))
+    elif meta["model_type"] == "multimodal_autoencoder":
+        detector.build_model(modality_dims=meta["modality_dims"])
     detector.load(MODELS_DIR / f"{model_id}.joblib")
 
     preprocessor = joblib.load(MODELS_DIR / f"{model_id}_preprocessor.joblib")

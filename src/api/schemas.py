@@ -19,6 +19,7 @@ class ModelInfo(BaseModel):
     source_metrics_filename: Optional[str] = None
     source_logs_filename: Optional[str] = None
     target_col: Optional[str] = None
+    source: Optional[str] = None
 
 
 class ModelsListResponse(BaseModel):
@@ -46,11 +47,33 @@ class PredictionItem(BaseModel):
     prediction: int
     anomaly_score: float
     anomalie: bool
+    # Passthrough (pas une feature du modèle, cf. main.py qui l'extrait avant
+    # validation des colonnes) — permet au dashboard de relier une prédiction
+    # à ses spans de trace via GET /explain/{run_id}.
+    run_id: Optional[str] = None
 
 
 class PredictResponse(BaseModel):
     model_id: str
     predictions: List[PredictionItem]
+
+
+class CausalChainItem(BaseModel):
+    service: str
+    span_id: str
+    operation: Optional[str] = None
+    reason: str
+    score: float
+    n_suspect_spans: int
+
+
+class ExplainResponse(BaseModel):
+    run_id: str
+    model_id: str
+    causal_chain: List[CausalChainItem] = Field(
+        default_factory=list,
+        description="Services suspects triés par score décroissant, vide si aucun signal détecté",
+    )
 
 
 class SourceInfo(BaseModel):
