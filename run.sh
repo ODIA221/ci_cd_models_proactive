@@ -40,7 +40,8 @@
 #                                  # initial à la première installation. Nécessite Docker démarré.
 #   ./run.sh jenkins-down            # arrête le conteneur Jenkins local (conserve son volume de données)
 #   ./run.sh otel-up               # clone (si besoin) ../opentelemetry-demo et lance le stack
-#                                  # Docker Compose (nécessite Docker installé et démarré)
+#                                  # Docker Compose (nécessite Docker installé et démarré),
+#                                  # y compris Jaeger/Prometheus/Grafana (compose.observability.yaml)
 #   ./run.sh otel-down             # arrête le stack OpenTelemetry Demo
 #   ./run.sh serve                 # démarre l'API FastAPI (http://localhost:8000, docs: /docs)
 #   ./run.sh dashboard              # démarre le dashboard Streamlit (http://localhost:8501)
@@ -224,15 +225,47 @@ case "$COMMAND" in
             git clone https://github.com/open-telemetry/opentelemetry-demo "$OTEL_DEMO_DIR"
         fi
 
+        # Publie Jaeger sur un port hôte fixe (l'amont ne publie que le port
+        # conteneur) et évite que otel-collector reste bloqué si OpenSearch
+        # (logs, non exploité par le connecteur otel_demo) ne devient jamais
+        # "healthy". Auto-chargé par docker compose (nom de fichier par défaut).
+        cat > "$OTEL_DEMO_DIR/compose.override.yaml" <<'EOF'
+services:
+  jaeger:
+    ports:
+      - "16686:16686"
+  otel-collector:
+    depends_on:
+      jaeger:
+        condition: service_started
+      opensearch:
+        condition: service_started
+      opamp-server:
+        condition: service_healthy
+EOF
+
+        # OpenSearch (Elasticsearch-like) exige vm.max_map_count >= 262144 pour
+        # démarrer; sur Docker Desktop Mac cette limite s'applique à la VM Linux
+        # sous-jacente, pas macOS. Réglage best-effort, non bloquant si échoue.
+        if [ "$(uname -s)" = "Darwin" ]; then
+            echo "==> Réglage de vm.max_map_count dans la VM Docker Desktop (requis par OpenSearch)..."
+            docker run --rm --privileged --pid=host alpine sh -c \
+                "apk add --no-cache util-linux >/dev/null 2>&1 && nsenter -t 1 -m -u -n -i sysctl -w vm.max_map_count=262144" \
+                || echo "    (échec non bloquant — si OpenSearch reste 'unhealthy', règle-le manuellement)"
+        fi
+
         echo "==> Lancement du stack (docker compose up -d)..."
-        (cd "$OTEL_DEMO_DIR" && docker compose up --no-build -d)
+        (cd "$OTEL_DEMO_DIR" && docker compose -f compose.yaml -f compose.observability.yaml -f compose.override.yaml up --no-build -d)
 
         echo
         echo "==> Stack démarré. Interfaces:"
         echo "    Boutique   : http://localhost:8080"
         echo "    Grafana    : http://localhost:8080/grafana"
-        echo "    Jaeger UI  : http://localhost:8080/jaeger/ui"
+        echo "    Jaeger UI  : http://localhost:16686/jaeger/ui (API servie sous ce même préfixe)"
         echo "    Prometheus : http://localhost:9090"
+        echo
+        echo "Note: Loki a été retiré du stack upstream (remplacé par OpenSearch) —"
+        echo "l'export logs n'est pas disponible via ./run.sh acquire --source otel_demo."
         echo
         echo "Une fois prêt, exporte les données avec: ./run.sh acquire --source otel_demo --export all"
         echo "Pour arrêter: ./run.sh otel-down"
@@ -244,7 +277,7 @@ case "$COMMAND" in
             echo "'$OTEL_DEMO_DIR' introuvable, rien à arrêter."
             exit 1
         fi
-        (cd "$OTEL_DEMO_DIR" && docker compose down)
+        (cd "$OTEL_DEMO_DIR" && docker compose -f compose.yaml -f compose.observability.yaml -f compose.override.yaml down)
         ;;
 
     serve)
