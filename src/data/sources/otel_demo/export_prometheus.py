@@ -25,11 +25,15 @@ def export(endpoint: str, out_dir: Path, lookback_seconds: int = 3600, step: str
 
     rows = []
     for metric_name in metric_names:
-        response = requests.get(
-            f"{endpoint}/api/v1/query_range",
-            params={"query": metric_name, "start": start, "end": now, "step": step},
-            timeout=30,
-        )
+        try:
+            response = requests.get(
+                f"{endpoint}/api/v1/query_range",
+                params={"query": metric_name, "start": start, "end": now, "step": step},
+                timeout=60,
+            )
+        except requests.exceptions.RequestException as exc:
+            logger.warning(f"Requête échouée pour la métrique '{metric_name}': {exc}")
+            continue
         if response.status_code != 200:
             logger.warning(f"Requête échouée pour la métrique '{metric_name}': {response.status_code}")
             continue

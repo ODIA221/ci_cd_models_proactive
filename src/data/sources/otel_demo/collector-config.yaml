@@ -1,8 +1,9 @@
 # Extrait de configuration à fusionner dans le Collector OTel de
-# opentelemetry-demo (fichier src/otel-collector/otelcol-config.yml du dépôt
-# upstream cloné en dossier frère). Ne remplace pas la config existante du
-# démonstrateur (receivers OTLP, exporters Prometheus/Jaeger/Loki déjà
-# configurés) — ajoute seulement le processor d'attributs CI/CD décrit par
+# opentelemetry-demo (fichier src/otel-collector/otelcol-config-observability.yml
+# du dépôt upstream cloné en dossier frère, chargé avec compose.observability.yaml).
+# Ne remplace pas la config existante du démonstrateur (receivers OTLP,
+# exporters Prometheus/Jaeger/OpenSearch déjà configurés) — ajoute seulement
+# le processor d'attributs CI/CD décrit par
 # OF4CD (pipeline.id, job.id, commit.hash) pour permettre la corrélation
 # systématique via trace_id entre logs/métriques/traces d'un même run CI.
 #
@@ -34,7 +35,7 @@ processors:
 #     logs:
 #       receivers: [otlp]
 #       processors: [batch, attributes/ci]
-#       exporters: [loki]
+#       exporters: [opensearch]
 #     metrics:
 #       receivers: [otlp]
 #       processors: [batch, attributes/ci]

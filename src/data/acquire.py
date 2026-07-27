@@ -71,7 +71,7 @@ def main() -> None:
     )
     parser.add_argument("--subset", type=str, help="[rcaeval] 'RE1', 'RE2' ou 'RE3'")
     parser.add_argument("--repo", type=str, help="[travistorrent, github_actions] '{owner}/{name}'")
-    parser.add_argument("--export", type=str, default="all", help="[otel_demo] 'prometheus', 'jaeger', 'loki' ou 'all'")
+    parser.add_argument("--export", type=str, default="all", help="[otel_demo] 'prometheus', 'jaeger' ou 'all'")
     parser.add_argument("--job", type=str, help="[jenkins] nom du job (premier niveau uniquement)")
     parser.add_argument("--jenkins-url", type=str, help="[jenkins] URL de base de l'instance (ex: 'https://ci.example.com')")
     parser.add_argument("--project", type=str, help="[gitlab_ci] ID numérique ou 'namespace/nom'")
