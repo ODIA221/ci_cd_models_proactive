@@ -12,6 +12,7 @@ chaque page se suffit à elle-même si vous cherchez un point précis.
 
 ## Plan
 
+0. **[Cours : les concepts et algorithmes](00-cours-concepts-et-algorithmes.md)** — un cours complet, pédagogique, qui explique de zéro chaque notion utilisée (VAE, GAT, LSTM, fusion, métriques d'évaluation...) et un glossaire de toutes les abréviations. À lire en premier si un terme technique des chapitres suivants n'est pas familier.
 1. **[Diagnostic initial](01-diagnostic-initial.md)** — pourquoi ce travail a commencé : l'écart entre le résumé de thèse et le code réel, chiffré précisément.
 2. **[VAE pour la branche métriques](02-vae-branche-metriques.md)** — premier composant, le plus simple : encodeur variationnel greffé sur `MultimodalAutoencoder`.
 3. **[GAT pour la branche traces](03-gat-branche-traces.md)** — réseau à attention de graphe fait main, et la découverte (200k+ spans/run) qui a changé sa conception.
