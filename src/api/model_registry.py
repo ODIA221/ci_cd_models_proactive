@@ -76,7 +76,15 @@ def load_triplet(model_id: str) -> Tuple[AnomalyDetector, CICDPreprocessor, Dict
     """Charge (detector, preprocessor, meta) pour un model_id déjà résolu."""
     meta = load_meta(model_id)
 
-    detector = AnomalyDetector(model_type=meta["model_type"])
+    if meta["model_type"] == "multimodal_autoencoder":
+        # variational_modalities change la forme des poids (têtes mu/logvar):
+        # doit être lu depuis meta pour que build_model reconstruise la même
+        # architecture que celle sauvegardée, sinon load_state_dict échoue.
+        detector = AnomalyDetector(model_type=meta["model_type"],
+                                    variational_modalities=set(meta.get("variational_modalities") or []))
+    else:
+        detector = AnomalyDetector(model_type=meta["model_type"])
+
     if meta["model_type"] == "autoencoder":
         detector.build_model(input_dim=len(meta["feature_columns"]))
     elif meta["model_type"] == "multimodal_autoencoder":

@@ -22,9 +22,13 @@ documentation upstream laisse penser):
     metrics.csv             - "time" (s) + une colonne par (service_metric) brut
     simple_metrics.csv      - "time" (s) + un sous-ensemble curé (cpu/mem/diskio/sock)
     logs.csv                - "timestamp" (epoch NANOsecondes) + container_name +
-                              message + level + log_template + cluster_id
-                              (le parsing/templating des logs est déjà fait,
-                              pas besoin de Drain3 ici)
+                              message + level (+ log_template/cluster_id
+                              PARFOIS présents — vérifié: seulement 25 des 271
+                              cas RE2, tous Online Boutique, JAMAIS pour Sock
+                              Shop ni Train Ticket. Ne pas supposer le
+                              templating déjà fait: cf. src/models/
+                              log_sequence_encoder.py, qui re-mine tous les
+                              cas via Drain3 pour un vocabulaire cohérent)
     traces.csv              - "startTime" (epoch MICROsecondes) + traceID/spanID/
                               serviceName/operationName/duration/statusCode/parentSpanID
     logts.csv, tracets_err.csv, tracets_lat.csv - séries temporelles déjà
