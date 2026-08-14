@@ -306,13 +306,28 @@ class MultimodalAutoencoder(nn.Module):
     dans l'ordre de `modality_dims`, un dict {nom: nb_colonnes}) plutôt que
     des tenseurs séparés par modalité — reste compatible avec l'appel
     `detector.train(X.values)` déjà utilisé partout ailleurs dans le repo.
+
+    `variational_modalities` (vide par défaut) rend certaines branches
+    variationnelles (VAE): encodeur -> (mu, logvar) + échantillonnage par
+    reparamétrisation au lieu d'un vecteur latent déterministe. Les autres
+    branches ne sont pas affectées — permet d'introduire le VAE modalité par
+    modalité (ex: métriques d'abord) sans toucher logs/traces.
     """
 
     def __init__(self, modality_dims: Dict[str, int], hidden_dims: list = [64, 32, 16],
-                 branch_latent_dim: int = 16, latent_dim: int = 8, dropout: float = 0.2):
+                 branch_latent_dim: int = 16, latent_dim: int = 8, dropout: float = 0.2,
+                 variational_modalities: Optional[set] = None, kl_weight: float = 1e-3):
         super().__init__()
         self.modality_dims = modality_dims
         self.branch_latent_dim = branch_latent_dim
+        self.variational_modalities = set(variational_modalities or [])
+        self.kl_weight = kl_weight
+        # Rempli à chaque forward() sur les branches variationnelles, lu par
+        # train_model() juste après pour calculer le terme KL — évite de
+        # changer la signature de forward() (donc AnomalyDetector.predict/
+        # anomaly_score, qui n'attendent que le tenseur reconstruit).
+        self._last_mu: Dict[str, torch.Tensor] = {}
+        self._last_logvar: Dict[str, torch.Tensor] = {}
 
         # Bornes de tranchage du tenseur d'entrée concaténé, précalculées une
         # fois (ordre = ordre d'insertion de modality_dims).
@@ -331,11 +346,35 @@ class MultimodalAutoencoder(nn.Module):
             layers.append(nn.Linear(prev_dim, out_dim))
             return nn.Sequential(*layers)
 
-        # Une branche encodeur par modalité: dim modalité -> branch_latent_dim
+        def make_vae_trunk(in_dim: int, dims: list):
+            layers = []
+            prev_dim = in_dim
+            for h_dim in dims:
+                layers.extend([nn.Linear(prev_dim, h_dim), nn.ReLU(), nn.Dropout(dropout)])
+                prev_dim = h_dim
+            return nn.Sequential(*layers), prev_dim
+
+        # Une branche encodeur déterministe par modalité NON variationnelle:
+        # dim modalité -> branch_latent_dim (comportement inchangé).
         self.encoders = nn.ModuleDict({
             name: make_branch(dim, branch_latent_dim, hidden_dims)
             for name, dim in modality_dims.items()
+            if name not in self.variational_modalities
         })
+
+        # Pour chaque modalité variationnelle: un tronc partagé puis deux
+        # têtes (mu, logvar), chacune -> branch_latent_dim.
+        vae_trunks, vae_mu, vae_logvar = {}, {}, {}
+        for name in self.variational_modalities:
+            if name not in modality_dims:
+                continue
+            trunk, prev_dim = make_vae_trunk(modality_dims[name], hidden_dims)
+            vae_trunks[name] = trunk
+            vae_mu[name] = nn.Linear(prev_dim, branch_latent_dim)
+            vae_logvar[name] = nn.Linear(prev_dim, branch_latent_dim)
+        self.vae_trunks = nn.ModuleDict(vae_trunks)
+        self.vae_mu = nn.ModuleDict(vae_mu)
+        self.vae_logvar = nn.ModuleDict(vae_logvar)
 
         # Goulot d'étranglement PARTAGÉ: concat des latents par modalité -> latent_dim
         fused_dim = branch_latent_dim * len(modality_dims)
@@ -343,6 +382,8 @@ class MultimodalAutoencoder(nn.Module):
         self.unbottleneck = nn.Linear(latent_dim, fused_dim)
 
         # Une branche décodeur par modalité: branch_latent_dim -> dim modalité
+        # (inchangé, y compris pour les modalités variationnelles: seul
+        # l'encodeur diffère, le décodeur reconstruit depuis z comme d'habitude)
         self.decoders = nn.ModuleDict({
             name: make_branch(branch_latent_dim, dim, list(reversed(hidden_dims)))
             for name, dim in modality_dims.items()
@@ -351,12 +392,49 @@ class MultimodalAutoencoder(nn.Module):
         self.optimizer = None
 
     def forward(self, x):
-        branch_latents = [self.encoders[name](x[:, s]) for name, s in self._slices.items()]
+        branch_latents = []
+        for name, s in self._slices.items():
+            x_mod = x[:, s]
+            if name in self.variational_modalities:
+                h = self.vae_trunks[name](x_mod)
+                mu = self.vae_mu[name](h)
+                # Bornée: exp(logvar) apparaît tel quel (pas exp(0.5*logvar))
+                # dans le terme KL — sans borne, quelques pas de gradient sur
+                # des features déjà à grande échelle (colonnes metric_* quasi
+                # constantes, cf. _reconstruction_error) suffisent à le faire
+                # diverger vers l'infini et la perte totale devient NaN.
+                logvar = torch.clamp(self.vae_logvar[name](h), min=-6.0, max=6.0)
+                # Échantillonnage uniquement à l'entraînement (self.training,
+                # positionné par train_model()/predict()) — à l'inférence, mu
+                # seul donne un score de reconstruction déterministe et
+                # reproductible, nécessaire pour un seuil d'anomalie stable.
+                if self.training:
+                    std = torch.exp(0.5 * logvar)
+                    z_mod = mu + torch.randn_like(std) * std
+                else:
+                    z_mod = mu
+                self._last_mu[name] = mu
+                self._last_logvar[name] = logvar
+                branch_latents.append(z_mod)
+            else:
+                branch_latents.append(self.encoders[name](x_mod))
+
         z = self.bottleneck(torch.cat(branch_latents, dim=1))
         unfused = self.unbottleneck(z)
         chunks = torch.split(unfused, self.branch_latent_dim, dim=1)
         reconstructions = [self.decoders[name](chunk) for name, chunk in zip(self._slices.keys(), chunks)]
         return torch.cat(reconstructions, dim=1)
+
+    def _kl_loss(self) -> torch.Tensor:
+        """KL(q(z|x) || N(0,I)) moyenné sur les modalités variationnelles,
+        à partir de mu/logvar calculés au dernier forward()."""
+        device = next(self.parameters()).device
+        terms = [
+            -0.5 * torch.mean(1 + self._last_logvar[name] - self._last_mu[name].pow(2) - self._last_logvar[name].exp())
+            for name in self.variational_modalities
+            if name in self._last_mu
+        ]
+        return torch.stack(terms).mean() if terms else torch.tensor(0.0, device=device)
 
     def _modality_loss(self, outputs, targets):
         """
@@ -400,6 +478,8 @@ class MultimodalAutoencoder(nn.Module):
                 self.optimizer.zero_grad()
                 outputs = self(batch_x)
                 loss = self._modality_loss(outputs, batch_x)
+                if self.variational_modalities:
+                    loss = loss + self.kl_weight * self._kl_loss()
                 loss.backward()
                 self.optimizer.step()
                 total_loss += loss.item()
