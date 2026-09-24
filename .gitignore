@@ -20,8 +20,9 @@ data/processed/
 !data/raw/traces/traces.json
 !data/processed/multimodal_data.parquet
 
-# Sorties d'entraînement
-models/
+# Sorties d'entraînement (dossier racine uniquement: "models/" sans "/"
+# initial excluait aussi src/models/, cf. docs/git-tracking.md)
+/models/
 experiments/*.csv
 
 # Fichiers d'exécution (PID/logs de `./run.sh start`)
@@ -32,3 +33,7 @@ anomaly-detection-log-datasets/
 
 # Divers
 .DS_Store
+
+# Configuration locale de l'assistant de code (jamais publiée)
+.claude/
+CLAUDE.md

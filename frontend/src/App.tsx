@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import { fetchRuns, fetchSignals, fetchWhatIf, jsonldUrl, reportUrl } from "./api";
+import { fetchRuns, fetchSignals, fetchWhatIf, jsonldUrl, reportPdfUrl, reportUrl } from "./api";
 import ForceGraph from "./components/ForceGraph";
 import ModalParallel from "./components/ModalParallel";
 import TimelineCanvas from "./components/TimelineCanvas";
@@ -95,8 +95,9 @@ export default function App() {
           </label>
           {runId && signals && (
             <>
-              <a className="btn" href={reportUrl(runId, selected)} download={`diagnostic_${runId.replaceAll("/", "_")}.md`}>Exporter le rapport (Markdown)</a>
-              <a className="btn" href={jsonldUrl(runId)} download={`diagnostic_${runId.replaceAll("/", "_")}.jsonld`}>Exporter (JSON-LD)</a>
+              <a className="btn" href={reportPdfUrl(runId, selected)} download={`diagnostic_${runId.replaceAll("/", "_")}.pdf`}>Exporter le rapport (PDF)</a>
+              <a className="btn" href={reportUrl(runId, selected)} download={`diagnostic_${runId.replaceAll("/", "_")}.md`}>Markdown</a>
+              <a className="btn" href={jsonldUrl(runId)} download={`diagnostic_${runId.replaceAll("/", "_")}.jsonld`}>JSON-LD</a>
             </>
           )}
         </div>

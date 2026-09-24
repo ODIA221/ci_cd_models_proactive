@@ -16,4 +16,6 @@ export const fetchWhatIf = (runId: string, hypothesis: string, minScore: number)
   getJson<WhatIf>(`/causal/${runId}/whatif?hypothesis=${encodeURIComponent(hypothesis)}&min_score=${minScore}`);
 export const reportUrl = (runId: string, hypothesis: string | null) =>
   `/causal/${runId}/report${hypothesis ? `?hypothesis=${encodeURIComponent(hypothesis)}` : ""}`;
+export const reportPdfUrl = (runId: string, hypothesis: string | null) =>
+  `/causal/${runId}/report.pdf${hypothesis ? `?hypothesis=${encodeURIComponent(hypothesis)}` : ""}`;
 export const jsonldUrl = (runId: string) => `/causal/${runId}/jsonld`;

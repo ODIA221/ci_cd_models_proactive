@@ -1,5 +1,7 @@
 # Note : `src/models/` n'est pas suivi par Git
 
+> **Corrigé le 2026-09-24** : la règle est devenue `/models/` (dossier racine uniquement) et les 9 fichiers de `src/models/` sont désormais suivis par Git.
+
 Découvert en vérifiant l'état du dépôt à la fin de cette session de travail
 (pas un problème lié aux changements documentés ci-avant, mais assez
 important pour être signalé séparément).

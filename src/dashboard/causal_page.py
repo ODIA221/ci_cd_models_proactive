@@ -109,9 +109,15 @@ def render_interactive_views(base_url: str, signals: dict, key_prefix: str, allo
             st.dataframe(pd.DataFrame(node["logs"]["top_templates"]), hide_index=True, use_container_width=True)
 
     if allow_report:
-        report = requests.get(f"{base_url}/causal/{run_id}/report", params={"hypothesis": selected} if selected else {}, timeout=60)
+        params = {"hypothesis": selected} if selected else {}
+        e1, e2 = st.columns(2)
+        report_pdf = requests.get(f"{base_url}/causal/{run_id}/report.pdf", params=params, timeout=120)
+        if report_pdf.status_code == 200:
+            e1.download_button("Exporter le rapport (PDF)", report_pdf.content,
+                               file_name=f"diagnostic_{run_id.replace('/', '_')}.pdf", mime="application/pdf")
+        report = requests.get(f"{base_url}/causal/{run_id}/report", params=params, timeout=60)
         if report.status_code == 200:
-            st.download_button("Exporter le rapport de diagnostic (Markdown)", report.text,
+            e2.download_button("Exporter le rapport (Markdown)", report.text,
                                file_name=f"diagnostic_{run_id.replace('/', '_')}.md", mime="text/markdown")
 
 
