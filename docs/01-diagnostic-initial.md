@@ -22,6 +22,7 @@ d'évaluation existants (`src/models/evaluate_multimodal.py`,
 révélé un écart important entre ce texte et l'implémentation :
 
 | Élément du résumé | Réalité du code (avant ce travail) |
+
 |---|---|
 | LSTM pour les logs | Sac d'événements + bigrammes (`build_sequence_features`, `src/data/features.py`) — aucune notion d'ordre séquentiel réel, aucun réseau récurrent. |
 | Auto-encodeur variationnel pour les métriques | `MultimodalAutoencoder` (`detection_models.py`) : un MLP déterministe par branche, goulot d'étranglement par simple concaténation — aucune reparamétrisation, aucun terme KL. |

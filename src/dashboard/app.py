@@ -6,6 +6,7 @@ par l'API, pour rester le premier vrai consommateur de la brique commune.
 
 from pathlib import Path
 import json
+import sys
 
 import pandas as pd
 import plotly.graph_objects as go
@@ -13,6 +14,10 @@ import requests
 import streamlit as st
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
+# `streamlit run src/dashboard/app.py` ne met que src/dashboard/ dans sys.path.
+sys.path.insert(0, str(REPO_ROOT))
+
+from src.dashboard import causal_page  # noqa: E402
 SAMPLE_CSV = REPO_ROOT / "data" / "raw" / "metrics" / "dataset_metrics.csv"
 
 # Palette validée (skill dataviz): bleu = score normal, rouge critique = anomalie
@@ -38,6 +43,7 @@ def api_post(base_url: str, path: str, json_body: dict):
 st.sidebar.title("LogPipeGuard")
 base_url = st.sidebar.text_input("URL de l'API", value="http://localhost:8000").rstrip("/")
 
+
 try:
     health = api_get(base_url, "/health")
     st.sidebar.success(f"API accessible ({health['status']})")
@@ -62,9 +68,15 @@ if api_ok:
     else:
         st.sidebar.warning("Aucun modèle entraîné. Lance: `./run.sh demo`")
 
+study_mode = api_ok and st.sidebar.toggle("Mode étude utilisateur", help="Masque le reste du dashboard pour ne pas biaiser les participants")
+
 st.title("LogPipeGuard — détection d'anomalies CI/CD")
 
 if not api_ok:
+    st.stop()
+
+if study_mode:
+    causal_page.render_study_mode(base_url)
     st.stop()
 
 # --- Vue d'ensemble ---
@@ -246,3 +258,8 @@ if "results_df" in st.session_state:
                                 f"**{rank}. {item['service']}** — `{item['operation']}` — "
                                 f"{item['reason']} (score={item['score']:.1f}, {item['n_suspect_spans']} spans suspects)"
                             )
+
+# --- Exploration causale (v2) ---
+if "results_df" in st.session_state and st.session_state.get("explainable"):
+    ranked_runs = st.session_state["results_df"].sort_values("anomaly_score", ascending=False)["run_id"].dropna().tolist()
+    causal_page.render_exploration_section(base_url, ranked_runs)

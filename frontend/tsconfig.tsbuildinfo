@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/api.ts","./src/colors.ts","./src/main.tsx","./src/types.ts","./src/components/forcegraph.tsx","./src/components/modalparallel.tsx","./src/components/timelinecanvas.tsx","./src/components/whatifpanel.tsx"],"version":"5.6.3"}

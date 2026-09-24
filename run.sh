@@ -23,6 +23,16 @@
 #                                  # mono-modalité sur RCAEval (précision/rappel/F1/AUC réels)
 #   ./run.sh evaluate-causal <args...>      # évalue la corrélation causale (precision@1/@3 contre
 #                                  # le service fautif réellement injecté, RCAEval)
+#                                  # --compare-rankers: couche v2, compare score multimodal / précédence
+#                                  # temporelle / propagation AVEC vs SANS attention GAT (~1 h au 1er lancement)
+#   ./run.sh ui-build               # construit l'interface web v2 (React 18 + TypeScript + D3, frontend/)
+#                                  # servie ensuite par l'API sur http://localhost:8000/ui/ (nécessite Node >= 18)
+#   ./run.sh verify [--full]        # VÉRIFIE TOUT: environnement, données, modèle GAT, signaux causaux,
+#                                  # chaque endpoint de l'API (instance de test dédiée), typage + build
+#                                  # du frontend, rendu réel dans Chrome, parcours du dashboard, scripts.
+#                                  # --full: relance aussi l'évaluation et compare aux chiffres de docs/07
+#   ./run.sh study-analysis         # analyse les sessions d'étude utilisateur RÉELLEMENT enregistrées
+#                                  # (experiments/user_study/sessions.jsonl), refuse de tourner sans
 #   ./run.sh evaluate-proactive <args...>   # mesure le délai de détection minimal (proactivité):
 #                                  # précision/rappel/F1/AUC par horizon (15s à 720s post-incident)
 #   ./run.sh showcase-rcaeval        # PRÉPARE le dashboard: acquiert RCAEval RE2 si besoin (~4.2GB,
@@ -46,8 +56,9 @@
 #   ./run.sh serve                 # démarre l'API FastAPI (http://localhost:8000, docs: /docs)
 #   ./run.sh dashboard              # démarre le dashboard Streamlit (http://localhost:8501)
 #                                  # nécessite l'API lancée dans un autre terminal (./run.sh serve)
-#   ./run.sh start                  # tout-en-un: API en arrière-plan + dashboard au premier plan,
-#                                  # ouvre le navigateur, arrête l'API automatiquement à la sortie (Ctrl+C)
+#   ./run.sh start                  # TOUT-EN-UN: (re)construit l'interface v2 si besoin, API en
+#                                  # arrière-plan, dashboard au premier plan, ouvre /ui/ et le dashboard
+#                                  # dans le navigateur, arrête tout à la sortie (Ctrl+C)
 #   ./run.sh stop                   # arrête l'API laissée en arrière-plan par `start`
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
@@ -63,6 +74,33 @@ fi
 echo "==> Installation des dépendances (requirements.txt)..."
 "$PYTHON_BIN" -m pip install --quiet --upgrade pip
 "$PYTHON_BIN" -m pip install --quiet -r requirements.txt
+
+# --- Interface web v2 (frontend/, React + TypeScript + D3) ---
+# Node installé via nvm n'est chargé que par le .zshrc/.bashrc interactif,
+# jamais dans ce script bash: on charge nvm nous-mêmes si besoin.
+load_npm() {
+    if ! command -v npm >/dev/null 2>&1; then
+        export NVM_DIR="${NVM_DIR:-$HOME/.nvm}"
+        # shellcheck disable=SC1091
+        [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    fi
+    command -v npm >/dev/null 2>&1
+}
+
+# Vrai si frontend/dist est absent ou plus ancien qu'un fichier source.
+ui_needs_build() {
+    [ ! -f frontend/dist/index.html ] && return 0
+    [ -n "$(find frontend/src frontend/index.html frontend/package.json frontend/vite.config.ts \
+        -newer frontend/dist/index.html -print 2>/dev/null | head -n 1)" ]
+}
+
+build_ui() {
+    if ! load_npm; then
+        echo "npm introuvable: installe Node.js >= 18 pour construire l'interface v2 (frontend/)."
+        return 1
+    fi
+    (cd frontend && npm install --no-audit --no-fund && npm run build)
+}
 
 COMMAND="${1:-demo}"
 
@@ -107,6 +145,22 @@ case "$COMMAND" in
     evaluate-causal)
         shift
         "$PYTHON_BIN" src/models/evaluate_causal.py "$@"
+        ;;
+
+    ui-build)
+        build_ui
+        echo "==> Interface construite (frontend/dist). Lance ./run.sh start (tout) ou ./run.sh serve, puis ouvre http://localhost:8000/ui/"
+        ;;
+
+    verify)
+        shift
+        # npm dans le PATH pour les contrôles frontend (nvm non chargé en bash)
+        load_npm || true
+        "$PYTHON_BIN" -m src.verify "$@"
+        ;;
+
+    study-analysis)
+        "$PYTHON_BIN" -m src.causal.study_analysis
         ;;
 
     evaluate-proactive)
@@ -300,6 +354,18 @@ EOF
         API_PID_FILE="$RUN_DIR/api.pid"
         mkdir -p "$RUN_DIR"
 
+        # Interface v2 servie par l'API sous /ui: construite AVANT le démarrage
+        # de l'API (le montage /ui n'a lieu que si frontend/dist existe au
+        # moment où l'API démarre, cf. src/api/main.py).
+        if ui_needs_build; then
+            echo "==> Construction de l'interface web v2 (frontend/ absent ou modifié)..."
+            if ! build_ui; then
+                echo "    Échec: l'API et le dashboard démarrent quand même, sans l'interface /ui/."
+            fi
+        else
+            echo "==> Interface web v2 à jour (frontend/dist)."
+        fi
+
         if curl -s -o /dev/null http://localhost:8000/health; then
             echo "==> API déjà accessible sur le port 8000, réutilisation."
             STARTED_API=false
@@ -351,19 +417,48 @@ EOF
         trap 'STOP=1' INT TERM
         trap cleanup EXIT
 
+        UI_URL="http://localhost:8000/ui/"
+        UI_CODE="$(curl -s -o /dev/null -w '%{http_code}' "$UI_URL" || true)"
+        if [ "$UI_CODE" = "200" ]; then
+            UI_OK=true
+        else
+            UI_OK=false
+            if [ "$STARTED_API" = "false" ] && [ -f frontend/dist/index.html ]; then
+                echo "    /ui/ répond $UI_CODE: l'API réutilisée a démarré avant le build de l'interface."
+                echo "    Relance tout: ./run.sh stop && ./run.sh start"
+            else
+                echo "    /ui/ répond $UI_CODE: interface v2 indisponible (voir le build ci-dessus)."
+            fi
+        fi
+
+        open_url() {
+            if command -v open >/dev/null 2>&1; then
+                open "$1"
+            elif command -v xdg-open >/dev/null 2>&1; then
+                xdg-open "$1"
+            else
+                echo "Ouvre manuellement: $1"
+            fi
+        }
         (
             sleep 2
-            if command -v open >/dev/null 2>&1; then
-                open http://localhost:8501
-            elif command -v xdg-open >/dev/null 2>&1; then
-                xdg-open http://localhost:8501
-            else
-                echo "Ouvre manuellement: http://localhost:8501"
-            fi
+            [ "$UI_OK" = "true" ] && open_url "$UI_URL"
+            open_url http://localhost:8501
         ) &
 
-        echo "==> Démarrage du dashboard (http://localhost:8501)... (Ctrl+C pour tout arrêter)"
-        "$PYTHON_BIN" -m streamlit run src/dashboard/app.py "$@" &
+        echo
+        echo "==> LogPipeGuard démarré:"
+        if [ "$UI_OK" = "true" ]; then
+            echo "    Interface v2 (exploration causale) : $UI_URL"
+        fi
+        echo "    Dashboard Streamlit                : http://localhost:8501"
+        echo "    API + documentation Swagger        : http://localhost:8000/docs"
+        echo "    Logs de l'API                      : $API_LOG"
+        echo "    Ctrl+C pour tout arrêter (en cas de souci: ./run.sh stop)"
+        echo
+        echo "==> Démarrage du dashboard (http://localhost:8501)..."
+        # headless: c'est ce script qui ouvre le navigateur (sinon 2 onglets).
+        "$PYTHON_BIN" -m streamlit run src/dashboard/app.py --server.headless true "$@" &
         DASHBOARD_PID=$!
 
         while kill -0 "$DASHBOARD_PID" 2>/dev/null; do
@@ -399,7 +494,7 @@ EOF
 
     *)
         echo "Commande inconnue: '$COMMAND'"
-        echo "Usage: ./run.sh [setup|demo|sources|acquire <args...>|evaluate|train-rcaeval <args...>|evaluate-multimodal <args...>|evaluate-causal <args...>|evaluate-proactive <args...>|showcase-rcaeval|jenkins-up|jenkins-down|otel-up|otel-down|serve|dashboard|start|stop]"
+        echo "Usage: ./run.sh [setup|demo|sources|acquire <args...>|evaluate|train-rcaeval <args...>|evaluate-multimodal <args...>|evaluate-causal <args...>|evaluate-proactive <args...>|showcase-rcaeval|jenkins-up|jenkins-down|otel-up|otel-down|serve|dashboard|ui-build|verify [--full]|study-analysis|start|stop]"
         exit 1
         ;;
 esac

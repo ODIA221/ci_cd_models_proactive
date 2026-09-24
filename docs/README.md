@@ -19,6 +19,7 @@ chaque page se suffit à elle-même si vous cherchez un point précis.
 4. **[LSTM pour la branche logs](04-lstm-branche-logs.md)** — auto-encodeur séquentiel sur des templates minés par Drain3, et les trois incidents rencontrés en le construisant.
 5. **[Fusion tardive vs fusion jointe](05-fusion-tardive-vs-jointe.md)** — pourquoi l'ensemble simple (isolation_forest par modalité + régression logistique) bat systématiquement l'architecture à goulot d'étranglement partagé, validé sur deux jeux de données indépendants (RE2, RE3) puis regroupés.
 6. **[Conclusion et recommandations](06-conclusion-et-recommandations.md)** — ce qui est validé, ce qui reste ouvert, quoi utiliser en pratique.
+7. **[Couche d'exploration causale (v2)](07-couche-exploration-causale-v2.md)** — adaptation de l'article « Explication des échecs CI/CD » : ce qui est implémenté, ce qui est mesuré (l'attention GAT n'apporte rien au-delà d'une normalisation par le degré) et ce que l'article doit corriger.
 
 Note annexe, sans rapport avec le contenu scientifique ci-dessus mais
 importante : **[le dossier `src/models/` n'est pas suivi par Git](git-tracking.md)**

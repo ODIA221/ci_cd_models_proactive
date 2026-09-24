@@ -90,3 +90,22 @@ class SourceInfo(BaseModel):
 
 class SourcesResponse(BaseModel):
     sources: List[SourceInfo]
+
+
+class StudyTask(BaseModel):
+    task_index: int
+    run_id: str
+    condition: str
+
+
+class StudySessionRecord(BaseModel):
+    participant_id: str
+    task_index: int
+    run_id: str
+    condition: str
+    subset: str = "RE2"
+    answer_service: str
+    diagnosis_seconds: float = Field(..., ge=0)
+    confidence_likert: int = Field(..., ge=1, le=5)
+    n_interactions: int = Field(0, ge=0, description="Nombre d'interactions comptées côté dashboard (sélections, filtres, hypothèses testées)")
+    comment: Optional[str] = None
