@@ -86,7 +86,7 @@ interprétation.
 1. **Alerte proactive** : existait déjà (`/predict`, modèles à horizon court, chapitre 10 de la thèse).
 2. **Ouverture avec le run pré-chargé** : lien direct `/ui/?run=<run_id>&service=<service>`, et bouton depuis le dashboard Streamlit.
 3. **Exploration** : les trois vues.
-4. **Export** : rapport Markdown (`/report`) et JSON-LD (`/jsonld`), boutons dans les deux interfaces.
+4. **Export** : rapport PDF avec graphiques (`/report.pdf`, `src/causal/report_pdf.py`), rapport Markdown (`/report`) et JSON-LD (`/jsonld`), boutons dans les deux interfaces.
 
 ## Résultats mesurés
 

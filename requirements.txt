@@ -30,3 +30,5 @@ uvicorn[standard]==0.30.6
 
 # Dashboard
 streamlit==1.38.0
+# Export PDF du rapport de diagnostic (GET /causal/{run_id}/report.pdf) — pur Python
+fpdf2>=2.7

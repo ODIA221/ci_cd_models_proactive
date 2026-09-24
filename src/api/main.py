@@ -16,7 +16,7 @@ from typing import Optional
 
 import pandas as pd
 from fastapi import FastAPI, HTTPException
-from fastapi.responses import JSONResponse, PlainTextResponse, RedirectResponse
+from fastapi.responses import JSONResponse, PlainTextResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 
 from src.api import model_registry
@@ -30,7 +30,7 @@ from src.api.schemas import (
     PredictResponse,
     SourcesResponse,
 )
-from src.causal import correlation, signals
+from src.causal import correlation, report_pdf, signals
 from src.data.sources.registry import list_sources
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
@@ -175,6 +175,15 @@ def causal_what_if(run_id: str, hypothesis: str, subset: str = "RE2", min_score:
     result = signals.what_if(signals_data, hypothesis, min_score=min_score)
     result["paths"] = signals.causal_path(signals_data, hypothesis)
     return result
+
+
+@app.get("/causal/{run_id:path}/report.pdf")
+def causal_report_pdf(run_id: str, subset: str = "RE2", hypothesis: Optional[str] = None) -> Response:
+    """Même rapport que /report, en PDF avec graphiques (rapport post-incident)."""
+    pdf = report_pdf.pdf_report(_load_signals(run_id, subset), hypothesis=hypothesis)
+    filename = f"diagnostic_{run_id.replace('/', '_')}.pdf"
+    return Response(pdf, media_type="application/pdf",
+                    headers={"Content-Disposition": f'attachment; filename="{filename}"'})
 
 
 @app.get("/causal/{run_id:path}/report", response_class=PlainTextResponse)

@@ -26,6 +26,7 @@ import shutil
 import socket
 import subprocess
 import sys
+import tempfile
 import threading
 import time
 import traceback
@@ -78,7 +79,7 @@ def check(section: str, name: str):
 
 @check("Environnement", "Dépendances Python importables")
 def check_python_deps():
-    import fastapi, streamlit, torch, pandas, plotly, scipy, sklearn  # noqa: F401,E401
+    import fastapi, streamlit, torch, pandas, plotly, scipy, sklearn, fpdf  # noqa: F401,E401
     return f"Python {sys.version.split()[0]}, torch {torch.__version__}, streamlit {streamlit.__version__}"
 
 
@@ -250,7 +251,7 @@ def api_checks(base: str) -> None:
         assert len(data) == 172, f"{len(data)} runs au lieu de 172"
         return f"{sum(r['anormal'] for r in data)} anormaux, {sum(r['signaux_en_cache'] for r in data)} en cache"
 
-    @check("API", "GET /causal/{run_id} + /whatif + /report + /jsonld")
+    @check("API", "GET /causal/{run_id} + /whatif + /report (Markdown et PDF) + /jsonld")
     def causal():
         sig = requests.get(f"{base}/causal/{EXAMPLE_RUN}", timeout=300).json()
         assert sig["nodes"]
@@ -258,6 +259,9 @@ def api_checks(base: str) -> None:
         assert "paths" in wi and "coverage" in wi
         report = requests.get(f"{base}/causal/{EXAMPLE_RUN}/report", params={"hypothesis": "checkout"})
         assert report.status_code == 200 and report.text.startswith("# Rapport")
+        pdf = requests.get(f"{base}/causal/{EXAMPLE_RUN}/report.pdf", params={"hypothesis": "checkout"}, timeout=120)
+        assert pdf.status_code == 200 and pdf.content[:5] == b"%PDF-", f"PDF invalide (HTTP {pdf.status_code})"
+        assert pdf.headers["content-type"] == "application/pdf"
         ld = requests.get(f"{base}/causal/{EXAMPLE_RUN}/jsonld")
         assert ld.headers["content-type"].startswith("application/ld+json"), ld.headers["content-type"]
         assert requests.get(f"{base}/causal/RE2-OB/inexistant/1__abnormal").status_code == 404
@@ -320,8 +324,10 @@ def check_browser_render(base: str) -> None:
         if not (REPO_ROOT / "frontend" / "dist" / "index.html").exists():
             raise Skip("frontend/dist absent")
         url = f"{base}/ui/?run={quote(EXAMPLE_RUN)}&service=checkout"
-        profile = REPO_ROOT / ".run" / "chrome-verify"
-        profile.mkdir(parents=True, exist_ok=True)
+        # Profil jetable: un Chrome arrêté de force laisse un verrou
+        # (SingletonLock) qui fait quitter les lancements suivants sur un
+        # DOM vide — mesuré lors d'une vérification précédente.
+        profile = tempfile.mkdtemp(prefix="chrome-verify-")
         # --dump-dom seul capture le DOM dès l'événement "load", AVANT la
         # 2e requête (/whatif) — mesuré: panneau « Et si » absent alors que
         # l'API l'a bien servi. Le temps virtuel laisse les requêtes aboutir,
@@ -336,7 +342,9 @@ def check_browser_render(base: str) -> None:
         except subprocess.TimeoutExpired:
             proc.kill()
             dom, _ = proc.communicate()
-        for expected in ("exploration causale", "Chronologie", "Propagation", "Corrélation modale", "Et si la cause racine"):
+        shutil.rmtree(profile, ignore_errors=True)
+        for expected in ("exploration causale", "Chronologie", "Propagation", "Corrélation modale", "Et si la cause racine",
+                         "Exporter le rapport (PDF)"):
             assert expected in dom, f"'{expected}' absent du DOM rendu ({len(dom)} caractères)"
         assert "<canvas" in dom and "<circle" in dom, "canevas de chronologie ou nœuds du graphe non rendus"
         return f"{dom.count('<circle')} nœuds SVG, chronologie sur canevas"
