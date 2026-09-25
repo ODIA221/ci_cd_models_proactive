@@ -27,12 +27,15 @@
 #                                  # temporelle / propagation AVEC vs SANS attention GAT (~1 h au 1er lancement)
 #   ./run.sh ui-build               # construit l'interface web v2 (React 18 + TypeScript + D3, frontend/)
 #                                  # servie ensuite par l'API sur http://localhost:8000/ui/ (nécessite Node >= 18)
+#   ./run.sh ui-dev                 # interface v2 en MODE DÉVELOPPEMENT (Vite, rechargement à chaud):
+#                                  # http://localhost:5173/ui/ — démarre l'API sur :8000 si elle ne tourne
+#                                  # pas déjà, et l'arrête à la sortie (Ctrl+C)
 #   ./run.sh verify [--full]        # VÉRIFIE TOUT: environnement, données, modèle GAT, signaux causaux,
 #                                  # chaque endpoint de l'API (instance de test dédiée), typage + build
 #                                  # du frontend, rendu réel dans Chrome, parcours du dashboard, scripts.
 #                                  # --full: relance aussi l'évaluation et compare aux chiffres de docs/07
 #   ./run.sh study-analysis         # analyse les sessions d'étude utilisateur RÉELLEMENT enregistrées
-#                                  # (experiments/user_study/sessions.jsonl), refuse de tourner sans
+#                                  # (experiments/user_study/sessions.jsonl), refuse de tourner sans sessions
 #   ./run.sh evaluate-proactive <args...>   # mesure le délai de détection minimal (proactivité):
 #                                  # précision/rappel/F1/AUC par horizon (15s à 720s post-incident)
 #   ./run.sh showcase-rcaeval        # PRÉPARE le dashboard: acquiert RCAEval RE2 si besoin (~4.2GB,
@@ -59,7 +62,8 @@
 #   ./run.sh start                  # TOUT-EN-UN: (re)construit l'interface v2 si besoin, API en
 #                                  # arrière-plan, dashboard au premier plan, ouvre /ui/ et le dashboard
 #                                  # dans le navigateur, arrête tout à la sortie (Ctrl+C)
-#   ./run.sh stop                   # arrête l'API laissée en arrière-plan par `start`
+#   ./run.sh stop                   # arrête l'API (port 8000) et le dashboard (port 8501), quel que
+#                                  # soit le moyen par lequel ils ont été lancés
 set -euo pipefail
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
@@ -150,6 +154,50 @@ case "$COMMAND" in
     ui-build)
         build_ui
         echo "==> Interface construite (frontend/dist). Lance ./run.sh start (tout) ou ./run.sh serve, puis ouvre http://localhost:8000/ui/"
+        ;;
+
+    ui-dev)
+        if ! load_npm; then
+            echo "npm introuvable: installe Node.js >= 18 pour lancer l'interface v2 (frontend/)."
+            exit 1
+        fi
+        mkdir -p .run
+        DEV_API_PID=""
+        if curl -s -o /dev/null http://localhost:8000/health; then
+            echo "==> API déjà accessible sur le port 8000, réutilisation."
+        else
+            # Sans API, Vite relaie chaque appel vers :8000 et échoue
+            # (ECONNREFUSED): on la démarre ici, et on l'arrête en sortant.
+            echo "==> Démarrage de l'API en arrière-plan (logs: .run/api-dev.log)..."
+            nohup "$PYTHON_BIN" -m uvicorn src.api.main:app --host 127.0.0.1 --port 8000 > .run/api-dev.log 2>&1 &
+            DEV_API_PID=$!
+            printf "    Attente de l'API"
+            for _ in $(seq 1 60); do
+                curl -s -o /dev/null http://localhost:8000/health && break
+                printf "."
+                sleep 1
+            done
+            echo
+            if ! curl -s -o /dev/null http://localhost:8000/health; then
+                echo "L'API ne répond pas après 60 s. Voir .run/api-dev.log"
+                kill "$DEV_API_PID" 2>/dev/null || true
+                exit 1
+            fi
+        fi
+        stop_dev_api() {
+            if [ -n "$DEV_API_PID" ] && kill -0 "$DEV_API_PID" 2>/dev/null; then
+                echo
+                echo "==> Arrêt de l'API démarrée par ui-dev (PID $DEV_API_PID)..."
+                kill "$DEV_API_PID" 2>/dev/null || true
+            fi
+        }
+        trap stop_dev_api EXIT
+        trap 'exit 130' INT TERM
+
+        [ -d frontend/node_modules ] || (cd frontend && npm install --no-audit --no-fund)
+        echo "==> Interface v2 en mode développement: http://localhost:5173/ui/ (Ctrl+C pour tout arrêter)"
+        echo "    Les modifications de frontend/src/ s'affichent sans recharger. Appels API relayés vers :8000."
+        (cd frontend && npm run dev -- --open)
         ;;
 
     verify)
@@ -494,7 +542,7 @@ EOF
 
     *)
         echo "Commande inconnue: '$COMMAND'"
-        echo "Usage: ./run.sh [setup|demo|sources|acquire <args...>|evaluate|train-rcaeval <args...>|evaluate-multimodal <args...>|evaluate-causal <args...>|evaluate-proactive <args...>|showcase-rcaeval|jenkins-up|jenkins-down|otel-up|otel-down|serve|dashboard|ui-build|verify [--full]|study-analysis|start|stop]"
+        echo "Usage: ./run.sh [setup|demo|sources|acquire <args...>|evaluate|train-rcaeval <args...>|evaluate-multimodal <args...>|evaluate-causal <args...>|evaluate-proactive <args...>|showcase-rcaeval|jenkins-up|jenkins-down|otel-up|otel-down|serve|dashboard|ui-build|ui-dev|verify [--full]|study-analysis|start|stop]"
         exit 1
         ;;
 esac

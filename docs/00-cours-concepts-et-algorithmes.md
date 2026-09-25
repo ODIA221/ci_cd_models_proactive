@@ -2,7 +2,7 @@
 
 Ce chapitre est différent des autres : ce n'est pas un compte-rendu de ce
 qui a été fait, mais un **cours** qui explique, à partir de zéro, chaque
-concept et chaque algorithme mobilisé dans les chapitres 1 à 6. L'objectif
+concept et chaque algorithme mobilisé dans les chapitres 1 à 7. L'objectif
 est qu'après l'avoir lu, une phrase comme *"un VAE sur la branche métriques,
 un GAT sur la branche traces, un LSTM sur la branche logs, fusionnés par un
 combinateur logistique plutôt qu'un goulot d'étranglement partagé"*
@@ -22,7 +22,7 @@ dépôt (`src/models/...`).
 6. [Séquences et réseaux récurrents (LSTM)](#6-séquences-et-réseaux-récurrents-lstm)
 7. [Le parsing de logs et Drain3](#7-le-parsing-de-logs-et-drain3)
 8. [Fusionner plusieurs modalités : fusion jointe vs fusion tardive](#8-fusionner-plusieurs-modalités-fusion-jointe-vs-fusion-tardive)
-9. [Évaluer un modèle : métriques et pièges statistiques](#9-évaluer-un-modèle-métriques-et-pièges-statistiques)
+9. [Évaluer un modèle : métriques et pièges statistiques](#9-évaluer-un-modèle-métriques-et-pièges-statistiques) (dont P@k, McNemar, MAD)
 10. [Glossaire des abréviations](#10-glossaire-des-abréviations)
 
 ---
@@ -315,6 +315,22 @@ méthode utilisée ici est le **mean pooling** : la simple moyenne des
 représentations de tous les nœuds. C'est le rôle de
 `TraceGraphAutoencoder.encode_graph()`.
 
+### L'attention n'est pas (forcément) une explication
+
+Il est tentant de lire les poids d'attention αᵢⱼ comme « l'influence du
+service j sur le service i ». Rien ne le garantit : un GAT apprend
+l'attention qui sert **son** objectif d'entraînement. Celui de ce projet
+est de reconstruire des graphes normaux, pas de localiser une panne. Mesuré
+au [chapitre 7](07-couche-exploration-causale-v2.md), son attention est
+uniforme : chaque service accorde le même poids à tous ses voisins, soit
+exactement 1/(nombre de voisins + 1). Des travaux de référence en
+traitement du langage (Jain et Wallace, « Attention is not Explanation »,
+2019 ; Wiegreffe et Pinter, « Attention is not not Explanation », 2019)
+concluent de même : l'attention n'est une explication qu'après
+vérification, modèle par modèle. La vérification la plus simple est une
+**ablation** : remplacer α par une pondération sans apprentissage (ici,
+1/degré) et regarder si les résultats changent. Ici, ils sont identiques.
+
 ---
 
 ## 6. Séquences et réseaux récurrents (LSTM)
@@ -591,6 +607,34 @@ plutôt, cf. chapitre 5).
 
 ---
 
+### Classer plutôt que détecter : la précision au rang k
+
+Localiser une cause racine n'est pas une détection oui/non : une méthode
+**classe** les services du plus au moins suspect. On mesure alors la
+**précision au rang k** (P@k) : la part des exécutions où le vrai service
+fautif figure parmi les k premiers. P@1 répond à « la méthode désigne-t-elle
+directement le bon service ? », P@3 à « le bon service est-il dans une
+courte liste à examiner ? » (chapitre 7).
+
+### Comparer deux méthodes sur les mêmes cas : le test de McNemar
+
+Deux méthodes évaluées sur les **mêmes** exécutions ne sont pas
+indépendantes. Le test de McNemar ne regarde que les cas où elles
+divergent : combien d'exécutions la méthode A trouve seule, combien la
+méthode B trouve seule. Si ces deux nombres sont proches (au chapitre 7 :
+10 contre 8), l'écart global n'est pas significatif, même si les
+pourcentages semblent différer (0,75 contre 0,72).
+
+### Écart robuste : médiane et MAD
+
+La moyenne et l'écart-type sont sensibles aux valeurs extrêmes, fréquentes
+dans les métriques d'un système en panne. La couche causale leur préfère la
+**médiane** et le **MAD** (écart absolu médian), multiplié par 1,4826 pour
+être comparable à un écart-type sur des données normales. Un écart robuste
+de 3 signifie « 3 écarts-types typiques au-dessus de la normale ».
+
+---
+
 ## 10. Glossaire des abréviations
 
 | Sigle | Signification (anglais) | Traduction / explication |
@@ -609,17 +653,23 @@ plutôt, cf. chapitre 5).
 | **GPU** | Graphics Processing Unit | Processeur graphique, utilisé pour accélérer l'entraînement de réseaux de neurones |
 | **HTTP** | HyperText Transfer Protocol | Protocole de communication web, utilisé par l'API REST du projet |
 | **JSON** | JavaScript Object Notation | Format de données texte structuré, utilisé par l'API et certains logs |
+| **JSON-LD** | JSON for Linked Data | JSON enrichi d'un vocabulaire sémantique, format d'export des signaux causaux (chapitre 7) |
 | **KL** | Kullback-Leibler (divergence) | Mesure d'écart entre deux distributions de probabilité (section 4) |
 | **LRU** | Least Recently Used | Politique de cache qui évince l'élément le moins récemment utilisé (mécanisme de Drain3, chapitre 4) |
 | **LSTM** | Long Short-Term Memory | Réseau récurrent à mémoire longue/courte contrôlée (section 6) |
+| **MAD** | Median Absolute Deviation | Écart absolu médian — mesure de dispersion robuste aux valeurs extrêmes (section 9) |
 | **MLP** | MultiLayer Perceptron | Perceptron multicouche — le réseau de neurones "simple" (couches entièrement connectées) utilisé dans les encodeurs/décodeurs de ce projet |
+| **NASA-TLX** | NASA Task Load Index | Questionnaire standard de charge cognitive, prévu pour l'étude utilisateur (chapitre 7) |
 | **NLP** | Natural Language Processing | Traitement automatique du langage naturel (section 6) |
+| **P@k** | Precision at k | Précision au rang k — part des cas où la bonne réponse est dans les k premiers (section 9) |
 | **PAD** | Padding | Remplissage — token neutre pour égaliser la longueur des séquences (section 6) |
 | **RCA** | Root Cause Analysis | Analyse de cause racine (section 1) |
+| **REST** | REpresentational State Transfer | Style d'API web par ressources et verbes HTTP, celui de l'API du projet |
 | **RNN** | Recurrent Neural Network | Réseau de neurones récurrent (section 6) |
 | **ROC** | Receiver Operating Characteristic | Courbe reliant taux de vrais/faux positifs selon le seuil (section 9) |
 | **seq2seq** | Sequence to Sequence | Architecture encodeur-décodeur pour transformer une séquence en une autre (ou la reconstruire) (section 6) |
 | **SVM** | Support Vector Machine | Machine à vecteurs de support (section 3) |
+| **SUS** | System Usability Scale | Questionnaire standard d'utilisabilité en 10 questions, prévu pour l'étude utilisateur (chapitre 7) |
 | **UNK** | Unknown | Inconnu — token "fourre-tout" pour les éléments rares (sections 6-7) |
 | **VAE** | Variational AutoEncoder | Auto-encodeur variationnel (section 4) |
 | **VN** | Vrai Négatif | Run normal correctement jugé normal (section 9) |
@@ -630,4 +680,6 @@ plutôt, cf. chapitre 5).
 *Pour voir comment ces concepts s'articulent concrètement dans le code de
 ce projet, revenir aux chapitres [2](02-vae-branche-metriques.md) (VAE),
 [3](03-gat-branche-traces.md) (GAT), [4](04-lstm-branche-logs.md) (LSTM) et
-[5](05-fusion-tardive-vs-jointe.md) (fusion et évaluation).*
+[5](05-fusion-tardive-vs-jointe.md) (fusion et évaluation) et
+[7](07-couche-exploration-causale-v2.md) (localisation de la cause racine,
+interface d'exploration).*

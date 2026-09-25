@@ -47,6 +47,12 @@ isolément).
   sur un seul split val/test (seed=42) — une validation croisée (k-fold)
   donnerait une estimation encore plus fiable, mais n'a pas été faite ici.
 
+- **Expliquer une anomalie**, et pas seulement la détecter, est traité
+  au [chapitre 7](07-couche-exploration-causale-v2.md) : un score par
+  service localise le service fautif (P@1 = 0,71 sur 86 exécutions), mais
+  l'attention du GAT n'y contribue pas, et l'effet sur le temps de
+  diagnostic humain reste à mesurer par une étude utilisateur.
+
 ## Recommandation pratique
 
 Pour un modèle **utilisable en pratique** aujourd'hui (servi par l'API,
