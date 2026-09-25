@@ -13,18 +13,23 @@ pas soutenir l'affirmation, ce chapitre le dit.
 |---|---|
 | `src/models/graph_encoder.py` | Modifié : le GAT expose ses poids d'attention (`attention_weights`), est entraîné avec une graine fixe et **sauvegardé** (`--save-model-only`) |
 | `src/causal/signals.py` | Nouveau : couche d'extraction des signaux causaux (score par service, attention, logs, onsets, graphe d'appels, « et si », rapport, JSON-LD) |
-| `src/api/main.py`, `schemas.py` | Nouveaux endpoints : `GET /runs`, `GET /causal/{run_id}` (+ `/whatif`, `/report`, `/jsonld`), `GET /study/tasks`, `POST /study/sessions`, interface servie sous `/ui/` |
+| `src/causal/report_pdf.py` | Nouveau : rapport de diagnostic en PDF avec graphiques (fpdf2 + matplotlib) |
+| `src/api/main.py`, `schemas.py` | Nouveaux endpoints : `GET /runs`, `GET /causal/{run_id}` (+ `/whatif`, `/report`, `/report.pdf`, `/jsonld`), `GET /study/tasks`, `POST /study/sessions`, interface servie sous `/ui/` |
 | `frontend/` | Nouveau : interface React 18 + TypeScript + D3 v7 (chronologie sur canevas défilable, graphe à forces animé, coordonnées parallèles, « et si », exports) |
 | `src/dashboard/causal_views.py`, `causal_page.py` | Nouveau : mêmes vues dans le dashboard Streamlit + mode étude utilisateur |
 | `src/models/evaluate_causal.py` | Modifié : `--compare-rankers` compare les classements de cause racine de la v2 |
 | `src/causal/study_analysis.py` | Nouveau : analyse statistique des sessions d'étude **réellement enregistrées** |
+| `src/verify.py` | Nouveau : vérification de bout en bout (`./run.sh verify [--full]`) |
+| `run.sh` | Nouvelles commandes : `ui-build`, `ui-dev`, `verify`, `study-analysis` ; `start` construit l'interface si besoin et l'ouvre |
 
 Commandes :
 
 ```bash
 python -m src.models.graph_encoder --subset RE2 --save-model-only   # ~20 min, une fois
-./run.sh evaluate-causal --compare-rankers                          # ~45 min au 1er lancement, puis cache
-./run.sh ui-build && ./run.sh serve                                 # http://localhost:8000/ui/
+./run.sh evaluate-causal --compare-rankers                          # ~1 h au 1er lancement, puis cache
+./run.sh start                                                      # tout lancer ; interface sur http://localhost:8000/ui/
+./run.sh ui-dev                                                     # interface en mode développement (http://localhost:5173/ui/, démarre l'API si besoin)
+./run.sh verify --full                                              # tout vérifier + recomparer aux chiffres ci-dessous
 ./run.sh study-analysis                                             # seulement après une vraie étude
 ```
 

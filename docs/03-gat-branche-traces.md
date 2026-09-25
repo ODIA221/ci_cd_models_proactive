@@ -98,3 +98,26 @@ python3 -m src.models.evaluate_multimodal --source-dir data/interim/rcaeval/RE2 
 Temps d'exécution mesuré pour `graph_encoder.py --subset RE2` : environ
 12 minutes (271 cas, dont la construction des 241 graphes et
 l'entraînement sur les 121 graphes normaux du split train).
+
+## Suite : le modèle sauvegardé et son attention mesurée
+
+Le modèle de ce chapitre n'était pas sauvegardé : seuls ses embeddings
+l'étaient (`trace_gat_features.parquet`). Pour la couche d'exploration
+causale, `graph_encoder.py` sait désormais exposer ses poids d'attention et
+sauvegarder le modèle, avec une graine fixe :
+
+```bash
+python3 -m src.models.graph_encoder --subset RE2 --save-model-only
+```
+
+`--save-model-only` écrit `trace_gat_model.pt` **sans** réécrire
+`trace_gat_features.parquet`, pour ne pas changer les résultats de ce
+chapitre, qui ont été obtenus avec l'ancien modèle (entraîné sans graine,
+donc non reproductible à l'identique). Le modèle sauvegardé est un
+réentraînement de même architecture.
+
+Ce que vaut son attention est mesuré au
+[chapitre 7](07-couche-exploration-causale-v2.md) : elle est uniforme, et
+n'apporte rien au-delà d'une pondération par le degré des nœuds.
+L'embedding GAT reste utile pour la **détection** (ce chapitre) ; c'est son
+**attention** qui ne l'est pas pour **expliquer** une panne.
