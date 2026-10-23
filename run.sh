@@ -36,6 +36,13 @@
 #                                  # --full: relance aussi l'évaluation et compare aux chiffres de docs/07
 #   ./run.sh study-analysis         # analyse les sessions d'étude utilisateur RÉELLEMENT enregistrées
 #                                  # (experiments/user_study/sessions.jsonl), refuse de tourner sans sessions
+#   ./run.sh study-env-up           # CONDITION A de l'étude (docs/08): démarre Grafana + VictoriaMetrics
+#                                  # (Prometheus) + Loki + Jaeger via Docker (study/condition_a/)
+#   ./run.sh study-env-load [args]  # y charge les 60 exécutions anonymisées (--limit 2 pour tester,
+#                                  # --list pour voir alias et créneaux, --trace-sample 0.1)
+#   ./run.sh study-env-reload-logs  # vide Loki et recharge les seuls journaux (si --check signale des doublons)
+#   ./run.sh study-env-down         # arrête la pile (données conservées)
+#   ./run.sh study-env-reset        # arrête la pile ET supprime ses données (rechargement complet)
 #   ./run.sh study-power [--sims N] # calcul de puissance de l'étude utilisateur par simulation du plan
 #                                  # exact et du modèle préenregistré (docs/08), ~10 min
 #   ./run.sh evaluate-proactive <args...>   # mesure le délai de détection minimal (proactivité):
@@ -207,6 +214,56 @@ case "$COMMAND" in
         # npm dans le PATH pour les contrôles frontend (nvm non chargé en bash)
         load_npm || true
         "$PYTHON_BIN" -m src.verify "$@"
+        ;;
+
+    study-env-up)
+        if ! docker info >/dev/null 2>&1; then
+            echo "Docker ne répond pas. Démarre Docker Desktop, attends qu'il soit prêt, puis relance."
+            exit 1
+        fi
+        docker compose -f study/condition_a/docker-compose.yml up -d
+        printf "==> Attente de la pile"
+        READY=false
+        for _ in $(seq 1 90); do
+            if curl -s -o /dev/null http://localhost:8428/health && curl -s http://localhost:3100/ready | grep -q ready \
+               && curl -s -o /dev/null http://localhost:16686/ && curl -s -o /dev/null "http://localhost:${CONDITION_A_GRAFANA_PORT:-3300}/api/health"; then
+                READY=true; break
+            fi
+            printf "."; sleep 2
+        done
+        echo
+        if [ "$READY" != "true" ]; then
+            echo "La pile ne répond pas après 3 min. Diagnostic: docker compose -f study/condition_a/docker-compose.yml logs"
+            exit 1
+        fi
+        echo "==> Condition A prête : Grafana http://localhost:${CONDITION_A_GRAFANA_PORT:-3300} (accès sans compte), Jaeger http://localhost:16686"
+        echo "    Charger les données (une fois) : ./run.sh study-env-load"
+        ;;
+
+    study-env-load)
+        shift
+        "$PYTHON_BIN" -m src.causal.condition_a "$@"
+        ;;
+
+    study-env-reload-logs)
+        # Repart d'un Loki vide et ne recharge que les journaux : seul moyen
+        # d'éliminer des doublons (Loki ne dédoublonne pas un lot renvoyé).
+        docker compose -f study/condition_a/docker-compose.yml rm -sf loki
+        docker volume rm logpipeguard-condition-a_loki-data
+        docker compose -f study/condition_a/docker-compose.yml up -d loki
+        for _ in $(seq 1 60); do curl -s http://localhost:3100/ready | grep -q ready && break; sleep 2; done
+        "$PYTHON_BIN" -m src.causal.condition_a --only logs
+        echo "==> Vérifier dans quelques minutes : ./run.sh study-env-load --check"
+        ;;
+
+    study-env-down)
+        docker compose -f study/condition_a/docker-compose.yml stop
+        echo "==> Pile arrêtée, données conservées (relancer : ./run.sh study-env-up)."
+        ;;
+
+    study-env-reset)
+        docker compose -f study/condition_a/docker-compose.yml down -v
+        echo "==> Pile et données supprimées."
         ;;
 
     study-power)
@@ -549,7 +606,7 @@ EOF
 
     *)
         echo "Commande inconnue: '$COMMAND'"
-        echo "Usage: ./run.sh [setup|demo|sources|acquire <args...>|evaluate|train-rcaeval <args...>|evaluate-multimodal <args...>|evaluate-causal <args...>|evaluate-proactive <args...>|showcase-rcaeval|jenkins-up|jenkins-down|otel-up|otel-down|serve|dashboard|ui-build|ui-dev|verify [--full]|study-power|study-analysis|start|stop]"
+        echo "Usage: ./run.sh [setup|demo|sources|acquire <args...>|evaluate|train-rcaeval <args...>|evaluate-multimodal <args...>|evaluate-causal <args...>|evaluate-proactive <args...>|showcase-rcaeval|jenkins-up|jenkins-down|otel-up|otel-down|serve|dashboard|ui-build|ui-dev|verify [--full]|study-env-up|study-env-load|study-env-reload-logs|study-env-down|study-env-reset|study-power|study-analysis|start|stop]"
         exit 1
         ;;
 esac

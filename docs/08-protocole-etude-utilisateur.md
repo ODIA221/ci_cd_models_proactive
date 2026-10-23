@@ -144,16 +144,47 @@ Le participant ne voit jamais l'identifiant RCAEval de l'exécution, qui
 contient le nom du service fautif : l'interface affiche un alias opaque. Il
 n'apprend pas non plus s'il a eu juste avant la fin de la séance.
 
-## 7. Matériel à préparer avant le pilote
+## 7. Matériel
 
-- **Condition A** : un environnement Grafana avec Loki (journaux), Prometheus
-  (métriques) et Jaeger ou Tempo (traces), chargé avec des copies des
-  exécutions **anonymisées**. Les dossiers RCAEval portent le nom du service
-  fautif et doivent être renommés avec le même alias que dans l'interface.
-  **Cet environnement n'existe pas encore** : c'est le principal chantier
-  technique avant l'étude.
-- **Condition B** : déjà en place (tableaux du mode étude).
-- **Condition C** : déjà en place (interface d'exploration).
+- **Condition A** : Grafana, avec VictoriaMetrics (stockage compatible
+  Prometheus, requêtes PromQL), Loki (journaux) et Jaeger (traces), chargés
+  avec les 60 exécutions du pool, **anonymisées** (`study/condition_a/`,
+  `src/causal/condition_a.py`) :
+  - chaque exécution n'est connue que par son alias `alerte-xxxxxxxx`, le
+    même que dans le mode étude ; aucun nom de dossier, `run_id` ni type de
+    panne n'est chargé ;
+  - les horodatages sont décalés : chaque exécution occupe son propre créneau
+    d'une heure, dans un ordre fixé par l'alias, donc sans lien avec le
+    service fautif ; les dates d'origine sont aussi retirées du texte des
+    journaux ;
+  - un tableau de bord unique, préconfiguré (CPU, mémoire, latence, requêtes,
+    erreurs, réseau, disque, sockets, volume et contenu des journaux), plus
+    un lien vers Jaeger sur la même période. Le mode étude du dashboard
+    ouvre Grafana directement sur l'exécution de la tâche.
+- **Condition B** : tableaux du mode étude.
+- **Condition C** : interface d'exploration.
+
+**Écarts assumés de la condition A** par rapport aux conditions B et C :
+
+| Écart | Raison |
+|---|---|
+| Traces **échantillonnées** : toutes celles qui contiennent une erreur, plus 10 % des autres (tirage déterministe) | 400 000 à 900 000 spans par exécution (environ 35 millions pour 60) ne tiennent pas dans un Jaeger local ; c'est aussi la pratique courante en production |
+| Métriques ré-échantillonnées toutes les **5 s** | Les valeurs de RCAEval se répètent sur plusieurs secondes (interpolation d'un relevé plus lâche) : rien n'est perdu |
+| Colonnes `*-total` exportées en `*_per_second` | Ce sont déjà des taux, pas des compteurs (elles décroissent) : sans renommage, un ingénieur leur appliquerait `rate()` |
+
+Mise en place, une fois, par l'expérimentateur :
+
+```bash
+./run.sh study-env-up          # démarre la pile (Docker), Grafana sur http://localhost:3300
+./run.sh study-env-load        # charge les 60 exécutions (20 à 30 min)
+./run.sh study-env-load --check  # quelques minutes plus tard : toutes les lignes sont-elles interrogeables ?
+./run.sh study-env-reload-logs   # seulement si --check signale des DOUBLONS
+```
+
+Le contrôle `--check` est indispensable : Loki accepte des lignes qu'il ne
+restitue qu'après quelques minutes, et un lot renvoyé après un délai dépassé
+peut créer des doublons, que Loki n'élimine pas. Les deux cas ont été
+constatés pendant la mise au point.
 
 ## 8. Mesures
 
@@ -214,7 +245,7 @@ que sous forme d'extraits anonymisés.
 
 | Semaines | Étape |
 |---|---|
-| 1 à 3 | Avis éthique, environnement de la condition A |
+| 1 à 3 | Avis éthique ; essai de l'environnement de la condition A par un ingénieur extérieur à l'étude |
 | 4 | Étude pilote, ajustements, recalcul éventuel de l'effectif |
 | 5 à 12 | Étude principale (24 participants au plus) |
 | 13 et 14 | Analyse préenregistrée, rédaction de l'étape 2 |

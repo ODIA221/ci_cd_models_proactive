@@ -187,8 +187,22 @@ def render_study_mode(base_url: str) -> None:
         signals = fetch_signals(base_url, task["run_id"])
 
     if task["condition"] == "A_manuel":
-        st.info("Condition A : utilisez vos outils habituels (Grafana/Loki/Jaeger ou fichiers bruts du cas). "
-                "Ce tableau de bord ne sert ici qu'à chronométrer et enregistrer votre réponse.")
+        # Grafana/Loki/Jaeger chargés avec les exécutions anonymisées
+        # (./run.sh study-env-up puis study-env-load, docs/08 section 7).
+        try:
+            link = requests.get(f"{base_url}/study/condition-a", params={"run_id": task["run_id"]}, timeout=60).json()
+        except requests.exceptions.RequestException:
+            link = {}
+        if link.get("grafana_url"):
+            st.info(f"Condition A : diagnostiquez avec Grafana (métriques, journaux) et Jaeger (traces). "
+                    f"Alerte émise le {link['alert_time_utc']}. Ce tableau de bord ne sert qu'à chronométrer "
+                    "et à enregistrer votre réponse.")
+            c1, c2 = st.columns(2)
+            c1.link_button("Ouvrir Grafana sur cette exécution", link["grafana_url"])
+            c2.link_button("Ouvrir Jaeger (traces)", link["jaeger_url"])
+        else:
+            st.warning("Environnement de la condition A indisponible : lancer ./run.sh study-env-up puis "
+                       "./run.sh study-env-load (expérimentateur).")
     elif task["condition"] == "B_attribution_statique":
         st.dataframe(causal_views.static_attribution_table(signals), hide_index=True, use_container_width=True)
         st.dataframe(causal_views.attention_table(signals), hide_index=True, use_container_width=True)

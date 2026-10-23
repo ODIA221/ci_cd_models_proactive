@@ -245,6 +245,18 @@ def latin_square_sequence(participant_id: str) -> int:
     return int.from_bytes(participant_id.encode(), "little") % 3
 
 
+@app.get("/study/condition-a")
+def study_condition_a(run_id: str, subset: str = "RE2") -> dict:
+    """Lien Grafana de la condition A (docs/08) pour une tâche : alias,
+    heure de l'alerte (décalée) et URL Grafana/Jaeger sur la bonne période.
+    Ne renvoie jamais le run_id ni aucun nom de dossier RCAEval."""
+    from src.causal import condition_a
+    try:
+        return condition_a.grafana_link(run_id, subset)
+    except KeyError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+
+
 @app.post("/study/sessions")
 def study_record(record: StudySessionRecord) -> dict:
     labels = _study_labels(record.subset)

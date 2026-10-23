@@ -1,0 +1,22 @@
+apiVersion: 1
+datasources:
+  - name: Métriques (Prometheus)
+    uid: metrics
+    type: prometheus
+    access: proxy
+    url: http://victoriametrics:8428
+    isDefault: true
+    jsonData:
+      timeInterval: 5s
+  - name: Journaux (Loki)
+    uid: logs
+    type: loki
+    access: proxy
+    url: http://loki:3100
+    jsonData:
+      maxLines: 5000
+  - name: Traces (Jaeger)
+    uid: traces
+    type: jaeger
+    access: proxy
+    url: http://jaeger:16686

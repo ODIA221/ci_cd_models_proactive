@@ -291,6 +291,36 @@ def api_checks(base: str) -> None:
         assert before == after, "une session a été écrite pendant la vérification"
         return f"3 blocs de 5, ordres {orders} pour P01-P03"
 
+    @check("API", "Condition A : lien Grafana anonymisé (aucun run_id)")
+    def condition_a_link():
+        import src.api.main as api_main
+        task = next(t for t in api_main.study_tasks("P01") if t.condition == "A_manuel")
+        r = requests.get(f"{base}/study/condition-a", params={"run_id": task.run_id}, timeout=120)
+        assert r.status_code == 200, r.text[:200]
+        body = r.text
+        assert task.run_id not in body and "RE2-" not in body, "run_id ou dossier RCAEval présent dans la réponse"
+        return f"{r.json()['alias']}, alerte {r.json()['alert_time_utc']}"
+
+    @check("API", "Condition A : exécution présente dans Grafana, Loki et Jaeger")
+    def condition_a_stack():
+        from src.causal import condition_a
+        try:
+            requests.get(f"{condition_a.GRAFANA_URL}/api/health", timeout=3)
+        except requests.exceptions.RequestException:
+            raise Skip("pile de la condition A arrêtée (./run.sh study-env-up)")
+        row = condition_a.slots().iloc[0]
+        series = requests.get(f"{condition_a.VM_URL}/api/v1/series", params={
+            "match[]": f'rcaeval_container_memory_usage_bytes{{run="{row.alias}"}}',
+            "start": int(row.slot_start), "end": int(row.window_end)}, timeout=30).json()["data"]
+        logs = requests.get(f"{condition_a.LOKI_URL}/loki/api/v1/query", params={
+            "query": f'sum(count_over_time({{run="{row.alias}"}}[2h]))',
+            "time": (int(row.window_end) + 60) * 10**9}, timeout=60).json()["data"]["result"]
+        services = requests.get(f"{condition_a.JAEGER_UI_URL}/api/services", timeout=30).json()["data"]
+        assert series, "aucune métrique"
+        assert logs and int(float(logs[0]["value"][1])) > 0, "aucun journal"
+        assert len(services) > 1, "aucune trace"
+        return f"{row.alias} : {len(series)} séries mémoire, {int(float(logs[0]['value'][1]))} lignes, {len(services) - 1} services tracés"
+
     @check("API", "Interface web servie sous /ui/")
     def ui_served():
         if not (REPO_ROOT / "frontend" / "dist" / "index.html").exists():
@@ -300,7 +330,7 @@ def api_checks(base: str) -> None:
         assert requests.get(f"{base}{asset}").status_code == 200, f"{asset} introuvable"
         return asset
 
-    for fn in (basics, predict, predict_422, explain, runs, causal, study, ui_served):
+    for fn in (basics, predict, predict_422, explain, runs, causal, study, condition_a_link, condition_a_stack, ui_served):
         fn()
 
 
