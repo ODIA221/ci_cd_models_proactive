@@ -100,7 +100,18 @@ Protocole : `./run.sh evaluate-causal --compare-rankers`, RCAEval RE2, les
 Shop ; faute cpu 15, delay 10, disk 17, loss 12, mem 16, socket 16). La
 vérité terrain est le service où la faute a été injectée. On mesure
 precision@k : le service fautif est-il classé dans les k premiers ? Fichiers
-bruts : `experiments/causal_rankers*_20260924_123129.csv`.
+bruts : `experiments/causal_rankers*_20261023_194519.csv` ; tous les chiffres
+ci-dessous se recalculent avec `python -m src.models.causal_summary`.
+
+> **Correction du 2026-10-23 (signaux version 3).** Les colonnes de métriques
+> RCAEval en `*-total` sont déjà des taux par seconde, pas des compteurs
+> cumulés (elles décroissent, vérifié). Les versions 1 et 2 des signaux les
+> différenciaient, et mesuraient donc la variation du taux au lieu du taux.
+> La correction **dégrade** le score multimodal : P@1 de 0,71 à 0,64, P@3 de
+> 0,95 à 0,88, et davantage de fausses pistes. Les chiffres ci-dessous sont
+> ceux de la version corrigée ; les anciens restent dans l'historique Git
+> (`causal_rankers*_20260924_123129.csv`). Le pipeline de détection
+> (chapitres 2 à 6) n'était pas concerné.
 
 Classements comparés :
 
@@ -117,76 +128,71 @@ Classements comparés :
 
 | Classement | P@1 (86 runs) | P@3 (86 runs) | P@1 (60 runs avec traces) | P@3 (60 runs) |
 |---|---|---|---|---|
-| arbre_spans_v1 (existant) | — | — | **0,75** | 0,95 |
-| score_multimodal | **0,71** | **0,95** | 0,72 | **0,98** |
-| precedence_temporelle | 0,66 | 0,91 | 0,67 | 0,87 |
-| propagation_attention | 0,45 | 0,74 | 0,35 | 0,68 |
-| propagation_degre | 0,45 | 0,74 | 0,35 | 0,68 |
-| propagation_uniforme | 0,41 | 0,65 | 0,28 | 0,55 |
+| arbre_spans_v1 (existant) | — | — | **0,75** | **0,95** |
+| score_multimodal | **0,64** | **0,88** | 0,65 | 0,90 |
+| precedence_temporelle | 0,58 | 0,81 | 0,60 | 0,78 |
+| propagation_attention | 0,42 | 0,71 | 0,33 | 0,65 |
+| propagation_degre | 0,42 | 0,72 | 0,33 | 0,67 |
+| propagation_uniforme | 0,36 | 0,62 | 0,25 | 0,52 |
 
 Tests de McNemar appariés (P@1) :
 
-- arbre_spans_v1 contre score_multimodal : 10 contre 8 runs gagnés seul, p = 0,82 ;
-- arbre_spans_v1 contre precedence_temporelle : p = 0,36 ;
-- score_multimodal contre precedence_temporelle : p = 0,42 ;
-- attention contre uniforme : 4 contre 0, p = 0,13.
+- arbre_spans_v1 contre score_multimodal : 13 contre 7 runs gagnés seul, p = 0,263 ;
+- arbre_spans_v1 contre precedence_temporelle : 16 contre 7, p = 0,093 ;
+- score_multimodal contre precedence_temporelle : 10 contre 5, p = 0,302 ;
+- attention contre uniforme : 5 contre 0, p = 0,062.
 
-**Aucune différence n'est significative entre les trois meilleurs classements.**
+**Aucune différence n'est significative entre les trois meilleurs
+classements**, mais l'heuristique existante a désormais l'estimation la plus
+haute (0,75 contre 0,65 sur les mêmes 60 runs).
 
-Par système (P@1) : Online Boutique 0,68 / 0,68 (v1 / score_multimodal),
-Train Ticket 0,81 / 0,75, Sock Shop — / 0,69. Seul apport net de la v2 :
-**elle fonctionne sans traces** (Sock Shop, 26 runs), là où l'heuristique
-v1 ne peut rien classer.
+Par système (P@1) : Online Boutique 0,68 / 0,68 (arbre de spans /
+score_multimodal), Train Ticket 0,81 / 0,62, Sock Shop — / 0,62. Seul apport
+net du score multimodal : **il fonctionne sans traces** (Sock Shop, 26 runs),
+là où l'heuristique par arbre de spans ne peut rien classer.
 
-Par type de faute (P@1, score_multimodal) : cpu 0,87, delay 0,80, disk 0,82,
-loss 0,50, mem 0,62, socket 0,62. Les fautes réseau (`loss`) restent les plus
-difficiles, pour tous les classements.
+Par type de faute (P@1, score_multimodal) : cpu 0,80, delay 0,80, disk 0,76,
+socket 0,62, mem 0,44, loss 0,42. La mémoire et la perte de paquets sont les
+plus difficiles.
 
 ### Ce que valent les poids d'attention GAT
 
-**Rien de plus qu'une normalisation par le degré.**
+**Rien de plus qu'une normalisation par le degré.** (Ce résultat porte sur
+les traces, que la correction ne modifie pas.)
 
 - L'entropie normalisée des lignes d'attention (1 = parfaitement uniforme)
   a une médiane de **1,000** (minimum 0,999) sur les 60 runs avec traces.
-  Le GAT répartit son attention également entre tous les voisins. C'est
-  cohérent avec son objectif : reconstruire des graphes normaux, pas
-  localiser une panne.
 - `propagation_attention` et `propagation_degre` (1/(1+degré), sans aucun
-  modèle) donnent des **résultats identiques sur les 86 runs**, jusque dans
-  chaque type de faute. Le léger avantage apparent de l'attention sur
-  `propagation_uniforme` (+0,05 de P@1, non significatif) vient entièrement
-  de cette normalisation.
+  modèle) donnent des **P@1 identiques sur les 86 runs**, jusque dans chaque
+  type de faute ; à P@3, ils ne diffèrent que d'un run (en faveur du degré).
+  L'avantage apparent de l'attention sur `propagation_uniforme` (5 runs
+  contre 0, p = 0,062) vient de cette normalisation.
 - Tous les classements par propagation sont **nettement moins bons** que le
   simple score par service. Le marcheur « descend » vers les appelés, alors
   qu'une faute sur un appelant (par exemple checkoutservice) contamine ses
   appelés par effet de charge. Sur `delay`, P@1 = 0,10.
 
-Conséquence pour l'article : la vue de propagation reste utile pour
-**visualiser** la structure d'appels et tester des hypothèses (« et si »),
-mais l'épaisseur d'arête « = α » n'encode aujourd'hui aucune information
-apprise. Afficher le volume d'appels serait tout aussi informatif.
-
 ### Fausses pistes (runs sans faute)
 
 Sur les 86 runs **normaux** de test (deuxième moitié contre première moitié
-d'une fenêtre sans faute), les vues signalent quand même en médiane
-**2 services « notablement anormaux »** (aᵢ ≥ 0,5 ; jusqu'à 23), avec un aᵢ
-maximal médian de 0,74. Sur les runs anormaux : 6 services en médiane
-(jusqu'à 49). Autrement dit, un service rouge dans la chronologie ne suffit
-pas à conclure. La heuristique aᵢ n'est pas calibrée : le seuil « notable »
-(écart robuste de 3) a été fixé *a priori*, pas appris.
+d'une fenêtre sans faute), les vues signalent en médiane **3 services
+« notablement anormaux »** (aᵢ ≥ 0,5 ; écart interquartile 2 à 10,75 ;
+jusqu'à 24), et le score maximal atteint le plafond (0,94) dans plus de la
+moitié des runs normaux. Sur les runs anormaux : 8 services en médiane
+(jusqu'à 50). Un service rouge ne suffit donc pas à conclure : les seuils
+(écart robuste de 3) n'ont pas été calibrés, et avec la correction, les taux
+bruts (trafic, CPU) varient assez d'une demi-fenêtre à l'autre pour saturer
+le score.
 
-### Limites de cette évaluation (à reprendre dans l'article)
+### Limites de cette évaluation
 
 - **Pas de jeu de test séparé.** Trois décisions ont été prises *après*
   avoir vu les résultats de ces mêmes 86 runs : le masquage des
-  identifiants dans les logs (UUID non masqués en v1 du module), le
-  départage des ex æquo (48 runs sur 86 avaient plusieurs services au
-  plafond de aᵢ, départagés par ordre alphabétique dans la première mesure,
-  P@1 = 0,51) et l'ajout de l'ablation par le degré. Chacune se justifie
-  sur le fond, mais les chiffres de `score_multimodal` sont probablement
-  légèrement optimistes. RE3 (déjà acquis, chapitre 5) peut servir de
-  confirmation indépendante.
+  identifiants dans les logs, le départage des ex æquo (64 runs sur 86 ont
+  plusieurs services au plafond de aᵢ ; sans départage, par ordre
+  alphabétique, P@1 = 0,35) et l'ajout de l'ablation par le degré. Les
+  chiffres de `score_multimodal` sont donc probablement un peu optimistes.
+  RE3 (déjà acquis, chapitre 5) peut servir de confirmation indépendante.
 - 86 runs, 10 à 17 par type de faute : les chiffres par faute ont de larges
   intervalles de confiance.
 - Fautes injectées sur **un seul** service par cas. Rien n'est mesuré sur les

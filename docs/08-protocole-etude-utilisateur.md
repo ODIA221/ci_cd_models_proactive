@@ -40,7 +40,9 @@ Une seule hypothèse principale est déclarée, ce qui dispense le test de H1 de
 toute correction pour comparaisons multiples.
 
 **Analyses exploratoires**, présentées comme telles : NASA-TLX et SUS par
-condition, nombre d'interactions en C, résultats par type de panne et par
+condition, nombre d'interactions en C, **nombre de fausses pistes suivies**
+(comparé entre C et A : l'interface aide-t-elle à écarter les services qui
+dévient sans être en cause ?), résultats par type de panne et par
 application, entretien qualitatif.
 
 ## 3. Plan
@@ -196,6 +198,7 @@ constatés pendant la mise au point.
 | Charge cognitive | NASA-TLX brut, par bloc | Exploratoire |
 | Utilisabilité | SUS, conditions B et C | Exploratoire |
 | Interactions | Nombre d'actions dans l'interface (condition C) | Exploratoire |
+| Fausses pistes suivies | Nombre de services soupçonnés pendant le diagnostic (réponse comprise) qui ne sont pas le service fautif ; le participant les indique avant de valider | Exploratoire |
 
 ## 9. Analyse
 

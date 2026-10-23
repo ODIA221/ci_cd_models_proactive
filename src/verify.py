@@ -41,9 +41,9 @@ SUBSET_DIR = REPO_ROOT / "data" / "interim" / "rcaeval" / "RE2"
 EXAMPLE_RUN = "RE2-OB/checkoutservice_disk/2__abnormal"
 EXAMPLE_RUN_NO_TRACES = "RE2-SS/carts_cpu/3__abnormal"
 CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
-# Chiffres publiés dans docs/07-couche-exploration-causale-v2.md (86 runs).
-PUBLISHED_P_AT_1 = {"score_multimodal": 0.709302, "precedence_temporelle": 0.662791,
-                    "propagation_attention": 0.453488, "propagation_degre": 0.453488}
+# Chiffres publiés dans docs/07-couche-exploration-causale-v2.md (86 runs, signaux version 3).
+PUBLISHED_P_AT_1 = {"score_multimodal": 0.639535, "precedence_temporelle": 0.581395,
+                    "propagation_attention": 0.418605, "propagation_degre": 0.418605}
 
 results = []
 

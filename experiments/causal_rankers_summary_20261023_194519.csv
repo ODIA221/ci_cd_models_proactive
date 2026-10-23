@@ -1,0 +1,13 @@
+ranker,n_runs,precision_at_1,precision_at_3,sous_ensemble
+arbre_spans_v1,60,0.75,0.95,tous_runs_anormaux
+precedence_temporelle,86,0.5813953488372093,0.813953488372093,tous_runs_anormaux
+propagation_attention,86,0.4186046511627907,0.7093023255813954,tous_runs_anormaux
+propagation_degre,86,0.4186046511627907,0.7209302325581395,tous_runs_anormaux
+propagation_uniforme,86,0.36046511627906974,0.6162790697674418,tous_runs_anormaux
+score_multimodal,86,0.6395348837209303,0.8837209302325582,tous_runs_anormaux
+arbre_spans_v1,60,0.75,0.95,runs_avec_attention
+precedence_temporelle,60,0.6,0.7833333333333333,runs_avec_attention
+propagation_attention,60,0.3333333333333333,0.65,runs_avec_attention
+propagation_degre,60,0.3333333333333333,0.6666666666666666,runs_avec_attention
+propagation_uniforme,60,0.25,0.5166666666666667,runs_avec_attention
+score_multimodal,60,0.65,0.9,runs_avec_attention

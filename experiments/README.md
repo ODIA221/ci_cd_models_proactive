@@ -8,14 +8,18 @@ sorties d'entraînement et d'évaluation (`results_*.csv`, nouvelles
 ## Localisation de la cause racine (article, tables 3 et 4 ; `docs/07`)
 
 Produits par `./run.sh evaluate-causal --compare-rankers` sur les 86
-exécutions anormales de test de RCAEval RE2.
+exécutions anormales de test de RCAEval RE2, avec les signaux en version 3
+(les colonnes de métriques `*-total`, déjà des taux, ne sont plus
+différenciées). Les résultats antérieurs (`20260924_123129`), calculés avec
+ce défaut, restent dans l'historique Git. Tous les chiffres cités dans
+l'article se recalculent avec `python -m src.models.causal_summary`.
 
 | Fichier | Contenu |
 |---|---|
-| `causal_rankers_summary_20260924_123129.csv` | P@1 et P@3 par méthode (table 3), sur toutes les exécutions anormales (86) et sur celles qui ont des traces (60) |
-| `causal_rankers_by_fault_20260924_123129.csv` | P@1 par méthode et par type de panne (table 4) |
-| `causal_rankers_20260924_123129.csv` | Détail par exécution et par méthode : rang du service fautif, présence de traces, uniformité de l'attention GAT (entropie normalisée) |
-| `causal_false_leads_20260924_123129.csv` | Par exécution (normale ou anormale) : nombre de services avec aᵢ ≥ 0,5 et score maximal (section 6.3, fausses pistes) |
+| `causal_rankers_summary_20261023_194519.csv` | P@1 et P@3 par méthode (table 3), sur toutes les exécutions anormales (86) et sur celles qui ont des traces (60) |
+| `causal_rankers_by_fault_20261023_194519.csv` | P@1 par méthode et par type de panne (table 4) |
+| `causal_rankers_20261023_194519.csv` | Détail par exécution et par méthode : rang du service fautif, présence de traces, uniformité de l'attention GAT (entropie normalisée) |
+| `causal_false_leads_20261023_194519.csv` | Par exécution (normale ou anormale) : nombre de services avec aᵢ ≥ 0,5 et score maximal (section 6.3, fausses pistes) |
 
 `./run.sh verify --full` relance cette évaluation et vérifie que les P@1
 obtenus correspondent à ceux de ce fichier de synthèse.

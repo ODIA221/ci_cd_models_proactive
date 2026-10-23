@@ -40,7 +40,7 @@ Note annexe, sans rapport avec le contenu scientifique : **[pourquoi
 | Le VAE, le GAT et le LSTM ajoutés aident-ils ? | Le GAT oui, mesurablement. Le LSTM légèrement, mais son effet net dans la fusion reste incertain. Le VAE aide la fusion jointe mais celle-ci reste dominée par une approche plus simple. |
 | Quelle est la meilleure approche mesurée ? | La fusion tardive (un détecteur par modalité + régression logistique sur les scores), pas la fusion jointe visée par le résumé de thèse. |
 | Ce résultat est-il fiable ? | Validé sur deux sous-ensembles RCAEval indépendants (RE2, RE3) puis sur leurs runs de test regroupés (218 au total) — voir [chapitre 5](05-fusion-tardive-vs-jointe.md). |
-| Peut-on localiser le service fautif ? | Oui, en partie : un score robuste par service le classe 1er dans 71 % des 86 exécutions anormales de test RE2, dans les 3 premiers dans 95 %, même sans traces — voir [chapitre 7](07-couche-exploration-causale-v2.md). |
+| Peut-on localiser le service fautif ? | Oui, en partie : un score robuste par service le classe 1er dans 64 % des 86 exécutions anormales de test RE2, dans les 3 premiers dans 88 %, même sans traces ; l'heuristique existante par arbre de spans fait au moins aussi bien là où elle s'applique (75 %) — voir [chapitre 7](07-couche-exploration-causale-v2.md). |
 | L'attention du GAT explique-t-elle la panne ? | Non : elle est uniforme (entropie normalisée médiane 1,000) et donne exactement les mêmes classements qu'une pondération par 1/degré. |
 | L'interface fait-elle gagner du temps aux ingénieurs ? | Non mesuré : l'étude utilisateur n'a pas été conduite. Le protocole et l'instrumentation existent. |
 
