@@ -1,0 +1,65 @@
+# Pile d'observabilité de la condition A de l'étude utilisateur (docs/08).
+# Lancer avec ./run.sh study-env-up, charger avec ./run.sh study-env-load.
+# Les données sont persistées dans des volumes Docker (study-env-down les conserve).
+name: logpipeguard-condition-a
+
+services:
+  victoriametrics:
+    image: victoriametrics/victoria-metrics:v1.106.1
+    command:
+      - "-storageDataPath=/storage"
+      # Par défaut, les points plus vieux que la rétention (1 mois) sont REFUSÉS
+      # à l'import : les données rejouées datent de début 2026.
+      - "-retentionPeriod=100y"
+      # Une exécution rechargée (reprise après interruption) ne doit pas
+      # doubler ses points.
+      - "-dedup.minScrapeInterval=1s"
+    ports: ["8428:8428"]
+    volumes: ["vm-data:/storage"]
+
+  loki:
+    image: grafana/loki:3.3.2
+    command: ["-config.file=/etc/loki/loki.yaml"]
+    ports: ["3100:3100"]
+    volumes:
+      - ./loki.yaml:/etc/loki/loki.yaml:ro
+      - loki-data:/loki
+
+  jaeger:
+    image: jaegertracing/all-in-one:1.64.0
+    environment:
+      SPAN_STORAGE_TYPE: badger
+      BADGER_EPHEMERAL: "false"
+      BADGER_DIRECTORY_VALUE: /badger/data
+      BADGER_DIRECTORY_KEY: /badger/key
+      # 72 h par défaut : les traces disparaîtraient avant la fin de l'étude.
+      BADGER_SPAN_STORE_TTL: 8760h
+      COLLECTOR_OTLP_ENABLED: "true"
+    ports: ["16686:16686", "4318:4318"]
+    volumes: ["jaeger-data:/badger"]
+    user: "0"
+
+  grafana:
+    image: grafana/grafana:11.3.0
+    environment:
+      # Accès sans compte pour les participants ; Explore autorisé.
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+      GF_USERS_VIEWERS_CAN_EDIT: "true"
+      GF_AUTH_DISABLE_LOGIN_FORM: "false"
+      GF_SECURITY_ADMIN_PASSWORD: condition-a
+      GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: /var/lib/grafana/dashboards/condition-a.json
+      GF_ANALYTICS_REPORTING_ENABLED: "false"
+      GF_ANALYTICS_CHECK_FOR_UPDATES: "false"
+    # 3300 plutôt que 3000, très souvent déjà pris ; modifiable :
+    # CONDITION_A_GRAFANA_PORT=3400 ./run.sh study-env-up
+    ports: ["${CONDITION_A_GRAFANA_PORT:-3300}:3000"]
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    depends_on: [victoriametrics, loki, jaeger]
+
+volumes:
+  vm-data:
+  loki-data:
+  jaeger-data:

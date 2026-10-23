@@ -32,7 +32,7 @@ Chiffres obtenus avec ce code, sur RCAEval ; détails et limites dans [`docs/`](
 | Python 3.12 | Tout le projet | Oui |
 | Node.js ≥ 18 | Interface web v2 (`frontend/`) | Non — l'API et le dashboard fonctionnent sans |
 | Google Chrome | Contrôle de rendu de `./run.sh verify` | Non — contrôle ignoré s'il est absent |
-| Docker | Démo OpenTelemetry, Jenkins local | Non |
+| Docker | Environnement de la condition A de l'étude, démo OpenTelemetry, Jenkins local | Non |
 | ~5 Go de disque | Jeu RCAEval RE2 | Pour les fonctions RCAEval |
 
 `run.sh` crée l'environnement virtuel `.venv` et installe `requirements.txt`
@@ -128,6 +128,7 @@ d'échec.
 | `evaluate-multimodal <args>` | Fusion tardive vs jointe vs mono-modalité |
 | `evaluate-causal [--compare-rankers]` | Localisation de la cause racine (P@1, P@3) |
 | `evaluate-proactive <args>` | Détection à horizon court (15 s à 720 s) |
+| `study-env-up` / `study-env-load [--check]` / `study-env-reload-logs` / `study-env-down` / `study-env-reset` | Environnement de la condition A de l'étude : Grafana (port 3300), Loki, Jaeger, VictoriaMetrics, chargés avec les exécutions anonymisées (Docker) |
 | `study-power [--sims N]` | Calcul de puissance de l'étude utilisateur (simulation) |
 | `study-analysis` | Analyse préenregistrée des sessions d'étude utilisateur enregistrées |
 | `otel-up` / `otel-down` | Démo OpenTelemetry (Docker) |
