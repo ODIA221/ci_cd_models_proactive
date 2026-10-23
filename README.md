@@ -128,7 +128,8 @@ d'échec.
 | `evaluate-multimodal <args>` | Fusion tardive vs jointe vs mono-modalité |
 | `evaluate-causal [--compare-rankers]` | Localisation de la cause racine (P@1, P@3) |
 | `evaluate-proactive <args>` | Détection à horizon court (15 s à 720 s) |
-| `study-analysis` | Analyse des sessions d'étude utilisateur enregistrées |
+| `study-power [--sims N]` | Calcul de puissance de l'étude utilisateur (simulation) |
+| `study-analysis` | Analyse préenregistrée des sessions d'étude utilisateur enregistrées |
 | `otel-up` / `otel-down` | Démo OpenTelemetry (Docker) |
 | `jenkins-up` / `jenkins-down` | Jenkins local (Docker) |
 
@@ -169,7 +170,14 @@ run.sh         point d'entrée unique
 
 La [documentation](docs/README.md) se lit comme une suite de chapitres : cours
 sur les notions utilisées, diagnostic initial, VAE, GAT, LSTM, comparaison des
-fusions, conclusions, puis la [couche d'exploration causale](docs/07-couche-exploration-causale-v2.md).
+fusions, conclusions, puis la [couche d'exploration causale](docs/07-couche-exploration-causale-v2.md)
+et le [protocole préenregistré de l'étude utilisateur](docs/08-protocole-etude-utilisateur.md).
+
+## Licence et citation
+
+Code sous licence [MIT](LICENSE). Les jeux de données RCAEval et le dépôt
+`RCAEval/` référencé restent sous la licence de leurs auteurs. Pour citer ce
+travail, voir [`CITATION.cff`](CITATION.cff).
 
 ## Limites
 

@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "Si vous utilisez ce logiciel, merci de le citer comme suit."
+title: "LogPipeGuard : détection multimodale d'anomalies et couche d'exploration causale (journaux, métriques, traces)"
+type: software
+authors:
+  - family-names: Diagne
+    given-names: Oumar
+    affiliation: "Université Cheikh Anta Diop (UCAD), Dakar, Sénégal"
+    email: oumar14.diagne@ucad.edu.sn
+  - family-names: Fall
+    given-names: Ibrahima
+    affiliation: "UMI 209 UMMISCO, École Supérieure Polytechnique (ESP), UCAD, Dakar, Sénégal"
+    email: ibrahima.fall@esp.sn
+repository-code: "https://github.com/ODIA221/ci_cd_models_proactive"
+license: MIT
+version: "2.0.0"
+date-released: "2026-10-23"
+keywords:
+  - root cause analysis
+  - anomaly detection
+  - visual analytics
+  - explainable AI
+  - microservices
+  - CI/CD
+references:
+  - type: conference-paper
+    title: "RCAEval: A Benchmark for Root Cause Analysis of Microservice Systems with Telemetry Data"
+    authors:
+      - family-names: Pham
+        given-names: Luan
+      - family-names: Zhang
+        given-names: Hongyu
+      - family-names: Ha
+        given-names: Huong
+      - family-names: Salim
+        given-names: Flora
+      - family-names: Zhang
+        given-names: Xiuzhen
+    collection-title: "Companion Proceedings of the ACM Web Conference"
+    year: 2025

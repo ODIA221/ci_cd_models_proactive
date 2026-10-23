@@ -266,12 +266,21 @@ def api_checks(base: str) -> None:
         assert ld.headers["content-type"].startswith("application/ld+json"), ld.headers["content-type"]
         assert requests.get(f"{base}/causal/RE2-OB/inexistant/1__abnormal").status_code == 404
 
-    @check("API", "Étude utilisateur: tâches contrebalancées, aucune écriture")
+    @check("API", "Étude utilisateur: plan par blocs en carré latin, aucune écriture")
     def study():
         tasks = requests.get(f"{base}/study/tasks", params={"participant_id": "VERIFY"}).json()
         assert len(tasks) == 15
         per_condition = {c: sum(t["condition"] == c for t in tasks) for c in {t["condition"] for t in tasks}}
         assert sorted(per_condition.values()) == [5, 5, 5], per_condition
+        # Plan par blocs (docs/08) : 3 blocs contigus de 5, ordre des blocs
+        # tournant d'un participant à l'autre (carré latin à tour de rôle).
+        orders = []
+        for pid in ("P01", "P02", "P03"):
+            seq = [t["condition"][0] for t in requests.get(f"{base}/study/tasks", params={"participant_id": pid}).json()]
+            blocks = ["".join(seq[i:i + 5]) for i in (0, 5, 10)]
+            assert all(len(set(b)) == 1 for b in blocks), f"{pid} : blocs non contigus {seq}"
+            orders.append("".join(b[0] for b in blocks))
+        assert sorted(orders) == ["ABC", "BCA", "CAB"], f"ordres de blocs non contrebalancés : {orders}"
         sessions = REPO_ROOT / "experiments" / "user_study" / "sessions.jsonl"
         before = sessions.read_text() if sessions.exists() else None
         r = requests.post(f"{base}/study/sessions", json={
@@ -280,7 +289,7 @@ def api_checks(base: str) -> None:
         assert r.status_code == 404, f"run_id invalide accepté (HTTP {r.status_code})"
         after = sessions.read_text() if sessions.exists() else None
         assert before == after, "une session a été écrite pendant la vérification"
-        return f"5 tâches par condition: {per_condition}"
+        return f"3 blocs de 5, ordres {orders} pour P01-P03"
 
     @check("API", "Interface web servie sous /ui/")
     def ui_served():
