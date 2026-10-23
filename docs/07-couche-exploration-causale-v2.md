@@ -200,17 +200,23 @@ pas à conclure. La heuristique aᵢ n'est pas calibrée : le seuil « notable �
 **Elle n'a pas été menée, et aucun chiffre de la Table 3 de l'article n'est
 produit par ce code.** Ce qui existe est l'**instrumentation** pour la mener :
 
-- `GET /study/tasks?participant_id=P01` : 15 tâches (5 par condition) tirées
-  de manière déterministe parmi les runs anormaux avec traces, conditions
-  contrebalancées par rotation (carré latin 3×3) ;
+Le protocole complet (questions de recherche, hypothèses, effectif calculé
+par simulation, analyse préenregistrée) est au
+[chapitre 8](08-protocole-etude-utilisateur.md). L'instrumentation :
+
+- `GET /study/tasks?participant_id=P01` : 15 tâches tirées de manière
+  déterministe parmi les runs anormaux avec traces, en **3 blocs de 5** (un
+  par condition), ordre des blocs en carré latin attribué à tour de rôle
+  (P01 : ABC, P02 : BCA, P03 : CAB) ;
 - mode « étude utilisateur » du dashboard : chronomètre, réponse, confiance
   (Likert 1-5), nombre d'interactions ;
 - `POST /study/sessions` : correction **côté serveur**, jamais renvoyée au
   participant, écriture dans `experiments/user_study/sessions.jsonl` ;
-- `./run.sh study-analysis` : moyenne ± écart-type par condition, puis
-  Friedman et Wilcoxon appariés avec correction de Bonferroni. Refuse de
-  tourner sans sessions, et refuse les tests à moins de 5 participants
-  ayant passé les 3 conditions.
+- `./run.sh study-analysis` : analyse préenregistrée (modèle mixte pour
+  l'hypothèse principale, Holm pour les secondaires, tests de rangs en
+  sensibilité). Refuse de tourner sans sessions, et refuse les tests à moins
+  de 5 participants ayant passé les 3 conditions ;
+- `python -m src.causal.study_power` : calcul de puissance par simulation du plan exact.
 
 Biais identifiés et traités :
 
@@ -224,9 +230,8 @@ Biais identifiés et traités :
 - NASA-TLX et SUS se collectent hors outil.
 
 Reste à faire, hors code : avis d'un comité d'éthique, consentement éclairé,
-recrutement, analyse de puissance *a priori*. L'article mentionne 7
-participants à un endroit et 18 à un autre : il faut trancher avec le nombre
-réel une fois l'étude faite.
+recrutement, environnement Grafana/Loki/Jaeger de la condition A, étude
+pilote (voir le [chapitre 8](08-protocole-etude-utilisateur.md)).
 
 ## Ce que l'article doit changer pour rester honnête
 

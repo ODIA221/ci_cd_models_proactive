@@ -219,13 +219,30 @@ def study_tasks(participant_id: str, subset: str = "RE2", n: int = 15) -> list:
     candidates = sorted(r for r in labels.index if (traces_dir / f"{r.replace('/', '__')}.parquet").exists())
     rng = random.Random(participant_id)
     chosen = rng.sample(candidates, min(n, len(candidates)))
-    # Ordre des conditions contrebalancé par rotation (carré latin 3x3).
+    # Plan PAR BLOCS (docs/08): 5 tâches de suite dans la même condition —
+    # alterner A/B/C à chaque tâche imposait de passer de Grafana à
+    # l'interface à chaque exécution (coût de bascule, contamination). Ordre
+    # des blocs contrebalancé par carré latin 3x3, attribué À TOUR DE RÔLE
+    # selon le numéro du participant (P01 -> ordre 1, P02 -> 2, P03 -> 3,
+    # P04 -> 1...) : un hachage de l'identifiant ne garantissait pas que les
+    # trois ordres soient également représentés.
     conditions = ["A_manuel", "B_attribution_statique", "C_exploration_causale"]
-    offset = int.from_bytes(participant_id.encode(), "little") % 3
+    sequence = latin_square_sequence(participant_id)
+    block_size = max(1, len(chosen) // len(conditions))
     return [
-        StudyTask(task_index=i, run_id=r, condition=conditions[(i + offset) % 3])
+        StudyTask(task_index=i, run_id=r, condition=conditions[(min(i // block_size, 2) + sequence) % 3])
         for i, r in enumerate(chosen)
     ]
+
+
+def latin_square_sequence(participant_id: str) -> int:
+    """Ordre de blocs 0, 1 ou 2 : (numéro du participant - 1) mod 3 pour un
+    identifiant du type P01, P02… ; à défaut, hachage stable (participant
+    pilote ou identifiant libre), signalé comme tel dans le protocole."""
+    digits = "".join(ch for ch in participant_id if ch.isdigit())
+    if digits:
+        return (int(digits) - 1) % 3
+    return int.from_bytes(participant_id.encode(), "little") % 3
 
 
 @app.post("/study/sessions")

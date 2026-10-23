@@ -26,6 +26,7 @@ installer et lancer le projet, voir le [README à la racine](../README.md).
 5. **[Fusion tardive vs fusion jointe](05-fusion-tardive-vs-jointe.md)** — pourquoi l'ensemble simple (isolation_forest par modalité + régression logistique) bat systématiquement l'architecture à goulot d'étranglement partagé, validé sur deux jeux de données indépendants (RE2, RE3) puis regroupés.
 6. **[Conclusion et recommandations](06-conclusion-et-recommandations.md)** — ce qui est validé, ce qui reste ouvert, quoi utiliser en pratique.
 7. **[Couche d'exploration causale (v2)](07-couche-exploration-causale-v2.md)** — adaptation de l'article « Explication des échecs CI/CD » : ce qui est implémenté, ce qui est mesuré (l'attention GAT n'apporte rien au-delà d'une normalisation par le degré) et ce que l'article doit corriger.
+8. **[Protocole préenregistré de l'étude utilisateur](08-protocole-etude-utilisateur.md)** — questions de recherche, hypothèses, plan par blocs en carré latin, effectif calculé par simulation, analyse préenregistrée ; étude non conduite.
 
 Note annexe, sans rapport avec le contenu scientifique : **[pourquoi
 `src/models/` n'était pas suivi par Git](git-tracking.md)** (règle

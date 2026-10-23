@@ -36,6 +36,8 @@
 #                                  # --full: relance aussi l'évaluation et compare aux chiffres de docs/07
 #   ./run.sh study-analysis         # analyse les sessions d'étude utilisateur RÉELLEMENT enregistrées
 #                                  # (experiments/user_study/sessions.jsonl), refuse de tourner sans sessions
+#   ./run.sh study-power [--sims N] # calcul de puissance de l'étude utilisateur par simulation du plan
+#                                  # exact et du modèle préenregistré (docs/08), ~10 min
 #   ./run.sh evaluate-proactive <args...>   # mesure le délai de détection minimal (proactivité):
 #                                  # précision/rappel/F1/AUC par horizon (15s à 720s post-incident)
 #   ./run.sh showcase-rcaeval        # PRÉPARE le dashboard: acquiert RCAEval RE2 si besoin (~4.2GB,
@@ -205,6 +207,11 @@ case "$COMMAND" in
         # npm dans le PATH pour les contrôles frontend (nvm non chargé en bash)
         load_npm || true
         "$PYTHON_BIN" -m src.verify "$@"
+        ;;
+
+    study-power)
+        shift
+        "$PYTHON_BIN" -m src.causal.study_power "$@"
         ;;
 
     study-analysis)
@@ -542,7 +549,7 @@ EOF
 
     *)
         echo "Commande inconnue: '$COMMAND'"
-        echo "Usage: ./run.sh [setup|demo|sources|acquire <args...>|evaluate|train-rcaeval <args...>|evaluate-multimodal <args...>|evaluate-causal <args...>|evaluate-proactive <args...>|showcase-rcaeval|jenkins-up|jenkins-down|otel-up|otel-down|serve|dashboard|ui-build|ui-dev|verify [--full]|study-analysis|start|stop]"
+        echo "Usage: ./run.sh [setup|demo|sources|acquire <args...>|evaluate|train-rcaeval <args...>|evaluate-multimodal <args...>|evaluate-causal <args...>|evaluate-proactive <args...>|showcase-rcaeval|jenkins-up|jenkins-down|otel-up|otel-down|serve|dashboard|ui-build|ui-dev|verify [--full]|study-power|study-analysis|start|stop]"
         exit 1
         ;;
 esac

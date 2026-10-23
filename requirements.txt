@@ -32,3 +32,6 @@ uvicorn[standard]==0.30.6
 streamlit==1.38.0
 # Export PDF du rapport de diagnostic (GET /causal/{run_id}/report.pdf) — pur Python
 fpdf2>=2.7
+
+# Analyse de l'étude utilisateur (modèle mixte, src/causal/study_power.py et study_analysis.py)
+statsmodels>=0.14.5

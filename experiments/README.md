@@ -32,3 +32,11 @@ obtenus correspondent à ceux de ce fichier de synthèse.
 
 Colonnes communes aux fichiers de détection : `precision_anomalie`,
 `rappel_anomalie`, `f1_anomalie`, `auc`, et les effectifs de test.
+
+## Étude utilisateur (`docs/08`)
+
+| Fichier | Contenu |
+|---|---|
+| `study_power_grid.csv` | Puissance du test de l'hypothèse principale par simulation du plan exact (`./run.sh study-power`) : grille d'effectifs et de variances, plus la sensibilité à un effet faible (d = 0,3) |
+
+Aucune donnée de participant n'est présente : l'étude n'a pas été conduite.
