@@ -212,6 +212,8 @@ def render_study_mode(base_url: str) -> None:
     with st.form(f"study_answer_{done}"):
         services = sorted(n["service"] for n in signals["nodes"])
         answer = st.selectbox("Service cause racine", services)
+        others = st.multiselect("Autres services que vous avez soupçonnés pendant ce diagnostic, même écartés ensuite",
+                                services)
         confidence = st.slider("Confiance dans ce diagnostic (1 = aucune, 5 = totale)", 1, 5, 3)
         comment = st.text_area("Commentaire (facultatif)")
         if st.form_submit_button("Valider le diagnostic"):
@@ -220,6 +222,7 @@ def render_study_mode(base_url: str) -> None:
                 "participant_id": participant, "task_index": task["task_index"], "run_id": task["run_id"],
                 "condition": task["condition"], "answer_service": answer, "diagnosis_seconds": elapsed,
                 "confidence_likert": confidence, "n_interactions": st.session_state.get("n_interactions", 0),
+                "other_suspects": [o for o in others if o != answer],
                 "comment": comment or None,
             }
             response = requests.post(f"{base_url}/study/sessions", json=payload, timeout=30)

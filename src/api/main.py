@@ -264,7 +264,13 @@ def study_record(record: StudySessionRecord) -> dict:
         raise HTTPException(status_code=404, detail=f"run_id inconnu ou non anormal: '{record.run_id}'")
     truth = labels.loc[record.run_id, "root_cause_service"]
     row = record.model_dump()
-    row["correct"] = signals.canonical_service(record.answer_service) == signals.canonical_service(truth)
+    truth_canon = signals.canonical_service(truth)
+    row["correct"] = signals.canonical_service(record.answer_service) == truth_canon
+    # Fausses pistes suivies : services soupçonnés (réponse comprise) qui ne
+    # sont pas le service fautif. Calculé ici : la vérité terrain ne quitte
+    # jamais le serveur.
+    suspected = {signals.canonical_service(s) for s in [record.answer_service, *record.other_suspects] if s}
+    row["n_fausses_pistes"] = len(suspected - {truth_canon})
     row["recorded_at"] = datetime.now().isoformat()
     STUDY_DIR.mkdir(parents=True, exist_ok=True)
     with open(STUDY_DIR / "sessions.jsonl", "a", encoding="utf-8") as f:

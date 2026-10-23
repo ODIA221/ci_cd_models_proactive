@@ -43,7 +43,7 @@ logger = logging.getLogger(__name__)
 
 REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 
-SIGNALS_VERSION = 2
+SIGNALS_VERSION = 3
 BIN_SECONDS = 10
 # Plafond des écarts robustes: une série constante en référence (MAD=0,
 # fréquent pour memory-failures-total etc.) donnerait sinon un écart infini
@@ -161,9 +161,10 @@ def metric_signals(case_dir: Path, windows: dict) -> Dict[str, dict]:
         values = pd.to_numeric(df[col], errors="coerce")
         if values.notna().sum() < 10:
             continue
-        # Compteurs cumulés Prometheus (*-total): seul leur taux a un sens.
-        if kind.endswith("-total"):
-            values = values.diff()
+        # Les colonnes RCAEval en *-total ne sont PAS des compteurs cumulés
+        # mais déjà des taux par seconde (elles décroissent régulièrement,
+        # vérifié). Les différencier (SIGNALS_VERSION <= 2) mesurait la
+        # variation du taux au lieu du taux : corrigé en version 3.
         base, probe, probe_bins = _split_series(_binned(ts, values, "mean"), windows)
         dev = _deviation(base, probe)
         entry = out.setdefault(service, {"score": 0.0, "top_metric": None, "onset_s": None,

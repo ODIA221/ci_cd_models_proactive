@@ -49,7 +49,7 @@ isolément).
 
 - **Expliquer une anomalie**, et pas seulement la détecter, est traité
   au [chapitre 7](07-couche-exploration-causale-v2.md) : un score par
-  service localise le service fautif (P@1 = 0,71 sur 86 exécutions), mais
+  service localise le service fautif (P@1 = 0,64 sur 86 exécutions, sans faire mieux que l'heuristique existante par arbre de spans), mais
   l'attention du GAT n'y contribue pas, et l'effet sur le temps de
   diagnostic humain reste à mesurer par une étude utilisateur.
 

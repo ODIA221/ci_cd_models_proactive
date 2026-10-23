@@ -108,4 +108,7 @@ class StudySessionRecord(BaseModel):
     diagnosis_seconds: float = Field(..., ge=0)
     confidence_likert: int = Field(..., ge=1, le=5)
     n_interactions: int = Field(0, ge=0, description="Nombre d'interactions comptées côté dashboard (sélections, filtres, hypothèses testées)")
+    other_suspects: List[str] = Field(
+        default_factory=list,
+        description="Autres services soupçonnés pendant le diagnostic, même écartés ensuite (mesure des fausses pistes, docs/08)")
     comment: Optional[str] = None

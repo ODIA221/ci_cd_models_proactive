@@ -621,9 +621,12 @@ courte liste à examiner ? » (chapitre 7).
 Deux méthodes évaluées sur les **mêmes** exécutions ne sont pas
 indépendantes. Le test de McNemar ne regarde que les cas où elles
 divergent : combien d'exécutions la méthode A trouve seule, combien la
-méthode B trouve seule. Si ces deux nombres sont proches (au chapitre 7 :
-10 contre 8), l'écart global n'est pas significatif, même si les
-pourcentages semblent différer (0,75 contre 0,72).
+méthode B trouve seule. Au chapitre 7, l'heuristique par arbre de spans
+trouve seule 13 exécutions et le score multimodal 7 : malgré des
+pourcentages qui semblent nettement différents (0,75 contre 0,65), un tel
+déséquilibre sur seulement 20 cas divergents peut encore s'expliquer par le
+hasard (p = 0,26). Avec peu de cas, seul un écart très marqué est
+significatif.
 
 ### Écart robuste : médiane et MAD
 

@@ -25,6 +25,9 @@ Plan (conditions A = manuel, B = attribution statique, C = exploration) :
 - Sensibilité : Friedman puis Wilcoxon appariés (Bonferroni) sur les
   moyennes par participant, comme dans la version initiale du protocole.
 NASA-TLX et SUS sont collectés hors outil et analysés à part (descriptif).
+Exploratoire : nombre de fausses pistes suivies (services soupçonnés, réponse
+comprise, qui ne sont pas le service fautif), décrit par condition et
+comparé entre C et A par modèle mixte, sans correction.
 
 Usage: python -m src.causal.study_analysis [--sessions CHEMIN]
 """
@@ -57,6 +60,8 @@ def load_sessions(path: Path) -> pd.DataFrame:
     # Position du bloc dans la séance (0, 1, 2) : covariable préenregistrée,
     # neutralise l'apprentissage/la fatigue (plan par blocs de 5 tâches).
     df["position"] = (df["task_index"] // 5).clip(upper=2)
+    if "n_fausses_pistes" not in df:
+        df["n_fausses_pistes"] = np.nan
     return df
 
 
@@ -157,6 +162,16 @@ def main() -> None:
         transform = np.exp if ("rapport" in name) else (lambda v: v)
         print(f"  {name} : {transform(r['estimate']):.2f} [IC 95 % {transform(r['ci_low']):.2f} ; "
               f"{transform(r['ci_high']):.2f}], p {fmt_p(r['p'])}, p Holm {fmt_p(adjusted[name])}")
+
+    print("\nExploratoire — fausses pistes suivies (services soupçonnés qui ne sont pas le service fautif) :")
+    fp = data.dropna(subset=["n_fausses_pistes"])
+    if fp.empty:
+        print("  non mesurées dans ces sessions")
+    else:
+        print("  " + fp.groupby("cond")["n_fausses_pistes"].agg(["mean", "std"]).round(2).to_string().replace("\n", "\n  "))
+        r = mixed_contrast(fp, "n_fausses_pistes", "A", "C")
+        print(f"  C contre A (modèle mixte, nombre de fausses pistes) : {r['estimate']:.2f} "
+              f"[IC 95 % {r['ci_low']:.2f} ; {r['ci_high']:.2f}], p {fmt_p(r['p'])} — exploratoire, non corrigé")
 
     print("\nAnalyse de sensibilité (tests de rangs sur moyennes par participant) :")
     sensitivity_rank_tests(data)
