@@ -24,6 +24,20 @@ data/processed/
 # initial excluait aussi src/models/, cf. docs/git-tracking.md)
 /models/
 experiments/*.csv
+# Résultats cités dans l'article et dans docs/ : versionnés pour la
+# reproductibilité (petits fichiers, voir experiments/README.md)
+!experiments/causal_rankers_20260924_123129.csv
+!experiments/causal_rankers_summary_20260924_123129.csv
+!experiments/causal_rankers_by_fault_20260924_123129.csv
+!experiments/causal_false_leads_20260924_123129.csv
+!experiments/evaluation_pooled_20260814_093826.csv
+!experiments/evaluation_proactive_20260726_153239.csv
+!experiments/evaluation_rcaeval_20260726_140759.csv
+!experiments/evaluation_rcaeval_20260813_162337.csv
+!experiments/evaluation_rcaeval_20260813_165228.csv
+!experiments/evaluation_rcaeval_20260813_221630.csv
+!experiments/evaluation_rcaeval_20260814_083115.csv
+!experiments/evaluation_rcaeval_20260814_093057.csv
 
 # Fichiers d'exécution (PID/logs de `./run.sh start`)
 .run/
