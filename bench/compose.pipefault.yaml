@@ -1,0 +1,118 @@
+# Banc PipeFault : fichier compose ajouté à compose.yaml de la démo
+# OpenTelemetry 3.0.0 (dossier frère ../opentelemetry-demo). À utiliser via
+# ./run.sh bench-up, jamais seul.
+#
+# Avec plusieurs fichiers -f, les chemins relatifs se résolvent par rapport
+# au PREMIER (la démo) : ./src/... désigne donc les fichiers de la démo. Les
+# fichiers du banc passent par ${PIPEFAULT_DIR} (chemin absolu).
+#
+# Différences avec compose.observability.yaml de la démo :
+# - Loki remplace OpenSearch pour les journaux (pile d'OF4CD ; OpenSearch
+#   demande plus de 1 Go et vm.max_map_count relevé) ;
+# - pas de Grafana ni d'OpAMP (inutiles à l'export) ;
+# - Jaeger publié sur 16686 (la démo laisse Docker choisir le port hôte) ;
+# - Jenkins sur 8090 (8080 est le port de la boutique).
+
+services:
+  jaeger:
+    image: ${JAEGERTRACING_IMAGE}
+    container_name: jaeger
+    command: ["--config=file:/etc/jaeger/config.yml"]
+    deploy:
+      resources:
+        limits:
+          memory: 1200M
+    environment:
+      - JAEGER_HOST
+      - JAEGER_GRPC_PORT
+      - PROMETHEUS_ADDR
+      - OTEL_COLLECTOR_HOST
+      - OTEL_COLLECTOR_PORT_HTTP
+      - MEMORY_MAX_TRACES=25000
+    ports:
+      - "16686:16686"
+    restart: unless-stopped
+    volumes:
+      - ./src/jaeger/config.yml:/etc/jaeger/config.yml
+      - ./src/jaeger/ui-config.json:/etc/jaeger/ui-config.json
+
+  prometheus:
+    image: ${PROMETHEUS_IMAGE}
+    container_name: prometheus
+    command:
+      - --config.file=/etc/prometheus/prometheus-config.yaml
+      - --storage.tsdb.path=/prometheus
+      - --storage.tsdb.retention.time=30d
+      - --web.enable-lifecycle
+      - --web.route-prefix=/
+      - --web.enable-otlp-receiver
+    deploy:
+      resources:
+        limits:
+          memory: 400M
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+    volumes:
+      - ./src/prometheus/prometheus-config.yaml:/etc/prometheus/prometheus-config.yaml
+      - pipefault_prometheus:/prometheus
+
+  loki:
+    image: grafana/loki:3.3.2
+    container_name: loki
+    command: ["-config.file=/etc/loki/loki.yaml"]
+    deploy:
+      resources:
+        limits:
+          memory: 400M
+    ports:
+      - "3100:3100"
+    restart: unless-stopped
+    volumes:
+      - ${PIPEFAULT_DIR}/bench/loki/loki.yaml:/etc/loki/loki.yaml:ro
+      - pipefault_loki:/loki
+
+  otel-collector:
+    depends_on:
+      - jaeger
+      - prometheus
+      - loki
+
+  jenkins:
+    build: ${PIPEFAULT_DIR}/bench/jenkins
+    image: pipefault/jenkins:local
+    container_name: pipefault-jenkins
+    # root : accès à /var/run/docker.sock de Docker Desktop sans réglage de
+    # groupe. Banc local uniquement, jamais exposé.
+    user: root
+    environment:
+      - JENKINS_ADMIN_PASSWORD=${PIPEFAULT_JENKINS_PASSWORD}
+      - CASC_JENKINS_CONFIG=/usr/share/jenkins/ref/casc.yaml
+      - JAVA_OPTS=-Djenkins.install.runSetupWizard=false -Xmx768m
+      - PIPEFAULT_DIR=${PIPEFAULT_DIR}
+      - DEMO_DIR=${DEMO_DIR}
+      # Mêmes valeurs que bench-up : sinon le docker compose de l'étape deploy
+      # relirait DEMO_VERSION=latest dans le .env de la démo.
+      - DEMO_VERSION=${DEMO_VERSION}
+      - OTEL_COLLECTOR_CONFIG_EXTRAS=${OTEL_COLLECTOR_CONFIG_EXTRAS}
+    deploy:
+      resources:
+        limits:
+          memory: 1200M
+    ports:
+      - "8090:8080"
+    restart: unless-stopped
+    volumes:
+      - pipefault_jenkins:/var/jenkins_home
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Mêmes chemins que sur l'hôte : docker compose, lancé DANS Jenkins,
+      # transmet au démon des chemins de montage qui doivent exister sur l'hôte.
+      - ${DEMO_DIR}:${DEMO_DIR}:ro
+      - ${PIPEFAULT_DIR}/src:${PIPEFAULT_DIR}/src:ro
+      - ${PIPEFAULT_DIR}/bench:${PIPEFAULT_DIR}/bench:ro
+      - ${PIPEFAULT_DIR}/data/raw/pipefault:${PIPEFAULT_DIR}/data/raw/pipefault
+
+volumes:
+  pipefault_prometheus:
+  pipefault_loki:
+  pipefault_jenkins:

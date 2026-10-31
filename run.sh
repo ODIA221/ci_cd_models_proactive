@@ -25,6 +25,10 @@
 #                                  # le service fautif réellement injecté, RCAEval)
 #                                  # --compare-rankers: couche v2, compare score multimodal / précédence
 #                                  # temporelle / propagation AVEC vs SANS attention GAT (~1 h au 1er lancement)
+#   ./run.sh evaluate-baselines <args...>   # méthodes de référence RCAEval (BARO, NSigma, mmBARO, CIRCA,
+#                                  # PC-PageRank, TraceRCA, MicroRank...) sur les MÊMES 86 cas de test
+#                                  # (--methods, --workers, --timeout, --limit) ; puis ./run.sh causal-summary
+#   ./run.sh causal-summary         # recalcule tous les chiffres de localisation cités (article, docs/07)
 #   ./run.sh ui-build               # construit l'interface web v2 (React 18 + TypeScript + D3, frontend/)
 #                                  # servie ensuite par l'API sur http://localhost:8000/ui/ (nécessite Node >= 18)
 #   ./run.sh ui-dev                 # interface v2 en MODE DÉVELOPPEMENT (Vite, rechargement à chaud):
@@ -61,6 +65,11 @@
 #                                  # le connecteur Jenkins sans instance réelle. Affiche le mot de passe
 #                                  # initial à la première installation. Nécessite Docker démarré.
 #   ./run.sh jenkins-down            # arrête le conteneur Jenkins local (conserve son volume de données)
+#   ./run.sh bench-selftest         # banc PipeFault (article 5) : vérifications sans Docker
+#   ./run.sh bench-up               # démo OpenTelemetry + Jaeger/Prometheus/Loki + Jenkins (port 8090)
+#   ./run.sh bench-plan             # tire le calendrier préenregistré (une seule fois)
+#   ./run.sh bench-run [--limit N]  # exécute la campagne (pilote d'abord), reprise automatique
+#   ./run.sh bench-status|bench-check|bench-down
 #   ./run.sh otel-up               # clone (si besoin) ../opentelemetry-demo et lance le stack
 #                                  # Docker Compose (nécessite Docker installé et démarré),
 #                                  # y compris Jaeger/Prometheus/Grafana (compose.observability.yaml)
@@ -158,6 +167,15 @@ case "$COMMAND" in
     evaluate-causal)
         shift
         "$PYTHON_BIN" src/models/evaluate_causal.py "$@"
+        ;;
+
+    evaluate-baselines)
+        shift
+        OUTDATED_IGNORE=1 "$PYTHON_BIN" -m src.models.rcaeval_baselines "$@"
+        ;;
+
+    causal-summary)
+        "$PYTHON_BIN" -m src.models.causal_summary
         ;;
 
     ui-build)
@@ -372,6 +390,78 @@ case "$COMMAND" in
         else
             echo "Aucun conteneur 'jenkins' trouvé, rien à arrêter."
         fi
+        ;;
+
+    bench-selftest)
+        "$PYTHON_BIN" -m src.bench.selftest
+        ;;
+
+    bench-up)
+        if ! docker info >/dev/null 2>&1; then
+            echo "Docker ne répond pas : démarre Docker Desktop puis relance."
+            exit 1
+        fi
+        DEMO_DIR="$(cd .. && pwd)/opentelemetry-demo"
+        if [ ! -d "$DEMO_DIR" ]; then
+            echo "Démo absente ($DEMO_DIR) : git clone https://github.com/open-telemetry/opentelemetry-demo \"$DEMO_DIR\""
+            exit 1
+        fi
+        if [ ! -s bench/.jenkins_password ]; then
+            ( umask 077; openssl rand -hex 16 > bench/.jenkins_password )
+            echo "==> Mot de passe Jenkins généré dans bench/.jenkins_password (non versionné)"
+        fi
+        MEM_BYTES="$(docker info --format '{{.MemTotal}}' 2>/dev/null || echo 0)"
+        if [ "$MEM_BYTES" -lt 8000000000 ]; then
+            echo "==> ATTENTION : Docker dispose de $((MEM_BYTES / 1000000)) Mo. La démo + le banc demandent"
+            echo "    environ 7 Go (limites de compose) ; prévoir une VM de 16 Go pour la campagne complète."
+        fi
+        mkdir -p data/raw/pipefault/runs
+        export PIPEFAULT_DIR="$PWD" DEMO_DIR
+        export PIPEFAULT_JENKINS_PASSWORD="$(cat bench/.jenkins_password)"
+        export DEMO_VERSION="$(grep -E '^IMAGE_VERSION=' "$DEMO_DIR/.env" | cut -d= -f2)"
+        export OTEL_COLLECTOR_CONFIG_EXTRAS="$PWD/bench/otel/otelcol-pipefault.yml"
+        echo "==> Démo $DEMO_VERSION + banc PipeFault (Jaeger, Prometheus, Loki, Jenkins)..."
+        docker compose -p opentelemetry-demo --project-directory "$DEMO_DIR" \
+            -f "$DEMO_DIR/compose.yaml" -f bench/compose.pipefault.yaml up -d --build
+        echo "==> Attente de Jenkins (http://localhost:8090)..."
+        for _ in $(seq 1 90); do
+            CODE="$(curl -s -o /dev/null -w '%{http_code}' http://localhost:8090/login 2>/dev/null || true)"
+            [ "$CODE" = "200" ] && break
+            sleep 2
+        done
+        echo "==> Jenkins : http://localhost:8090 (admin / bench/.jenkins_password)"
+        echo "    Boutique : http://localhost:8080   Jaeger : http://localhost:16686/jaeger/ui"
+        echo "    Prometheus : http://localhost:9090   Loki : http://localhost:3100"
+        echo "Ensuite : ./run.sh bench-plan (une seule fois), puis ./run.sh bench-run --limit 1 (pilote)"
+        ;;
+
+    bench-plan)
+        shift
+        "$PYTHON_BIN" -m src.bench.campaign plan "$@"
+        ;;
+
+    bench-run)
+        shift
+        DEMO_DIR="$(cd .. && pwd)/opentelemetry-demo"
+        DEMO_VERSION="$(grep -E '^IMAGE_VERSION=' "$DEMO_DIR/.env" | cut -d= -f2)" \
+        PIPEFAULT_JENKINS_PASSWORD="$(cat bench/.jenkins_password)" DEMO_DIR="$DEMO_DIR" \
+            "$PYTHON_BIN" -m src.bench.campaign run "$@"
+        ;;
+
+    bench-status)
+        "$PYTHON_BIN" -m src.bench.campaign status
+        ;;
+
+    bench-check)
+        "$PYTHON_BIN" -m src.bench.check
+        ;;
+
+    bench-down)
+        DEMO_DIR="$(cd .. && pwd)/opentelemetry-demo"
+        PIPEFAULT_DIR="$PWD" DEMO_DIR="$DEMO_DIR" PIPEFAULT_JENKINS_PASSWORD=x \
+            docker compose -p opentelemetry-demo --project-directory "$DEMO_DIR" \
+            -f "$DEMO_DIR/compose.yaml" -f bench/compose.pipefault.yaml stop
+        echo "==> Banc arrêté, volumes conservés (Jenkins, Prometheus, Loki). Relancer : ./run.sh bench-up"
         ;;
 
     otel-up)
@@ -606,7 +696,7 @@ EOF
 
     *)
         echo "Commande inconnue: '$COMMAND'"
-        echo "Usage: ./run.sh [setup|demo|sources|acquire <args...>|evaluate|train-rcaeval <args...>|evaluate-multimodal <args...>|evaluate-causal <args...>|evaluate-proactive <args...>|showcase-rcaeval|jenkins-up|jenkins-down|otel-up|otel-down|serve|dashboard|ui-build|ui-dev|verify [--full]|study-env-up|study-env-load|study-env-reload-logs|study-env-down|study-env-reset|study-power|study-analysis|start|stop]"
+        echo "Usage: ./run.sh [setup|demo|sources|acquire <args...>|evaluate|train-rcaeval <args...>|evaluate-multimodal <args...>|evaluate-causal <args...>|evaluate-baselines <args...>|causal-summary|evaluate-proactive <args...>|showcase-rcaeval|bench-selftest|bench-up|bench-plan|bench-run|bench-status|bench-check|bench-down|jenkins-up|jenkins-down|otel-up|otel-down|serve|dashboard|ui-build|ui-dev|verify [--full]|study-env-up|study-env-load|study-env-reload-logs|study-env-down|study-env-reset|study-power|study-analysis|start|stop]"
         exit 1
         ;;
 esac

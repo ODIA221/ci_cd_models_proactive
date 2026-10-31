@@ -1,0 +1,46 @@
+# Configuration complète de Jenkins pour PipeFault (Configuration as Code).
+# Mot de passe admin : variable JENKINS_ADMIN_PASSWORD, générée par
+# ./run.sh bench-up dans bench/.jenkins_password (non versionné).
+jenkins:
+  systemMessage: "PipeFault : banc d'injection de fautes CI/CD (article 5). Ne pas lancer de jobs à la main pendant une campagne."
+  numExecutors: 1
+  mode: EXCLUSIVE
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: admin
+          password: ${JENKINS_ADMIN_PASSWORD}
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
+
+# Le script Job DSL ci-dessous lit le Jenkinsfile sur disque (java.io.File),
+# ce que la sécurité des scripts Job DSL refuse par défaut. Configuration
+# écrite par l'administrateur du banc, pas par un utilisateur.
+security:
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
+
+unclassified:
+  location:
+    url: "http://localhost:8090/"
+  # Greffon OpenTelemetry : chaque exécution de pipeline devient une trace
+  # (service « jenkins »), une étape = un span. Clés à confirmer au premier
+  # démarrage (Gérer Jenkins > OpenTelemetry) : elles varient selon la version.
+  openTelemetry:
+    endpoint: "http://otel-collector:4317"
+    serviceName: "jenkins"
+    serviceNamespace: "pipefault"
+
+jobs:
+  - script: >
+      pipelineJob('pipefault') {
+        description('Pipeline paramétré du banc PipeFault (bench/jenkins/Jenkinsfile).')
+        definition {
+          cps {
+            script(new File(System.getenv('PIPEFAULT_DIR') + '/bench/jenkins/Jenkinsfile').text)
+            sandbox(true)
+          }
+        }
+      }

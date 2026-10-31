@@ -30,6 +30,48 @@ def mcnemar(wide: pd.DataFrame, a: str, b: str) -> str:
     return f"{a} contre {b} : n = {len(d)}, {only_a} contre {only_b} gagnées seules, p = {p:.3f}"
 
 
+def holm(pvalues: dict) -> dict:
+    ordered = sorted(pvalues.items(), key=lambda kv: kv[1])
+    adjusted, running = {}, 0.0
+    for i, (name, p) in enumerate(ordered):
+        running = max(running, min(1.0, (len(ordered) - i) * p))
+        adjusted[name] = running
+    return adjusted
+
+
+def summarize_baselines(r: pd.DataFrame, wide: pd.DataFrame, path: Path) -> None:
+    """Méthodes de référence RCAEval (src/models/rcaeval_baselines.py) sur les
+    mêmes cas. Échec ou dépassement de délai = pas de réponse = raté (une
+    méthode qui ne rend rien ne diagnostique rien) ; P@k sur les seuls cas
+    aboutis donné à côté."""
+    b = pd.read_csv(path)
+    print(f"\nMéthodes de référence RCAEval ({path.name}) :")
+    for name, reason in b[b["statut"] == "non_executee"][["methode", "erreur"]].itertuples(index=False):
+        print(f"  {name} : non exécutée ({reason})")
+    b = b[b["run_id"].notna()]
+    cases = set(r["run_id"])
+    rows, pvals = [], {}
+    for method, g in b.groupby("methode"):
+        g = g[g["run_id"].isin(cases)].set_index("run_id")
+        ok = g[g["statut"] == "ok"]
+        hit1 = (g["statut"].eq("ok") & g["hit_at_1"].fillna(False).astype(bool)).reindex(wide.index, fill_value=False)
+        hit3 = (g["statut"].eq("ok") & g["hit_at_3"].fillna(False).astype(bool)).reindex(wide.index, fill_value=False)
+        applicable = g[g["statut"] != "non_applicable"].index
+        d = pd.DataFrame({"score_multimodal": wide["score_multimodal"].astype(bool), method: hit1}).loc[applicable]
+        only_s, only_b = int((d["score_multimodal"] & ~d[method]).sum()), int((~d["score_multimodal"] & d[method]).sum())
+        pvals[method] = binomtest(only_s, only_s + only_b, 0.5).pvalue if only_s + only_b else 1.0
+        rows.append({"methode": method, "famille": g["famille"].iloc[0], "n_applicables": len(applicable),
+                     "aboutis": len(ok), "echecs": int(g["statut"].isin(["echec", "timeout"]).sum()),
+                     "P@1": round(hit1.loc[applicable].mean(), 2), "P@3": round(hit3.loc[applicable].mean(), 2),
+                     "P@1_aboutis": round(ok["hit_at_1"].astype(bool).mean(), 2) if len(ok) else None,
+                     "score_seul": only_s, "methode_seule": only_b, "p_McNemar": round(pvals[method], 3)})
+    adjusted = holm(pvals)
+    table = pd.DataFrame(rows)
+    table["p_Holm"] = table["methode"].map(lambda m: round(adjusted[m], 3))
+    print("  (P@1/P@3 : échecs comptés comme ratés ; McNemar = score_multimodal contre la méthode, cas applicables)")
+    print("  " + table.sort_values("P@1", ascending=False).to_string(index=False).replace("\n", "\n  "))
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Chiffres de localisation cités dans l'article")
     parser.add_argument("--stamp", default=None, help="Horodatage des fichiers (par défaut : le plus récent)")
@@ -76,6 +118,10 @@ def main() -> None:
         hits_alpha += alpha_rank[0]["service"] == truth
     print(f"Ex aequo au sommet de a_i : {ties}/{len(abnormal)} exécutions ; "
           f"P@1 sans départage (ordre alphabétique) = {hits_alpha / len(abnormal):.2f}")
+
+    baseline_files = sorted(EXPERIMENTS.glob("causal_baselines_2*.csv"))
+    if baseline_files:
+        summarize_baselines(r, wide, baseline_files[-1])
 
     fl = pd.read_csv(EXPERIMENTS / f"causal_false_leads_{stamp}.csv")
     for anormal, label in ((False, "fenêtres normales"), (True, "fenêtres anormales")):
