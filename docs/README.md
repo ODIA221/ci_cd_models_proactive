@@ -27,6 +27,7 @@ installer et lancer le projet, voir le [README à la racine](../README.md).
 6. **[Conclusion et recommandations](06-conclusion-et-recommandations.md)** — ce qui est validé, ce qui reste ouvert, quoi utiliser en pratique.
 7. **[Couche d'exploration causale (v2)](07-couche-exploration-causale-v2.md)** — adaptation de l'article « Explication des échecs CI/CD » : ce qui est implémenté, ce qui est mesuré (l'attention GAT n'apporte rien au-delà d'une normalisation par le degré) et ce que l'article doit corriger.
 8. **[Protocole préenregistré de l'étude utilisateur](08-protocole-etude-utilisateur.md)** — questions de recherche, hypothèses, plan par blocs en carré latin, effectif calculé par simulation, analyse préenregistrée ; étude non conduite.
+9. **[Banc PipeFault](09-banc-pipefault.md)** — chaîne Jenkins → démo OpenTelemetry avec injection de fautes CI, inter-étapes et d'exécution (article 5) ; code vérifié sans Docker, pilote pas encore lancé.
 
 Note annexe, sans rapport avec le contenu scientifique : **[pourquoi
 `src/models/` n'était pas suivi par Git](git-tracking.md)** (règle

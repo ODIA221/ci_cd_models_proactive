@@ -127,6 +127,11 @@ d'échec.
 | `evaluate` | Évaluation sur LogHub HDFS |
 | `evaluate-multimodal <args>` | Fusion tardive vs jointe vs mono-modalité |
 | `evaluate-causal [--compare-rankers]` | Localisation de la cause racine (P@1, P@3) |
+| `evaluate-baselines [--methods ...]` | Méthodes de référence de RCAEval (BARO, NSigma, mmBARO, mmNSigma, CIRCA, PC-PageRank, TraceRCA, MicroRank) sur les mêmes 86 cas (plusieurs heures) |
+| `bench-selftest` | Banc PipeFault (article 5) : vérifie fautes, configurations, drapeaux et calendrier contre la démo, sans Docker |
+| `bench-up` / `bench-down` | Démo OpenTelemetry + Jaeger, Prometheus, Loki et Jenkins (http://localhost:8090) |
+| `bench-plan` / `bench-run [--limit N]` / `bench-status` / `bench-check` | Calendrier préenregistré, campagne (reprise automatique), contrôle des exécutions — voir [docs/09](docs/09-banc-pipefault.md) |
+| `causal-summary` | Recalcule tous les chiffres de localisation cités, y compris la comparaison avec les méthodes de référence |
 | `evaluate-proactive <args>` | Détection à horizon court (15 s à 720 s) |
 | `study-env-up` / `study-env-load [--check]` / `study-env-reload-logs` / `study-env-down` / `study-env-reset` | Environnement de la condition A de l'étude : Grafana (port 3300), Loki, Jaeger, VictoriaMetrics, chargés avec les exécutions anonymisées (Docker) |
 | `study-power [--sims N]` | Calcul de puissance de l'étude utilisateur (simulation) |

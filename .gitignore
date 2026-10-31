@@ -52,3 +52,6 @@ anomaly-detection-log-datasets/
 # Configuration locale de l'assistant de code (jamais publiée)
 .claude/
 CLAUDE.md
+
+# Banc PipeFault : mot de passe Jenkins généré localement
+bench/.jenkins_password

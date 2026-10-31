@@ -1,0 +1,33 @@
+// Pipeline PipeFault : une étape Jenkins = une étape de src/bench/pipeline.py,
+// pour que toute la logique soit testable hors de Jenkins (src/bench/selftest.py).
+// Déclenché par l'orchestrateur (src/bench/campaign.py), jamais à la main
+// pendant une campagne.
+pipeline {
+  agent any
+  options {
+    disableConcurrentBuilds()
+    timeout(time: 45, unit: 'MINUTES')
+    timestamps()
+  }
+  parameters {
+    string(name: 'RUN_ID', defaultValue: 'manuel', description: 'Identifiant de l\'exécution (pf0001...)')
+    string(name: 'SERVICES', defaultValue: 'checkout,payment,ad', description: 'Services livrés, séparés par des virgules')
+    string(name: 'FAULT', defaultValue: 'N0', description: 'Code de faute du catalogue (src/bench/faults.py)')
+    string(name: 'FAULT_SERVICE', defaultValue: '', description: 'Service fautif (fautes CI et inter-étapes)')
+    string(name: 'SEED', defaultValue: '0', description: 'Graine de l\'exécution')
+  }
+  environment {
+    PIPELINE = "${env.PIPEFAULT_DIR}/src/bench/pipeline.py"
+  }
+  stages {
+    stage('checkout')    { steps { sh 'python3 "$PIPELINE" checkout' } }
+    stage('build')       { steps { sh 'python3 "$PIPELINE" build' } }
+    stage('test-unit') {
+      steps { sh 'python3 "$PIPELINE" test-unit' }
+      post { always { junit allowEmptyResults: true, skipMarkingBuildUnstable: true, testResults: 'junit/*.xml' } }
+    }
+    stage('image-check') { steps { sh 'python3 "$PIPELINE" image-check' } }
+    stage('deploy')      { steps { sh 'python3 "$PIPELINE" deploy' } }
+    stage('smoke')       { steps { sh 'python3 "$PIPELINE" smoke' } }
+  }
+}

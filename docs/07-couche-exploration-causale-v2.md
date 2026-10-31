@@ -103,6 +103,19 @@ precision@k : le service fautif est-il classé dans les k premiers ? Fichiers
 bruts : `experiments/causal_rankers*_20261023_194519.csv` ; tous les chiffres
 ci-dessous se recalculent avec `python -m src.models.causal_summary`.
 
+**Méthodes de référence (lot 1, en cours)** : `./run.sh evaluate-baselines`
+(`src/models/rcaeval_baselines.py`) exécute les méthodes de RCAEval sur les
+mêmes 86 cas, avec le protocole de `RCAEval/main.py` (fenêtre de 5 min de
+part et d'autre de l'injection, `simple_metrics.csv`, même SLI). Le
+décorateur `rca` de RCAEval, qui masque les échecs, est remplacé pour que
+chaque échec soit compté ; `PageRank.fit_transform`, retiré de
+scikit-network 0.33, est rétabli comme simple alias de `fit_predict`. RCD et
+MM-RCD (Python 3.8 seulement), PDiagnose (script non appelable), MicroCause
+et CausalRCA (> 5 min par cas sur cette machine) ne sont pas exécutés et
+apparaissent comme tels dans le fichier de résultats. `causal_summary`
+compare ensuite chaque méthode au score multimodal (McNemar, Holm ; échec =
+pas de réponse).
+
 > **Correction du 2026-10-23 (signaux version 3).** Les colonnes de métriques
 > RCAEval en `*-total` sont déjà des taux par seconde, pas des compteurs
 > cumulés (elles décroissent, vérifié). Les versions 1 et 2 des signaux les
