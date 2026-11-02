@@ -39,6 +39,8 @@ experiments/*.csv
 !experiments/evaluation_rcaeval_20260814_083115.csv
 !experiments/evaluation_rcaeval_20260814_093057.csv
 !experiments/study_power_grid.csv
+!experiments/causal_baselines_20261102_103500.csv
+!experiments/causal_baselines_20261102_103500.log
 
 # Fichiers d'exécution (PID/logs de `./run.sh start`)
 .run/

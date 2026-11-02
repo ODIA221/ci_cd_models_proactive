@@ -21,7 +21,7 @@ Chiffres obtenus avec ce code, sur RCAEval ; détails et limites dans [`docs/`](
 | Question | Résultat |
 |---|---|
 | Meilleure détection d'anomalies | Fusion tardive : F1 = 0,86 sur 23 exécutions de test RE2 ; 0,59 sur RE2 + RE3 regroupés (109 exécutions) |
-| Localisation du service fautif | Le bon service est classé 1er dans 64 % des 86 exécutions anormales de test, dans les 3 premiers dans 88 % ; l'heuristique existante par arbre de spans atteint 75 % sur les 60 exécutions où elle s'applique |
+| Localisation du service fautif | Le bon service est classé 1er dans 64 % des 86 exécutions anormales de test, dans les 3 premiers dans 88 % ; l'heuristique existante par arbre de spans atteint 75 % sur les 60 exécutions où elle s'applique. La méthode de référence NSigma de RCAEval fait mieux : 83 % (écart significatif, Holm p = 0,045) |
 | L'attention du GAT explique-t-elle la panne ? | Non : elle est uniforme et n'apporte rien au-delà du degré des nœuds |
 | Gain de temps de diagnostic pour un ingénieur | **Non mesuré** : l'étude utilisateur reste à conduire (protocole et instrumentation fournis) |
 

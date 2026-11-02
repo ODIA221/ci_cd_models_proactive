@@ -21,6 +21,8 @@ l'article se recalculent avec `python -m src.models.causal_summary`.
 | `causal_rankers_20261023_194519.csv` | Détail par exécution et par méthode : rang du service fautif, présence de traces, uniformité de l'attention GAT (entropie normalisée) |
 | `causal_false_leads_20261023_194519.csv` | Par exécution (normale ou anormale) : nombre de services avec aᵢ ≥ 0,5 et score maximal (section 6.3, fausses pistes) |
 
+`causal_baselines_20261102_103500.csv` : méthodes de référence de RCAEval (BARO, NSigma, mmBARO, mmNSigma, CIRCA, PC-PageRank, TraceRCA, MicroRank) sur les mêmes 86 cas, une ligne par méthode et par cas (statut, rang, durée, provenance) ; `.log` : journal du calcul, source des 487 lignes reconstituées. Produit par `./run.sh evaluate-baselines`, résumé par `./run.sh causal-summary`.
+
 `./run.sh verify --full` relance cette évaluation et vérifie que les P@1
 obtenus correspondent à ceux de ce fichier de synthèse.
 
