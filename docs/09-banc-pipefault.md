@@ -84,7 +84,9 @@ l'effet de sa faute n'est pas vérifié (étape d'origine en échec pour C1, C3,
 C4 ; au moins une tentative en échec pour C2 ; pipeline vert ET, sur le
 service fautif, p90 de latence ×1,5 ou taux d'erreur +5 points ou un
 redémarrage, pour X et R), ou s'il manque plus de 10 % des pas de 15 s dans
-une modalité.
+une modalité. Si plus de 15 % des exécutions d'un type sont exclues, elles sont
+remplacées en fin de campagne par un calendrier complémentaire tiré avec la
+graine **20261032** (déclarée dans l'article 5, section 6.4).
 
 ## Lancer
 

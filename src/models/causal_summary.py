@@ -71,6 +71,20 @@ def summarize_baselines(r: pd.DataFrame, wide: pd.DataFrame, path: Path) -> None
     print("  (P@1/P@3 : échecs comptés comme ratés ; McNemar = score_multimodal contre la méthode, cas applicables)")
     print("  " + table.sort_values("P@1", ascending=False).to_string(index=False).replace("\n", "\n  "))
 
+    # Ventilations citées dans l'article 5 (tableaux 7 et 8), mêmes conventions.
+    b = b[b["run_id"].isin(cases) & (b["statut"] != "non_applicable")].copy()
+    b["hit"] = b["statut"].eq("ok") & b["hit_at_1"].astype(str).eq("True")
+    score = r[r["ranker"] == "score_multimodal"][["run_id", "systeme", "type_faute", "hit_at_1"]]
+    long = pd.concat([b[["run_id", "systeme", "type_faute", "methode", "hit"]],
+                      score.rename(columns={"hit_at_1": "hit"}).assign(methode="score_multimodal")])
+    print("\n  P@1 par système (cas applicables) :")
+    print("  " + long.pivot_table(index="methode", columns="systeme", values="hit", aggfunc="mean")
+          .round(2).to_string().replace("\n", "\n  "))
+    by_fault = long.pivot_table(index="type_faute", columns="methode", values="hit", aggfunc="mean").round(2)
+    by_fault.insert(0, "n", score.groupby("type_faute").size())
+    print("\n  P@1 par type de faute :")
+    print("  " + by_fault.to_string().replace("\n", "\n  "))
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Chiffres de localisation cités dans l'article")
