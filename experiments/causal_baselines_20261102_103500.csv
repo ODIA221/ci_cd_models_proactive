@@ -1,0 +1,694 @@
+run_id,systeme,type_faute,root_cause_service,methode,famille,statut,erreur,duree_s,rang,hit_at_1,hit_at_3,top5,provenance
+RE2-OB/checkoutservice_disk/2__abnormal,RE2-OB,disk,checkout,baro,metriques,ok,,13,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_loss/3__abnormal,RE2-OB,loss,checkout,baro,metriques,ok,,13,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_mem/1__abnormal,RE2-OB,mem,checkout,baro,metriques,ok,,12,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_mem/2__abnormal,RE2-OB,mem,checkout,baro,metriques,ok,,12,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_socket/2__abnormal,RE2-OB,socket,checkout,baro,metriques,ok,,11,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_cpu/1__abnormal,RE2-OB,cpu,currency,baro,metriques,ok,,11,6.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_cpu/3__abnormal,RE2-OB,cpu,currency,baro,metriques,ok,,14,5.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_disk/3__abnormal,RE2-OB,disk,currency,baro,metriques,ok,,14,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_loss/3__abnormal,RE2-OB,loss,currency,baro,metriques,ok,,10,6.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_mem/2__abnormal,RE2-OB,mem,currency,baro,metriques,ok,,10,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_socket/2__abnormal,RE2-OB,socket,currency,baro,metriques,ok,,9,8.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/emailservice_cpu/1__abnormal,RE2-OB,cpu,email,baro,metriques,ok,,9,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/emailservice_socket/1__abnormal,RE2-OB,socket,email,baro,metriques,ok,,8,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_cpu/2__abnormal,RE2-OB,cpu,productcatalog,baro,metriques,ok,,8,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_disk/3__abnormal,RE2-OB,disk,productcatalog,baro,metriques,ok,,9,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_loss/1__abnormal,RE2-OB,loss,productcatalog,baro,metriques,ok,,9,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_loss/2__abnormal,RE2-OB,loss,productcatalog,baro,metriques,ok,,11,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_mem/2__abnormal,RE2-OB,mem,productcatalog,baro,metriques,ok,,11,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_socket/3__abnormal,RE2-OB,socket,productcatalog,baro,metriques,ok,,8,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_cpu/1__abnormal,RE2-OB,cpu,recommendation,baro,metriques,ok,,8,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/1__abnormal,RE2-OB,delay,recommendation,baro,metriques,ok,,8,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/2__abnormal,RE2-OB,delay,recommendation,baro,metriques,ok,,8,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/3__abnormal,RE2-OB,delay,recommendation,baro,metriques,ok,,9,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_disk/1__abnormal,RE2-OB,disk,recommendation,baro,metriques,ok,,9,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_disk/2__abnormal,RE2-OB,disk,recommendation,baro,metriques,ok,,10,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_loss/1__abnormal,RE2-OB,loss,recommendation,baro,metriques,ok,,10,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_mem/3__abnormal,RE2-OB,mem,recommendation,baro,metriques,ok,,11,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_socket/2__abnormal,RE2-OB,socket,recommendation,baro,metriques,ok,,11,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_cpu/3__abnormal,RE2-SS,cpu,carts,baro,metriques,ok,,15,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_disk/1__abnormal,RE2-SS,disk,carts,baro,metriques,ok,,15,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_loss/2__abnormal,RE2-SS,loss,carts,baro,metriques,ok,,13,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_mem/2__abnormal,RE2-SS,mem,carts,baro,metriques,ok,,13,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_socket/1__abnormal,RE2-SS,socket,carts,baro,metriques,ok,,12,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/catalogue_mem/2__abnormal,RE2-SS,mem,catalogue,baro,metriques,ok,,12,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_cpu/1__abnormal,RE2-SS,cpu,orders,baro,metriques,ok,,12,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_cpu/2__abnormal,RE2-SS,cpu,orders,baro,metriques,ok,,12,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_delay/1__abnormal,RE2-SS,delay,orders,baro,metriques,ok,,14,6.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_loss/3__abnormal,RE2-SS,loss,orders,baro,metriques,ok,,14,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_mem/2__abnormal,RE2-SS,mem,orders,baro,metriques,ok,,14,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_socket/2__abnormal,RE2-SS,socket,orders,baro,metriques,ok,,14,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_socket/3__abnormal,RE2-SS,socket,orders,baro,metriques,ok,,12,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_cpu/2__abnormal,RE2-SS,cpu,payment,baro,metriques,ok,,12,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_cpu/3__abnormal,RE2-SS,cpu,payment,baro,metriques,ok,,10,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_delay/3__abnormal,RE2-SS,delay,payment,baro,metriques,ok,,10,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_disk/1__abnormal,RE2-SS,disk,payment,baro,metriques,ok,,12,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_disk/2__abnormal,RE2-SS,disk,payment,baro,metriques,ok,,12,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_socket/2__abnormal,RE2-SS,socket,payment,baro,metriques,ok,,10,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_cpu/2__abnormal,RE2-SS,cpu,user,baro,metriques,ok,,10,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/1__abnormal,RE2-SS,disk,user,baro,metriques,ok,,7,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/2__abnormal,RE2-SS,disk,user,baro,metriques,ok,,7,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/3__abnormal,RE2-SS,disk,user,baro,metriques,ok,,9,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_loss/3__abnormal,RE2-SS,loss,user,baro,metriques,ok,,9,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_mem/3__abnormal,RE2-SS,mem,user,baro,metriques,ok,,10,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_socket/1__abnormal,RE2-SS,socket,user,baro,metriques,ok,,10,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_cpu/3__abnormal,RE2-TT,cpu,ts-auth,baro,metriques,ok,,14,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_delay/2__abnormal,RE2-TT,delay,ts-auth,baro,metriques,ok,,14,41.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_disk/2__abnormal,RE2-TT,disk,ts-auth,baro,metriques,ok,,10,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_disk/3__abnormal,RE2-TT,disk,ts-auth,baro,metriques,ok,,10,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_loss/1__abnormal,RE2-TT,loss,ts-auth,baro,metriques,ok,,15,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_mem/1__abnormal,RE2-TT,mem,ts-auth,baro,metriques,ok,,15,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_mem/3__abnormal,RE2-TT,mem,ts-auth,baro,metriques,ok,,37,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_socket/2__abnormal,RE2-TT,socket,ts-auth,baro,metriques,ok,,36,9.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-order-service_delay/3__abnormal,RE2-TT,delay,ts-order,baro,metriques,ok,,17,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-order-service_disk/3__abnormal,RE2-TT,disk,ts-order,baro,metriques,ok,,17,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_cpu/1__abnormal,RE2-TT,cpu,ts-route,baro,metriques,ok,,9,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_delay/2__abnormal,RE2-TT,delay,ts-route,baro,metriques,ok,,9,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_disk/1__abnormal,RE2-TT,disk,ts-route,baro,metriques,ok,,9,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_disk/3__abnormal,RE2-TT,disk,ts-route,baro,metriques,ok,,9,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_mem/2__abnormal,RE2-TT,mem,ts-route,baro,metriques,ok,,21,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_socket/1__abnormal,RE2-TT,socket,ts-route,baro,metriques,ok,,21,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_socket/2__abnormal,RE2-TT,socket,ts-route,baro,metriques,ok,,12,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_cpu/1__abnormal,RE2-TT,cpu,ts-train,baro,metriques,ok,,12,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_cpu/3__abnormal,RE2-TT,cpu,ts-train,baro,metriques,ok,,14,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_loss/2__abnormal,RE2-TT,loss,ts-train,baro,metriques,ok,,12,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_mem/1__abnormal,RE2-TT,mem,ts-train,baro,metriques,ok,,24,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_mem/2__abnormal,RE2-TT,mem,ts-train,baro,metriques,ok,,23,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_socket/1__abnormal,RE2-TT,socket,ts-train,baro,metriques,ok,,1771,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_delay/1__abnormal,RE2-TT,delay,ts-travel,baro,metriques,ok,,1771,7.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_delay/2__abnormal,RE2-TT,delay,ts-travel,baro,metriques,ok,,8,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_disk/3__abnormal,RE2-TT,disk,ts-travel,baro,metriques,ok,,8,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_loss/1__abnormal,RE2-TT,loss,ts-travel,baro,metriques,ok,,6,16.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_loss/2__abnormal,RE2-TT,loss,ts-travel,baro,metriques,ok,,6,29.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_mem/1__abnormal,RE2-TT,mem,ts-travel,baro,metriques,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_mem/2__abnormal,RE2-TT,mem,ts-travel,baro,metriques,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_socket/1__abnormal,RE2-TT,socket,ts-travel,baro,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_socket/3__abnormal,RE2-TT,socket,ts-travel,baro,metriques,ok,,5,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_disk/2__abnormal,RE2-OB,disk,checkout,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_loss/3__abnormal,RE2-OB,loss,checkout,nsigma,metriques,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_mem/1__abnormal,RE2-OB,mem,checkout,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_mem/2__abnormal,RE2-OB,mem,checkout,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_socket/2__abnormal,RE2-OB,socket,checkout,nsigma,metriques,ok,,165,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_cpu/1__abnormal,RE2-OB,cpu,currency,nsigma,metriques,ok,,166,5.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_cpu/3__abnormal,RE2-OB,cpu,currency,nsigma,metriques,ok,,442,5.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_disk/3__abnormal,RE2-OB,disk,currency,nsigma,metriques,ok,,442,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_loss/3__abnormal,RE2-OB,loss,currency,nsigma,metriques,ok,,4,5.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_mem/2__abnormal,RE2-OB,mem,currency,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_socket/2__abnormal,RE2-OB,socket,currency,nsigma,metriques,ok,,3,6.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/emailservice_cpu/1__abnormal,RE2-OB,cpu,email,nsigma,metriques,ok,,3,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/emailservice_socket/1__abnormal,RE2-OB,socket,email,nsigma,metriques,ok,,3,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_cpu/2__abnormal,RE2-OB,cpu,productcatalog,nsigma,metriques,ok,,3,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_disk/3__abnormal,RE2-OB,disk,productcatalog,nsigma,metriques,ok,,3,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_loss/1__abnormal,RE2-OB,loss,productcatalog,nsigma,metriques,ok,,3,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_loss/2__abnormal,RE2-OB,loss,productcatalog,nsigma,metriques,ok,,3,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_mem/2__abnormal,RE2-OB,mem,productcatalog,nsigma,metriques,ok,,3,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_socket/3__abnormal,RE2-OB,socket,productcatalog,nsigma,metriques,ok,,3,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_cpu/1__abnormal,RE2-OB,cpu,recommendation,nsigma,metriques,ok,,3,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/1__abnormal,RE2-OB,delay,recommendation,nsigma,metriques,ok,,3,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/2__abnormal,RE2-OB,delay,recommendation,nsigma,metriques,ok,,3,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/3__abnormal,RE2-OB,delay,recommendation,nsigma,metriques,ok,,3,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_disk/1__abnormal,RE2-OB,disk,recommendation,nsigma,metriques,ok,,3,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_disk/2__abnormal,RE2-OB,disk,recommendation,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_loss/1__abnormal,RE2-OB,loss,recommendation,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_mem/3__abnormal,RE2-OB,mem,recommendation,nsigma,metriques,ok,,3,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_socket/2__abnormal,RE2-OB,socket,recommendation,nsigma,metriques,ok,,3,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_cpu/3__abnormal,RE2-SS,cpu,carts,nsigma,metriques,ok,,1801,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_disk/1__abnormal,RE2-SS,disk,carts,nsigma,metriques,ok,,1801,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_loss/2__abnormal,RE2-SS,loss,carts,nsigma,metriques,ok,,7,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_mem/2__abnormal,RE2-SS,mem,carts,nsigma,metriques,ok,,7,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_socket/1__abnormal,RE2-SS,socket,carts,nsigma,metriques,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/catalogue_mem/2__abnormal,RE2-SS,mem,catalogue,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_cpu/1__abnormal,RE2-SS,cpu,orders,nsigma,metriques,ok,,1165,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_cpu/2__abnormal,RE2-SS,cpu,orders,nsigma,metriques,ok,,1165,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_delay/1__abnormal,RE2-SS,delay,orders,nsigma,metriques,ok,,4,7.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_loss/3__abnormal,RE2-SS,loss,orders,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_mem/2__abnormal,RE2-SS,mem,orders,nsigma,metriques,ok,,46,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_socket/2__abnormal,RE2-SS,socket,orders,nsigma,metriques,ok,,46,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_socket/3__abnormal,RE2-SS,socket,orders,nsigma,metriques,ok,,11,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_cpu/2__abnormal,RE2-SS,cpu,payment,nsigma,metriques,ok,,11,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_cpu/3__abnormal,RE2-SS,cpu,payment,nsigma,metriques,ok,,14,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_delay/3__abnormal,RE2-SS,delay,payment,nsigma,metriques,ok,,14,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_disk/1__abnormal,RE2-SS,disk,payment,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_disk/2__abnormal,RE2-SS,disk,payment,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_socket/2__abnormal,RE2-SS,socket,payment,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_cpu/2__abnormal,RE2-SS,cpu,user,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/1__abnormal,RE2-SS,disk,user,nsigma,metriques,ok,,9,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/2__abnormal,RE2-SS,disk,user,nsigma,metriques,ok,,9,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/3__abnormal,RE2-SS,disk,user,nsigma,metriques,ok,,11,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_loss/3__abnormal,RE2-SS,loss,user,nsigma,metriques,ok,,11,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_mem/3__abnormal,RE2-SS,mem,user,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_socket/1__abnormal,RE2-SS,socket,user,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_cpu/3__abnormal,RE2-TT,cpu,ts-auth,nsigma,metriques,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_delay/2__abnormal,RE2-TT,delay,ts-auth,nsigma,metriques,ok,,6,22.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_disk/2__abnormal,RE2-TT,disk,ts-auth,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_disk/3__abnormal,RE2-TT,disk,ts-auth,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_loss/1__abnormal,RE2-TT,loss,ts-auth,nsigma,metriques,ok,,5,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_mem/1__abnormal,RE2-TT,mem,ts-auth,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_mem/3__abnormal,RE2-TT,mem,ts-auth,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_socket/2__abnormal,RE2-TT,socket,ts-auth,nsigma,metriques,ok,,5,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-order-service_delay/3__abnormal,RE2-TT,delay,ts-order,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-order-service_disk/3__abnormal,RE2-TT,disk,ts-order,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_cpu/1__abnormal,RE2-TT,cpu,ts-route,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_delay/2__abnormal,RE2-TT,delay,ts-route,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_disk/1__abnormal,RE2-TT,disk,ts-route,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_disk/3__abnormal,RE2-TT,disk,ts-route,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_mem/2__abnormal,RE2-TT,mem,ts-route,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_socket/1__abnormal,RE2-TT,socket,ts-route,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_socket/2__abnormal,RE2-TT,socket,ts-route,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_cpu/1__abnormal,RE2-TT,cpu,ts-train,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_cpu/3__abnormal,RE2-TT,cpu,ts-train,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_loss/2__abnormal,RE2-TT,loss,ts-train,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_mem/1__abnormal,RE2-TT,mem,ts-train,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_mem/2__abnormal,RE2-TT,mem,ts-train,nsigma,metriques,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_socket/1__abnormal,RE2-TT,socket,ts-train,nsigma,metriques,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_delay/1__abnormal,RE2-TT,delay,ts-travel,nsigma,metriques,ok,,6,7.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_delay/2__abnormal,RE2-TT,delay,ts-travel,nsigma,metriques,ok,,6,8.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_disk/3__abnormal,RE2-TT,disk,ts-travel,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_loss/1__abnormal,RE2-TT,loss,ts-travel,nsigma,metriques,ok,,5,15.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_loss/2__abnormal,RE2-TT,loss,ts-travel,nsigma,metriques,ok,,5,16.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_mem/1__abnormal,RE2-TT,mem,ts-travel,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_mem/2__abnormal,RE2-TT,mem,ts-travel,nsigma,metriques,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_socket/1__abnormal,RE2-TT,socket,ts-travel,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_socket/3__abnormal,RE2-TT,socket,ts-travel,nsigma,metriques,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_disk/2__abnormal,RE2-OB,disk,checkout,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_loss/3__abnormal,RE2-OB,loss,checkout,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_mem/1__abnormal,RE2-OB,mem,checkout,mmbaro,multi_sources,ok,,5,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_socket/2__abnormal,RE2-OB,socket,checkout,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_cpu/1__abnormal,RE2-OB,cpu,currency,mmbaro,multi_sources,ok,,4,6.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_cpu/3__abnormal,RE2-OB,cpu,currency,mmbaro,multi_sources,ok,,4,5.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_disk/3__abnormal,RE2-OB,disk,currency,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_loss/3__abnormal,RE2-OB,loss,currency,mmbaro,multi_sources,ok,,5,6.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_mem/2__abnormal,RE2-OB,mem,currency,mmbaro,multi_sources,ok,,5,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_socket/2__abnormal,RE2-OB,socket,currency,mmbaro,multi_sources,ok,,5,7.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/emailservice_cpu/1__abnormal,RE2-OB,cpu,email,mmbaro,multi_sources,ok,,5,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/emailservice_socket/1__abnormal,RE2-OB,socket,email,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_cpu/2__abnormal,RE2-OB,cpu,productcatalog,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_disk/3__abnormal,RE2-OB,disk,productcatalog,mmbaro,multi_sources,ok,,5,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_loss/1__abnormal,RE2-OB,loss,productcatalog,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_loss/2__abnormal,RE2-OB,loss,productcatalog,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_mem/2__abnormal,RE2-OB,mem,productcatalog,mmbaro,multi_sources,ok,,5,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_socket/3__abnormal,RE2-OB,socket,productcatalog,mmbaro,multi_sources,ok,,6,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_cpu/1__abnormal,RE2-OB,cpu,recommendation,mmbaro,multi_sources,ok,,6,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/1__abnormal,RE2-OB,delay,recommendation,mmbaro,multi_sources,ok,,5,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/2__abnormal,RE2-OB,delay,recommendation,mmbaro,multi_sources,ok,,5,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/3__abnormal,RE2-OB,delay,recommendation,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_disk/1__abnormal,RE2-OB,disk,recommendation,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_disk/2__abnormal,RE2-OB,disk,recommendation,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_loss/1__abnormal,RE2-OB,loss,recommendation,mmbaro,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_mem/3__abnormal,RE2-OB,mem,recommendation,mmbaro,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_socket/2__abnormal,RE2-OB,socket,recommendation,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_cpu/3__abnormal,RE2-SS,cpu,carts,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_disk/1__abnormal,RE2-SS,disk,carts,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_loss/2__abnormal,RE2-SS,loss,carts,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_mem/2__abnormal,RE2-SS,mem,carts,mmbaro,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_socket/1__abnormal,RE2-SS,socket,carts,mmbaro,multi_sources,ok,,4,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/catalogue_mem/2__abnormal,RE2-SS,mem,catalogue,mmbaro,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_cpu/1__abnormal,RE2-SS,cpu,orders,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_cpu/2__abnormal,RE2-SS,cpu,orders,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_delay/1__abnormal,RE2-SS,delay,orders,mmbaro,multi_sources,ok,,4,7.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_loss/3__abnormal,RE2-SS,loss,orders,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_mem/2__abnormal,RE2-SS,mem,orders,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_socket/2__abnormal,RE2-SS,socket,orders,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_socket/3__abnormal,RE2-SS,socket,orders,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_cpu/2__abnormal,RE2-SS,cpu,payment,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_cpu/3__abnormal,RE2-SS,cpu,payment,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_delay/3__abnormal,RE2-SS,delay,payment,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_disk/1__abnormal,RE2-SS,disk,payment,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_disk/2__abnormal,RE2-SS,disk,payment,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_socket/2__abnormal,RE2-SS,socket,payment,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_cpu/2__abnormal,RE2-SS,cpu,user,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/1__abnormal,RE2-SS,disk,user,mmbaro,multi_sources,ok,,5,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/2__abnormal,RE2-SS,disk,user,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/3__abnormal,RE2-SS,disk,user,mmbaro,multi_sources,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_loss/3__abnormal,RE2-SS,loss,user,mmbaro,multi_sources,ok,,6,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_mem/3__abnormal,RE2-SS,mem,user,mmbaro,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_socket/1__abnormal,RE2-SS,socket,user,mmbaro,multi_sources,ok,,4,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_cpu/3__abnormal,RE2-TT,cpu,ts-auth,mmbaro,multi_sources,ok,,5,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_delay/2__abnormal,RE2-TT,delay,ts-auth,mmbaro,multi_sources,ok,,5,40.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_disk/2__abnormal,RE2-TT,disk,ts-auth,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_disk/3__abnormal,RE2-TT,disk,ts-auth,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_loss/1__abnormal,RE2-TT,loss,ts-auth,mmbaro,multi_sources,ok,,5,4.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_mem/1__abnormal,RE2-TT,mem,ts-auth,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_mem/3__abnormal,RE2-TT,mem,ts-auth,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_socket/2__abnormal,RE2-TT,socket,ts-auth,mmbaro,multi_sources,ok,,5,10.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-order-service_delay/3__abnormal,RE2-TT,delay,ts-order,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-order-service_disk/3__abnormal,RE2-TT,disk,ts-order,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_cpu/1__abnormal,RE2-TT,cpu,ts-route,mmbaro,multi_sources,ok,,8,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_delay/2__abnormal,RE2-TT,delay,ts-route,mmbaro,multi_sources,ok,,8,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_disk/1__abnormal,RE2-TT,disk,ts-route,mmbaro,multi_sources,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_disk/3__abnormal,RE2-TT,disk,ts-route,mmbaro,multi_sources,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_mem/2__abnormal,RE2-TT,mem,ts-route,mmbaro,multi_sources,ok,,5,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_socket/1__abnormal,RE2-TT,socket,ts-route,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_socket/2__abnormal,RE2-TT,socket,ts-route,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_cpu/1__abnormal,RE2-TT,cpu,ts-train,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_cpu/3__abnormal,RE2-TT,cpu,ts-train,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_loss/2__abnormal,RE2-TT,loss,ts-train,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_mem/1__abnormal,RE2-TT,mem,ts-train,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_mem/2__abnormal,RE2-TT,mem,ts-train,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_delay/1__abnormal,RE2-TT,delay,ts-travel,mmbaro,multi_sources,ok,,5,10.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_delay/2__abnormal,RE2-TT,delay,ts-travel,mmbaro,multi_sources,ok,,5,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_disk/3__abnormal,RE2-TT,disk,ts-travel,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_loss/1__abnormal,RE2-TT,loss,ts-travel,mmbaro,multi_sources,ok,,5,18.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_loss/2__abnormal,RE2-TT,loss,ts-travel,mmbaro,multi_sources,ok,,5,27.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_mem/1__abnormal,RE2-TT,mem,ts-travel,mmbaro,multi_sources,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_mem/2__abnormal,RE2-TT,mem,ts-travel,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_socket/1__abnormal,RE2-TT,socket,ts-travel,mmbaro,multi_sources,ok,,5,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_socket/3__abnormal,RE2-TT,socket,ts-travel,mmbaro,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_disk/2__abnormal,RE2-OB,disk,checkout,mmnsigma,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_loss/3__abnormal,RE2-OB,loss,checkout,mmnsigma,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_mem/1__abnormal,RE2-OB,mem,checkout,mmnsigma,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_mem/2__abnormal,RE2-OB,mem,checkout,mmnsigma,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_socket/2__abnormal,RE2-OB,socket,checkout,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_cpu/1__abnormal,RE2-OB,cpu,currency,mmnsigma,multi_sources,ok,,6,5.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_cpu/3__abnormal,RE2-OB,cpu,currency,mmnsigma,multi_sources,ok,,4,4.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_disk/3__abnormal,RE2-OB,disk,currency,mmnsigma,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_loss/3__abnormal,RE2-OB,loss,currency,mmnsigma,multi_sources,ok,,5,5.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_mem/2__abnormal,RE2-OB,mem,currency,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_socket/2__abnormal,RE2-OB,socket,currency,mmnsigma,multi_sources,ok,,5,6.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/emailservice_cpu/1__abnormal,RE2-OB,cpu,email,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/emailservice_socket/1__abnormal,RE2-OB,socket,email,mmnsigma,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_cpu/2__abnormal,RE2-OB,cpu,productcatalog,mmnsigma,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_disk/3__abnormal,RE2-OB,disk,productcatalog,mmnsigma,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_loss/1__abnormal,RE2-OB,loss,productcatalog,mmnsigma,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_loss/2__abnormal,RE2-OB,loss,productcatalog,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_mem/2__abnormal,RE2-OB,mem,productcatalog,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_socket/3__abnormal,RE2-OB,socket,productcatalog,mmnsigma,multi_sources,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_cpu/1__abnormal,RE2-OB,cpu,recommendation,mmnsigma,multi_sources,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/1__abnormal,RE2-OB,delay,recommendation,mmnsigma,multi_sources,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/2__abnormal,RE2-OB,delay,recommendation,mmnsigma,multi_sources,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/3__abnormal,RE2-OB,delay,recommendation,mmnsigma,multi_sources,ok,,19,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_disk/1__abnormal,RE2-OB,disk,recommendation,mmnsigma,multi_sources,ok,,19,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_disk/2__abnormal,RE2-OB,disk,recommendation,mmnsigma,multi_sources,ok,,10,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_loss/1__abnormal,RE2-OB,loss,recommendation,mmnsigma,multi_sources,ok,,10,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_mem/3__abnormal,RE2-OB,mem,recommendation,mmnsigma,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_socket/2__abnormal,RE2-OB,socket,recommendation,mmnsigma,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_cpu/3__abnormal,RE2-SS,cpu,carts,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_disk/1__abnormal,RE2-SS,disk,carts,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_loss/2__abnormal,RE2-SS,loss,carts,mmnsigma,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_mem/2__abnormal,RE2-SS,mem,carts,mmnsigma,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_socket/1__abnormal,RE2-SS,socket,carts,mmnsigma,multi_sources,ok,,5,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/catalogue_mem/2__abnormal,RE2-SS,mem,catalogue,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_cpu/1__abnormal,RE2-SS,cpu,orders,mmnsigma,multi_sources,ok,,8,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_cpu/2__abnormal,RE2-SS,cpu,orders,mmnsigma,multi_sources,ok,,8,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_delay/1__abnormal,RE2-SS,delay,orders,mmnsigma,multi_sources,ok,,5,9.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_loss/3__abnormal,RE2-SS,loss,orders,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_mem/2__abnormal,RE2-SS,mem,orders,mmnsigma,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_socket/2__abnormal,RE2-SS,socket,orders,mmnsigma,multi_sources,ok,,4,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_socket/3__abnormal,RE2-SS,socket,orders,mmnsigma,multi_sources,ok,,7,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_cpu/2__abnormal,RE2-SS,cpu,payment,mmnsigma,multi_sources,ok,,7,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_cpu/3__abnormal,RE2-SS,cpu,payment,mmnsigma,multi_sources,ok,,8,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_delay/3__abnormal,RE2-SS,delay,payment,mmnsigma,multi_sources,ok,,8,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_disk/1__abnormal,RE2-SS,disk,payment,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_disk/2__abnormal,RE2-SS,disk,payment,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_socket/2__abnormal,RE2-SS,socket,payment,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_cpu/2__abnormal,RE2-SS,cpu,user,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/1__abnormal,RE2-SS,disk,user,mmnsigma,multi_sources,ok,,8,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/2__abnormal,RE2-SS,disk,user,mmnsigma,multi_sources,ok,,8,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/3__abnormal,RE2-SS,disk,user,mmnsigma,multi_sources,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_loss/3__abnormal,RE2-SS,loss,user,mmnsigma,multi_sources,ok,,6,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_mem/3__abnormal,RE2-SS,mem,user,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_socket/1__abnormal,RE2-SS,socket,user,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_cpu/3__abnormal,RE2-TT,cpu,ts-auth,mmnsigma,multi_sources,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_delay/2__abnormal,RE2-TT,delay,ts-auth,mmnsigma,multi_sources,ok,,6,24.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_disk/2__abnormal,RE2-TT,disk,ts-auth,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_disk/3__abnormal,RE2-TT,disk,ts-auth,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_loss/1__abnormal,RE2-TT,loss,ts-auth,mmnsigma,multi_sources,ok,,5,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_mem/1__abnormal,RE2-TT,mem,ts-auth,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_mem/3__abnormal,RE2-TT,mem,ts-auth,mmnsigma,multi_sources,ok,,11,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_socket/2__abnormal,RE2-TT,socket,ts-auth,mmnsigma,multi_sources,ok,,11,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-order-service_delay/3__abnormal,RE2-TT,delay,ts-order,mmnsigma,multi_sources,ok,,13,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-order-service_disk/3__abnormal,RE2-TT,disk,ts-order,mmnsigma,multi_sources,ok,,13,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_cpu/1__abnormal,RE2-TT,cpu,ts-route,mmnsigma,multi_sources,ok,,11,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_delay/2__abnormal,RE2-TT,delay,ts-route,mmnsigma,multi_sources,ok,,11,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_disk/1__abnormal,RE2-TT,disk,ts-route,mmnsigma,multi_sources,ok,,7,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_disk/3__abnormal,RE2-TT,disk,ts-route,mmnsigma,multi_sources,ok,,7,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_mem/2__abnormal,RE2-TT,mem,ts-route,mmnsigma,multi_sources,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_socket/1__abnormal,RE2-TT,socket,ts-route,mmnsigma,multi_sources,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_socket/2__abnormal,RE2-TT,socket,ts-route,mmnsigma,multi_sources,ok,,7,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_cpu/1__abnormal,RE2-TT,cpu,ts-train,mmnsigma,multi_sources,ok,,7,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_cpu/3__abnormal,RE2-TT,cpu,ts-train,mmnsigma,multi_sources,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_loss/2__abnormal,RE2-TT,loss,ts-train,mmnsigma,multi_sources,ok,,6,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_mem/1__abnormal,RE2-TT,mem,ts-train,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_mem/2__abnormal,RE2-TT,mem,ts-train,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_delay/1__abnormal,RE2-TT,delay,ts-travel,mmnsigma,multi_sources,ok,,7,8.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_delay/2__abnormal,RE2-TT,delay,ts-travel,mmnsigma,multi_sources,ok,,6,7.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_disk/3__abnormal,RE2-TT,disk,ts-travel,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_loss/1__abnormal,RE2-TT,loss,ts-travel,mmnsigma,multi_sources,ok,,11,15.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_loss/2__abnormal,RE2-TT,loss,ts-travel,mmnsigma,multi_sources,ok,,11,16.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_mem/1__abnormal,RE2-TT,mem,ts-travel,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_mem/2__abnormal,RE2-TT,mem,ts-travel,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_socket/1__abnormal,RE2-TT,socket,ts-travel,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_socket/3__abnormal,RE2-TT,socket,ts-travel,mmnsigma,multi_sources,ok,,5,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_disk/2__abnormal,RE2-OB,disk,checkout,circa,metriques,ok,,63,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_loss/3__abnormal,RE2-OB,loss,checkout,circa,metriques,ok,,72,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_mem/1__abnormal,RE2-OB,mem,checkout,circa,metriques,ok,,50,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_mem/2__abnormal,RE2-OB,mem,checkout,circa,metriques,ok,,58,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_socket/2__abnormal,RE2-OB,socket,checkout,circa,metriques,ok,,36,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_cpu/1__abnormal,RE2-OB,cpu,currency,circa,metriques,ok,,48,4.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_cpu/3__abnormal,RE2-OB,cpu,currency,circa,metriques,ok,,41,7.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_disk/3__abnormal,RE2-OB,disk,currency,circa,metriques,ok,,40,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_loss/3__abnormal,RE2-OB,loss,currency,circa,metriques,ok,,48,6.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_mem/2__abnormal,RE2-OB,mem,currency,circa,metriques,ok,,43,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_socket/2__abnormal,RE2-OB,socket,currency,circa,metriques,ok,,36,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/emailservice_cpu/1__abnormal,RE2-OB,cpu,email,circa,metriques,ok,,37,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/emailservice_socket/1__abnormal,RE2-OB,socket,email,circa,metriques,ok,,35,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_cpu/2__abnormal,RE2-OB,cpu,productcatalog,circa,metriques,ok,,33,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_disk/3__abnormal,RE2-OB,disk,productcatalog,circa,metriques,ok,,36,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_loss/1__abnormal,RE2-OB,loss,productcatalog,circa,metriques,ok,,46,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_loss/2__abnormal,RE2-OB,loss,productcatalog,circa,metriques,ok,,53,9.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_mem/2__abnormal,RE2-OB,mem,productcatalog,circa,metriques,ok,,42,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_socket/3__abnormal,RE2-OB,socket,productcatalog,circa,metriques,ok,,34,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_cpu/1__abnormal,RE2-OB,cpu,recommendation,circa,metriques,ok,,38,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/1__abnormal,RE2-OB,delay,recommendation,circa,metriques,ok,,38,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/2__abnormal,RE2-OB,delay,recommendation,circa,metriques,ok,,42,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/3__abnormal,RE2-OB,delay,recommendation,circa,metriques,ok,,36,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_disk/1__abnormal,RE2-OB,disk,recommendation,circa,metriques,ok,,35,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_disk/2__abnormal,RE2-OB,disk,recommendation,circa,metriques,ok,,33,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_loss/1__abnormal,RE2-OB,loss,recommendation,circa,metriques,ok,,42,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_mem/3__abnormal,RE2-OB,mem,recommendation,circa,metriques,ok,,39,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_socket/2__abnormal,RE2-OB,socket,recommendation,circa,metriques,ok,,36,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_cpu/3__abnormal,RE2-SS,cpu,carts,circa,metriques,ok,,42,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_disk/1__abnormal,RE2-SS,disk,carts,circa,metriques,ok,,36,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_loss/2__abnormal,RE2-SS,loss,carts,circa,metriques,ok,,39,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_mem/2__abnormal,RE2-SS,mem,carts,circa,metriques,ok,,35,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_socket/1__abnormal,RE2-SS,socket,carts,circa,metriques,ok,,32,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/catalogue_mem/2__abnormal,RE2-SS,mem,catalogue,circa,metriques,ok,,45,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_cpu/1__abnormal,RE2-SS,cpu,orders,circa,metriques,ok,,38,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_cpu/2__abnormal,RE2-SS,cpu,orders,circa,metriques,ok,,42,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_delay/1__abnormal,RE2-SS,delay,orders,circa,metriques,ok,,43,9.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_loss/3__abnormal,RE2-SS,loss,orders,circa,metriques,ok,,84,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_mem/2__abnormal,RE2-SS,mem,orders,circa,metriques,ok,,79,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_socket/2__abnormal,RE2-SS,socket,orders,circa,metriques,ok,,42,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_socket/3__abnormal,RE2-SS,socket,orders,circa,metriques,ok,,38,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_cpu/2__abnormal,RE2-SS,cpu,payment,circa,metriques,ok,,42,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_cpu/3__abnormal,RE2-SS,cpu,payment,circa,metriques,ok,,41,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_delay/3__abnormal,RE2-SS,delay,payment,circa,metriques,ok,,43,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_disk/1__abnormal,RE2-SS,disk,payment,circa,metriques,ok,,51,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_disk/2__abnormal,RE2-SS,disk,payment,circa,metriques,ok,,46,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_socket/2__abnormal,RE2-SS,socket,payment,circa,metriques,ok,,38,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_cpu/2__abnormal,RE2-SS,cpu,user,circa,metriques,ok,,58,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/1__abnormal,RE2-SS,disk,user,circa,metriques,ok,,105,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/2__abnormal,RE2-SS,disk,user,circa,metriques,ok,,108,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/3__abnormal,RE2-SS,disk,user,circa,metriques,ok,,71,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_loss/3__abnormal,RE2-SS,loss,user,circa,metriques,ok,,84,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_mem/3__abnormal,RE2-SS,mem,user,circa,metriques,ok,,48,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_socket/1__abnormal,RE2-SS,socket,user,circa,metriques,ok,,53,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_cpu/3__abnormal,RE2-TT,cpu,ts-auth,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_delay/2__abnormal,RE2-TT,delay,ts-auth,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_disk/2__abnormal,RE2-TT,disk,ts-auth,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_disk/3__abnormal,RE2-TT,disk,ts-auth,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_loss/1__abnormal,RE2-TT,loss,ts-auth,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_mem/1__abnormal,RE2-TT,mem,ts-auth,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_mem/3__abnormal,RE2-TT,mem,ts-auth,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_socket/2__abnormal,RE2-TT,socket,ts-auth,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-order-service_delay/3__abnormal,RE2-TT,delay,ts-order,circa,metriques,timeout,> 600 s (durée gonflée par une mise en veille du Mac),82072,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-order-service_disk/3__abnormal,RE2-TT,disk,ts-order,circa,metriques,timeout,> 600 s (durée gonflée par une mise en veille du Mac),82071,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_cpu/1__abnormal,RE2-TT,cpu,ts-route,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_delay/2__abnormal,RE2-TT,delay,ts-route,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_disk/1__abnormal,RE2-TT,disk,ts-route,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_disk/3__abnormal,RE2-TT,disk,ts-route,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_mem/2__abnormal,RE2-TT,mem,ts-route,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_socket/1__abnormal,RE2-TT,socket,ts-route,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-route-service_socket/2__abnormal,RE2-TT,socket,ts-route,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_cpu/1__abnormal,RE2-TT,cpu,ts-train,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_cpu/3__abnormal,RE2-TT,cpu,ts-train,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_loss/2__abnormal,RE2-TT,loss,ts-train,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_mem/1__abnormal,RE2-TT,mem,ts-train,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_mem/2__abnormal,RE2-TT,mem,ts-train,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-train-service_socket/1__abnormal,RE2-TT,socket,ts-train,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_delay/1__abnormal,RE2-TT,delay,ts-travel,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_delay/2__abnormal,RE2-TT,delay,ts-travel,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_disk/3__abnormal,RE2-TT,disk,ts-travel,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_loss/1__abnormal,RE2-TT,loss,ts-travel,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_loss/2__abnormal,RE2-TT,loss,ts-travel,circa,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_mem/1__abnormal,RE2-TT,mem,ts-travel,circa,metriques,echec,message non conservé (reconstitué depuis le journal),84,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_mem/2__abnormal,RE2-TT,mem,ts-travel,circa,metriques,timeout,> 600 s (durée gonflée par une mise en veille du Mac),7778,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_socket/1__abnormal,RE2-TT,socket,ts-travel,circa,metriques,timeout,> 600 s (durée gonflée par une mise en veille du Mac),7778,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-travel-service_socket/3__abnormal,RE2-TT,socket,ts-travel,circa,metriques,timeout,> 600 s (durée gonflée par une mise en veille du Mac),36430,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_disk/2__abnormal,RE2-OB,disk,checkout,pc_pagerank,metriques,ok,,34,10.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_loss/3__abnormal,RE2-OB,loss,checkout,pc_pagerank,metriques,ok,,39,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_mem/1__abnormal,RE2-OB,mem,checkout,pc_pagerank,metriques,ok,,16258,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_mem/2__abnormal,RE2-OB,mem,checkout,pc_pagerank,metriques,ok,,19682,10.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_socket/2__abnormal,RE2-OB,socket,checkout,pc_pagerank,metriques,ok,,27,5.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_cpu/1__abnormal,RE2-OB,cpu,currency,pc_pagerank,metriques,ok,,34,5.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_cpu/3__abnormal,RE2-OB,cpu,currency,pc_pagerank,metriques,ok,,29,10.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_disk/3__abnormal,RE2-OB,disk,currency,pc_pagerank,metriques,ok,,27,10.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_loss/3__abnormal,RE2-OB,loss,currency,pc_pagerank,metriques,ok,,35,7.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_mem/2__abnormal,RE2-OB,mem,currency,pc_pagerank,metriques,ok,,29,8.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/currencyservice_socket/2__abnormal,RE2-OB,socket,currency,pc_pagerank,metriques,ok,,25,7.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/emailservice_cpu/1__abnormal,RE2-OB,cpu,email,pc_pagerank,metriques,ok,,28,8.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/emailservice_socket/1__abnormal,RE2-OB,socket,email,pc_pagerank,metriques,ok,,26,7.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_cpu/2__abnormal,RE2-OB,cpu,productcatalog,pc_pagerank,metriques,ok,,23,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_disk/3__abnormal,RE2-OB,disk,productcatalog,pc_pagerank,metriques,ok,,29,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_loss/1__abnormal,RE2-OB,loss,productcatalog,pc_pagerank,metriques,ok,,40,6.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_loss/2__abnormal,RE2-OB,loss,productcatalog,pc_pagerank,metriques,ok,,40,9.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_mem/2__abnormal,RE2-OB,mem,productcatalog,pc_pagerank,metriques,ok,,32,10.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/productcatalogservice_socket/3__abnormal,RE2-OB,socket,productcatalog,pc_pagerank,metriques,ok,,29,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_cpu/1__abnormal,RE2-OB,cpu,recommendation,pc_pagerank,metriques,ok,,30,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/1__abnormal,RE2-OB,delay,recommendation,pc_pagerank,metriques,ok,,29,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/2__abnormal,RE2-OB,delay,recommendation,pc_pagerank,metriques,ok,,29,5.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_delay/3__abnormal,RE2-OB,delay,recommendation,pc_pagerank,metriques,ok,,24,5.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_disk/1__abnormal,RE2-OB,disk,recommendation,pc_pagerank,metriques,ok,,26,5.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_disk/2__abnormal,RE2-OB,disk,recommendation,pc_pagerank,metriques,ok,,27,4.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_loss/1__abnormal,RE2-OB,loss,recommendation,pc_pagerank,metriques,ok,,33,6.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_mem/3__abnormal,RE2-OB,mem,recommendation,pc_pagerank,metriques,ok,,31,9.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/recommendationservice_socket/2__abnormal,RE2-OB,socket,recommendation,pc_pagerank,metriques,ok,,30,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_cpu/3__abnormal,RE2-SS,cpu,carts,pc_pagerank,metriques,ok,,38,8.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_disk/1__abnormal,RE2-SS,disk,carts,pc_pagerank,metriques,ok,,31,3.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_loss/2__abnormal,RE2-SS,loss,carts,pc_pagerank,metriques,ok,,35,7.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_mem/2__abnormal,RE2-SS,mem,carts,pc_pagerank,metriques,ok,,32,6.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/carts_socket/1__abnormal,RE2-SS,socket,carts,pc_pagerank,metriques,ok,,31,10.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/catalogue_mem/2__abnormal,RE2-SS,mem,catalogue,pc_pagerank,metriques,ok,,35,9.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_cpu/1__abnormal,RE2-SS,cpu,orders,pc_pagerank,metriques,ok,,31,9.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_cpu/2__abnormal,RE2-SS,cpu,orders,pc_pagerank,metriques,ok,,29,4.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_delay/1__abnormal,RE2-SS,delay,orders,pc_pagerank,metriques,ok,,35,9.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_loss/3__abnormal,RE2-SS,loss,orders,pc_pagerank,metriques,ok,,40,4.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_mem/2__abnormal,RE2-SS,mem,orders,pc_pagerank,metriques,ok,,40,5.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_socket/2__abnormal,RE2-SS,socket,orders,pc_pagerank,metriques,ok,,30,6.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/orders_socket/3__abnormal,RE2-SS,socket,orders,pc_pagerank,metriques,ok,,29,6.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_cpu/2__abnormal,RE2-SS,cpu,payment,pc_pagerank,metriques,ok,,30,10.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_cpu/3__abnormal,RE2-SS,cpu,payment,pc_pagerank,metriques,ok,,33,7.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_delay/3__abnormal,RE2-SS,delay,payment,pc_pagerank,metriques,ok,,31,4.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_disk/1__abnormal,RE2-SS,disk,payment,pc_pagerank,metriques,ok,,40,8.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_disk/2__abnormal,RE2-SS,disk,payment,pc_pagerank,metriques,ok,,40,4.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/payment_socket/2__abnormal,RE2-SS,socket,payment,pc_pagerank,metriques,ok,,31,11.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_cpu/2__abnormal,RE2-SS,cpu,user,pc_pagerank,metriques,ok,,31,7.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/1__abnormal,RE2-SS,disk,user,pc_pagerank,metriques,ok,,40,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/2__abnormal,RE2-SS,disk,user,pc_pagerank,metriques,ok,,36,7.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_disk/3__abnormal,RE2-SS,disk,user,pc_pagerank,metriques,ok,,33,1.0,True,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_loss/3__abnormal,RE2-SS,loss,user,pc_pagerank,metriques,ok,,68,2.0,False,True,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_mem/3__abnormal,RE2-SS,mem,user,pc_pagerank,metriques,ok,,35,4.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-SS/user_socket/1__abnormal,RE2-SS,socket,user,pc_pagerank,metriques,ok,,45,8.0,False,False,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_cpu/3__abnormal,RE2-TT,cpu,ts-auth,pc_pagerank,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_delay/2__abnormal,RE2-TT,delay,ts-auth,pc_pagerank,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_disk/2__abnormal,RE2-TT,disk,ts-auth,pc_pagerank,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_disk/3__abnormal,RE2-TT,disk,ts-auth,pc_pagerank,metriques,timeout,> 600 s,600,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_loss/1__abnormal,RE2-TT,loss,ts-auth,pc_pagerank,metriques,timeout,> 600 s (durée gonflée par une mise en veille du Mac),2046,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-TT/ts-auth-service_mem/1__abnormal,RE2-TT,mem,ts-auth,pc_pagerank,metriques,timeout,> 600 s (durée gonflée par une mise en veille du Mac),2298,,,,,reconstitué depuis le journal (experiments/causal_baselines_20261102_103500.log)
+RE2-OB/checkoutservice_mem/2__abnormal,RE2-OB,mem,checkout,mmbaro,multi_sources,ok,,6.7,2,False,True,redis > checkout > email > payment > shipping,calcul direct
+RE2-TT/ts-train-service_socket/1__abnormal,RE2-TT,socket,ts-train,mmbaro,multi_sources,echec,"ValueError: Found array with 0 sample(s) (shape=(0, 1)) while a minimum of 1 is required by RobustScaler.",7.6,,,,,calcul direct
+RE2-TT/ts-train-service_socket/1__abnormal,RE2-TT,socket,ts-train,mmnsigma,multi_sources,echec,"ValueError: Found array with 0 sample(s) (shape=(0, 1)) while a minimum of 1 is required by StandardScaler.",5.6,,,,,calcul direct
+RE2-TT/ts-auth-service_mem/3__abnormal,RE2-TT,mem,ts-auth,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-auth-service_socket/2__abnormal,RE2-TT,socket,ts-auth,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-order-service_delay/3__abnormal,RE2-TT,delay,ts-order,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-order-service_disk/3__abnormal,RE2-TT,disk,ts-order,pc_pagerank,metriques,timeout,> 600 s,600.2,,,,,calcul direct
+RE2-TT/ts-route-service_cpu/1__abnormal,RE2-TT,cpu,ts-route,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-route-service_delay/2__abnormal,RE2-TT,delay,ts-route,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-route-service_disk/1__abnormal,RE2-TT,disk,ts-route,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-route-service_disk/3__abnormal,RE2-TT,disk,ts-route,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-route-service_mem/2__abnormal,RE2-TT,mem,ts-route,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-route-service_socket/1__abnormal,RE2-TT,socket,ts-route,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-route-service_socket/2__abnormal,RE2-TT,socket,ts-route,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-train-service_cpu/1__abnormal,RE2-TT,cpu,ts-train,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-train-service_cpu/3__abnormal,RE2-TT,cpu,ts-train,pc_pagerank,metriques,timeout,> 600 s,600.3,,,,,calcul direct
+RE2-TT/ts-train-service_loss/2__abnormal,RE2-TT,loss,ts-train,pc_pagerank,metriques,timeout,> 600 s,600.3,,,,,calcul direct
+RE2-TT/ts-train-service_mem/1__abnormal,RE2-TT,mem,ts-train,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-train-service_mem/2__abnormal,RE2-TT,mem,ts-train,pc_pagerank,metriques,timeout,> 600 s,600.5,,,,,calcul direct
+RE2-TT/ts-train-service_socket/1__abnormal,RE2-TT,socket,ts-train,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-travel-service_delay/1__abnormal,RE2-TT,delay,ts-travel,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-travel-service_delay/2__abnormal,RE2-TT,delay,ts-travel,pc_pagerank,metriques,timeout,> 600 s,600.2,,,,,calcul direct
+RE2-TT/ts-travel-service_disk/3__abnormal,RE2-TT,disk,ts-travel,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-travel-service_loss/1__abnormal,RE2-TT,loss,ts-travel,pc_pagerank,metriques,timeout,> 600 s,600.2,,,,,calcul direct
+RE2-TT/ts-travel-service_loss/2__abnormal,RE2-TT,loss,ts-travel,pc_pagerank,metriques,timeout,> 600 s,600.1,,,,,calcul direct
+RE2-TT/ts-travel-service_mem/1__abnormal,RE2-TT,mem,ts-travel,pc_pagerank,metriques,echec,ValueError: Data correlation matrix is singular. Cannot run fisherz test. Please check your data.,94.7,,,,,calcul direct
+RE2-TT/ts-travel-service_mem/2__abnormal,RE2-TT,mem,ts-travel,pc_pagerank,metriques,timeout,> 600 s,600.2,,,,,calcul direct
+RE2-TT/ts-travel-service_socket/1__abnormal,RE2-TT,socket,ts-travel,pc_pagerank,metriques,timeout,> 600 s,600.2,,,,,calcul direct
+RE2-TT/ts-travel-service_socket/3__abnormal,RE2-TT,socket,ts-travel,pc_pagerank,metriques,timeout,> 600 s,600.2,,,,,calcul direct
+RE2-OB/checkoutservice_disk/2__abnormal,RE2-OB,disk,checkout,tracerca,traces,ok,,33.3,1,True,True,checkout > frontend > productcatalog > email > currency,calcul direct
+RE2-OB/checkoutservice_loss/3__abnormal,RE2-OB,loss,checkout,tracerca,traces,ok,,23.2,2,False,True,frontend > checkout > productcatalog > email > currency,calcul direct
+RE2-OB/checkoutservice_mem/1__abnormal,RE2-OB,mem,checkout,tracerca,traces,ok,,36.2,2,False,True,frontend > checkout > email > currency > payment,calcul direct
+RE2-OB/checkoutservice_mem/2__abnormal,RE2-OB,mem,checkout,tracerca,traces,ok,,31.9,2,False,True,frontend > checkout > productcatalog > currency > email,calcul direct
+RE2-OB/checkoutservice_socket/2__abnormal,RE2-OB,socket,checkout,tracerca,traces,ok,,24.8,1,True,True,checkout > frontend > recommendation > payment > currency,calcul direct
+RE2-OB/currencyservice_cpu/1__abnormal,RE2-OB,cpu,currency,tracerca,traces,ok,,23.7,2,False,True,frontend > currency > productcatalog > checkout > recommendation,calcul direct
+RE2-OB/currencyservice_cpu/3__abnormal,RE2-OB,cpu,currency,tracerca,traces,ok,,27.9,2,False,True,frontend > currency > recommendation > checkout > productcatalog,calcul direct
+RE2-OB/currencyservice_disk/3__abnormal,RE2-OB,disk,currency,tracerca,traces,ok,,24.3,3,False,True,frontend > checkout > currency > recommendation > productcatalog,calcul direct
+RE2-OB/currencyservice_loss/3__abnormal,RE2-OB,loss,currency,tracerca,traces,ok,,21.9,6,False,False,frontend > recommendation > checkout > productcatalog > email,calcul direct
+RE2-OB/currencyservice_mem/2__abnormal,RE2-OB,mem,currency,tracerca,traces,ok,,25.8,4,False,False,frontend > checkout > recommendation > currency > productcatalog,calcul direct
+RE2-OB/currencyservice_socket/2__abnormal,RE2-OB,socket,currency,tracerca,traces,ok,,24.4,3,False,True,frontend > recommendation > currency > checkout > productcatalog,calcul direct
+RE2-OB/emailservice_cpu/1__abnormal,RE2-OB,cpu,email,tracerca,traces,ok,,25.4,2,False,True,checkout > email > frontend > productcatalog > currency,calcul direct
+RE2-OB/emailservice_socket/1__abnormal,RE2-OB,socket,email,tracerca,traces,ok,,24.6,3,False,True,frontend > checkout > email > currency > recommendation,calcul direct
+RE2-OB/productcatalogservice_cpu/2__abnormal,RE2-OB,cpu,productcatalog,tracerca,traces,ok,,22.6,4,False,False,frontend > recommendation > checkout > productcatalog > currency,calcul direct
+RE2-OB/productcatalogservice_disk/3__abnormal,RE2-OB,disk,productcatalog,tracerca,traces,ok,,22.1,4,False,False,frontend > recommendation > checkout > productcatalog > currency,calcul direct
+RE2-OB/productcatalogservice_loss/1__abnormal,RE2-OB,loss,productcatalog,tracerca,traces,ok,,17.5,5,False,False,frontend > recommendation > currency > checkout > productcatalog,calcul direct
+RE2-OB/productcatalogservice_loss/2__abnormal,RE2-OB,loss,productcatalog,tracerca,traces,ok,,17.2,4,False,False,frontend > recommendation > checkout > productcatalog > payment,calcul direct
+RE2-OB/productcatalogservice_mem/2__abnormal,RE2-OB,mem,productcatalog,tracerca,traces,ok,,18.6,4,False,False,frontend > recommendation > checkout > productcatalog > currency,calcul direct
+RE2-OB/productcatalogservice_socket/3__abnormal,RE2-OB,socket,productcatalog,tracerca,traces,ok,,22.7,4,False,False,frontend > recommendation > checkout > productcatalog > currency,calcul direct
+RE2-OB/recommendationservice_cpu/1__abnormal,RE2-OB,cpu,recommendation,tracerca,traces,ok,,21.0,2,False,True,frontend > recommendation > currency > email > checkout,calcul direct
+RE2-OB/recommendationservice_delay/1__abnormal,RE2-OB,delay,recommendation,tracerca,traces,ok,,20.5,2,False,True,frontend > recommendation > currency > productcatalog > payment,calcul direct
+RE2-OB/recommendationservice_delay/2__abnormal,RE2-OB,delay,recommendation,tracerca,traces,ok,,21.8,2,False,True,frontend > recommendation > productcatalog > currency > checkout,calcul direct
+RE2-OB/recommendationservice_delay/3__abnormal,RE2-OB,delay,recommendation,tracerca,traces,ok,,21.3,2,False,True,frontend > recommendation > productcatalog > currency > payment,calcul direct
+RE2-OB/recommendationservice_disk/1__abnormal,RE2-OB,disk,recommendation,tracerca,traces,ok,,23.2,2,False,True,frontend > recommendation > productcatalog > currency > checkout,calcul direct
+RE2-OB/recommendationservice_disk/2__abnormal,RE2-OB,disk,recommendation,tracerca,traces,ok,,23.7,2,False,True,frontend > recommendation > currency > productcatalog > checkout,calcul direct
+RE2-OB/recommendationservice_loss/1__abnormal,RE2-OB,loss,recommendation,tracerca,traces,ok,,18.8,2,False,True,frontend > recommendation > productcatalog > currency > checkout,calcul direct
+RE2-OB/recommendationservice_mem/3__abnormal,RE2-OB,mem,recommendation,tracerca,traces,ok,,20.9,2,False,True,frontend > recommendation > productcatalog > checkout > currency,calcul direct
+RE2-OB/recommendationservice_socket/2__abnormal,RE2-OB,socket,recommendation,tracerca,traces,ok,,21.9,2,False,True,frontend > recommendation > productcatalog > email > currency,calcul direct
+RE2-SS/carts_cpu/3__abnormal,RE2-SS,cpu,carts,tracerca,traces,non_applicable,pas de traces pour ce cas,8.8,,,,,calcul direct
+RE2-SS/carts_disk/1__abnormal,RE2-SS,disk,carts,tracerca,traces,non_applicable,pas de traces pour ce cas,8.7,,,,,calcul direct
+RE2-SS/carts_loss/2__abnormal,RE2-SS,loss,carts,tracerca,traces,non_applicable,pas de traces pour ce cas,9.6,,,,,calcul direct
+RE2-SS/carts_mem/2__abnormal,RE2-SS,mem,carts,tracerca,traces,non_applicable,pas de traces pour ce cas,10.5,,,,,calcul direct
+RE2-SS/carts_socket/1__abnormal,RE2-SS,socket,carts,tracerca,traces,non_applicable,pas de traces pour ce cas,9.9,,,,,calcul direct
+RE2-SS/catalogue_mem/2__abnormal,RE2-SS,mem,catalogue,tracerca,traces,non_applicable,pas de traces pour ce cas,8.5,,,,,calcul direct
+RE2-SS/orders_cpu/1__abnormal,RE2-SS,cpu,orders,tracerca,traces,non_applicable,pas de traces pour ce cas,8.6,,,,,calcul direct
+RE2-SS/orders_cpu/2__abnormal,RE2-SS,cpu,orders,tracerca,traces,non_applicable,pas de traces pour ce cas,8.2,,,,,calcul direct
+RE2-SS/orders_delay/1__abnormal,RE2-SS,delay,orders,tracerca,traces,non_applicable,pas de traces pour ce cas,7.7,,,,,calcul direct
+RE2-SS/orders_loss/3__abnormal,RE2-SS,loss,orders,tracerca,traces,non_applicable,pas de traces pour ce cas,7.7,,,,,calcul direct
+RE2-SS/orders_mem/2__abnormal,RE2-SS,mem,orders,tracerca,traces,non_applicable,pas de traces pour ce cas,7.3,,,,,calcul direct
+RE2-SS/orders_socket/2__abnormal,RE2-SS,socket,orders,tracerca,traces,non_applicable,pas de traces pour ce cas,7.3,,,,,calcul direct
+RE2-SS/orders_socket/3__abnormal,RE2-SS,socket,orders,tracerca,traces,non_applicable,pas de traces pour ce cas,6.8,,,,,calcul direct
+RE2-SS/payment_cpu/2__abnormal,RE2-SS,cpu,payment,tracerca,traces,non_applicable,pas de traces pour ce cas,6.7,,,,,calcul direct
+RE2-SS/payment_cpu/3__abnormal,RE2-SS,cpu,payment,tracerca,traces,non_applicable,pas de traces pour ce cas,7.4,,,,,calcul direct
+RE2-SS/payment_delay/3__abnormal,RE2-SS,delay,payment,tracerca,traces,non_applicable,pas de traces pour ce cas,7.5,,,,,calcul direct
+RE2-SS/payment_disk/1__abnormal,RE2-SS,disk,payment,tracerca,traces,non_applicable,pas de traces pour ce cas,11.3,,,,,calcul direct
+RE2-SS/payment_disk/2__abnormal,RE2-SS,disk,payment,tracerca,traces,non_applicable,pas de traces pour ce cas,11.1,,,,,calcul direct
+RE2-SS/payment_socket/2__abnormal,RE2-SS,socket,payment,tracerca,traces,non_applicable,pas de traces pour ce cas,7.9,,,,,calcul direct
+RE2-SS/user_cpu/2__abnormal,RE2-SS,cpu,user,tracerca,traces,non_applicable,pas de traces pour ce cas,7.8,,,,,calcul direct
+RE2-SS/user_disk/1__abnormal,RE2-SS,disk,user,tracerca,traces,non_applicable,pas de traces pour ce cas,8.2,,,,,calcul direct
+RE2-SS/user_disk/2__abnormal,RE2-SS,disk,user,tracerca,traces,non_applicable,pas de traces pour ce cas,8.0,,,,,calcul direct
+RE2-SS/user_disk/3__abnormal,RE2-SS,disk,user,tracerca,traces,non_applicable,pas de traces pour ce cas,11.1,,,,,calcul direct
+RE2-SS/user_loss/3__abnormal,RE2-SS,loss,user,tracerca,traces,non_applicable,pas de traces pour ce cas,11.1,,,,,calcul direct
+RE2-SS/user_mem/3__abnormal,RE2-SS,mem,user,tracerca,traces,non_applicable,pas de traces pour ce cas,8.8,,,,,calcul direct
+RE2-SS/user_socket/1__abnormal,RE2-SS,socket,user,tracerca,traces,non_applicable,pas de traces pour ce cas,8.8,,,,,calcul direct
+RE2-TT/ts-auth-service_cpu/3__abnormal,RE2-TT,cpu,ts-auth,tracerca,traces,ok,,81.6,15,False,False,ts-basic > ts-ticketinfo > ts-station > ts-route > ts-train,calcul direct
+RE2-TT/ts-auth-service_delay/2__abnormal,RE2-TT,delay,ts-auth,tracerca,traces,ok,,63.5,1,True,True,ts-auth > ts-station > ts-seat > ts-order-other > ts-travel2,calcul direct
+RE2-TT/ts-auth-service_disk/2__abnormal,RE2-TT,disk,ts-auth,tracerca,traces,ok,,57.6,1,True,True,ts-auth > ts-station > ts-config > ts-seat > ts-order-other,calcul direct
+RE2-TT/ts-auth-service_disk/3__abnormal,RE2-TT,disk,ts-auth,tracerca,traces,ok,,57.9,10,False,False,ts-train > ts-station > ts-route > ts-seat > ts-travel,calcul direct
+RE2-TT/ts-auth-service_loss/1__abnormal,RE2-TT,loss,ts-auth,tracerca,traces,ok,,83.0,2,False,True,ts-ticketinfo > ts-auth > ts-travel2 > ts-basic > ts-travel,calcul direct
+RE2-TT/ts-auth-service_mem/1__abnormal,RE2-TT,mem,ts-auth,tracerca,traces,ok,,85.0,1,True,True,ts-auth > ts-basic > ts-ticketinfo > ts-route > ts-station,calcul direct
+RE2-TT/ts-auth-service_mem/3__abnormal,RE2-TT,mem,ts-auth,tracerca,traces,ok,,58.2,1,True,True,ts-auth > ts-seat > ts-travel2 > ts-station > ts-config,calcul direct
+RE2-TT/ts-auth-service_socket/2__abnormal,RE2-TT,socket,ts-auth,tracerca,traces,ok,,152.6,1,True,True,ts-auth > ts-train > ts-station > ts-route > ts-travel,calcul direct
+RE2-TT/ts-order-service_delay/3__abnormal,RE2-TT,delay,ts-order,tracerca,traces,ok,,34.6,1,True,True,ts-order > ts-auth > ts-basic > ts-station > ts-travel2,calcul direct
+RE2-TT/ts-order-service_disk/3__abnormal,RE2-TT,disk,ts-order,tracerca,traces,ok,,55.3,3,False,True,ts-auth > ts-station > ts-order > ts-route > ts-inside-payment,calcul direct
+RE2-TT/ts-route-service_cpu/1__abnormal,RE2-TT,cpu,ts-route,tracerca,traces,ok,,156.6,1,True,True,ts-route > ts-travel2 > ts-travel > ts-seat > ts-ticketinfo,calcul direct
+RE2-TT/ts-route-service_delay/2__abnormal,RE2-TT,delay,ts-route,tracerca,traces,ok,,140.5,1,True,True,ts-route > ts-travel2 > ts-travel > ts-basic > ts-seat,calcul direct
+RE2-TT/ts-route-service_disk/1__abnormal,RE2-TT,disk,ts-route,tracerca,traces,ok,,153.8,1,True,True,ts-route > ts-travel2 > ts-ticketinfo > ts-basic > ts-travel,calcul direct
+RE2-TT/ts-route-service_disk/3__abnormal,RE2-TT,disk,ts-route,tracerca,traces,ok,,72.5,1,True,True,ts-route > ts-travel2 > ts-travel > ts-station > ts-basic,calcul direct
+RE2-TT/ts-route-service_mem/2__abnormal,RE2-TT,mem,ts-route,tracerca,traces,ok,,82.0,1,True,True,ts-route > ts-travel > ts-basic > ts-seat > ts-station,calcul direct
+RE2-TT/ts-route-service_socket/1__abnormal,RE2-TT,socket,ts-route,tracerca,traces,ok,,156.8,1,True,True,ts-route > ts-travel2 > ts-travel > ts-seat > ts-basic,calcul direct
+RE2-TT/ts-route-service_socket/2__abnormal,RE2-TT,socket,ts-route,tracerca,traces,ok,,71.8,1,True,True,ts-route > ts-travel2 > ts-basic > ts-ticketinfo > ts-seat,calcul direct
+RE2-TT/ts-train-service_cpu/1__abnormal,RE2-TT,cpu,ts-train,tracerca,traces,ok,,107.8,1,True,True,ts-train > ts-travel2 > ts-ticketinfo > ts-basic > ts-seat,calcul direct
+RE2-TT/ts-train-service_cpu/3__abnormal,RE2-TT,cpu,ts-train,tracerca,traces,ok,,78.1,1,True,True,ts-train > ts-seat > ts-travel2 > ts-basic > ts-route,calcul direct
+RE2-TT/ts-train-service_loss/2__abnormal,RE2-TT,loss,ts-train,tracerca,traces,ok,,78.6,1,True,True,ts-train > ts-seat > ts-travel > ts-travel2 > ts-station,calcul direct
+RE2-TT/ts-train-service_mem/1__abnormal,RE2-TT,mem,ts-train,tracerca,traces,ok,,54.4,1,True,True,ts-train > ts-travel2 > ts-travel > ts-seat > ts-basic,calcul direct
+RE2-TT/ts-train-service_mem/2__abnormal,RE2-TT,mem,ts-train,tracerca,traces,ok,,57.1,1,True,True,ts-train > ts-seat > ts-basic > ts-travel2 > ts-ticketinfo,calcul direct
+RE2-TT/ts-train-service_socket/1__abnormal,RE2-TT,socket,ts-train,tracerca,traces,echec,KeyError: 'ts-security-service_GET /api/v1/securityservice/securityConfigs/{accountId}',17.6,,,,,calcul direct
+RE2-TT/ts-travel-service_delay/1__abnormal,RE2-TT,delay,ts-travel,tracerca,traces,ok,,81.6,1,True,True,ts-travel > ts-seat > ts-station > ts-basic > ts-ticketinfo,calcul direct
+RE2-TT/ts-travel-service_delay/2__abnormal,RE2-TT,delay,ts-travel,tracerca,traces,ok,,77.0,1,True,True,ts-travel > ts-seat > ts-basic > ts-station > ts-ticketinfo,calcul direct
+RE2-TT/ts-travel-service_disk/3__abnormal,RE2-TT,disk,ts-travel,tracerca,traces,ok,,20.4,1,True,True,ts-travel > ts-food > ts-ticketinfo > ts-admin-travel > ts-basic,calcul direct
+RE2-TT/ts-travel-service_loss/1__abnormal,RE2-TT,loss,ts-travel,tracerca,traces,echec,KeyError: 'ts-order-other-service_getMore ts.orders',33.5,,,,,calcul direct
+RE2-TT/ts-travel-service_loss/2__abnormal,RE2-TT,loss,ts-travel,tracerca,traces,ok,,79.7,12,False,False,ts-seat > ts-basic > ts-station > ts-ticketinfo > ts-travel2,calcul direct
+RE2-TT/ts-travel-service_mem/1__abnormal,RE2-TT,mem,ts-travel,tracerca,traces,ok,,55.7,1,True,True,ts-travel > ts-seat > ts-basic > ts-ticketinfo > ts-travel2,calcul direct
+RE2-TT/ts-travel-service_mem/2__abnormal,RE2-TT,mem,ts-travel,tracerca,traces,ok,,56.9,1,True,True,ts-travel > ts-seat > ts-ticketinfo > ts-basic > ts-route,calcul direct
+RE2-TT/ts-travel-service_socket/1__abnormal,RE2-TT,socket,ts-travel,tracerca,traces,ok,,12.2,1,True,True,ts-travel > ts-food > ts-admin-travel > ts-ticketinfo > ts-basic,calcul direct
+RE2-TT/ts-travel-service_socket/3__abnormal,RE2-TT,socket,ts-travel,tracerca,traces,ok,,52.1,1,True,True,ts-travel > ts-seat > ts-route > ts-station > ts-basic,calcul direct
+RE2-OB/checkoutservice_disk/2__abnormal,RE2-OB,disk,checkout,microrank,traces,ok,,172.0,,False,False,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/checkoutservice_loss/3__abnormal,RE2-OB,loss,checkout,microrank,traces,ok,,186.6,,False,False,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/checkoutservice_mem/1__abnormal,RE2-OB,mem,checkout,microrank,traces,ok,,211.2,,False,False,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/checkoutservice_mem/2__abnormal,RE2-OB,mem,checkout,microrank,traces,ok,,195.1,,False,False,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/checkoutservice_socket/2__abnormal,RE2-OB,socket,checkout,microrank,traces,ok,,244.6,,False,False,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/currencyservice_cpu/1__abnormal,RE2-OB,cpu,currency,microrank,traces,ok,,236.4,2,False,True,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/currencyservice_cpu/3__abnormal,RE2-OB,cpu,currency,microrank,traces,ok,,162.5,2,False,True,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/currencyservice_disk/3__abnormal,RE2-OB,disk,currency,microrank,traces,ok,,157.8,2,False,True,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/currencyservice_loss/3__abnormal,RE2-OB,loss,currency,microrank,traces,ok,,139.5,2,False,True,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/currencyservice_mem/2__abnormal,RE2-OB,mem,currency,microrank,traces,ok,,141.4,2,False,True,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/currencyservice_socket/2__abnormal,RE2-OB,socket,currency,microrank,traces,ok,,245.2,2,False,True,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/emailservice_cpu/1__abnormal,RE2-OB,cpu,email,microrank,traces,ok,,238.1,,False,False,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/emailservice_socket/1__abnormal,RE2-OB,socket,email,microrank,traces,ok,,170.5,,False,False,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/productcatalogservice_cpu/2__abnormal,RE2-OB,cpu,productcatalog,microrank,traces,ok,,166.6,3,False,True,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/productcatalogservice_disk/3__abnormal,RE2-OB,disk,productcatalog,microrank,traces,ok,,184.1,3,False,True,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/productcatalogservice_loss/1__abnormal,RE2-OB,loss,productcatalog,microrank,traces,ok,,121.4,,False,False,frontend > currency > recommendation,calcul direct
+RE2-OB/productcatalogservice_loss/2__abnormal,RE2-OB,loss,productcatalog,microrank,traces,ok,,214.7,3,False,True,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/productcatalogservice_mem/2__abnormal,RE2-OB,mem,productcatalog,microrank,traces,ok,,266.6,3,False,True,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/productcatalogservice_socket/3__abnormal,RE2-OB,socket,productcatalog,microrank,traces,ok,,264.3,3,False,True,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/recommendationservice_cpu/1__abnormal,RE2-OB,cpu,recommendation,microrank,traces,ok,,208.7,4,False,False,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/recommendationservice_delay/1__abnormal,RE2-OB,delay,recommendation,microrank,traces,ok,,183.5,4,False,False,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/recommendationservice_delay/2__abnormal,RE2-OB,delay,recommendation,microrank,traces,ok,,167.8,4,False,False,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/recommendationservice_delay/3__abnormal,RE2-OB,delay,recommendation,microrank,traces,ok,,146.6,4,False,False,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/recommendationservice_disk/1__abnormal,RE2-OB,disk,recommendation,microrank,traces,ok,,150.3,4,False,False,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/recommendationservice_disk/2__abnormal,RE2-OB,disk,recommendation,microrank,traces,ok,,172.1,4,False,False,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/recommendationservice_loss/1__abnormal,RE2-OB,loss,recommendation,microrank,traces,ok,,129.3,,False,False,frontend > currency > productcatalog,calcul direct
+RE2-OB/recommendationservice_mem/3__abnormal,RE2-OB,mem,recommendation,microrank,traces,ok,,158.2,4,False,False,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-OB/recommendationservice_socket/2__abnormal,RE2-OB,socket,recommendation,microrank,traces,ok,,159.6,4,False,False,frontend > currency > productcatalog > recommendation,calcul direct
+RE2-SS/carts_cpu/3__abnormal,RE2-SS,cpu,carts,microrank,traces,non_applicable,pas de traces pour ce cas,7.1,,,,,calcul direct
+RE2-SS/carts_disk/1__abnormal,RE2-SS,disk,carts,microrank,traces,non_applicable,pas de traces pour ce cas,5.5,,,,,calcul direct
+RE2-SS/carts_loss/2__abnormal,RE2-SS,loss,carts,microrank,traces,non_applicable,pas de traces pour ce cas,5.5,,,,,calcul direct
+RE2-SS/carts_mem/2__abnormal,RE2-SS,mem,carts,microrank,traces,non_applicable,pas de traces pour ce cas,5.5,,,,,calcul direct
+RE2-SS/carts_socket/1__abnormal,RE2-SS,socket,carts,microrank,traces,non_applicable,pas de traces pour ce cas,5.6,,,,,calcul direct
+RE2-SS/catalogue_mem/2__abnormal,RE2-SS,mem,catalogue,microrank,traces,non_applicable,pas de traces pour ce cas,5.6,,,,,calcul direct
+RE2-SS/orders_cpu/1__abnormal,RE2-SS,cpu,orders,microrank,traces,non_applicable,pas de traces pour ce cas,5.7,,,,,calcul direct
+RE2-SS/orders_cpu/2__abnormal,RE2-SS,cpu,orders,microrank,traces,non_applicable,pas de traces pour ce cas,5.7,,,,,calcul direct
+RE2-SS/orders_delay/1__abnormal,RE2-SS,delay,orders,microrank,traces,non_applicable,pas de traces pour ce cas,6.6,,,,,calcul direct
+RE2-SS/orders_loss/3__abnormal,RE2-SS,loss,orders,microrank,traces,non_applicable,pas de traces pour ce cas,6.5,,,,,calcul direct
+RE2-SS/orders_mem/2__abnormal,RE2-SS,mem,orders,microrank,traces,non_applicable,pas de traces pour ce cas,9.2,,,,,calcul direct
+RE2-SS/orders_socket/2__abnormal,RE2-SS,socket,orders,microrank,traces,non_applicable,pas de traces pour ce cas,9.3,,,,,calcul direct
+RE2-SS/orders_socket/3__abnormal,RE2-SS,socket,orders,microrank,traces,non_applicable,pas de traces pour ce cas,6.3,,,,,calcul direct
+RE2-SS/payment_cpu/2__abnormal,RE2-SS,cpu,payment,microrank,traces,non_applicable,pas de traces pour ce cas,6.0,,,,,calcul direct
+RE2-SS/payment_cpu/3__abnormal,RE2-SS,cpu,payment,microrank,traces,non_applicable,pas de traces pour ce cas,5.7,,,,,calcul direct
+RE2-SS/payment_delay/3__abnormal,RE2-SS,delay,payment,microrank,traces,non_applicable,pas de traces pour ce cas,5.9,,,,,calcul direct
+RE2-SS/payment_disk/1__abnormal,RE2-SS,disk,payment,microrank,traces,non_applicable,pas de traces pour ce cas,5.8,,,,,calcul direct
+RE2-SS/payment_disk/2__abnormal,RE2-SS,disk,payment,microrank,traces,non_applicable,pas de traces pour ce cas,6.0,,,,,calcul direct
+RE2-SS/payment_socket/2__abnormal,RE2-SS,socket,payment,microrank,traces,non_applicable,pas de traces pour ce cas,5.0,,,,,calcul direct
+RE2-SS/user_cpu/2__abnormal,RE2-SS,cpu,user,microrank,traces,non_applicable,pas de traces pour ce cas,4.9,,,,,calcul direct
+RE2-SS/user_disk/1__abnormal,RE2-SS,disk,user,microrank,traces,non_applicable,pas de traces pour ce cas,5.6,,,,,calcul direct
+RE2-SS/user_disk/2__abnormal,RE2-SS,disk,user,microrank,traces,non_applicable,pas de traces pour ce cas,5.4,,,,,calcul direct
+RE2-SS/user_disk/3__abnormal,RE2-SS,disk,user,microrank,traces,non_applicable,pas de traces pour ce cas,5.6,,,,,calcul direct
+RE2-SS/user_loss/3__abnormal,RE2-SS,loss,user,microrank,traces,non_applicable,pas de traces pour ce cas,5.4,,,,,calcul direct
+RE2-SS/user_mem/3__abnormal,RE2-SS,mem,user,microrank,traces,non_applicable,pas de traces pour ce cas,5.0,,,,,calcul direct
+RE2-SS/user_socket/1__abnormal,RE2-SS,socket,user,microrank,traces,non_applicable,pas de traces pour ce cas,5.2,,,,,calcul direct
+RE2-TT/ts-auth-service_cpu/3__abnormal,RE2-TT,cpu,ts-auth,microrank,traces,ok,,262.4,3,False,True,ts-station > ts-route > ts-auth > ts-price > ts-config,calcul direct
+RE2-TT/ts-auth-service_delay/2__abnormal,RE2-TT,delay,ts-auth,microrank,traces,ok,,200.8,3,False,True,ts-station > ts-route > ts-auth > ts-price > ts-config,calcul direct
+RE2-TT/ts-auth-service_disk/2__abnormal,RE2-TT,disk,ts-auth,microrank,traces,ok,,173.7,4,False,False,ts-station > ts-route > ts-config > ts-auth > ts-price,calcul direct
+RE2-TT/ts-auth-service_disk/3__abnormal,RE2-TT,disk,ts-auth,microrank,traces,ok,,231.9,3,False,True,ts-station > ts-route > ts-auth > ts-config > ts-price,calcul direct
+RE2-TT/ts-auth-service_loss/1__abnormal,RE2-TT,loss,ts-auth,microrank,traces,ok,,268.5,3,False,True,ts-station > ts-route > ts-auth > ts-config > ts-price,calcul direct
+RE2-TT/ts-auth-service_mem/1__abnormal,RE2-TT,mem,ts-auth,microrank,traces,ok,,274.2,3,False,True,ts-station > ts-route > ts-auth > ts-config > ts-price,calcul direct
+RE2-TT/ts-auth-service_mem/3__abnormal,RE2-TT,mem,ts-auth,microrank,traces,ok,,170.2,3,False,True,ts-station > ts-route > ts-auth > ts-config > ts-price,calcul direct
+RE2-TT/ts-auth-service_socket/2__abnormal,RE2-TT,socket,ts-auth,microrank,traces,ok,,211.2,3,False,True,ts-station > ts-route > ts-auth > ts-price > ts-config,calcul direct
+RE2-TT/ts-order-service_delay/3__abnormal,RE2-TT,delay,ts-order,microrank,traces,ok,,39.3,,False,False,ts-auth > ts-station > ts-route > ts-basic,calcul direct
+RE2-TT/ts-order-service_disk/3__abnormal,RE2-TT,disk,ts-order,microrank,traces,ok,,38.2,,False,False,ts-station > ts-auth > ts-route > ts-basic,calcul direct
+RE2-TT/ts-route-service_cpu/1__abnormal,RE2-TT,cpu,ts-route,microrank,traces,ok,,335.6,2,False,True,ts-station > ts-route > ts-auth > ts-config > ts-price,calcul direct
+RE2-TT/ts-route-service_delay/2__abnormal,RE2-TT,delay,ts-route,microrank,traces,ok,,362.0,2,False,True,ts-station > ts-route > ts-price > ts-config > ts-train,calcul direct
+RE2-TT/ts-route-service_disk/1__abnormal,RE2-TT,disk,ts-route,microrank,traces,ok,,599.1,2,False,True,ts-station > ts-route > ts-auth > ts-price > ts-config,calcul direct
+RE2-TT/ts-route-service_disk/3__abnormal,RE2-TT,disk,ts-route,microrank,traces,ok,,275.3,2,False,True,ts-station > ts-route > ts-auth > ts-price > ts-config,calcul direct
+RE2-TT/ts-route-service_mem/2__abnormal,RE2-TT,mem,ts-route,microrank,traces,ok,,334.6,2,False,True,ts-station > ts-route > ts-auth > ts-price > ts-config,calcul direct
+RE2-TT/ts-route-service_socket/1__abnormal,RE2-TT,socket,ts-route,microrank,traces,timeout,> 600 s,600.2,,,,,calcul direct
+RE2-TT/ts-route-service_socket/2__abnormal,RE2-TT,socket,ts-route,microrank,traces,ok,,356.8,2,False,True,ts-station > ts-route > ts-auth > ts-config > ts-price,calcul direct
+RE2-TT/ts-train-service_cpu/1__abnormal,RE2-TT,cpu,ts-train,microrank,traces,ok,,350.3,,False,False,ts-station > ts-route > ts-auth > ts-config > ts-price,calcul direct
+RE2-TT/ts-train-service_cpu/3__abnormal,RE2-TT,cpu,ts-train,microrank,traces,ok,,297.7,,False,False,ts-station > ts-route > ts-auth > ts-config > ts-price,calcul direct
+RE2-TT/ts-train-service_loss/2__abnormal,RE2-TT,loss,ts-train,microrank,traces,ok,,329.9,5,False,False,ts-station > ts-route > ts-price > ts-config > ts-train,calcul direct
+RE2-TT/ts-train-service_mem/1__abnormal,RE2-TT,mem,ts-train,microrank,traces,ok,,237.0,,False,False,ts-station > ts-route > ts-auth > ts-price > ts-config,calcul direct
+RE2-TT/ts-train-service_mem/2__abnormal,RE2-TT,mem,ts-train,microrank,traces,ok,,246.5,,False,False,ts-station > ts-route > ts-auth > ts-config > ts-price,calcul direct
+RE2-TT/ts-train-service_socket/1__abnormal,RE2-TT,socket,ts-train,microrank,traces,echec,KeyError: 'ts-security-service_GET /api/v1/securityservice/securityConfigs/{accountId}',14.5,,,,,calcul direct
+RE2-TT/ts-travel-service_delay/1__abnormal,RE2-TT,delay,ts-travel,microrank,traces,ok,,405.7,,False,False,ts-station > ts-route > ts-price > ts-config > ts-auth,calcul direct
+RE2-TT/ts-travel-service_delay/2__abnormal,RE2-TT,delay,ts-travel,microrank,traces,ok,,323.3,,False,False,ts-station > ts-route > ts-config > ts-price > ts-auth,calcul direct
+RE2-TT/ts-travel-service_disk/3__abnormal,RE2-TT,disk,ts-travel,microrank,traces,ok,,60.3,,False,False,ts-station > ts-route > ts-auth > ts-ticketinfo > ts-basic,calcul direct
+RE2-TT/ts-travel-service_loss/1__abnormal,RE2-TT,loss,ts-travel,microrank,traces,echec,KeyError: 'ts-order-other-service_getMore ts.orders',33.7,,,,,calcul direct
+RE2-TT/ts-travel-service_loss/2__abnormal,RE2-TT,loss,ts-travel,microrank,traces,ok,,236.7,,False,False,ts-station > ts-route > ts-price > ts-config > ts-auth,calcul direct
+RE2-TT/ts-travel-service_mem/1__abnormal,RE2-TT,mem,ts-travel,microrank,traces,ok,,160.3,,False,False,ts-station > ts-route > ts-price > ts-config > ts-auth,calcul direct
+RE2-TT/ts-travel-service_mem/2__abnormal,RE2-TT,mem,ts-travel,microrank,traces,ok,,149.6,,False,False,ts-station > ts-route > ts-auth > ts-config > ts-price,calcul direct
+RE2-TT/ts-travel-service_socket/1__abnormal,RE2-TT,socket,ts-travel,microrank,traces,ok,,45.8,,False,False,ts-auth > ts-station > ts-route > ts-basic,calcul direct
+RE2-TT/ts-travel-service_socket/3__abnormal,RE2-TT,socket,ts-travel,microrank,traces,ok,,117.2,,False,False,ts-station > ts-route > ts-auth > ts-config > ts-price,calcul direct
+,,,,rcd,,non_executee,RCAEval n'importe RCD que sous Python 3.8 (is_py38) ; ce dépôt est en 3.12,,,,,,calcul direct
+,,,,mmrcd,,non_executee,idem RCD (Python 3.8 uniquement dans RCAEval),,,,,,calcul direct
+,,,,pdiagnose,,non_executee,"script main() aux chemins codés en dur, pas de fonction appelable",,,,,,calcul direct
+,,,,microcause,,non_executee,"essai sur 2 cas RE2-OB : > 300 s par cas (4 cœurs, 8 Go) ; lançable avec --methods microcause",,,,,,calcul direct
+,,,,causalrca,,non_executee,"essai sur 2 cas RE2-OB : > 300 s par cas (4 cœurs, 8 Go) ; lançable avec --methods causalrca",,,,,,calcul direct

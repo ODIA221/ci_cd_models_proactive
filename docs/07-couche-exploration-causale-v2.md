@@ -103,18 +103,46 @@ precision@k : le service fautif est-il classé dans les k premiers ? Fichiers
 bruts : `experiments/causal_rankers*_20261023_194519.csv` ; tous les chiffres
 ci-dessous se recalculent avec `python -m src.models.causal_summary`.
 
-**Méthodes de référence (lot 1, en cours)** : `./run.sh evaluate-baselines`
+**Méthodes de référence de RCAEval (2026-11-02)** : `./run.sh evaluate-baselines`
 (`src/models/rcaeval_baselines.py`) exécute les méthodes de RCAEval sur les
 mêmes 86 cas, avec le protocole de `RCAEval/main.py` (fenêtre de 5 min de
-part et d'autre de l'injection, `simple_metrics.csv`, même SLI). Le
-décorateur `rca` de RCAEval, qui masque les échecs, est remplacé pour que
-chaque échec soit compté ; `PageRank.fit_transform`, retiré de
-scikit-network 0.33, est rétabli comme simple alias de `fit_predict`. RCD et
-MM-RCD (Python 3.8 seulement), PDiagnose (script non appelable), MicroCause
-et CausalRCA (> 5 min par cas sur cette machine) ne sont pas exécutés et
-apparaissent comme tels dans le fichier de résultats. `causal_summary`
-compare ensuite chaque méthode au score multimodal (McNemar, Holm ; échec =
-pas de réponse).
+part et d'autre de l'injection, `simple_metrics.csv`, même SLI), deux cas à
+la fois, 10 min au plus par cas. Le décorateur `rca` de RCAEval, qui masque
+les échecs, est remplacé pour que chaque échec soit compté ;
+`PageRank.fit_transform`, retiré de scikit-network 0.33, est rétabli comme
+simple alias de `fit_predict`. Résultats : `experiments/causal_baselines_20261102_103500.csv`
+(journal du calcul à côté), recalculés par `causal_summary` (échec = pas de
+réponse ; McNemar contre le score multimodal, Holm sur 8 comparaisons) :
+
+| Méthode | Cas applicables | Aboutis | P@1 | P@3 | Score seul juste | Méthode seule juste | p Holm |
+|---|---|---|---|---|---|---|---|
+| NSigma | 86 | 86 | **0,83** | 0,88 | 11 | 27 | 0,045 |
+| mmNSigma | 86 | 85 | **0,83** | 0,87 | 10 | 26 | 0,045 |
+| *Score multimodal (v3)* | 86 | 86 | *0,64* | *0,88* | — | — | — |
+| CIRCA | 86 | 54 | 0,48 | 0,57 | 28 | 14 | 0,087 |
+| TraceRCA | 60 | 58 | 0,45 | 0,78 | 22 | 10 | 0,087 |
+| BARO | 86 | 86 | 0,35 | 0,88 | 41 | 16 | 0,006 |
+| mmBARO | 86 | 85 | 0,35 | 0,86 | 40 | 15 | 0,006 |
+| PC-PageRank | 86 | 54 | 0,06 | 0,14 | 51 | 1 | < 0,001 |
+| MicroRank | 60 | 57 | 0,00 | 0,40 | 39 | 0 | < 0,001 |
+
+**Une méthode élémentaire (NSigma : maximum de l'écart standardisé par
+métrique) bat le score multimodal**, surtout sur les fautes mémoire (1,00
+contre 0,44) et disque (1,00 contre 0,76) ; le score fait mieux sur la
+latence (0,80 contre 0,60). CIRCA et PC-PageRank n'aboutissent sur AUCUN des
+32 cas Train Ticket (31 dépassements de 10 min et 1 échec chacune ; 7 de ces
+durées gonflées par des mises en veille de la machine, sans incidence : tous
+les autres cas TT dépassent aussi). MicroRank produit le même classement
+(frontend, currency, productcatalog, recommendation) sur les cas Online
+Boutique : à rapporter tel quel, sans conclure sur la méthode elle-même.
+
+Non exécutées (motif dans le fichier) : RCD et MM-RCD (Python 3.8 seulement
+dans RCAEval), PDiagnose (script non appelable), MicroCause et CausalRCA
+(> 5 min par cas sur deux cas d'essai). 487 lignes ont été reconstituées
+depuis le journal après l'arrêt d'une session (statut, rang et durée y
+figuraient ; colonne `provenance`) ; le script écrit désormais chaque
+résultat au fil de l'eau (`--resume`). Ces résultats vont dans l'article 5 ;
+l'article 4, déjà soumis, n'est pas modifié.
 
 > **Correction du 2026-10-23 (signaux version 3).** Les colonnes de métriques
 > RCAEval en `*-total` sont déjà des taux par seconde, pas des compteurs

@@ -1,0 +1,940 @@
+2026-10-31 17:16:40,808 86 cas (repris de causal_rankers_20261023_194519.csv), méthodes : baro, nsigma, mmbaro, mmnsigma, circa, pc_pagerank, tracerca, microrank
+2026-10-31 17:16:53,726 [1/688] baro RE2-OB/checkoutservice_disk/2__abnormal: ok rang=2 (13 s)
+2026-10-31 17:16:53,744 [2/688] baro RE2-OB/checkoutservice_loss/3__abnormal: ok rang=2 (13 s)
+2026-10-31 17:17:05,569 [3/688] baro RE2-OB/checkoutservice_mem/1__abnormal: ok rang=2 (12 s)
+2026-10-31 17:17:05,570 [4/688] baro RE2-OB/checkoutservice_mem/2__abnormal: ok rang=2 (12 s)
+2026-10-31 17:17:16,810 [5/688] baro RE2-OB/checkoutservice_socket/2__abnormal: ok rang=2 (11 s)
+2026-10-31 17:17:16,812 [6/688] baro RE2-OB/currencyservice_cpu/1__abnormal: ok rang=6 (11 s)
+2026-10-31 17:17:30,495 [7/688] baro RE2-OB/currencyservice_cpu/3__abnormal: ok rang=5 (14 s)
+2026-10-31 17:17:30,499 [8/688] baro RE2-OB/currencyservice_disk/3__abnormal: ok rang=2 (14 s)
+2026-10-31 17:17:40,325 [9/688] baro RE2-OB/currencyservice_loss/3__abnormal: ok rang=6 (10 s)
+2026-10-31 17:17:40,339 [10/688] baro RE2-OB/currencyservice_mem/2__abnormal: ok rang=2 (10 s)
+2026-10-31 17:17:49,014 [11/688] baro RE2-OB/currencyservice_socket/2__abnormal: ok rang=8 (9 s)
+2026-10-31 17:17:49,028 [12/688] baro RE2-OB/emailservice_cpu/1__abnormal: ok rang=2 (9 s)
+2026-10-31 17:17:57,231 [13/688] baro RE2-OB/emailservice_socket/1__abnormal: ok rang=2 (8 s)
+2026-10-31 17:17:57,323 [14/688] baro RE2-OB/productcatalogservice_cpu/2__abnormal: ok rang=2 (8 s)
+2026-10-31 17:18:06,308 [15/688] baro RE2-OB/productcatalogservice_disk/3__abnormal: ok rang=2 (9 s)
+2026-10-31 17:18:06,327 [16/688] baro RE2-OB/productcatalogservice_loss/1__abnormal: ok rang=1 (9 s)
+2026-10-31 17:18:17,180 [17/688] baro RE2-OB/productcatalogservice_loss/2__abnormal: ok rang=1 (11 s)
+2026-10-31 17:18:17,205 [18/688] baro RE2-OB/productcatalogservice_mem/2__abnormal: ok rang=2 (11 s)
+2026-10-31 17:18:25,445 [19/688] baro RE2-OB/productcatalogservice_socket/3__abnormal: ok rang=2 (8 s)
+2026-10-31 17:18:25,461 [20/688] baro RE2-OB/recommendationservice_cpu/1__abnormal: ok rang=2 (8 s)
+2026-10-31 17:18:33,749 [21/688] baro RE2-OB/recommendationservice_delay/1__abnormal: ok rang=2 (8 s)
+2026-10-31 17:18:33,774 [22/688] baro RE2-OB/recommendationservice_delay/2__abnormal: ok rang=2 (8 s)
+2026-10-31 17:18:42,684 [23/688] baro RE2-OB/recommendationservice_delay/3__abnormal: ok rang=2 (9 s)
+2026-10-31 17:18:42,686 [24/688] baro RE2-OB/recommendationservice_disk/1__abnormal: ok rang=2 (9 s)
+2026-10-31 17:18:52,992 [25/688] baro RE2-OB/recommendationservice_disk/2__abnormal: ok rang=2 (10 s)
+2026-10-31 17:18:53,022 [26/688] baro RE2-OB/recommendationservice_loss/1__abnormal: ok rang=1 (10 s)
+2026-10-31 17:19:04,471 [27/688] baro RE2-OB/recommendationservice_mem/3__abnormal: ok rang=2 (11 s)
+2026-10-31 17:19:04,474 [28/688] baro RE2-OB/recommendationservice_socket/2__abnormal: ok rang=2 (11 s)
+2026-10-31 17:19:19,252 [29/688] baro RE2-SS/carts_cpu/3__abnormal: ok rang=2 (15 s)
+2026-10-31 17:19:19,271 [30/688] baro RE2-SS/carts_disk/1__abnormal: ok rang=2 (15 s)
+2026-10-31 17:19:32,701 [31/688] baro RE2-SS/carts_loss/2__abnormal: ok rang=2 (13 s)
+2026-10-31 17:19:32,707 [32/688] baro RE2-SS/carts_mem/2__abnormal: ok rang=1 (13 s)
+2026-10-31 17:19:44,307 [33/688] baro RE2-SS/carts_socket/1__abnormal: ok rang=3 (12 s)
+2026-10-31 17:19:44,320 [34/688] baro RE2-SS/catalogue_mem/2__abnormal: ok rang=1 (12 s)
+2026-10-31 17:19:56,417 [35/688] baro RE2-SS/orders_cpu/1__abnormal: ok rang=2 (12 s)
+2026-10-31 17:19:56,419 [36/688] baro RE2-SS/orders_cpu/2__abnormal: ok rang=2 (12 s)
+2026-10-31 17:20:10,384 [37/688] baro RE2-SS/orders_delay/1__abnormal: ok rang=6 (14 s)
+2026-10-31 17:20:10,387 [38/688] baro RE2-SS/orders_loss/3__abnormal: ok rang=2 (14 s)
+2026-10-31 17:20:24,061 [39/688] baro RE2-SS/orders_mem/2__abnormal: ok rang=2 (14 s)
+2026-10-31 17:20:24,068 [40/688] baro RE2-SS/orders_socket/2__abnormal: ok rang=2 (14 s)
+2026-10-31 17:20:35,817 [41/688] baro RE2-SS/orders_socket/3__abnormal: ok rang=2 (12 s)
+2026-10-31 17:20:35,887 [42/688] baro RE2-SS/payment_cpu/2__abnormal: ok rang=2 (12 s)
+2026-10-31 17:20:46,299 [43/688] baro RE2-SS/payment_cpu/3__abnormal: ok rang=2 (10 s)
+2026-10-31 17:20:46,303 [44/688] baro RE2-SS/payment_delay/3__abnormal: ok rang=2 (10 s)
+2026-10-31 17:20:58,044 [45/688] baro RE2-SS/payment_disk/1__abnormal: ok rang=2 (12 s)
+2026-10-31 17:20:58,050 [46/688] baro RE2-SS/payment_disk/2__abnormal: ok rang=2 (12 s)
+2026-10-31 17:21:08,240 [47/688] baro RE2-SS/payment_socket/2__abnormal: ok rang=2 (10 s)
+2026-10-31 17:21:08,242 [48/688] baro RE2-SS/user_cpu/2__abnormal: ok rang=2 (10 s)
+2026-10-31 17:21:15,480 [49/688] baro RE2-SS/user_disk/1__abnormal: ok rang=2 (7 s)
+2026-10-31 17:21:15,498 [50/688] baro RE2-SS/user_disk/2__abnormal: ok rang=1 (7 s)
+2026-10-31 17:21:24,615 [51/688] baro RE2-SS/user_disk/3__abnormal: ok rang=1 (9 s)
+2026-10-31 17:21:24,635 [52/688] baro RE2-SS/user_loss/3__abnormal: ok rang=3 (9 s)
+2026-10-31 17:21:34,652 [53/688] baro RE2-SS/user_mem/3__abnormal: ok rang=1 (10 s)
+2026-10-31 17:21:34,680 [54/688] baro RE2-SS/user_socket/1__abnormal: ok rang=2 (10 s)
+2026-10-31 17:21:48,658 [55/688] baro RE2-TT/ts-auth-service_cpu/3__abnormal: ok rang=2 (14 s)
+2026-10-31 17:21:48,727 [56/688] baro RE2-TT/ts-auth-service_delay/2__abnormal: ok rang=41 (14 s)
+2026-10-31 17:21:58,337 [57/688] baro RE2-TT/ts-auth-service_disk/2__abnormal: ok rang=1 (10 s)
+2026-10-31 17:21:58,344 [58/688] baro RE2-TT/ts-auth-service_disk/3__abnormal: ok rang=1 (10 s)
+2026-10-31 17:22:13,436 [59/688] baro RE2-TT/ts-auth-service_loss/1__abnormal: ok rang=3 (15 s)
+2026-10-31 17:22:13,848 [60/688] baro RE2-TT/ts-auth-service_mem/1__abnormal: ok rang=1 (15 s)
+2026-10-31 17:22:50,411 [61/688] baro RE2-TT/ts-auth-service_mem/3__abnormal: ok rang=1 (37 s)
+2026-10-31 17:22:50,416 [62/688] baro RE2-TT/ts-auth-service_socket/2__abnormal: ok rang=9 (36 s)
+2026-10-31 17:23:07,528 [63/688] baro RE2-TT/ts-order-service_delay/3__abnormal: ok rang=1 (17 s)
+2026-10-31 17:23:07,541 [64/688] baro RE2-TT/ts-order-service_disk/3__abnormal: ok rang=1 (17 s)
+2026-10-31 17:23:16,966 [65/688] baro RE2-TT/ts-route-service_cpu/1__abnormal: ok rang=1 (9 s)
+2026-10-31 17:23:16,969 [66/688] baro RE2-TT/ts-route-service_delay/2__abnormal: ok rang=1 (9 s)
+2026-10-31 17:23:25,561 [67/688] baro RE2-TT/ts-route-service_disk/1__abnormal: ok rang=1 (9 s)
+2026-10-31 17:23:25,566 [68/688] baro RE2-TT/ts-route-service_disk/3__abnormal: ok rang=1 (9 s)
+2026-10-31 17:23:46,134 [69/688] baro RE2-TT/ts-route-service_mem/2__abnormal: ok rang=2 (21 s)
+2026-10-31 17:23:46,138 [70/688] baro RE2-TT/ts-route-service_socket/1__abnormal: ok rang=1 (21 s)
+2026-10-31 17:23:58,005 [71/688] baro RE2-TT/ts-route-service_socket/2__abnormal: ok rang=1 (12 s)
+2026-10-31 17:23:58,008 [72/688] baro RE2-TT/ts-train-service_cpu/1__abnormal: ok rang=1 (12 s)
+2026-10-31 17:24:11,758 [73/688] baro RE2-TT/ts-train-service_cpu/3__abnormal: ok rang=1 (14 s)
+2026-10-31 17:24:11,762 [74/688] baro RE2-TT/ts-train-service_loss/2__abnormal: ok rang=1 (12 s)
+2026-10-31 17:24:34,457 [75/688] baro RE2-TT/ts-train-service_mem/1__abnormal: ok rang=1 (24 s)
+2026-10-31 17:24:34,475 [76/688] baro RE2-TT/ts-train-service_mem/2__abnormal: ok rang=1 (23 s)
+2026-10-31 17:54:05,405 [77/688] baro RE2-TT/ts-train-service_socket/1__abnormal: ok rang=1 (1771 s)
+2026-10-31 17:54:05,431 [78/688] baro RE2-TT/ts-travel-service_delay/1__abnormal: ok rang=7 (1771 s)
+2026-10-31 17:54:13,767 [79/688] baro RE2-TT/ts-travel-service_delay/2__abnormal: ok rang=3 (8 s)
+2026-10-31 17:54:13,768 [80/688] baro RE2-TT/ts-travel-service_disk/3__abnormal: ok rang=1 (8 s)
+2026-10-31 17:54:19,266 [81/688] baro RE2-TT/ts-travel-service_loss/1__abnormal: ok rang=16 (6 s)
+2026-10-31 17:54:19,431 [82/688] baro RE2-TT/ts-travel-service_loss/2__abnormal: ok rang=29 (6 s)
+2026-10-31 17:54:25,323 [83/688] baro RE2-TT/ts-travel-service_mem/1__abnormal: ok rang=1 (6 s)
+2026-10-31 17:54:25,424 [84/688] baro RE2-TT/ts-travel-service_mem/2__abnormal: ok rang=1 (6 s)
+2026-10-31 17:54:30,417 [85/688] baro RE2-TT/ts-travel-service_socket/1__abnormal: ok rang=1 (5 s)
+2026-10-31 17:54:30,492 [86/688] baro RE2-TT/ts-travel-service_socket/3__abnormal: ok rang=2 (5 s)
+2026-10-31 17:54:34,552 [87/688] nsigma RE2-OB/checkoutservice_disk/2__abnormal: ok rang=1 (4 s)
+2026-10-31 17:54:34,594 [88/688] nsigma RE2-OB/checkoutservice_loss/3__abnormal: ok rang=2 (4 s)
+2026-10-31 17:54:38,629 [89/688] nsigma RE2-OB/checkoutservice_mem/1__abnormal: ok rang=1 (4 s)
+2026-10-31 17:54:38,686 [90/688] nsigma RE2-OB/checkoutservice_mem/2__abnormal: ok rang=1 (4 s)
+2026-10-31 17:57:23,896 [91/688] nsigma RE2-OB/checkoutservice_socket/2__abnormal: ok rang=1 (165 s)
+2026-10-31 17:57:24,431 [92/688] nsigma RE2-OB/currencyservice_cpu/1__abnormal: ok rang=5 (166 s)
+2026-10-31 18:04:46,054 [93/688] nsigma RE2-OB/currencyservice_cpu/3__abnormal: ok rang=5 (442 s)
+2026-10-31 18:04:46,222 [94/688] nsigma RE2-OB/currencyservice_disk/3__abnormal: ok rang=1 (442 s)
+2026-10-31 18:04:50,130 [95/688] nsigma RE2-OB/currencyservice_loss/3__abnormal: ok rang=5 (4 s)
+2026-10-31 18:04:50,194 [96/688] nsigma RE2-OB/currencyservice_mem/2__abnormal: ok rang=1 (4 s)
+2026-10-31 18:04:53,356 [97/688] nsigma RE2-OB/currencyservice_socket/2__abnormal: ok rang=6 (3 s)
+2026-10-31 18:04:53,436 [98/688] nsigma RE2-OB/emailservice_cpu/1__abnormal: ok rang=1 (3 s)
+2026-10-31 18:04:56,605 [99/688] nsigma RE2-OB/emailservice_socket/1__abnormal: ok rang=1 (3 s)
+2026-10-31 18:04:56,635 [100/688] nsigma RE2-OB/productcatalogservice_cpu/2__abnormal: ok rang=1 (3 s)
+2026-10-31 18:04:59,737 [101/688] nsigma RE2-OB/productcatalogservice_disk/3__abnormal: ok rang=1 (3 s)
+2026-10-31 18:04:59,810 [102/688] nsigma RE2-OB/productcatalogservice_loss/1__abnormal: ok rang=1 (3 s)
+2026-10-31 18:05:02,887 [103/688] nsigma RE2-OB/productcatalogservice_loss/2__abnormal: ok rang=1 (3 s)
+2026-10-31 18:05:02,938 [104/688] nsigma RE2-OB/productcatalogservice_mem/2__abnormal: ok rang=1 (3 s)
+2026-10-31 18:05:06,120 [105/688] nsigma RE2-OB/productcatalogservice_socket/3__abnormal: ok rang=1 (3 s)
+2026-10-31 18:05:06,171 [106/688] nsigma RE2-OB/recommendationservice_cpu/1__abnormal: ok rang=1 (3 s)
+2026-10-31 18:05:09,351 [107/688] nsigma RE2-OB/recommendationservice_delay/1__abnormal: ok rang=1 (3 s)
+2026-10-31 18:05:09,400 [108/688] nsigma RE2-OB/recommendationservice_delay/2__abnormal: ok rang=1 (3 s)
+2026-10-31 18:05:12,726 [109/688] nsigma RE2-OB/recommendationservice_delay/3__abnormal: ok rang=1 (3 s)
+2026-10-31 18:05:12,769 [110/688] nsigma RE2-OB/recommendationservice_disk/1__abnormal: ok rang=1 (3 s)
+2026-10-31 18:05:16,458 [111/688] nsigma RE2-OB/recommendationservice_disk/2__abnormal: ok rang=1 (4 s)
+2026-10-31 18:05:16,464 [112/688] nsigma RE2-OB/recommendationservice_loss/1__abnormal: ok rang=1 (4 s)
+2026-10-31 18:05:19,720 [113/688] nsigma RE2-OB/recommendationservice_mem/3__abnormal: ok rang=1 (3 s)
+2026-10-31 18:05:19,722 [114/688] nsigma RE2-OB/recommendationservice_socket/2__abnormal: ok rang=1 (3 s)
+2026-10-31 18:35:21,057 [115/688] nsigma RE2-SS/carts_cpu/3__abnormal: ok rang=1 (1801 s)
+2026-10-31 18:35:21,114 [116/688] nsigma RE2-SS/carts_disk/1__abnormal: ok rang=1 (1801 s)
+2026-10-31 18:35:28,024 [117/688] nsigma RE2-SS/carts_loss/2__abnormal: ok rang=1 (7 s)
+2026-10-31 18:35:28,066 [118/688] nsigma RE2-SS/carts_mem/2__abnormal: ok rang=1 (7 s)
+2026-10-31 18:35:31,797 [119/688] nsigma RE2-SS/carts_socket/1__abnormal: ok rang=2 (4 s)
+2026-10-31 18:35:31,834 [120/688] nsigma RE2-SS/catalogue_mem/2__abnormal: ok rang=1 (4 s)
+2026-10-31 18:54:57,190 [121/688] nsigma RE2-SS/orders_cpu/1__abnormal: ok rang=1 (1165 s)
+2026-10-31 18:54:57,192 [122/688] nsigma RE2-SS/orders_cpu/2__abnormal: ok rang=1 (1165 s)
+2026-10-31 18:55:01,211 [123/688] nsigma RE2-SS/orders_delay/1__abnormal: ok rang=7 (4 s)
+2026-10-31 18:55:01,216 [124/688] nsigma RE2-SS/orders_loss/3__abnormal: ok rang=1 (4 s)
+2026-10-31 18:55:47,584 [125/688] nsigma RE2-SS/orders_mem/2__abnormal: ok rang=1 (46 s)
+2026-10-31 18:55:47,587 [126/688] nsigma RE2-SS/orders_socket/2__abnormal: ok rang=1 (46 s)
+2026-10-31 18:55:58,285 [127/688] nsigma RE2-SS/orders_socket/3__abnormal: ok rang=1 (11 s)
+2026-10-31 18:55:58,285 [128/688] nsigma RE2-SS/payment_cpu/2__abnormal: ok rang=1 (11 s)
+2026-10-31 18:56:12,715 [129/688] nsigma RE2-SS/payment_cpu/3__abnormal: ok rang=1 (14 s)
+2026-10-31 18:56:12,717 [130/688] nsigma RE2-SS/payment_delay/3__abnormal: ok rang=1 (14 s)
+2026-10-31 18:56:17,784 [131/688] nsigma RE2-SS/payment_disk/1__abnormal: ok rang=1 (5 s)
+2026-10-31 18:56:17,785 [132/688] nsigma RE2-SS/payment_disk/2__abnormal: ok rang=1 (5 s)
+2026-10-31 18:56:22,719 [133/688] nsigma RE2-SS/payment_socket/2__abnormal: ok rang=1 (5 s)
+2026-10-31 18:56:22,721 [134/688] nsigma RE2-SS/user_cpu/2__abnormal: ok rang=1 (5 s)
+2026-10-31 18:56:31,819 [135/688] nsigma RE2-SS/user_disk/1__abnormal: ok rang=1 (9 s)
+2026-10-31 18:56:31,889 [136/688] nsigma RE2-SS/user_disk/2__abnormal: ok rang=1 (9 s)
+2026-10-31 18:56:42,753 [137/688] nsigma RE2-SS/user_disk/3__abnormal: ok rang=1 (11 s)
+2026-10-31 18:56:42,756 [138/688] nsigma RE2-SS/user_loss/3__abnormal: ok rang=2 (11 s)
+2026-10-31 18:56:47,070 [139/688] nsigma RE2-SS/user_mem/3__abnormal: ok rang=1 (4 s)
+2026-10-31 18:56:47,091 [140/688] nsigma RE2-SS/user_socket/1__abnormal: ok rang=1 (4 s)
+2026-10-31 18:56:53,405 [141/688] nsigma RE2-TT/ts-auth-service_cpu/3__abnormal: ok rang=1 (6 s)
+2026-10-31 18:56:53,409 [142/688] nsigma RE2-TT/ts-auth-service_delay/2__abnormal: ok rang=22 (6 s)
+2026-10-31 18:56:58,183 [143/688] nsigma RE2-TT/ts-auth-service_disk/2__abnormal: ok rang=1 (5 s)
+2026-10-31 18:56:58,185 [144/688] nsigma RE2-TT/ts-auth-service_disk/3__abnormal: ok rang=1 (5 s)
+2026-10-31 18:57:03,031 [145/688] nsigma RE2-TT/ts-auth-service_loss/1__abnormal: ok rang=2 (5 s)
+2026-10-31 18:57:03,032 [146/688] nsigma RE2-TT/ts-auth-service_mem/1__abnormal: ok rang=1 (5 s)
+2026-10-31 18:57:07,782 [147/688] nsigma RE2-TT/ts-auth-service_mem/3__abnormal: ok rang=1 (5 s)
+2026-10-31 18:57:07,784 [148/688] nsigma RE2-TT/ts-auth-service_socket/2__abnormal: ok rang=3 (5 s)
+2026-10-31 18:57:12,947 [149/688] nsigma RE2-TT/ts-order-service_delay/3__abnormal: ok rang=1 (5 s)
+2026-10-31 18:57:12,949 [150/688] nsigma RE2-TT/ts-order-service_disk/3__abnormal: ok rang=1 (5 s)
+2026-10-31 18:57:18,020 [151/688] nsigma RE2-TT/ts-route-service_cpu/1__abnormal: ok rang=1 (5 s)
+2026-10-31 18:57:18,021 [152/688] nsigma RE2-TT/ts-route-service_delay/2__abnormal: ok rang=1 (5 s)
+2026-10-31 18:57:22,419 [153/688] nsigma RE2-TT/ts-route-service_disk/1__abnormal: ok rang=1 (4 s)
+2026-10-31 18:57:22,422 [154/688] nsigma RE2-TT/ts-route-service_disk/3__abnormal: ok rang=1 (4 s)
+2026-10-31 18:57:27,005 [155/688] nsigma RE2-TT/ts-route-service_mem/2__abnormal: ok rang=1 (5 s)
+2026-10-31 18:57:27,048 [156/688] nsigma RE2-TT/ts-route-service_socket/1__abnormal: ok rang=1 (5 s)
+2026-10-31 18:57:32,242 [157/688] nsigma RE2-TT/ts-route-service_socket/2__abnormal: ok rang=1 (5 s)
+2026-10-31 18:57:32,243 [158/688] nsigma RE2-TT/ts-train-service_cpu/1__abnormal: ok rang=1 (5 s)
+2026-10-31 18:57:36,696 [159/688] nsigma RE2-TT/ts-train-service_cpu/3__abnormal: ok rang=1 (4 s)
+2026-10-31 18:57:36,697 [160/688] nsigma RE2-TT/ts-train-service_loss/2__abnormal: ok rang=1 (4 s)
+2026-10-31 18:57:42,096 [161/688] nsigma RE2-TT/ts-train-service_mem/1__abnormal: ok rang=1 (5 s)
+2026-10-31 18:57:42,267 [162/688] nsigma RE2-TT/ts-train-service_mem/2__abnormal: ok rang=1 (6 s)
+2026-10-31 18:57:48,471 [163/688] nsigma RE2-TT/ts-train-service_socket/1__abnormal: ok rang=1 (6 s)
+2026-10-31 18:57:48,575 [164/688] nsigma RE2-TT/ts-travel-service_delay/1__abnormal: ok rang=7 (6 s)
+2026-10-31 18:57:54,061 [165/688] nsigma RE2-TT/ts-travel-service_delay/2__abnormal: ok rang=8 (6 s)
+2026-10-31 18:57:54,062 [166/688] nsigma RE2-TT/ts-travel-service_disk/3__abnormal: ok rang=1 (5 s)
+2026-10-31 18:57:58,641 [167/688] nsigma RE2-TT/ts-travel-service_loss/1__abnormal: ok rang=15 (5 s)
+2026-10-31 18:57:58,652 [168/688] nsigma RE2-TT/ts-travel-service_loss/2__abnormal: ok rang=16 (5 s)
+2026-10-31 18:58:03,279 [169/688] nsigma RE2-TT/ts-travel-service_mem/1__abnormal: ok rang=1 (5 s)
+2026-10-31 18:58:03,281 [170/688] nsigma RE2-TT/ts-travel-service_mem/2__abnormal: ok rang=1 (5 s)
+2026-10-31 18:58:07,664 [171/688] nsigma RE2-TT/ts-travel-service_socket/1__abnormal: ok rang=1 (4 s)
+2026-10-31 18:58:07,665 [172/688] nsigma RE2-TT/ts-travel-service_socket/3__abnormal: ok rang=1 (4 s)
+2026-10-31 18:58:12,023 [173/688] mmbaro RE2-OB/checkoutservice_disk/2__abnormal: ok rang=2 (4 s)
+2026-10-31 18:58:12,055 [174/688] mmbaro RE2-OB/checkoutservice_loss/3__abnormal: ok rang=2 (4 s)
+2026-10-31 18:58:17,219 [175/688] mmbaro RE2-OB/checkoutservice_mem/1__abnormal: ok rang=2 (5 s)
+2026-10-31 18:58:17,223 [176/688] mmbaro RE2-OB/checkoutservice_mem/2__abnormal: timeout rang=None (5 s)
+2026-10-31 18:58:21,063 [177/688] mmbaro RE2-OB/checkoutservice_socket/2__abnormal: ok rang=2 (4 s)
+2026-10-31 18:58:21,064 [178/688] mmbaro RE2-OB/currencyservice_cpu/1__abnormal: ok rang=6 (4 s)
+2026-10-31 18:58:24,966 [179/688] mmbaro RE2-OB/currencyservice_cpu/3__abnormal: ok rang=5 (4 s)
+2026-10-31 18:58:24,967 [180/688] mmbaro RE2-OB/currencyservice_disk/3__abnormal: ok rang=2 (4 s)
+2026-10-31 18:58:29,917 [181/688] mmbaro RE2-OB/currencyservice_loss/3__abnormal: ok rang=6 (5 s)
+2026-10-31 18:58:29,935 [182/688] mmbaro RE2-OB/currencyservice_mem/2__abnormal: ok rang=2 (5 s)
+2026-10-31 18:58:35,110 [183/688] mmbaro RE2-OB/currencyservice_socket/2__abnormal: ok rang=7 (5 s)
+2026-10-31 18:58:35,134 [184/688] mmbaro RE2-OB/emailservice_cpu/1__abnormal: ok rang=2 (5 s)
+2026-10-31 18:58:39,198 [185/688] mmbaro RE2-OB/emailservice_socket/1__abnormal: ok rang=2 (4 s)
+2026-10-31 18:58:39,199 [186/688] mmbaro RE2-OB/productcatalogservice_cpu/2__abnormal: ok rang=2 (4 s)
+2026-10-31 18:58:44,328 [187/688] mmbaro RE2-OB/productcatalogservice_disk/3__abnormal: ok rang=2 (5 s)
+2026-10-31 18:58:44,329 [188/688] mmbaro RE2-OB/productcatalogservice_loss/1__abnormal: ok rang=1 (5 s)
+2026-10-31 18:58:49,156 [189/688] mmbaro RE2-OB/productcatalogservice_loss/2__abnormal: ok rang=1 (5 s)
+2026-10-31 18:58:49,160 [190/688] mmbaro RE2-OB/productcatalogservice_mem/2__abnormal: ok rang=2 (5 s)
+2026-10-31 18:58:55,156 [191/688] mmbaro RE2-OB/productcatalogservice_socket/3__abnormal: ok rang=2 (6 s)
+2026-10-31 18:58:55,213 [192/688] mmbaro RE2-OB/recommendationservice_cpu/1__abnormal: ok rang=2 (6 s)
+2026-10-31 18:58:59,986 [193/688] mmbaro RE2-OB/recommendationservice_delay/1__abnormal: ok rang=2 (5 s)
+2026-10-31 18:58:59,991 [194/688] mmbaro RE2-OB/recommendationservice_delay/2__abnormal: ok rang=2 (5 s)
+2026-10-31 18:59:04,179 [195/688] mmbaro RE2-OB/recommendationservice_delay/3__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:04,182 [196/688] mmbaro RE2-OB/recommendationservice_disk/1__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:08,035 [197/688] mmbaro RE2-OB/recommendationservice_disk/2__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:08,074 [198/688] mmbaro RE2-OB/recommendationservice_loss/1__abnormal: ok rang=1 (4 s)
+2026-10-31 18:59:11,878 [199/688] mmbaro RE2-OB/recommendationservice_mem/3__abnormal: ok rang=1 (4 s)
+2026-10-31 18:59:11,898 [200/688] mmbaro RE2-OB/recommendationservice_socket/2__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:15,738 [201/688] mmbaro RE2-SS/carts_cpu/3__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:15,739 [202/688] mmbaro RE2-SS/carts_disk/1__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:19,674 [203/688] mmbaro RE2-SS/carts_loss/2__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:19,678 [204/688] mmbaro RE2-SS/carts_mem/2__abnormal: ok rang=1 (4 s)
+2026-10-31 18:59:23,725 [205/688] mmbaro RE2-SS/carts_socket/1__abnormal: ok rang=3 (4 s)
+2026-10-31 18:59:23,747 [206/688] mmbaro RE2-SS/catalogue_mem/2__abnormal: ok rang=1 (4 s)
+2026-10-31 18:59:27,677 [207/688] mmbaro RE2-SS/orders_cpu/1__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:27,699 [208/688] mmbaro RE2-SS/orders_cpu/2__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:31,707 [209/688] mmbaro RE2-SS/orders_delay/1__abnormal: ok rang=7 (4 s)
+2026-10-31 18:59:31,709 [210/688] mmbaro RE2-SS/orders_loss/3__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:35,897 [211/688] mmbaro RE2-SS/orders_mem/2__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:35,898 [212/688] mmbaro RE2-SS/orders_socket/2__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:39,541 [213/688] mmbaro RE2-SS/orders_socket/3__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:39,587 [214/688] mmbaro RE2-SS/payment_cpu/2__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:43,440 [215/688] mmbaro RE2-SS/payment_cpu/3__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:43,478 [216/688] mmbaro RE2-SS/payment_delay/3__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:47,843 [217/688] mmbaro RE2-SS/payment_disk/1__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:47,883 [218/688] mmbaro RE2-SS/payment_disk/2__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:52,102 [219/688] mmbaro RE2-SS/payment_socket/2__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:52,139 [220/688] mmbaro RE2-SS/user_cpu/2__abnormal: ok rang=2 (4 s)
+2026-10-31 18:59:57,231 [221/688] mmbaro RE2-SS/user_disk/1__abnormal: ok rang=2 (5 s)
+2026-10-31 18:59:57,324 [222/688] mmbaro RE2-SS/user_disk/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:00:03,016 [223/688] mmbaro RE2-SS/user_disk/3__abnormal: ok rang=1 (6 s)
+2026-10-31 19:00:03,201 [224/688] mmbaro RE2-SS/user_loss/3__abnormal: ok rang=3 (6 s)
+2026-10-31 19:00:07,143 [225/688] mmbaro RE2-SS/user_mem/3__abnormal: ok rang=1 (4 s)
+2026-10-31 19:00:07,326 [226/688] mmbaro RE2-SS/user_socket/1__abnormal: ok rang=2 (4 s)
+2026-10-31 19:00:12,313 [227/688] mmbaro RE2-TT/ts-auth-service_cpu/3__abnormal: ok rang=2 (5 s)
+2026-10-31 19:00:12,440 [228/688] mmbaro RE2-TT/ts-auth-service_delay/2__abnormal: ok rang=40 (5 s)
+2026-10-31 19:00:17,794 [229/688] mmbaro RE2-TT/ts-auth-service_disk/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:00:17,858 [230/688] mmbaro RE2-TT/ts-auth-service_disk/3__abnormal: ok rang=1 (5 s)
+2026-10-31 19:00:23,165 [231/688] mmbaro RE2-TT/ts-auth-service_loss/1__abnormal: ok rang=4 (5 s)
+2026-10-31 19:00:23,169 [232/688] mmbaro RE2-TT/ts-auth-service_mem/1__abnormal: ok rang=1 (5 s)
+2026-10-31 19:00:28,267 [233/688] mmbaro RE2-TT/ts-auth-service_mem/3__abnormal: ok rang=1 (5 s)
+2026-10-31 19:00:28,268 [234/688] mmbaro RE2-TT/ts-auth-service_socket/2__abnormal: ok rang=10 (5 s)
+2026-10-31 19:00:33,356 [235/688] mmbaro RE2-TT/ts-order-service_delay/3__abnormal: ok rang=1 (5 s)
+2026-10-31 19:00:33,359 [236/688] mmbaro RE2-TT/ts-order-service_disk/3__abnormal: ok rang=1 (5 s)
+2026-10-31 19:00:41,384 [237/688] mmbaro RE2-TT/ts-route-service_cpu/1__abnormal: ok rang=1 (8 s)
+2026-10-31 19:00:41,388 [238/688] mmbaro RE2-TT/ts-route-service_delay/2__abnormal: ok rang=1 (8 s)
+2026-10-31 19:00:47,312 [239/688] mmbaro RE2-TT/ts-route-service_disk/1__abnormal: ok rang=1 (6 s)
+2026-10-31 19:00:47,346 [240/688] mmbaro RE2-TT/ts-route-service_disk/3__abnormal: ok rang=1 (6 s)
+2026-10-31 19:00:52,281 [241/688] mmbaro RE2-TT/ts-route-service_mem/2__abnormal: ok rang=2 (5 s)
+2026-10-31 19:00:52,322 [242/688] mmbaro RE2-TT/ts-route-service_socket/1__abnormal: ok rang=1 (5 s)
+2026-10-31 19:00:57,290 [243/688] mmbaro RE2-TT/ts-route-service_socket/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:00:57,417 [244/688] mmbaro RE2-TT/ts-train-service_cpu/1__abnormal: ok rang=1 (5 s)
+2026-10-31 19:01:02,511 [245/688] mmbaro RE2-TT/ts-train-service_cpu/3__abnormal: ok rang=1 (5 s)
+2026-10-31 19:01:02,674 [246/688] mmbaro RE2-TT/ts-train-service_loss/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:01:07,180 [247/688] mmbaro RE2-TT/ts-train-service_mem/1__abnormal: ok rang=1 (5 s)
+2026-10-31 19:01:07,352 [248/688] mmbaro RE2-TT/ts-train-service_mem/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:01:11,859 [249/688] mmbaro RE2-TT/ts-train-service_socket/1__abnormal: echec rang=None (5 s)
+2026-10-31 19:01:12,408 [250/688] mmbaro RE2-TT/ts-travel-service_delay/1__abnormal: ok rang=10 (5 s)
+2026-10-31 19:01:16,991 [251/688] mmbaro RE2-TT/ts-travel-service_delay/2__abnormal: ok rang=3 (5 s)
+2026-10-31 19:01:17,482 [252/688] mmbaro RE2-TT/ts-travel-service_disk/3__abnormal: ok rang=1 (5 s)
+2026-10-31 19:01:22,165 [253/688] mmbaro RE2-TT/ts-travel-service_loss/1__abnormal: ok rang=18 (5 s)
+2026-10-31 19:01:22,650 [254/688] mmbaro RE2-TT/ts-travel-service_loss/2__abnormal: ok rang=27 (5 s)
+2026-10-31 19:01:27,766 [255/688] mmbaro RE2-TT/ts-travel-service_mem/1__abnormal: ok rang=1 (6 s)
+2026-10-31 19:01:28,124 [256/688] mmbaro RE2-TT/ts-travel-service_mem/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:01:33,081 [257/688] mmbaro RE2-TT/ts-travel-service_socket/1__abnormal: ok rang=2 (5 s)
+2026-10-31 19:01:33,563 [258/688] mmbaro RE2-TT/ts-travel-service_socket/3__abnormal: ok rang=1 (5 s)
+2026-10-31 19:01:37,382 [259/688] mmnsigma RE2-OB/checkoutservice_disk/2__abnormal: ok rang=1 (4 s)
+2026-10-31 19:01:37,762 [260/688] mmnsigma RE2-OB/checkoutservice_loss/3__abnormal: ok rang=1 (4 s)
+2026-10-31 19:01:41,780 [261/688] mmnsigma RE2-OB/checkoutservice_mem/1__abnormal: ok rang=1 (4 s)
+2026-10-31 19:01:42,169 [262/688] mmnsigma RE2-OB/checkoutservice_mem/2__abnormal: ok rang=1 (4 s)
+2026-10-31 19:01:46,880 [263/688] mmnsigma RE2-OB/checkoutservice_socket/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:01:47,722 [264/688] mmnsigma RE2-OB/currencyservice_cpu/1__abnormal: ok rang=5 (6 s)
+2026-10-31 19:01:51,357 [265/688] mmnsigma RE2-OB/currencyservice_cpu/3__abnormal: ok rang=4 (4 s)
+2026-10-31 19:01:51,906 [266/688] mmnsigma RE2-OB/currencyservice_disk/3__abnormal: ok rang=1 (4 s)
+2026-10-31 19:01:56,520 [267/688] mmnsigma RE2-OB/currencyservice_loss/3__abnormal: ok rang=5 (5 s)
+2026-10-31 19:01:56,971 [268/688] mmnsigma RE2-OB/currencyservice_mem/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:02:01,591 [269/688] mmnsigma RE2-OB/currencyservice_socket/2__abnormal: ok rang=6 (5 s)
+2026-10-31 19:02:01,957 [270/688] mmnsigma RE2-OB/emailservice_cpu/1__abnormal: ok rang=1 (5 s)
+2026-10-31 19:02:05,828 [271/688] mmnsigma RE2-OB/emailservice_socket/1__abnormal: ok rang=1 (4 s)
+2026-10-31 19:02:06,217 [272/688] mmnsigma RE2-OB/productcatalogservice_cpu/2__abnormal: ok rang=1 (4 s)
+2026-10-31 19:02:09,850 [273/688] mmnsigma RE2-OB/productcatalogservice_disk/3__abnormal: ok rang=1 (4 s)
+2026-10-31 19:02:10,131 [274/688] mmnsigma RE2-OB/productcatalogservice_loss/1__abnormal: ok rang=1 (4 s)
+2026-10-31 19:02:14,361 [275/688] mmnsigma RE2-OB/productcatalogservice_loss/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:02:15,014 [276/688] mmnsigma RE2-OB/productcatalogservice_mem/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:02:20,644 [277/688] mmnsigma RE2-OB/productcatalogservice_socket/3__abnormal: ok rang=1 (6 s)
+2026-10-31 19:02:20,719 [278/688] mmnsigma RE2-OB/recommendationservice_cpu/1__abnormal: ok rang=1 (6 s)
+2026-10-31 19:02:26,362 [279/688] mmnsigma RE2-OB/recommendationservice_delay/1__abnormal: ok rang=1 (6 s)
+2026-10-31 19:02:26,379 [280/688] mmnsigma RE2-OB/recommendationservice_delay/2__abnormal: ok rang=1 (6 s)
+2026-10-31 19:02:45,473 [281/688] mmnsigma RE2-OB/recommendationservice_delay/3__abnormal: ok rang=1 (19 s)
+2026-10-31 19:02:45,475 [282/688] mmnsigma RE2-OB/recommendationservice_disk/1__abnormal: ok rang=1 (19 s)
+2026-10-31 19:02:55,609 [283/688] mmnsigma RE2-OB/recommendationservice_disk/2__abnormal: ok rang=1 (10 s)
+2026-10-31 19:02:55,635 [284/688] mmnsigma RE2-OB/recommendationservice_loss/1__abnormal: ok rang=1 (10 s)
+2026-10-31 19:02:59,901 [285/688] mmnsigma RE2-OB/recommendationservice_mem/3__abnormal: ok rang=1 (4 s)
+2026-10-31 19:02:59,909 [286/688] mmnsigma RE2-OB/recommendationservice_socket/2__abnormal: ok rang=1 (4 s)
+2026-10-31 19:03:04,462 [287/688] mmnsigma RE2-SS/carts_cpu/3__abnormal: ok rang=1 (5 s)
+2026-10-31 19:03:04,471 [288/688] mmnsigma RE2-SS/carts_disk/1__abnormal: ok rang=1 (5 s)
+2026-10-31 19:03:08,492 [289/688] mmnsigma RE2-SS/carts_loss/2__abnormal: ok rang=1 (4 s)
+2026-10-31 19:03:08,514 [290/688] mmnsigma RE2-SS/carts_mem/2__abnormal: ok rang=1 (4 s)
+2026-10-31 19:03:13,211 [291/688] mmnsigma RE2-SS/carts_socket/1__abnormal: ok rang=2 (5 s)
+2026-10-31 19:03:13,262 [292/688] mmnsigma RE2-SS/catalogue_mem/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:03:21,574 [293/688] mmnsigma RE2-SS/orders_cpu/1__abnormal: ok rang=1 (8 s)
+2026-10-31 19:03:21,578 [294/688] mmnsigma RE2-SS/orders_cpu/2__abnormal: ok rang=1 (8 s)
+2026-10-31 19:03:26,674 [295/688] mmnsigma RE2-SS/orders_delay/1__abnormal: ok rang=9 (5 s)
+2026-10-31 19:03:26,676 [296/688] mmnsigma RE2-SS/orders_loss/3__abnormal: ok rang=1 (5 s)
+2026-10-31 19:03:30,731 [297/688] mmnsigma RE2-SS/orders_mem/2__abnormal: ok rang=1 (4 s)
+2026-10-31 19:03:30,731 [298/688] mmnsigma RE2-SS/orders_socket/2__abnormal: ok rang=1 (4 s)
+2026-10-31 19:03:37,419 [299/688] mmnsigma RE2-SS/orders_socket/3__abnormal: ok rang=1 (7 s)
+2026-10-31 19:03:37,498 [300/688] mmnsigma RE2-SS/payment_cpu/2__abnormal: ok rang=1 (7 s)
+2026-10-31 19:03:45,746 [301/688] mmnsigma RE2-SS/payment_cpu/3__abnormal: ok rang=1 (8 s)
+2026-10-31 19:03:45,750 [302/688] mmnsigma RE2-SS/payment_delay/3__abnormal: ok rang=1 (8 s)
+2026-10-31 19:03:51,017 [303/688] mmnsigma RE2-SS/payment_disk/1__abnormal: ok rang=1 (5 s)
+2026-10-31 19:03:51,026 [304/688] mmnsigma RE2-SS/payment_disk/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:03:56,214 [305/688] mmnsigma RE2-SS/payment_socket/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:03:56,215 [306/688] mmnsigma RE2-SS/user_cpu/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:04:04,623 [307/688] mmnsigma RE2-SS/user_disk/1__abnormal: ok rang=1 (8 s)
+2026-10-31 19:04:04,628 [308/688] mmnsigma RE2-SS/user_disk/2__abnormal: ok rang=1 (8 s)
+2026-10-31 19:04:10,750 [309/688] mmnsigma RE2-SS/user_disk/3__abnormal: ok rang=1 (6 s)
+2026-10-31 19:04:10,861 [310/688] mmnsigma RE2-SS/user_loss/3__abnormal: ok rang=2 (6 s)
+2026-10-31 19:04:15,901 [311/688] mmnsigma RE2-SS/user_mem/3__abnormal: ok rang=1 (5 s)
+2026-10-31 19:04:16,075 [312/688] mmnsigma RE2-SS/user_socket/1__abnormal: ok rang=1 (5 s)
+2026-10-31 19:04:21,803 [313/688] mmnsigma RE2-TT/ts-auth-service_cpu/3__abnormal: ok rang=1 (6 s)
+2026-10-31 19:04:22,019 [314/688] mmnsigma RE2-TT/ts-auth-service_delay/2__abnormal: ok rang=24 (6 s)
+2026-10-31 19:04:26,823 [315/688] mmnsigma RE2-TT/ts-auth-service_disk/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:04:26,924 [316/688] mmnsigma RE2-TT/ts-auth-service_disk/3__abnormal: ok rang=1 (5 s)
+2026-10-31 19:04:32,033 [317/688] mmnsigma RE2-TT/ts-auth-service_loss/1__abnormal: ok rang=3 (5 s)
+2026-10-31 19:04:32,034 [318/688] mmnsigma RE2-TT/ts-auth-service_mem/1__abnormal: ok rang=1 (5 s)
+2026-10-31 19:04:43,140 [319/688] mmnsigma RE2-TT/ts-auth-service_mem/3__abnormal: ok rang=1 (11 s)
+2026-10-31 19:04:43,146 [320/688] mmnsigma RE2-TT/ts-auth-service_socket/2__abnormal: ok rang=3 (11 s)
+2026-10-31 19:04:56,285 [321/688] mmnsigma RE2-TT/ts-order-service_delay/3__abnormal: ok rang=1 (13 s)
+2026-10-31 19:04:56,378 [322/688] mmnsigma RE2-TT/ts-order-service_disk/3__abnormal: ok rang=1 (13 s)
+2026-10-31 19:05:07,106 [323/688] mmnsigma RE2-TT/ts-route-service_cpu/1__abnormal: ok rang=1 (11 s)
+2026-10-31 19:05:07,111 [324/688] mmnsigma RE2-TT/ts-route-service_delay/2__abnormal: ok rang=1 (11 s)
+2026-10-31 19:05:13,815 [325/688] mmnsigma RE2-TT/ts-route-service_disk/1__abnormal: ok rang=1 (7 s)
+2026-10-31 19:05:13,820 [326/688] mmnsigma RE2-TT/ts-route-service_disk/3__abnormal: ok rang=1 (7 s)
+2026-10-31 19:05:19,404 [327/688] mmnsigma RE2-TT/ts-route-service_mem/2__abnormal: ok rang=1 (6 s)
+2026-10-31 19:05:19,444 [328/688] mmnsigma RE2-TT/ts-route-service_socket/1__abnormal: ok rang=1 (6 s)
+2026-10-31 19:05:26,169 [329/688] mmnsigma RE2-TT/ts-route-service_socket/2__abnormal: ok rang=1 (7 s)
+2026-10-31 19:05:26,171 [330/688] mmnsigma RE2-TT/ts-train-service_cpu/1__abnormal: ok rang=1 (7 s)
+2026-10-31 19:05:32,396 [331/688] mmnsigma RE2-TT/ts-train-service_cpu/3__abnormal: ok rang=1 (6 s)
+2026-10-31 19:05:32,397 [332/688] mmnsigma RE2-TT/ts-train-service_loss/2__abnormal: ok rang=1 (6 s)
+2026-10-31 19:05:37,592 [333/688] mmnsigma RE2-TT/ts-train-service_mem/1__abnormal: ok rang=1 (5 s)
+2026-10-31 19:05:37,603 [334/688] mmnsigma RE2-TT/ts-train-service_mem/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:05:44,560 [335/688] mmnsigma RE2-TT/ts-train-service_socket/1__abnormal: echec rang=None (7 s)
+2026-10-31 19:05:44,812 [336/688] mmnsigma RE2-TT/ts-travel-service_delay/1__abnormal: ok rang=8 (7 s)
+2026-10-31 19:05:50,368 [337/688] mmnsigma RE2-TT/ts-travel-service_delay/2__abnormal: ok rang=7 (6 s)
+2026-10-31 19:05:50,372 [338/688] mmnsigma RE2-TT/ts-travel-service_disk/3__abnormal: ok rang=1 (5 s)
+2026-10-31 19:06:00,918 [339/688] mmnsigma RE2-TT/ts-travel-service_loss/1__abnormal: ok rang=15 (11 s)
+2026-10-31 19:06:00,926 [340/688] mmnsigma RE2-TT/ts-travel-service_loss/2__abnormal: ok rang=16 (11 s)
+2026-10-31 19:06:05,944 [341/688] mmnsigma RE2-TT/ts-travel-service_mem/1__abnormal: ok rang=1 (5 s)
+2026-10-31 19:06:05,945 [342/688] mmnsigma RE2-TT/ts-travel-service_mem/2__abnormal: ok rang=1 (5 s)
+2026-10-31 19:06:11,119 [343/688] mmnsigma RE2-TT/ts-travel-service_socket/1__abnormal: ok rang=1 (5 s)
+2026-10-31 19:06:11,219 [344/688] mmnsigma RE2-TT/ts-travel-service_socket/3__abnormal: ok rang=1 (5 s)
+2026-10-31 19:07:14,172 [345/688] circa RE2-OB/checkoutservice_disk/2__abnormal: ok rang=1 (63 s)
+2026-10-31 19:07:23,053 [346/688] circa RE2-OB/checkoutservice_loss/3__abnormal: ok rang=3 (72 s)
+2026-10-31 19:08:03,707 [347/688] circa RE2-OB/checkoutservice_mem/1__abnormal: ok rang=1 (50 s)
+2026-10-31 19:08:21,422 [348/688] circa RE2-OB/checkoutservice_mem/2__abnormal: ok rang=1 (58 s)
+2026-10-31 19:08:39,498 [349/688] circa RE2-OB/checkoutservice_socket/2__abnormal: ok rang=1 (36 s)
+2026-10-31 19:09:09,854 [350/688] circa RE2-OB/currencyservice_cpu/1__abnormal: ok rang=4 (48 s)
+2026-10-31 19:09:20,838 [351/688] circa RE2-OB/currencyservice_cpu/3__abnormal: ok rang=7 (41 s)
+2026-10-31 19:09:49,894 [352/688] circa RE2-OB/currencyservice_disk/3__abnormal: ok rang=1 (40 s)
+2026-10-31 19:10:09,112 [353/688] circa RE2-OB/currencyservice_loss/3__abnormal: ok rang=6 (48 s)
+2026-10-31 19:10:33,234 [354/688] circa RE2-OB/currencyservice_mem/2__abnormal: ok rang=1 (43 s)
+2026-10-31 19:10:44,716 [355/688] circa RE2-OB/currencyservice_socket/2__abnormal: ok rang=1 (36 s)
+2026-10-31 19:11:09,846 [356/688] circa RE2-OB/emailservice_cpu/1__abnormal: ok rang=1 (37 s)
+2026-10-31 19:11:19,416 [357/688] circa RE2-OB/emailservice_socket/1__abnormal: ok rang=1 (35 s)
+2026-10-31 19:11:42,465 [358/688] circa RE2-OB/productcatalogservice_cpu/2__abnormal: ok rang=1 (33 s)
+2026-10-31 19:11:55,144 [359/688] circa RE2-OB/productcatalogservice_disk/3__abnormal: ok rang=1 (36 s)
+2026-10-31 19:12:28,155 [360/688] circa RE2-OB/productcatalogservice_loss/1__abnormal: ok rang=1 (46 s)
+2026-10-31 19:12:48,453 [361/688] circa RE2-OB/productcatalogservice_loss/2__abnormal: ok rang=9 (53 s)
+2026-10-31 19:13:09,915 [362/688] circa RE2-OB/productcatalogservice_mem/2__abnormal: ok rang=1 (42 s)
+2026-10-31 19:13:22,083 [363/688] circa RE2-OB/productcatalogservice_socket/3__abnormal: ok rang=1 (34 s)
+2026-10-31 19:13:47,981 [364/688] circa RE2-OB/recommendationservice_cpu/1__abnormal: ok rang=1 (38 s)
+2026-10-31 19:14:00,560 [365/688] circa RE2-OB/recommendationservice_delay/1__abnormal: ok rang=1 (38 s)
+2026-10-31 19:14:29,884 [366/688] circa RE2-OB/recommendationservice_delay/2__abnormal: ok rang=1 (42 s)
+2026-10-31 19:14:36,200 [367/688] circa RE2-OB/recommendationservice_delay/3__abnormal: ok rang=2 (36 s)
+2026-10-31 19:15:04,513 [368/688] circa RE2-OB/recommendationservice_disk/1__abnormal: ok rang=1 (35 s)
+2026-10-31 19:15:08,954 [369/688] circa RE2-OB/recommendationservice_disk/2__abnormal: ok rang=1 (33 s)
+2026-10-31 19:15:46,841 [370/688] circa RE2-OB/recommendationservice_loss/1__abnormal: ok rang=1 (42 s)
+2026-10-31 19:15:47,692 [371/688] circa RE2-OB/recommendationservice_mem/3__abnormal: ok rang=2 (39 s)
+2026-10-31 19:16:22,368 [372/688] circa RE2-OB/recommendationservice_socket/2__abnormal: ok rang=1 (36 s)
+2026-10-31 19:16:30,055 [373/688] circa RE2-SS/carts_cpu/3__abnormal: ok rang=1 (42 s)
+2026-10-31 19:16:57,944 [374/688] circa RE2-SS/carts_disk/1__abnormal: ok rang=1 (36 s)
+2026-10-31 19:17:09,391 [375/688] circa RE2-SS/carts_loss/2__abnormal: ok rang=3 (39 s)
+2026-10-31 19:17:32,639 [376/688] circa RE2-SS/carts_mem/2__abnormal: ok rang=1 (35 s)
+2026-10-31 19:17:41,237 [377/688] circa RE2-SS/carts_socket/1__abnormal: ok rang=2 (32 s)
+2026-10-31 19:18:18,026 [378/688] circa RE2-SS/catalogue_mem/2__abnormal: ok rang=1 (45 s)
+2026-10-31 19:18:19,222 [379/688] circa RE2-SS/orders_cpu/1__abnormal: ok rang=1 (38 s)
+2026-10-31 19:18:59,653 [380/688] circa RE2-SS/orders_cpu/2__abnormal: ok rang=1 (42 s)
+2026-10-31 19:19:01,732 [381/688] circa RE2-SS/orders_delay/1__abnormal: ok rang=9 (43 s)
+2026-10-31 19:20:23,394 [382/688] circa RE2-SS/orders_loss/3__abnormal: ok rang=1 (84 s)
+2026-10-31 19:20:23,397 [383/688] circa RE2-SS/orders_mem/2__abnormal: ok rang=1 (79 s)
+2026-10-31 19:21:02,942 [384/688] circa RE2-SS/orders_socket/2__abnormal: ok rang=2 (42 s)
+2026-10-31 19:21:02,943 [385/688] circa RE2-SS/orders_socket/3__abnormal: ok rang=1 (38 s)
+2026-10-31 19:21:44,310 [386/688] circa RE2-SS/payment_cpu/2__abnormal: ok rang=1 (42 s)
+2026-10-31 19:21:44,313 [387/688] circa RE2-SS/payment_cpu/3__abnormal: ok rang=1 (41 s)
+2026-10-31 19:22:26,545 [388/688] circa RE2-SS/payment_delay/3__abnormal: ok rang=1 (43 s)
+2026-10-31 19:22:35,708 [389/688] circa RE2-SS/payment_disk/1__abnormal: ok rang=1 (51 s)
+2026-10-31 19:23:12,762 [390/688] circa RE2-SS/payment_disk/2__abnormal: ok rang=1 (46 s)
+2026-10-31 19:23:14,081 [391/688] circa RE2-SS/payment_socket/2__abnormal: ok rang=2 (38 s)
+2026-10-31 19:24:10,320 [392/688] circa RE2-SS/user_cpu/2__abnormal: ok rang=1 (58 s)
+2026-10-31 19:24:59,350 [393/688] circa RE2-SS/user_disk/1__abnormal: ok rang=1 (105 s)
+2026-10-31 19:25:58,014 [394/688] circa RE2-SS/user_disk/2__abnormal: ok rang=1 (108 s)
+2026-10-31 19:26:10,667 [395/688] circa RE2-SS/user_disk/3__abnormal: ok rang=1 (71 s)
+2026-10-31 19:27:22,208 [396/688] circa RE2-SS/user_loss/3__abnormal: ok rang=3 (84 s)
+2026-10-31 19:27:22,211 [397/688] circa RE2-SS/user_mem/3__abnormal: ok rang=1 (48 s)
+2026-10-31 19:27:52,415 [398/688] circa RE2-SS/user_socket/1__abnormal: ok rang=1 (53 s)
+2026-10-31 19:37:22,357 [399/688] circa RE2-TT/ts-auth-service_cpu/3__abnormal: timeout rang=None (600 s)
+2026-10-31 19:37:52,547 [400/688] circa RE2-TT/ts-auth-service_delay/2__abnormal: timeout rang=None (600 s)
+2026-10-31 19:47:22,490 [401/688] circa RE2-TT/ts-auth-service_disk/2__abnormal: timeout rang=None (600 s)
+2026-10-31 19:47:52,648 [402/688] circa RE2-TT/ts-auth-service_disk/3__abnormal: timeout rang=None (600 s)
+2026-10-31 19:57:22,614 [403/688] circa RE2-TT/ts-auth-service_loss/1__abnormal: timeout rang=None (600 s)
+2026-10-31 19:57:52,753 [404/688] circa RE2-TT/ts-auth-service_mem/1__abnormal: timeout rang=None (600 s)
+2026-10-31 20:07:22,765 [405/688] circa RE2-TT/ts-auth-service_mem/3__abnormal: timeout rang=None (600 s)
+2026-10-31 20:07:52,884 [406/688] circa RE2-TT/ts-auth-service_socket/2__abnormal: timeout rang=None (600 s)
+2026-11-01 18:55:14,772 [407/688] circa RE2-TT/ts-order-service_delay/3__abnormal: timeout rang=None (82072 s)
+2026-11-01 18:55:43,987 [408/688] circa RE2-TT/ts-order-service_disk/3__abnormal: timeout rang=None (82071 s)
+2026-11-01 19:05:14,933 [409/688] circa RE2-TT/ts-route-service_cpu/1__abnormal: timeout rang=None (600 s)
+2026-11-01 19:05:44,089 [410/688] circa RE2-TT/ts-route-service_delay/2__abnormal: timeout rang=None (600 s)
+2026-11-01 19:15:15,070 [411/688] circa RE2-TT/ts-route-service_disk/1__abnormal: timeout rang=None (600 s)
+2026-11-01 19:15:44,208 [412/688] circa RE2-TT/ts-route-service_disk/3__abnormal: timeout rang=None (600 s)
+2026-11-01 19:25:15,189 [413/688] circa RE2-TT/ts-route-service_mem/2__abnormal: timeout rang=None (600 s)
+2026-11-01 19:25:44,281 [414/688] circa RE2-TT/ts-route-service_socket/1__abnormal: timeout rang=None (600 s)
+2026-11-01 19:35:15,300 [415/688] circa RE2-TT/ts-route-service_socket/2__abnormal: timeout rang=None (600 s)
+2026-11-01 19:35:44,336 [416/688] circa RE2-TT/ts-train-service_cpu/1__abnormal: timeout rang=None (600 s)
+2026-11-01 19:45:15,954 [417/688] circa RE2-TT/ts-train-service_cpu/3__abnormal: timeout rang=None (600 s)
+2026-11-01 19:45:44,412 [418/688] circa RE2-TT/ts-train-service_loss/2__abnormal: timeout rang=None (600 s)
+2026-11-01 19:55:16,100 [419/688] circa RE2-TT/ts-train-service_mem/1__abnormal: timeout rang=None (600 s)
+2026-11-01 19:55:44,577 [420/688] circa RE2-TT/ts-train-service_mem/2__abnormal: timeout rang=None (600 s)
+2026-11-01 20:05:16,224 [421/688] circa RE2-TT/ts-train-service_socket/1__abnormal: timeout rang=None (600 s)
+2026-11-01 20:05:44,676 [422/688] circa RE2-TT/ts-travel-service_delay/1__abnormal: timeout rang=None (600 s)
+2026-11-01 20:15:16,343 [423/688] circa RE2-TT/ts-travel-service_delay/2__abnormal: timeout rang=None (600 s)
+2026-11-01 20:15:44,955 [424/688] circa RE2-TT/ts-travel-service_disk/3__abnormal: timeout rang=None (600 s)
+2026-11-01 20:25:16,473 [425/688] circa RE2-TT/ts-travel-service_loss/1__abnormal: timeout rang=None (600 s)
+2026-11-01 20:25:45,059 [426/688] circa RE2-TT/ts-travel-service_loss/2__abnormal: timeout rang=None (600 s)
+2026-11-01 20:26:40,850 [427/688] circa RE2-TT/ts-travel-service_mem/1__abnormal: echec rang=None (84 s)
+2026-11-01 22:35:23,323 [428/688] circa RE2-TT/ts-travel-service_mem/2__abnormal: timeout rang=None (7778 s)
+2026-11-01 22:36:19,005 [429/688] circa RE2-TT/ts-travel-service_socket/1__abnormal: timeout rang=None (7778 s)
+2026-11-02 08:42:33,430 [430/688] circa RE2-TT/ts-travel-service_socket/3__abnormal: timeout rang=None (36430 s)
+2026-11-02 08:42:33,448 [431/688] pc_pagerank RE2-OB/checkoutservice_disk/2__abnormal: ok rang=10 (34 s)
+2026-11-02 08:42:33,451 [432/688] pc_pagerank RE2-OB/checkoutservice_loss/3__abnormal: ok rang=3 (39 s)
+2026-11-02 08:42:33,454 [433/688] pc_pagerank RE2-OB/checkoutservice_mem/1__abnormal: ok rang=1 (16258 s)
+2026-11-02 08:42:33,457 [434/688] pc_pagerank RE2-OB/checkoutservice_mem/2__abnormal: ok rang=10 (19682 s)
+2026-11-02 08:42:33,463 [435/688] pc_pagerank RE2-OB/checkoutservice_socket/2__abnormal: ok rang=5 (27 s)
+2026-11-02 08:42:33,463 [436/688] pc_pagerank RE2-OB/currencyservice_cpu/1__abnormal: ok rang=5 (34 s)
+2026-11-02 08:42:33,464 [437/688] pc_pagerank RE2-OB/currencyservice_cpu/3__abnormal: ok rang=10 (29 s)
+2026-11-02 08:42:33,464 [438/688] pc_pagerank RE2-OB/currencyservice_disk/3__abnormal: ok rang=10 (27 s)
+2026-11-02 08:42:33,466 [439/688] pc_pagerank RE2-OB/currencyservice_loss/3__abnormal: ok rang=7 (35 s)
+2026-11-02 08:42:33,468 [440/688] pc_pagerank RE2-OB/currencyservice_mem/2__abnormal: ok rang=8 (29 s)
+2026-11-02 08:42:33,468 [441/688] pc_pagerank RE2-OB/currencyservice_socket/2__abnormal: ok rang=7 (25 s)
+2026-11-02 08:42:33,470 [442/688] pc_pagerank RE2-OB/emailservice_cpu/1__abnormal: ok rang=8 (28 s)
+2026-11-02 08:42:33,471 [443/688] pc_pagerank RE2-OB/emailservice_socket/1__abnormal: ok rang=7 (26 s)
+2026-11-02 08:42:33,471 [444/688] pc_pagerank RE2-OB/productcatalogservice_cpu/2__abnormal: ok rang=2 (23 s)
+2026-11-02 08:42:33,473 [445/688] pc_pagerank RE2-OB/productcatalogservice_disk/3__abnormal: ok rang=2 (29 s)
+2026-11-02 08:42:33,473 [446/688] pc_pagerank RE2-OB/productcatalogservice_loss/1__abnormal: ok rang=6 (40 s)
+2026-11-02 08:43:03,446 [447/688] pc_pagerank RE2-OB/productcatalogservice_loss/2__abnormal: ok rang=9 (40 s)
+2026-11-02 08:43:05,261 [448/688] pc_pagerank RE2-OB/productcatalogservice_mem/2__abnormal: ok rang=10 (32 s)
+2026-11-02 08:43:32,857 [449/688] pc_pagerank RE2-OB/productcatalogservice_socket/3__abnormal: ok rang=1 (29 s)
+2026-11-02 08:43:34,770 [450/688] pc_pagerank RE2-OB/recommendationservice_cpu/1__abnormal: ok rang=3 (30 s)
+2026-11-02 08:44:01,508 [451/688] pc_pagerank RE2-OB/recommendationservice_delay/1__abnormal: ok rang=2 (29 s)
+2026-11-02 08:44:03,688 [452/688] pc_pagerank RE2-OB/recommendationservice_delay/2__abnormal: ok rang=5 (29 s)
+2026-11-02 08:44:25,418 [453/688] pc_pagerank RE2-OB/recommendationservice_delay/3__abnormal: ok rang=5 (24 s)
+2026-11-02 08:44:29,338 [454/688] pc_pagerank RE2-OB/recommendationservice_disk/1__abnormal: ok rang=5 (26 s)
+2026-11-02 08:44:52,374 [455/688] pc_pagerank RE2-OB/recommendationservice_disk/2__abnormal: ok rang=4 (27 s)
+2026-11-02 08:45:02,115 [456/688] pc_pagerank RE2-OB/recommendationservice_loss/1__abnormal: ok rang=6 (33 s)
+2026-11-02 08:45:23,457 [457/688] pc_pagerank RE2-OB/recommendationservice_mem/3__abnormal: ok rang=9 (31 s)
+2026-11-02 08:45:31,708 [458/688] pc_pagerank RE2-OB/recommendationservice_socket/2__abnormal: ok rang=1 (30 s)
+2026-11-02 08:46:01,916 [459/688] pc_pagerank RE2-SS/carts_cpu/3__abnormal: ok rang=8 (38 s)
+2026-11-02 08:46:02,646 [460/688] pc_pagerank RE2-SS/carts_disk/1__abnormal: ok rang=3 (31 s)
+2026-11-02 08:46:37,388 [461/688] pc_pagerank RE2-SS/carts_loss/2__abnormal: ok rang=7 (35 s)
+2026-11-02 08:46:37,389 [462/688] pc_pagerank RE2-SS/carts_mem/2__abnormal: ok rang=6 (32 s)
+2026-11-02 08:47:04,888 [463/688] pc_pagerank RE2-SS/carts_socket/1__abnormal: ok rang=10 (31 s)
+2026-11-02 08:47:12,007 [464/688] pc_pagerank RE2-SS/catalogue_mem/2__abnormal: ok rang=9 (35 s)
+2026-11-02 08:47:35,911 [465/688] pc_pagerank RE2-SS/orders_cpu/1__abnormal: ok rang=9 (31 s)
+2026-11-02 08:47:41,288 [466/688] pc_pagerank RE2-SS/orders_cpu/2__abnormal: ok rang=4 (29 s)
+2026-11-02 08:48:10,946 [467/688] pc_pagerank RE2-SS/orders_delay/1__abnormal: ok rang=9 (35 s)
+2026-11-02 08:48:21,230 [468/688] pc_pagerank RE2-SS/orders_loss/3__abnormal: ok rang=4 (40 s)
+2026-11-02 08:48:50,853 [469/688] pc_pagerank RE2-SS/orders_mem/2__abnormal: ok rang=5 (40 s)
+2026-11-02 08:48:51,732 [470/688] pc_pagerank RE2-SS/orders_socket/2__abnormal: ok rang=6 (30 s)
+2026-11-02 08:49:19,746 [471/688] pc_pagerank RE2-SS/orders_socket/3__abnormal: ok rang=6 (29 s)
+2026-11-02 08:49:22,079 [472/688] pc_pagerank RE2-SS/payment_cpu/2__abnormal: ok rang=10 (30 s)
+2026-11-02 08:49:52,323 [473/688] pc_pagerank RE2-SS/payment_cpu/3__abnormal: ok rang=7 (33 s)
+2026-11-02 08:49:53,239 [474/688] pc_pagerank RE2-SS/payment_delay/3__abnormal: ok rang=4 (31 s)
+2026-11-02 08:50:32,046 [475/688] pc_pagerank RE2-SS/payment_disk/1__abnormal: ok rang=8 (40 s)
+2026-11-02 08:50:33,140 [476/688] pc_pagerank RE2-SS/payment_disk/2__abnormal: ok rang=4 (40 s)
+2026-11-02 08:51:02,725 [477/688] pc_pagerank RE2-SS/payment_socket/2__abnormal: ok rang=11 (31 s)
+2026-11-02 08:51:03,996 [478/688] pc_pagerank RE2-SS/user_cpu/2__abnormal: ok rang=7 (31 s)
+2026-11-02 08:51:42,904 [479/688] pc_pagerank RE2-SS/user_disk/1__abnormal: ok rang=1 (40 s)
+2026-11-02 08:51:42,905 [480/688] pc_pagerank RE2-SS/user_disk/2__abnormal: ok rang=7 (36 s)
+2026-11-02 08:52:13,393 [481/688] pc_pagerank RE2-SS/user_disk/3__abnormal: ok rang=1 (33 s)
+2026-11-02 08:52:50,813 [482/688] pc_pagerank RE2-SS/user_loss/3__abnormal: ok rang=2 (68 s)
+2026-11-02 08:52:50,816 [483/688] pc_pagerank RE2-SS/user_mem/3__abnormal: ok rang=4 (35 s)
+2026-11-02 08:53:32,944 [484/688] pc_pagerank RE2-SS/user_socket/1__abnormal: ok rang=8 (45 s)
+2026-11-02 09:02:50,912 [485/688] pc_pagerank RE2-TT/ts-auth-service_cpu/3__abnormal: timeout rang=None (600 s)
+2026-11-02 09:03:33,044 [486/688] pc_pagerank RE2-TT/ts-auth-service_delay/2__abnormal: timeout rang=None (600 s)
+2026-11-02 09:12:51,006 [487/688] pc_pagerank RE2-TT/ts-auth-service_disk/2__abnormal: timeout rang=None (600 s)
+2026-11-02 09:13:33,141 [488/688] pc_pagerank RE2-TT/ts-auth-service_disk/3__abnormal: timeout rang=None (600 s)
+2026-11-02 09:46:56,615 [489/688] pc_pagerank RE2-TT/ts-auth-service_loss/1__abnormal: timeout rang=None (2046 s)
+2026-11-02 09:51:50,992 [490/688] pc_pagerank RE2-TT/ts-auth-service_mem/1__abnormal: timeout rang=None (2298 s)
+/usr/local/Cellar/python@3.12/3.12.13/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 14 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
+2026-11-02 10:34:07,024 86 cas (repris de causal_rankers_20261023_194519.csv), méthodes : baro, nsigma, mmbaro, mmnsigma, circa, pc_pagerank, tracerca, microrank
+2026-11-02 10:34:07,039 Reprise de causal_baselines_20261102_103500.csv : 487 résultats présents, 201 à calculer
+2026-11-02 10:34:13,850 [1/201] mmbaro RE2-OB/checkoutservice_mem/2__abnormal: ok rang=2 (7 s)
+2026-11-02 10:34:14,684 [2/201] mmbaro RE2-TT/ts-train-service_socket/1__abnormal: echec rang=None (8 s)
+2026-11-02 10:34:19,445 [3/201] mmnsigma RE2-TT/ts-train-service_socket/1__abnormal: echec rang=None (6 s)
+2026-11-02 10:44:14,815 [4/201] pc_pagerank RE2-TT/ts-auth-service_mem/3__abnormal: timeout rang=None (600 s)
+2026-11-02 10:44:19,536 [5/201] pc_pagerank RE2-TT/ts-auth-service_socket/2__abnormal: timeout rang=None (600 s)
+2026-11-02 10:54:14,933 [6/201] pc_pagerank RE2-TT/ts-order-service_delay/3__abnormal: timeout rang=None (600 s)
+2026-11-02 10:54:19,814 [7/201] pc_pagerank RE2-TT/ts-order-service_disk/3__abnormal: timeout rang=None (600 s)
+2026-11-02 11:04:15,042 [8/201] pc_pagerank RE2-TT/ts-route-service_cpu/1__abnormal: timeout rang=None (600 s)
+2026-11-02 11:04:19,888 [9/201] pc_pagerank RE2-TT/ts-route-service_delay/2__abnormal: timeout rang=None (600 s)
+2026-11-02 11:14:15,131 [10/201] pc_pagerank RE2-TT/ts-route-service_disk/1__abnormal: timeout rang=None (600 s)
+2026-11-02 11:14:19,972 [11/201] pc_pagerank RE2-TT/ts-route-service_disk/3__abnormal: timeout rang=None (600 s)
+2026-11-02 11:24:15,292 [12/201] pc_pagerank RE2-TT/ts-route-service_mem/2__abnormal: timeout rang=None (600 s)
+2026-11-02 11:24:20,069 [13/201] pc_pagerank RE2-TT/ts-route-service_socket/1__abnormal: timeout rang=None (600 s)
+2026-11-02 11:34:15,402 [14/201] pc_pagerank RE2-TT/ts-route-service_socket/2__abnormal: timeout rang=None (600 s)
+2026-11-02 11:34:20,165 [15/201] pc_pagerank RE2-TT/ts-train-service_cpu/1__abnormal: timeout rang=None (600 s)
+2026-11-02 11:44:15,801 [16/201] pc_pagerank RE2-TT/ts-train-service_cpu/3__abnormal: timeout rang=None (600 s)
+2026-11-02 11:44:20,453 [17/201] pc_pagerank RE2-TT/ts-train-service_loss/2__abnormal: timeout rang=None (600 s)
+2026-11-02 11:54:15,975 [18/201] pc_pagerank RE2-TT/ts-train-service_mem/1__abnormal: timeout rang=None (600 s)
+2026-11-02 11:54:20,929 [19/201] pc_pagerank RE2-TT/ts-train-service_mem/2__abnormal: timeout rang=None (600 s)
+2026-11-02 12:04:16,186 [20/201] pc_pagerank RE2-TT/ts-train-service_socket/1__abnormal: timeout rang=None (600 s)
+2026-11-02 12:04:21,096 [21/201] pc_pagerank RE2-TT/ts-travel-service_delay/1__abnormal: timeout rang=None (600 s)
+2026-11-02 12:14:16,328 [22/201] pc_pagerank RE2-TT/ts-travel-service_delay/2__abnormal: timeout rang=None (600 s)
+2026-11-02 12:14:21,252 [23/201] pc_pagerank RE2-TT/ts-travel-service_disk/3__abnormal: timeout rang=None (600 s)
+2026-11-02 12:24:16,519 [24/201] pc_pagerank RE2-TT/ts-travel-service_loss/1__abnormal: timeout rang=None (600 s)
+2026-11-02 12:24:21,391 [25/201] pc_pagerank RE2-TT/ts-travel-service_loss/2__abnormal: timeout rang=None (600 s)
+2026-11-02 12:25:51,222 [26/201] pc_pagerank RE2-TT/ts-travel-service_mem/1__abnormal: echec rang=None (95 s)
+2026-11-02 12:34:21,630 [27/201] pc_pagerank RE2-TT/ts-travel-service_mem/2__abnormal: timeout rang=None (600 s)
+2026-11-02 12:35:51,399 [28/201] pc_pagerank RE2-TT/ts-travel-service_socket/1__abnormal: timeout rang=None (600 s)
+2026-11-02 12:44:21,787 [29/201] pc_pagerank RE2-TT/ts-travel-service_socket/3__abnormal: timeout rang=None (600 s)
+2026-11-02 12:44:21,857 [30/201] tracerca RE2-OB/checkoutservice_disk/2__abnormal: ok rang=1 (33 s)
+2026-11-02 12:44:21,877 [31/201] tracerca RE2-OB/checkoutservice_loss/3__abnormal: ok rang=2 (23 s)
+2026-11-02 12:44:21,888 [32/201] tracerca RE2-OB/checkoutservice_mem/1__abnormal: ok rang=2 (36 s)
+2026-11-02 12:44:21,905 [33/201] tracerca RE2-OB/checkoutservice_mem/2__abnormal: ok rang=2 (32 s)
+2026-11-02 12:44:21,918 [34/201] tracerca RE2-OB/checkoutservice_socket/2__abnormal: ok rang=1 (25 s)
+2026-11-02 12:44:21,931 [35/201] tracerca RE2-OB/currencyservice_cpu/1__abnormal: ok rang=2 (24 s)
+2026-11-02 12:44:21,942 [36/201] tracerca RE2-OB/currencyservice_cpu/3__abnormal: ok rang=2 (28 s)
+2026-11-02 12:44:21,954 [37/201] tracerca RE2-OB/currencyservice_disk/3__abnormal: ok rang=3 (24 s)
+2026-11-02 12:44:21,972 [38/201] tracerca RE2-OB/currencyservice_loss/3__abnormal: ok rang=6 (22 s)
+2026-11-02 12:44:22,024 [39/201] tracerca RE2-OB/currencyservice_mem/2__abnormal: ok rang=4 (26 s)
+2026-11-02 12:44:22,030 [40/201] tracerca RE2-OB/currencyservice_socket/2__abnormal: ok rang=3 (24 s)
+2026-11-02 12:44:22,042 [41/201] tracerca RE2-OB/emailservice_cpu/1__abnormal: ok rang=2 (25 s)
+2026-11-02 12:44:22,049 [42/201] tracerca RE2-OB/emailservice_socket/1__abnormal: ok rang=3 (25 s)
+2026-11-02 12:44:22,061 [43/201] tracerca RE2-OB/productcatalogservice_cpu/2__abnormal: ok rang=4 (23 s)
+2026-11-02 12:44:22,068 [44/201] tracerca RE2-OB/productcatalogservice_disk/3__abnormal: ok rang=4 (22 s)
+2026-11-02 12:44:22,076 [45/201] tracerca RE2-OB/productcatalogservice_loss/1__abnormal: ok rang=5 (17 s)
+2026-11-02 12:44:22,086 [46/201] tracerca RE2-OB/productcatalogservice_loss/2__abnormal: ok rang=4 (17 s)
+2026-11-02 12:44:22,098 [47/201] tracerca RE2-OB/productcatalogservice_mem/2__abnormal: ok rang=4 (19 s)
+2026-11-02 12:44:22,105 [48/201] tracerca RE2-OB/productcatalogservice_socket/3__abnormal: ok rang=4 (23 s)
+2026-11-02 12:44:22,133 [49/201] tracerca RE2-OB/recommendationservice_cpu/1__abnormal: ok rang=2 (21 s)
+2026-11-02 12:44:22,146 [50/201] tracerca RE2-OB/recommendationservice_delay/1__abnormal: ok rang=2 (21 s)
+2026-11-02 12:44:42,925 [51/201] tracerca RE2-OB/recommendationservice_delay/2__abnormal: ok rang=2 (22 s)
+2026-11-02 12:44:43,114 [52/201] tracerca RE2-OB/recommendationservice_delay/3__abnormal: ok rang=2 (21 s)
+2026-11-02 12:45:06,205 [53/201] tracerca RE2-OB/recommendationservice_disk/1__abnormal: ok rang=2 (23 s)
+2026-11-02 12:45:06,809 [54/201] tracerca RE2-OB/recommendationservice_disk/2__abnormal: ok rang=2 (24 s)
+2026-11-02 12:45:25,051 [55/201] tracerca RE2-OB/recommendationservice_loss/1__abnormal: ok rang=2 (19 s)
+2026-11-02 12:45:27,697 [56/201] tracerca RE2-OB/recommendationservice_mem/3__abnormal: ok rang=2 (21 s)
+2026-11-02 12:45:46,990 [57/201] tracerca RE2-OB/recommendationservice_socket/2__abnormal: ok rang=2 (22 s)
+2026-11-02 12:45:47,007 [58/201] tracerca RE2-SS/carts_cpu/3__abnormal: non_applicable rang=None (9 s)
+2026-11-02 12:45:47,035 [59/201] tracerca RE2-SS/carts_disk/1__abnormal: non_applicable rang=None (9 s)
+2026-11-02 12:45:54,847 [60/201] tracerca RE2-SS/carts_loss/2__abnormal: non_applicable rang=None (10 s)
+2026-11-02 12:45:57,545 [61/201] tracerca RE2-SS/carts_mem/2__abnormal: non_applicable rang=None (11 s)
+2026-11-02 12:46:04,795 [62/201] tracerca RE2-SS/carts_socket/1__abnormal: non_applicable rang=None (10 s)
+2026-11-02 12:46:06,089 [63/201] tracerca RE2-SS/catalogue_mem/2__abnormal: non_applicable rang=None (9 s)
+2026-11-02 12:46:13,376 [64/201] tracerca RE2-SS/orders_cpu/1__abnormal: non_applicable rang=None (9 s)
+2026-11-02 12:46:14,288 [65/201] tracerca RE2-SS/orders_cpu/2__abnormal: non_applicable rang=None (8 s)
+2026-11-02 12:46:21,099 [66/201] tracerca RE2-SS/orders_delay/1__abnormal: non_applicable rang=None (8 s)
+2026-11-02 12:46:21,946 [67/201] tracerca RE2-SS/orders_loss/3__abnormal: non_applicable rang=None (8 s)
+2026-11-02 12:46:28,411 [68/201] tracerca RE2-SS/orders_mem/2__abnormal: non_applicable rang=None (7 s)
+2026-11-02 12:46:29,242 [69/201] tracerca RE2-SS/orders_socket/2__abnormal: non_applicable rang=None (7 s)
+2026-11-02 12:46:35,283 [70/201] tracerca RE2-SS/orders_socket/3__abnormal: non_applicable rang=None (7 s)
+2026-11-02 12:46:35,924 [71/201] tracerca RE2-SS/payment_cpu/2__abnormal: non_applicable rang=None (7 s)
+2026-11-02 12:46:42,649 [72/201] tracerca RE2-SS/payment_cpu/3__abnormal: non_applicable rang=None (7 s)
+2026-11-02 12:46:43,473 [73/201] tracerca RE2-SS/payment_delay/3__abnormal: non_applicable rang=None (8 s)
+2026-11-02 12:46:53,922 [74/201] tracerca RE2-SS/payment_disk/1__abnormal: non_applicable rang=None (11 s)
+2026-11-02 12:46:54,619 [75/201] tracerca RE2-SS/payment_disk/2__abnormal: non_applicable rang=None (11 s)
+2026-11-02 12:47:01,827 [76/201] tracerca RE2-SS/payment_socket/2__abnormal: non_applicable rang=None (8 s)
+2026-11-02 12:47:02,517 [77/201] tracerca RE2-SS/user_cpu/2__abnormal: non_applicable rang=None (8 s)
+2026-11-02 12:47:10,003 [78/201] tracerca RE2-SS/user_disk/1__abnormal: non_applicable rang=None (8 s)
+2026-11-02 12:47:10,529 [79/201] tracerca RE2-SS/user_disk/2__abnormal: non_applicable rang=None (8 s)
+2026-11-02 12:47:21,112 [80/201] tracerca RE2-SS/user_disk/3__abnormal: non_applicable rang=None (11 s)
+2026-11-02 12:47:21,626 [81/201] tracerca RE2-SS/user_loss/3__abnormal: non_applicable rang=None (11 s)
+2026-11-02 12:47:29,934 [82/201] tracerca RE2-SS/user_mem/3__abnormal: non_applicable rang=None (9 s)
+2026-11-02 12:47:30,413 [83/201] tracerca RE2-SS/user_socket/1__abnormal: non_applicable rang=None (9 s)
+2026-11-02 12:48:51,551 [84/201] tracerca RE2-TT/ts-auth-service_cpu/3__abnormal: ok rang=15 (82 s)
+2026-11-02 12:48:51,600 [85/201] tracerca RE2-TT/ts-auth-service_delay/2__abnormal: ok rang=1 (63 s)
+2026-11-02 12:49:31,484 [86/201] tracerca RE2-TT/ts-auth-service_disk/2__abnormal: ok rang=1 (58 s)
+2026-11-02 12:49:49,455 [87/201] tracerca RE2-TT/ts-auth-service_disk/3__abnormal: ok rang=10 (58 s)
+2026-11-02 12:50:54,535 [88/201] tracerca RE2-TT/ts-auth-service_loss/1__abnormal: ok rang=2 (83 s)
+2026-11-02 12:51:14,495 [89/201] tracerca RE2-TT/ts-auth-service_mem/1__abnormal: ok rang=1 (85 s)
+2026-11-02 12:51:52,720 [90/201] tracerca RE2-TT/ts-auth-service_mem/3__abnormal: ok rang=1 (58 s)
+2026-11-02 12:53:47,104 [91/201] tracerca RE2-TT/ts-auth-service_socket/2__abnormal: ok rang=1 (153 s)
+2026-11-02 12:53:47,116 [92/201] tracerca RE2-TT/ts-order-service_delay/3__abnormal: ok rang=1 (35 s)
+2026-11-02 12:53:47,127 [93/201] tracerca RE2-TT/ts-order-service_disk/3__abnormal: ok rang=3 (55 s)
+2026-11-02 12:55:59,341 [94/201] tracerca RE2-TT/ts-route-service_cpu/1__abnormal: ok rang=1 (157 s)
+2026-11-02 12:56:07,583 [95/201] tracerca RE2-TT/ts-route-service_delay/2__abnormal: ok rang=1 (140 s)
+2026-11-02 12:58:33,109 [96/201] tracerca RE2-TT/ts-route-service_disk/1__abnormal: ok rang=1 (154 s)
+2026-11-02 12:58:33,130 [97/201] tracerca RE2-TT/ts-route-service_disk/3__abnormal: ok rang=1 (73 s)
+2026-11-02 12:58:42,129 [98/201] tracerca RE2-TT/ts-route-service_mem/2__abnormal: ok rang=1 (82 s)
+2026-11-02 13:01:09,914 [99/201] tracerca RE2-TT/ts-route-service_socket/1__abnormal: ok rang=1 (157 s)
+2026-11-02 13:01:09,937 [100/201] tracerca RE2-TT/ts-route-service_socket/2__abnormal: ok rang=1 (72 s)
+2026-11-02 13:01:41,714 [101/201] tracerca RE2-TT/ts-train-service_cpu/1__abnormal: ok rang=1 (108 s)
+2026-11-02 13:02:27,999 [102/201] tracerca RE2-TT/ts-train-service_cpu/3__abnormal: ok rang=1 (78 s)
+2026-11-02 13:03:00,406 [103/201] tracerca RE2-TT/ts-train-service_loss/2__abnormal: ok rang=1 (79 s)
+2026-11-02 13:03:22,344 [104/201] tracerca RE2-TT/ts-train-service_mem/1__abnormal: ok rang=1 (54 s)
+2026-11-02 13:03:57,482 [105/201] tracerca RE2-TT/ts-train-service_mem/2__abnormal: ok rang=1 (57 s)
+2026-11-02 13:03:57,511 [106/201] tracerca RE2-TT/ts-train-service_socket/1__abnormal: echec rang=None (18 s)
+2026-11-02 13:05:01,508 [107/201] tracerca RE2-TT/ts-travel-service_delay/1__abnormal: ok rang=1 (82 s)
+2026-11-02 13:05:14,459 [108/201] tracerca RE2-TT/ts-travel-service_delay/2__abnormal: ok rang=1 (77 s)
+2026-11-02 13:05:21,910 [109/201] tracerca RE2-TT/ts-travel-service_disk/3__abnormal: ok rang=1 (20 s)
+2026-11-02 13:05:47,935 [110/201] tracerca RE2-TT/ts-travel-service_loss/1__abnormal: echec rang=None (33 s)
+2026-11-02 13:06:41,621 [111/201] tracerca RE2-TT/ts-travel-service_loss/2__abnormal: ok rang=12 (80 s)
+2026-11-02 13:06:43,624 [112/201] tracerca RE2-TT/ts-travel-service_mem/1__abnormal: ok rang=1 (56 s)
+2026-11-02 13:07:38,487 [113/201] tracerca RE2-TT/ts-travel-service_mem/2__abnormal: ok rang=1 (57 s)
+2026-11-02 13:07:38,513 [114/201] tracerca RE2-TT/ts-travel-service_socket/1__abnormal: ok rang=1 (12 s)
+2026-11-02 13:07:47,964 [115/201] tracerca RE2-TT/ts-travel-service_socket/3__abnormal: ok rang=1 (52 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:10:30,526 [116/201] microrank RE2-OB/checkoutservice_disk/2__abnormal: ok rang=None (172 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:10:54,553 [117/201] microrank RE2-OB/checkoutservice_loss/3__abnormal: ok rang=None (187 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:14:01,785 [118/201] microrank RE2-OB/checkoutservice_mem/1__abnormal: ok rang=None (211 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:14:09,680 [119/201] microrank RE2-OB/checkoutservice_mem/2__abnormal: ok rang=None (195 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:18:06,333 [120/201] microrank RE2-OB/checkoutservice_socket/2__abnormal: ok rang=None (245 s)
+2026-11-02 13:18:06,359 [121/201] microrank RE2-OB/currencyservice_cpu/1__abnormal: ok rang=2 (236 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:20:48,522 [122/201] microrank RE2-OB/currencyservice_cpu/3__abnormal: ok rang=2 (162 s)
+2026-11-02 13:20:48,534 [123/201] microrank RE2-OB/currencyservice_disk/3__abnormal: ok rang=2 (158 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:23:03,653 [124/201] microrank RE2-OB/currencyservice_loss/3__abnormal: ok rang=2 (139 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:23:09,924 [125/201] microrank RE2-OB/currencyservice_mem/2__abnormal: ok rang=2 (141 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:27:08,858 [126/201] microrank RE2-OB/currencyservice_socket/2__abnormal: ok rang=2 (245 s)
+2026-11-02 13:27:08,873 [127/201] microrank RE2-OB/emailservice_cpu/1__abnormal: ok rang=None (238 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:29:58,519 [128/201] microrank RE2-OB/emailservice_socket/1__abnormal: ok rang=None (170 s)
+2026-11-02 13:29:58,532 [129/201] microrank RE2-OB/productcatalogservice_cpu/2__abnormal: ok rang=3 (167 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:32:59,518 [130/201] microrank RE2-OB/productcatalogservice_disk/3__abnormal: ok rang=3 (184 s)
+2026-11-02 13:32:59,528 [131/201] microrank RE2-OB/productcatalogservice_loss/1__abnormal: ok rang=None (121 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:35:34,667 [132/201] microrank RE2-OB/productcatalogservice_loss/2__abnormal: ok rang=3 (215 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:37:26,103 [133/201] microrank RE2-OB/productcatalogservice_mem/2__abnormal: ok rang=3 (267 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:39:58,982 [134/201] microrank RE2-OB/productcatalogservice_socket/3__abnormal: ok rang=3 (264 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:40:54,820 [135/201] microrank RE2-OB/recommendationservice_cpu/1__abnormal: ok rang=4 (209 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:43:02,525 [136/201] microrank RE2-OB/recommendationservice_delay/1__abnormal: ok rang=4 (184 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:43:42,644 [137/201] microrank RE2-OB/recommendationservice_delay/2__abnormal: ok rang=4 (168 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:45:29,112 [138/201] microrank RE2-OB/recommendationservice_delay/3__abnormal: ok rang=4 (147 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:46:12,937 [139/201] microrank RE2-OB/recommendationservice_disk/1__abnormal: ok rang=4 (150 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:48:21,178 [140/201] microrank RE2-OB/recommendationservice_disk/2__abnormal: ok rang=4 (172 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:48:22,249 [141/201] microrank RE2-OB/recommendationservice_loss/1__abnormal: ok rang=None (129 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:50:59,404 [142/201] microrank RE2-OB/recommendationservice_mem/3__abnormal: ok rang=4 (158 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:51:01,813 [143/201] microrank RE2-OB/recommendationservice_socket/2__abnormal: ok rang=4 (160 s)
+2026-11-02 13:51:06,513 [144/201] microrank RE2-SS/carts_cpu/3__abnormal: non_applicable rang=None (7 s)
+2026-11-02 13:51:07,359 [145/201] microrank RE2-SS/carts_disk/1__abnormal: non_applicable rang=None (6 s)
+2026-11-02 13:51:12,032 [146/201] microrank RE2-SS/carts_loss/2__abnormal: non_applicable rang=None (6 s)
+2026-11-02 13:51:12,849 [147/201] microrank RE2-SS/carts_mem/2__abnormal: non_applicable rang=None (5 s)
+2026-11-02 13:51:17,638 [148/201] microrank RE2-SS/carts_socket/1__abnormal: non_applicable rang=None (6 s)
+2026-11-02 13:51:18,473 [149/201] microrank RE2-SS/catalogue_mem/2__abnormal: non_applicable rang=None (6 s)
+2026-11-02 13:51:23,293 [150/201] microrank RE2-SS/orders_cpu/1__abnormal: non_applicable rang=None (6 s)
+2026-11-02 13:51:24,201 [151/201] microrank RE2-SS/orders_cpu/2__abnormal: non_applicable rang=None (6 s)
+2026-11-02 13:51:29,909 [152/201] microrank RE2-SS/orders_delay/1__abnormal: non_applicable rang=None (7 s)
+2026-11-02 13:51:30,721 [153/201] microrank RE2-SS/orders_loss/3__abnormal: non_applicable rang=None (7 s)
+2026-11-02 13:51:39,109 [154/201] microrank RE2-SS/orders_mem/2__abnormal: non_applicable rang=None (9 s)
+2026-11-02 13:51:40,041 [155/201] microrank RE2-SS/orders_socket/2__abnormal: non_applicable rang=None (9 s)
+2026-11-02 13:51:45,369 [156/201] microrank RE2-SS/orders_socket/3__abnormal: non_applicable rang=None (6 s)
+2026-11-02 13:51:46,055 [157/201] microrank RE2-SS/payment_cpu/2__abnormal: non_applicable rang=None (6 s)
+2026-11-02 13:51:51,056 [158/201] microrank RE2-SS/payment_cpu/3__abnormal: non_applicable rang=None (6 s)
+2026-11-02 13:51:51,932 [159/201] microrank RE2-SS/payment_delay/3__abnormal: non_applicable rang=None (6 s)
+2026-11-02 13:51:56,931 [160/201] microrank RE2-SS/payment_disk/1__abnormal: non_applicable rang=None (6 s)
+2026-11-02 13:51:57,952 [161/201] microrank RE2-SS/payment_disk/2__abnormal: non_applicable rang=None (6 s)
+2026-11-02 13:52:01,962 [162/201] microrank RE2-SS/payment_socket/2__abnormal: non_applicable rang=None (5 s)
+2026-11-02 13:52:02,921 [163/201] microrank RE2-SS/user_cpu/2__abnormal: non_applicable rang=None (5 s)
+2026-11-02 13:52:07,598 [164/201] microrank RE2-SS/user_disk/1__abnormal: non_applicable rang=None (6 s)
+2026-11-02 13:52:08,349 [165/201] microrank RE2-SS/user_disk/2__abnormal: non_applicable rang=None (5 s)
+2026-11-02 13:52:13,163 [166/201] microrank RE2-SS/user_disk/3__abnormal: non_applicable rang=None (6 s)
+2026-11-02 13:52:13,769 [167/201] microrank RE2-SS/user_loss/3__abnormal: non_applicable rang=None (5 s)
+2026-11-02 13:52:18,179 [168/201] microrank RE2-SS/user_mem/3__abnormal: non_applicable rang=None (5 s)
+2026-11-02 13:52:18,983 [169/201] microrank RE2-SS/user_socket/1__abnormal: non_applicable rang=None (5 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:56:40,576 [170/201] microrank RE2-TT/ts-auth-service_cpu/3__abnormal: ok rang=3 (262 s)
+2026-11-02 13:56:40,583 [171/201] microrank RE2-TT/ts-auth-service_delay/2__abnormal: ok rang=3 (201 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 13:58:33,587 [172/201] microrank RE2-TT/ts-auth-service_disk/2__abnormal: ok rang=4 (174 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:00:32,443 [173/201] microrank RE2-TT/ts-auth-service_disk/3__abnormal: ok rang=3 (232 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:03:02,120 [174/201] microrank RE2-TT/ts-auth-service_loss/1__abnormal: ok rang=3 (269 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:05:06,625 [175/201] microrank RE2-TT/ts-auth-service_mem/1__abnormal: ok rang=3 (274 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:05:52,284 [176/201] microrank RE2-TT/ts-auth-service_mem/3__abnormal: ok rang=3 (170 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:08:37,839 [177/201] microrank RE2-TT/ts-auth-service_socket/2__abnormal: ok rang=3 (211 s)
+2026-11-02 14:08:37,852 [178/201] microrank RE2-TT/ts-order-service_delay/3__abnormal: ok rang=None (39 s)
+2026-11-02 14:08:37,870 [179/201] microrank RE2-TT/ts-order-service_disk/3__abnormal: ok rang=None (38 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:12:45,486 [180/201] microrank RE2-TT/ts-route-service_cpu/1__abnormal: ok rang=2 (336 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:14:39,816 [181/201] microrank RE2-TT/ts-route-service_delay/2__abnormal: ok rang=2 (362 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:22:44,562 [182/201] microrank RE2-TT/ts-route-service_disk/1__abnormal: ok rang=2 (599 s)
+2026-11-02 14:22:44,574 [183/201] microrank RE2-TT/ts-route-service_disk/3__abnormal: ok rang=2 (275 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:24:49,771 [184/201] microrank RE2-TT/ts-route-service_mem/2__abnormal: ok rang=2 (335 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:32:44,791 [185/201] microrank RE2-TT/ts-route-service_socket/1__abnormal: timeout rang=None (600 s)
+2026-11-02 14:32:44,799 [186/201] microrank RE2-TT/ts-route-service_socket/2__abnormal: ok rang=2 (357 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:36:36,917 [187/201] microrank RE2-TT/ts-train-service_cpu/1__abnormal: ok rang=None (350 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:37:42,458 [188/201] microrank RE2-TT/ts-train-service_cpu/3__abnormal: ok rang=None (298 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:42:06,794 [189/201] microrank RE2-TT/ts-train-service_loss/2__abnormal: ok rang=5 (330 s)
+2026-11-02 14:42:06,804 [190/201] microrank RE2-TT/ts-train-service_mem/1__abnormal: ok rang=None (237 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:45:46,004 [191/201] microrank RE2-TT/ts-train-service_mem/2__abnormal: ok rang=None (246 s)
+2026-11-02 14:45:46,019 [192/201] microrank RE2-TT/ts-train-service_socket/1__abnormal: echec rang=None (14 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:49:07,006 [193/201] microrank RE2-TT/ts-travel-service_delay/1__abnormal: ok rang=None (406 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:51:09,302 [194/201] microrank RE2-TT/ts-travel-service_delay/2__abnormal: ok rang=None (323 s)
+2026-11-02 14:51:09,308 [195/201] microrank RE2-TT/ts-travel-service_disk/3__abnormal: ok rang=None (60 s)
+2026-11-02 14:51:09,319 [196/201] microrank RE2-TT/ts-travel-service_loss/1__abnormal: echec rang=None (34 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:54:37,707 [197/201] microrank RE2-TT/ts-travel-service_loss/2__abnormal: ok rang=None (237 s)
+2026-11-02 14:54:37,714 [198/201] microrank RE2-TT/ts-travel-service_mem/1__abnormal: ok rang=None (160 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:56:19,192 [199/201] microrank RE2-TT/ts-travel-service_mem/2__abnormal: ok rang=None (150 s)
+2026-11-02 14:56:19,198 [200/201] microrank RE2-TT/ts-travel-service_socket/1__abnormal: ok rang=None (46 s)
+
+Normal_PageRank:
+
+Anomaly_PageRank:
+2026-11-02 14:57:20,679 [201/201] microrank RE2-TT/ts-travel-service_socket/3__abnormal: ok rang=None (117 s)
+
+Résultats : experiments/causal_baselines_20261102_103500.csv (source des cas : causal_rankers_20261023_194519.csv)
+              n  ok    p1    p3  duree_mediane_s
+methode                                         
+baro         86  86  0.35  0.88            11.00
+circa        86  54  0.76  0.91            53.00
+microrank    86  57  0.00  0.42           159.95
+mmbaro       86  85  0.35  0.87             5.00
+mmnsigma     86  85  0.84  0.88             5.00
+nsigma       86  86  0.83  0.88             5.00
+pc_pagerank  86  54  0.09  0.22            39.50
+tracerca     86  58  0.47  0.81            22.95
+
+P@1/P@3 calculés sur les cas où la méthode a abouti ('ok') ; voir causal_summary pour la comparaison appariée.
+/usr/local/Cellar/python@3.12/3.12.13/Frameworks/Python.framework/Versions/3.12/lib/python3.12/multiprocessing/resource_tracker.py:279: UserWarning: resource_tracker: There appear to be 26 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '
