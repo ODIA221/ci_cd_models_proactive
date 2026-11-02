@@ -72,6 +72,8 @@ NOT_RUN = {
     "microcause": "essai sur 2 cas RE2-OB : > 300 s par cas (4 cœurs, 8 Go) ; lançable avec --methods microcause",
     "causalrca": "essai sur 2 cas RE2-OB : > 300 s par cas (4 cœurs, 8 Go) ; lançable avec --methods causalrca",
 }
+COLUMNS = ["run_id", "systeme", "type_faute", "root_cause_service", "methode", "famille", "statut", "erreur",
+           "duree_s", "rang", "hit_at_1", "hit_at_3", "top5", "provenance"]
 DEFAULT_METHODS = ["baro", "nsigma", "mmbaro", "mmnsigma", "circa", "pc_pagerank", "tracerca", "microrank"]
 
 
@@ -224,6 +226,9 @@ def main() -> None:
     parser.add_argument("--workers", type=int, default=2)
     parser.add_argument("--timeout", type=float, default=900, help="Secondes par méthode et par cas")
     parser.add_argument("--limit", type=int, default=None, help="N premiers cas seulement (essai)")
+    parser.add_argument("--resume", default=None,
+                        help="Fichier causal_baselines_*.csv à compléter : ses couples (méthode, cas) déjà présents "
+                             "ne sont pas recalculés, les nouveaux résultats y sont ajoutés au fil de l'eau")
     parser.add_argument("--rerun", default=None,
                         help="Fichier causal_baselines_*.csv : ne relance que ses lignes en échec ou timeout, "
                              "et écrit un nouveau fichier complet (lignes abouties reprises telles quelles)")
@@ -253,6 +258,16 @@ def main() -> None:
                         & previous["run_id"].notna()].to_dict("records")
         log.info(f"Relance de {len(jobs)} cas en échec/timeout de {args.rerun}")
 
+    # Écriture au fil de l'eau : la campagne du 2026-10-31 a perdu son fichier
+    # de résultats (écrit seulement à la fin) quand le processus a été arrêté.
+    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    out = Path(args.resume) if args.resume else EXPERIMENTS / f"causal_baselines_{stamp}.csv"
+    if args.resume and out.exists():
+        present = pd.read_csv(out)
+        done_keys = set(zip(present["methode"], present["run_id"]))
+        jobs = [(m, r) for m, r in jobs if (m, r.run_id) not in done_keys]
+        log.info(f"Reprise de {out.name} : {len(done_keys)} résultats présents, {len(jobs)} à calculer")
+
     def record(method, row, res):
         services = services_from_ranks(res.get("ranks"))
         rank = services.index(row.root_cause_service) + 1 if row.root_cause_service in services else None
@@ -262,7 +277,10 @@ def main() -> None:
                      "duree_s": round(res["duree_s"], 1), "rang": rank,
                      "hit_at_1": rank == 1 if res["statut"] == "ok" else None,
                      "hit_at_3": (rank is not None and rank <= 3) if res["statut"] == "ok" else None,
-                     "top5": " > ".join(services[:5])})
+                     "top5": " > ".join(services[:5]), "provenance": "calcul direct"})
+        if not args.rerun:
+            pd.DataFrame([rows[-1]], columns=COLUMNS).to_csv(out, mode="a", header=not out.exists() or out.stat().st_size == 0,
+                                                           index=False)
         log.info(f"[{len(rows)}/{len(jobs)}] {method} {row.run_id}: {res['statut']} rang={rank} ({res['duree_s']:.0f} s)")
 
     from concurrent.futures import ThreadPoolExecutor
@@ -273,15 +291,16 @@ def main() -> None:
             m, r = futures[fut]
             record(m, r, fut.result())
 
-    for name, reason in NOT_RUN.items():
-        if name in methods:
-            continue
-        rows.append({"run_id": None, "methode": name, "statut": "non_executee", "erreur": reason})
-
-    stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    out = EXPERIMENTS / f"causal_baselines_{stamp}.csv"
-    df = pd.DataFrame(rows)
-    df.to_csv(out, index=False)
+    if args.rerun:
+        # --rerun réécrit un fichier complet (lignes reprises + relancées).
+        pd.DataFrame(rows, columns=COLUMNS).to_csv(out, index=False)
+    df = pd.read_csv(out)
+    missing = [n for n in NOT_RUN if n not in methods and n not in set(df["methode"])]
+    if missing:
+        extra = pd.DataFrame([{"run_id": None, "methode": n, "statut": "non_executee", "erreur": NOT_RUN[n],
+                               "provenance": "calcul direct"} for n in missing], columns=COLUMNS)
+        extra.to_csv(out, mode="a", header=False, index=False)
+        df = pd.read_csv(out)
     done = df[df["run_id"].notna()]
     summary = done.groupby("methode").agg(
         n=("run_id", "nunique"), ok=("statut", lambda s: int((s == "ok").sum())),
