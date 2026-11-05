@@ -5,6 +5,7 @@ import ModalParallel from "./components/ModalParallel";
 import TimelineCanvas from "./components/TimelineCanvas";
 import WhatIfPanel from "./components/WhatIfPanel";
 import type { RunInfo, RunSignals, WhatIf } from "./types";
+import { isEnglish, isFigure, tr } from "./i18n";
 
 // Lien direct (section 4.3, étape 2): /ui/?run=<run_id>&service=<service>
 function readUrl() {
@@ -44,6 +45,8 @@ export default function App() {
     const params = new URLSearchParams();
     if (runId) params.set("run", runId);
     if (selected) params.set("service", selected);
+    if (isEnglish) params.set("lang", "en");
+    if (isFigure) params.set("figure", "1");
     window.history.replaceState(null, "", `${window.location.pathname}?${params}`);
   }, [runId, selected]);
 
@@ -65,12 +68,12 @@ export default function App() {
 
   return (
     <>
-      <header>
+      {!isFigure && <header>
         <h1>LogPipeGuard v2 — exploration causale</h1>
         <p>Chronologie, propagation et corrélation modale des signaux d'un run RCAEval. Les nœuds sont des services, pas des étapes CI/CD.</p>
-      </header>
+      </header>}
       <main>
-        <div className="controls">
+        {!isFigure && <div className="controls">
           <label>
             Run
             <select value={runId ?? ""} onChange={(e) => { setRunId(e.target.value || null); setSelected(null); }}>
@@ -100,7 +103,7 @@ export default function App() {
               <a className="btn" href={jsonldUrl(runId)} download={`diagnostic_${runId.replaceAll("/", "_")}.jsonld`}>JSON-LD</a>
             </>
           )}
-        </div>
+        </div>}
 
         {error && <div className="caveat">Erreur : {error}</div>}
         {loading && <p>Calcul des signaux (relecture des logs/métriques/traces bruts au premier appel, puis cache)…</p>}
@@ -108,23 +111,23 @@ export default function App() {
 
         {signals && (
           <>
-            <div className="caveat">
+            {!isFigure && <div className="caveat">
               <b>Avant d'interpréter :</b> a_i est une heuristique (écart robuste par modalité) ; l'attention GAT est
               {signals.attention ? " associative (auto-encodeur entraîné sur des graphes normaux), pas causale" : " indisponible pour ce run"} ; β est
               un rapport de taux de templates, pas une attention.
               {missing.length > 0 && <> Modalités absentes : <b>{missing.join(", ")}</b> (rien n'est extrapolé).</>}
-            </div>
+            </div>}
 
             <section className="panel">
-              <h2>Chronologie — première déviation par service</h2>
-              <p className="sub">Secondes après le début de la fenêtre analysée ({signals.window.kind === "post_injection" ? "injection de la faute" : "2e moitié d'une fenêtre normale"}). Cliquer un glyphe pour le sélectionner.</p>
+              <h2>{isFigure ? "(a) " : ""}{tr("Chronologie — première déviation par service", "Timeline — first deviation per service")}</h2>
+              <p className="sub">{tr("Secondes après le début de la fenêtre analysée", "Seconds after the start of the analysed window")} ({signals.window.kind === "post_injection" ? tr("injection de la faute", "fault injection") : tr("2e moitié d'une fenêtre normale", "second half of a normal window")}). {tr("Cliquer un glyphe pour le sélectionner.", "Click a glyph to select it.")}</p>
               <TimelineCanvas nodes={visibleNodes} probeSeconds={signals.window.probe_seconds} selected={selected} onSelect={onSelect} />
             </section>
 
             <div className="grid2">
               <section className="panel">
-                <h2>Propagation</h2>
-                <p className="sub">Graphe d'appels observé dans les traces. Cliquer un nœud pour tester l'hypothèse « cause racine ».</p>
+                <h2>{isFigure ? "(b) " : ""}Propagation</h2>
+                <p className="sub">{tr("Graphe d'appels observé dans les traces. Cliquer un nœud pour tester l'hypothèse « cause racine ».", "Call graph observed in the traces. Click a node to test the root-cause hypothesis.")}</p>
                 {signals.edges.length === 0 ? (
                   <p>Pas de traces pour ce run (ex. Sock Shop dans RCAEval) : graphe indisponible.</p>
                 ) : (
@@ -133,21 +136,21 @@ export default function App() {
                 )}
               </section>
               <section className="panel">
-                <h2>Corrélation modale</h2>
-                <p className="sub">Contribution de chaque modalité à a_i, par service.</p>
+                <h2>{isFigure ? "(c) " : ""}{tr("Corrélation modale", "Modal correlation")}</h2>
+                <p className="sub">{tr("Contribution de chaque modalité à a_i, par service.", "Contribution of each modality to a_i, per service.")}</p>
                 <ModalParallel nodes={visibleNodes} selected={selected} onSelect={onSelect} />
               </section>
             </div>
 
-            {whatIf && selected && (
+            {whatIf && selected && !isFigure && (
               <WhatIfPanel whatIf={whatIf} node={signals.nodes.find((n) => n.service === selected)} labels={labels}
                 pathIndex={pathIndex} onPathIndex={setPathIndex} />
             )}
 
-            <details className="panel">
+            {!isFigure && <details className="panel">
               <summary>Provenance détaillée des signaux</summary>
               <ul>{Object.entries(signals.provenance).map(([k, v]) => <li key={k}><b>{k}</b> : {v}</li>)}</ul>
-            </details>
+            </details>}
           </>
         )}
       </main>

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import * as d3 from "d3";
 import { scoreColor } from "../colors";
 import type { CallEdge, ServiceNode } from "../types";
+import { tr } from "../i18n";
 
 interface Props {
   nodes: ServiceNode[];
@@ -137,9 +138,9 @@ export default function ForceGraph({ nodes, edges, hasAttention, threshold, sele
     <div>
       <svg ref={svgRef} viewBox={`0 0 ${WIDTH} ${HEIGHT}`} width="100%" role="img" aria-label="Graphe de propagation causale" />
       <div className="legend">
-        <span>flèche = sens de propagation d'un symptôme (appelé → appelant)</span>
-        <span>{hasAttention ? "épaisseur = attention GAT α" : "épaisseur = volume d'appels (attention indisponible)"}</span>
-        <span>taille/couleur = a_i · nœuds déplaçables</span>
+        <span>{tr("flèche = sens de propagation d'un symptôme (appelé → appelant)", "arrow = direction of symptom propagation (callee → caller)")}</span>
+        <span>{hasAttention ? tr("épaisseur = attention GAT α", "thickness = GAT attention α") : tr("épaisseur = volume d'appels (attention indisponible)", "thickness = call volume (attention unavailable)")}</span>
+        <span>{tr("taille/couleur = a_i · nœuds déplaçables", "size/colour = a_i · draggable nodes")}</span>
       </div>
       {tooltip && (
         <div className="tooltip" style={{ left: tooltip.x + 12, top: tooltip.y + 12 }}>
