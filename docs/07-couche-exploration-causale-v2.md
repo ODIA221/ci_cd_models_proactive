@@ -103,6 +103,10 @@ precision@k : le service fautif est-il classé dans les k premiers ? Fichiers
 bruts : `experiments/causal_rankers*_20261023_194519.csv` ; tous les chiffres
 ci-dessous se recalculent avec `python -m src.models.causal_summary`.
 
+**Figure de l'interface (article 4).** `/ui/?run=RE2-OB/checkoutservice_disk/2__abnormal&service=checkout&figure=1` n'affiche que les
+trois vues ; ajouter `&lang=en` pour les libellés anglais (`frontend/src/i18n.ts`). Capture en Chrome headless
+(`--window-size=1150,1150 --force-device-scale-factor=2`).
+
 **Méthodes de référence de RCAEval (2026-11-02)** : `./run.sh evaluate-baselines`
 (`src/models/rcaeval_baselines.py`) exécute les méthodes de RCAEval sur les
 mêmes 86 cas, avec le protocole de `RCAEval/main.py` (fenêtre de 5 min de

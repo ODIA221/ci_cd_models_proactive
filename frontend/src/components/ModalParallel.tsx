@@ -2,6 +2,7 @@ import { useState } from "react";
 import * as d3 from "d3";
 import { scoreColor } from "../colors";
 import type { ServiceNode } from "../types";
+import { tr } from "../i18n";
 
 interface Props {
   nodes: ServiceNode[];
@@ -11,7 +12,7 @@ interface Props {
 
 const AXES: { key: string; label: string; value: (n: ServiceNode) => number | null }[] = [
   { key: "logs", label: "logs", value: (n) => n.modality_contributions.logs ?? null },
-  { key: "metrics", label: "métriques", value: (n) => n.modality_contributions.metrics ?? null },
+  { key: "metrics", label: tr("métriques", "metrics"), value: (n) => n.modality_contributions.metrics ?? null },
   { key: "traces", label: "traces", value: (n) => n.modality_contributions.traces ?? null },
   { key: "a", label: "a_i", value: (n) => n.anomaly_score },
 ];
@@ -72,8 +73,8 @@ export default function ModalParallel({ nodes, selected, onSelect }: Props) {
         })}
       </svg>
       <div className="legend">
-        <span>un trait = un service · pointillé = une modalité absente (tracée à 0)</span>
-        <span>{focus ? `survol/sélection : ${nodes.find((n) => n.service === focus)?.display_name ?? focus}` : "survoler un trait"}</span>
+        <span>{tr("un trait = un service · pointillé = une modalité absente (tracée à 0)", "one line = one service · dashed = missing modality (drawn at 0)")}</span>
+        <span>{focus ? `${tr("survol/sélection", "hover/selection")} : ${nodes.find((n) => n.service === focus)?.display_name ?? focus}` : tr("survoler un trait", "hover a line")}</span>
       </div>
     </div>
   );
