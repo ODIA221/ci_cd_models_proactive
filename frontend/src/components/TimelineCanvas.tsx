@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { scoreColor } from "../colors";
 import type { ServiceNode } from "../types";
+import { isFigure, tr } from "../i18n";
 
 interface Props {
   nodes: ServiceNode[];
@@ -34,7 +35,7 @@ function cssVar(name: string): string {
  */
 export default function TimelineCanvas({ nodes, probeSeconds, selected, onSelect }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const [pxPerSecond, setPxPerSecond] = useState(1.5);
+  const [pxPerSecond, setPxPerSecond] = useState(isFigure ? 0.9 : 1.5);
   const [hover, setHover] = useState<{ glyph: Glyph; x: number; y: number } | null>(null);
 
   const rows = useMemo(
@@ -91,7 +92,7 @@ export default function TimelineCanvas({ nodes, probeSeconds, selected, onSelect
     ctx.fillRect(noOnsetX - 55, TOP - 6, 110, height);
     ctx.globalAlpha = 1;
     ctx.fillStyle = text2;
-    ctx.fillText("aucune déviation", noOnsetX, 14);
+    ctx.fillText(tr("aucune déviation", "no deviation"), noOnsetX, 14);
 
     glyphs.forEach((g) => {
       const isSel = g.node.service === selected;
@@ -121,12 +122,12 @@ export default function TimelineCanvas({ nodes, probeSeconds, selected, onSelect
 
   return (
     <div>
-      <div className="controls">
+      {!isFigure && <div className="controls">
         <label>
-          Zoom temporel ({pxPerSecond.toFixed(1)} px/s — faire défiler horizontalement)
+          {tr("Zoom temporel", "Time zoom")} ({pxPerSecond.toFixed(1)} px/s — {tr("faire défiler horizontalement", "scroll horizontally")})
           <input type="range" min={0.5} max={8} step={0.25} value={pxPerSecond} onChange={(e) => setPxPerSecond(+e.target.value)} />
         </label>
-      </div>
+      </div>}
       <div className="timeline-scroll">
         <canvas
           ref={canvasRef}
@@ -145,10 +146,10 @@ export default function TimelineCanvas({ nodes, probeSeconds, selected, onSelect
         />
       </div>
       <div className="legend">
-        <span><span className="swatch" /> couleur = a_i (0 → 1)</span>
-        <span>hauteur = entropie des logs</span>
-        <span>largeur = durée des spans (× référence)</span>
-        <span>bordure pointillée = déviation métrique</span>
+        <span><span className="swatch" /> {tr("couleur = a_i (0 → 1)", "colour = a_i (0 → 1)")}</span>
+        <span>{tr("hauteur = entropie des logs", "height = log entropy")}</span>
+        <span>{tr("largeur = durée des spans (× référence)", "width = span duration (× reference)")}</span>
+        <span>{tr("bordure pointillée = déviation métrique", "dashed border = metric deviation")}</span>
       </div>
       {hover && (
         <div className="tooltip" style={{ left: hover.x + 12, top: hover.y + 12 }}>
