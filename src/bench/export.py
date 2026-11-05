@@ -11,7 +11,7 @@ Export de la télémétrie d'une exécution PipeFault sur sa fenêtre
 - état Docker des services livrables (nombre de redémarrages, OOMKilled).
 
 Sorties dans data/raw/pipefault/runs/<run_id>/ : metrics.csv, traces.csv,
-logs.csv, jenkins_stages.json, console.txt, docker_state.json.
+logs.csv, jenkins_stages.json, console.txt, junit_report.json, docker_state.json.
 """
 
 from pathlib import Path
@@ -89,6 +89,10 @@ def export_jenkins(s, build_number: int, run_dir: Path) -> None:
     base = f"{JENKINS_URL}/job/pipefault/{build_number}"
     (run_dir / "jenkins_stages.json").write_text(json.dumps(s.get(f"{base}/wfapi/describe", timeout=60).json(), indent=2))
     (run_dir / "console.txt").write_text(s.get(f"{base}/consoleText", timeout=60).text)
+    # Rapport JUnit agrégé par Jenkins (404 si le pipeline s'arrête avant test-unit).
+    report = s.get(f"{base}/testReport/api/json", timeout=60)
+    if report.status_code == 200:
+        (run_dir / "junit_report.json").write_text(json.dumps(report.json(), indent=2))
 
 
 def export_docker_state(run_dir: Path) -> None:
