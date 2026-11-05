@@ -88,6 +88,11 @@ une modalité. Si plus de 15 % des exécutions d'un type sont exclues, elles son
 remplacées en fin de campagne par un calendrier complémentaire tiré avec la
 graine **20261032** (déclarée dans l'article 5, section 6.4).
 
+## Puissance
+
+`./run.sh bench-power` (`src/bench/power.py`, graine 20261031) recalcule le tableau 5
+de l'article 5 ; résultat dans `experiments/pipefault_power_grid.csv`.
+
 ## Lancer
 
 ```bash
@@ -100,8 +105,8 @@ graine **20261032** (déclarée dans l'article 5, section 6.4).
 ./run.sh bench-down                  # arrêt, volumes conservés
 ```
 
-**Ressources.** Les limites mémoire de compose (démo + banc) totalisent
-environ 7 Go, sans compter les constructions d'images (Gradle pour `ad`).
+**Ressources.** Les limites mémoire de compose (démo 3,2 Go + banc 3,2 Go)
+totalisent environ 6,4 Go, sans compter les constructions d'images (Gradle pour `ad`).
 Sur la machine de développement (4 cœurs, 8 Go), c'est à la limite : le
 pilote est possible en fermant le reste, la campagne de 410 exécutions
 (environ 170 h) demande une VM dédiée de 16 Go.

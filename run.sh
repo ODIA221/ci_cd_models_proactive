@@ -69,6 +69,7 @@
 #   ./run.sh bench-up               # démo OpenTelemetry + Jaeger/Prometheus/Loki + Jenkins (port 8090)
 #   ./run.sh bench-plan             # tire le calendrier préenregistré (une seule fois)
 #   ./run.sh bench-run [--limit N]  # exécute la campagne (pilote d'abord), reprise automatique
+#   ./run.sh bench-power            # recalcule la puissance du tableau 5 de l'article 5
 #   ./run.sh bench-status|bench-check|bench-down
 #   ./run.sh otel-up               # clone (si besoin) ../opentelemetry-demo et lance le stack
 #                                  # Docker Compose (nécessite Docker installé et démarré),
@@ -413,7 +414,7 @@ case "$COMMAND" in
         MEM_BYTES="$(docker info --format '{{.MemTotal}}' 2>/dev/null || echo 0)"
         if [ "$MEM_BYTES" -lt 8000000000 ]; then
             echo "==> ATTENTION : Docker dispose de $((MEM_BYTES / 1000000)) Mo. La démo + le banc demandent"
-            echo "    environ 7 Go (limites de compose) ; prévoir une VM de 16 Go pour la campagne complète."
+            echo "    environ 6,4 Go (limites de compose) ; prévoir une VM de 16 Go pour la campagne complète."
         fi
         mkdir -p data/raw/pipefault/runs
         export PIPEFAULT_DIR="$PWD" DEMO_DIR
@@ -446,6 +447,11 @@ case "$COMMAND" in
         DEMO_VERSION="$(grep -E '^IMAGE_VERSION=' "$DEMO_DIR/.env" | cut -d= -f2)" \
         PIPEFAULT_JENKINS_PASSWORD="$(cat bench/.jenkins_password)" DEMO_DIR="$DEMO_DIR" \
             "$PYTHON_BIN" -m src.bench.campaign run "$@"
+        ;;
+
+    bench-power)
+        shift
+        "$PYTHON_BIN" -m src.bench.power "$@"
         ;;
 
     bench-status)
@@ -696,7 +702,7 @@ EOF
 
     *)
         echo "Commande inconnue: '$COMMAND'"
-        echo "Usage: ./run.sh [setup|demo|sources|acquire <args...>|evaluate|train-rcaeval <args...>|evaluate-multimodal <args...>|evaluate-causal <args...>|evaluate-baselines <args...>|causal-summary|evaluate-proactive <args...>|showcase-rcaeval|bench-selftest|bench-up|bench-plan|bench-run|bench-status|bench-check|bench-down|jenkins-up|jenkins-down|otel-up|otel-down|serve|dashboard|ui-build|ui-dev|verify [--full]|study-env-up|study-env-load|study-env-reload-logs|study-env-down|study-env-reset|study-power|study-analysis|start|stop]"
+        echo "Usage: ./run.sh [setup|demo|sources|acquire <args...>|evaluate|train-rcaeval <args...>|evaluate-multimodal <args...>|evaluate-causal <args...>|evaluate-baselines <args...>|causal-summary|evaluate-proactive <args...>|showcase-rcaeval|bench-selftest|bench-up|bench-plan|bench-run|bench-power|bench-status|bench-check|bench-down|jenkins-up|jenkins-down|otel-up|otel-down|serve|dashboard|ui-build|ui-dev|verify [--full]|study-env-up|study-env-load|study-env-reload-logs|study-env-down|study-env-reset|study-power|study-analysis|start|stop]"
         exit 1
         ;;
 esac

@@ -82,7 +82,7 @@ interprétation.
 | D3.js v7 | Oui : simulation de forces, drag, coordonnées parallèles, rampes |
 | Disposition dirigée par forces, animation physique | Oui (`d3-force` : liens, répulsion, collision) |
 | Chronologie sur canevas défilable | Oui (`<canvas>` dans un conteneur à défilement horizontal, zoom) |
-| **Three.js** pour les graphes à grande échelle | **Non implémenté, volontairement.** Les graphes font au plus ~35 services (graphe au niveau service, chapitre 3). SVG/D3 en affiche des milliers. Ajouter WebGL n'apporterait rien de mesurable. **À retirer de l'article**, ou à présenter comme perspective si l'on passe un jour au niveau span (~200 000 nœuds/run). |
+| **Three.js** pour les graphes à grande échelle | **Non implémenté, volontairement.** Les graphes font au plus 26 services sur les 86 exécutions évaluées (graphe au niveau service, chapitre 3). SVG/D3 en affiche des milliers. Ajouter WebGL n'apporterait rien de mesurable. **À retirer de l'article**, ou à présenter comme perspective si l'on passe un jour au niveau span (125 000 à 1,5 million de spans par cas). |
 | FastAPI servant des signaux pré-calculés | Oui : calcul au premier appel (5 s à ~1 min selon le système), puis cache JSON |
 | JSON-LD | Oui (`GET /causal/{run_id}/jsonld`, `application/ld+json`), vocabulaire en URN du projet + `service.name` OpenTelemetry. **Limite** : ni Grafana ni Jaeger ne lisent nativement du JSON-LD. L'« intégration » à ces outils n'est donc ni faite ni testée. Une piste plausible : une source de données JSON générique de Grafana lisant l'endpoint REST. |
 
